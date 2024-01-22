@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+/* fonts */
+@font-face {
+  font-family: "poppins-normal";
+  src: url(../assets/fonts/Poppins-Regular.ttf);
+}
+
+/* body */
+body {
+  font-family: "poppins-normal";
+  font-size: 12px;
+  color: var(--body-font-color);
+  background-color: var(--body-background-color);
+}
+
+button {
+  font-family: "poppins-normal";
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
