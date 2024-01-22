@@ -1,1 +1,1 @@
-hi
+mangas image size 400 x 580

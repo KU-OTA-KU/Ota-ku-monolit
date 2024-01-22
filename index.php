@@ -1,6 +1,7 @@
 <?php
 require_once "./inc/connect.php";
 
+// get manga
 $sql = "SELECT * FROM `manga` ORDER BY RAND()";
 $result = mysqli_query($connect, $sql);
 ?>
