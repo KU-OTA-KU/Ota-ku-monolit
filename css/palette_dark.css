@@ -10,11 +10,12 @@
   --color-gray: rgb(185, 185, 185);
   --color-1717172b: rgba(255, 255, 255, 0.05);
   /* body */
-  --body-font-color: var(--color-white);
-  --body-background-color: var(--color-121212);
-
+  --body-font-color: #ffffff;
+  --body-background-color: #121212;
   /* header */
-  --header-background-color: var(--color-171717);
+  --header-background-color: #171717;
+  --header-search-form-button-i-color : #ffffff;
+  --header-user-is-reg-2-button-color: #ffffff;
   --navigation-a-color: var(--color-white);
   --nav-button-hov-color: var(--color-1976d2);
   --user-log-in-1-button-backrogund-color: var(--color-1976d2);

@@ -9,23 +9,24 @@
   margin: 0;
   padding: 0;
 }
-
-/* fonts */
-@font-face {
-  font-family: "poppins-normal";
-  src: url(../assets/fonts/Poppins-Regular.ttf);
-}
-
 /* body */
 body {
-  font-family: "poppins-normal";
-  font-size: 12px;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  overflow-y: scroll;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
   color: var(--body-font-color);
   background-color: var(--body-background-color);
 }
 
+
 button {
-  font-family: "poppins-normal";
+ font-size: 1em;
+ font-family: "Poppins", sans-serif;
+ font-weight: bold;
 }
 
 ul {
