@@ -1,1 +1,1 @@
-mangas image size 400 x 580
+Сайт аниме
