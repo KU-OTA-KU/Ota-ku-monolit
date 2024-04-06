@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const target = e.target;
     const validTags = ["a", "button", "input", "label"];
     const validClasses = [
+      "custom-select",
+      "custom-select-title"
     ];
 
     if (

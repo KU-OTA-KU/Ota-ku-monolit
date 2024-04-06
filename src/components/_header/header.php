@@ -52,13 +52,13 @@
       <div class="header-search spm-search">
         <form action="#">
           <button type="submit">
-            <img src="./assets/images/search.png" alt="search" />
+          <i class="fa-solid fa-magnifying-glass"></i>
           </button>
-          <input type="text" required placeholder="What are we looking for, Senpai?" class="search-input-fa" />
+          <input type="text" required placeholder="Что мы ищем, Сенпай?" class="search-input-fa" />
         </form>
 
         <!-- search result Start -->
-        <div class="search-results">wwwww</div>
+        <div class="search-results"></div>
         <!-- search result End -->
       </div>
     </div>
