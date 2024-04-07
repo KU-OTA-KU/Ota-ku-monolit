@@ -37,3 +37,10 @@
 .top-popular-animes-content::-webkit-scrollbar {
   height: 0px;
 }
+
+
+@media screen and (max-width: 425px) {
+  .top-popular-animes-title-h2 h2 {
+    display: none;
+  }
+}

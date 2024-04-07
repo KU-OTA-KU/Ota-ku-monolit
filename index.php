@@ -18,7 +18,7 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-  <link rel="stylesheet" href="src/components/_header/header.css" />
+  <link rel="stylesheet" href="src/components/header/header.css" />
   <link rel="stylesheet" href="src/components/_cursor/cursor.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="src/components/_filter/filter.css" />
@@ -32,11 +32,8 @@
 </head>
 
 <body>
-  <!-- cursor Init start -->
-  <?php include_once 'src/components/_cursor/cursor.php'; ?>
-  <!-- cursor Init End -->
   <!-- header Init start -->
-  <?php include_once 'src/components/_header/header.php'; ?>
+  <?php include_once 'src/components/header/header.php'; ?>
   <!-- header Init End -->
   <!-- heading Init start -->
   <?php include_once 'src/components/flickity/flickity.php'; ?>
@@ -65,7 +62,7 @@
   </main>
   <!-- main End -->
   <!-- what is it Init start -->
-  <?php // include_once 'src/components/anime/anime.php'; ?>
+  <?php // include_once 'src/components/anime/anime.php';  ?>
   <!-- what is it Init end -->
   <!-- footer Init Start -->
   <?php include_once 'src/components/footer/footer.php'; ?>
@@ -77,7 +74,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
   integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="js/genAnimeListSkeleton.js"></script>
+<script src="js/genAnimeListSkeleton.js"></script>
+<script src="js/other/delay.js"></script>
 <script src="js/other/cursorGrapToScrool.js"></script>
 <script src="js/other/shuffleArray.js"></script>
 <script src="js/flickity/displayAnimeListInFlickity.js"></script>
@@ -90,8 +88,7 @@
 <script src="js/animeList.js"></script>
 <script src="js/popular/scrollbar.js"></script>
 <script src="js/genres/scrollbar.js"></script>
-<script src="./js/logo.js"></script>
-<script src="./js/getManga.js"></script>
+<script src="js/logo.js"></script>
 <!-- <script src="js/randomTyanka.js"></script> -->
 <script src="js/most/displayAnimeListMost.js"></script>
 <script src="js/most/mostAnimes.js"></script>

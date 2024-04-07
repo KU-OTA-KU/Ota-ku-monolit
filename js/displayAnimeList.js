@@ -19,12 +19,15 @@ function displayAnimeList(animeList, selector) {
           </div>
         </div>
         <div class="name" style="background: transparent !important;">
-          <a href="#">${anime.russian}</a>
+          <a href="anime.php?animeId=${anime.id}">${anime.russian}</a>
         </div>
       </div>
     `;
 
     currentCell.insertAdjacentHTML('beforeend', animeHTML);
     currentCell.id = "appended";
+    currentCell.onclick = function() {
+      window.location.href = `anime.php?animeId=${anime.id}`;
+    };
   });
 }

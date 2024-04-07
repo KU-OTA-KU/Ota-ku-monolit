@@ -24,5 +24,8 @@ function displayAnimeListMost(animeList, selector) {
         </div>
       `;
       currentCell.insertAdjacentHTML("beforeend", animeHTML);
+      currentCell.onclick = function() {
+        window.location.href = `anime.php?animeId=${anime.id}`;
+      };
   });
 }

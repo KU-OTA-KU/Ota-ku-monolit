@@ -8,6 +8,7 @@ fetch("https://shikimori.one/api/graphql", {
     query: `
     query {
       animes(season: "2024", limit: 30, order: popularity, status: "released", kind: "tv,movie,special,tv_special") {
+        id
         name
         russian
         english

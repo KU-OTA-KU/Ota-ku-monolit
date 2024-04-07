@@ -1,4 +1,5 @@
-fetch("https://shikimori.one/api/graphql", {
+async function getCurrAnime(GET) {
+  fetch("https://shikimori.one/api/graphql", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -7,7 +8,7 @@ fetch("https://shikimori.one/api/graphql", {
   body: JSON.stringify({
     query: `
     query {
-      animes(season: "2024", limit: 20, order: popularity, status: "released", kind: "tv,movie,special,tv_special") {
+      animes(ids: "${GET}", limit: 1) {
         id
         name
         russian
@@ -32,10 +33,12 @@ fetch("https://shikimori.one/api/graphql", {
   .then((response) => response.json())
   .then((data) => {
     console.log("flickity popular animes top Detected!");
-    const popularAnime = data.data.animes;
-    const filteredAnime = shuffleArray(popularAnime);
-    displayAnimeListInFlickity(filteredAnime, ".flickity-slider");
+    const anime = data.data.animes;
+    appendAnimeInSite(anime);
   })
   .catch((error) => {
-    console.error("Request error => ", error);
+    console.warn("Request error => ", error);
   });
+}
+
+getCurrAnime(currAnime);

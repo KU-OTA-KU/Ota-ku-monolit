@@ -10,6 +10,7 @@ async function mostFetchOnGoing() {
         query: `
         query {
           animes(limit: 5, order: popularity, status: "ongoing", kind: "tv") {
+            id
             name
             russian
             english
@@ -32,9 +33,11 @@ async function mostFetchOnGoing() {
     const popularAnime = data.data.animes;
     const filteredAnime = shuffleArray(popularAnime);
     displayAnimeListMost(filteredAnime, ".most-content-animes-list-option-1");
+    await delay(1000)
     await mostFetchOnAnonse();
   } catch (error) {
-    console.error("Request error => ", error);
+    console.warn("Request error => ", error);
+    await delay(1000)
     await mostFetchOnGoing();
   }
 }
@@ -51,6 +54,7 @@ async function mostFetchOnAnonse() {
         query: `
         query {
           animes(season: "2024" limit: 5, order: random, status: "anons", kind: "tv") {
+            id
             name
             russian
             english
@@ -73,9 +77,11 @@ async function mostFetchOnAnonse() {
     const popularAnime = data.data.animes;
     const filteredAnime = shuffleArray(popularAnime);
     displayAnimeListMost(filteredAnime, ".most-content-animes-list-option-2");
+    await delay(1000)
     await mostFetchOnTop();
   } catch (error) {
-    console.error("Request error => ", error);
+    console.warn("Request error => ", error);
+    await delay(1000)
     await mostFetchOnAnonse();
   }
 }
@@ -92,6 +98,7 @@ async function mostFetchOnTop() {
         query: `
         query {
           animes(limit: 5, order: ranked, status: "released", kind: "tv") {
+            id
             name
             russian
             english
@@ -114,9 +121,11 @@ async function mostFetchOnTop() {
     const popularAnime = data.data.animes;
     const filteredAnime = shuffleArray(popularAnime);
     displayAnimeListMost(filteredAnime, ".most-content-animes-list-option-3");
+    await delay(1000)
     await mostFetchOnReleased();
   } catch (error) {
-    console.error("Request error => ", error);
+    console.warn("Request error => ", error);
+    await delay(1000)
     await mostFetchOnTop();
   }
 }
@@ -133,6 +142,7 @@ async function mostFetchOnReleased() {
         query: `
         query {
           animes(, limit: 5, order: ranked, status: "released", kind: "tv") {
+            id
             name
             russian
             english
@@ -156,7 +166,8 @@ async function mostFetchOnReleased() {
     const filteredAnime = shuffleArray(popularAnime);
     displayAnimeListMost(filteredAnime, ".most-content-animes-list-option-4");
   } catch (error) {
-    console.error("Request error => ", error);
+    console.warn("Request error => ", error);
+    delay(1000)
     await mostFetchOnReleased();
   }
 }

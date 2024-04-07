@@ -1,13 +1,13 @@
 function displayAnimeListInFlickity(animeList, selector) {
   let mainContent = document.querySelector(selector);
-  let galleryCells = mainContent.querySelectorAll('.gallery-cell');
+  let galleryCells = mainContent.querySelectorAll(".gallery-cell");
 
   animeList.forEach((anime, index) => {
     let currentCell = galleryCells[index];
 
-    const genres = anime.genres.map(genre => genre.russian);
+    const genres = anime.genres.map((genre) => genre.russian);
     const limitedGenres = genres.slice(0, 4);
-    const genresHTML = limitedGenres.map(genre => `<a>${genre}</a>`).join('');
+    const genresHTML = limitedGenres.map((genre) => `<a>${genre}</a>`).join("");
 
     let animeHTML = `
       <div class="flickity-content-gallery-block">
@@ -18,7 +18,7 @@ function displayAnimeListInFlickity(animeList, selector) {
             <p>Название: ${anime.japanese}</p>
             <p>Оценка: ${anime.score}<i class="fa-solid fa-star" aria-hidden="true"></i></p>
             <div class="gallery-cell-genres">${genresHTML}</div>
-            <a href="${anime.url}" target="_blank">Подробнее</a>
+            <a href="anime.php?animeId=${anime.id}">Подробнее</a>
           </div>
         </div>
       </div>

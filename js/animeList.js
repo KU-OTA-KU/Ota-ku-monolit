@@ -2,7 +2,7 @@ let currpage = 1;
 const limit = 50;
 let loading = false;
 let nextPageTimeout = null;
-let maxFetchsInAnimeList = 0;
+let maxFetchsInAnimeList = 2;
 
 function isNearBottom() {
   return (
@@ -41,6 +41,7 @@ function fetchAnimeData() {
       query: `
       query {
         animes(season: "2020_2024", limit: ${limit}, page: ${currpage}, kind: "tv,movie,special,tv_special") {
+          id
           name
           russian
           english

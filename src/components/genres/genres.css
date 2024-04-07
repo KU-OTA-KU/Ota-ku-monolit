@@ -50,3 +50,10 @@
 .all-genres-list-container .genre-cont span {
   color: var(--status-font-color);
 }
+
+@media screen and (max-width: 425px) {
+  .all-genres {
+    width: 100%;
+    padding: 0;
+  }
+}

@@ -148,6 +148,7 @@
   position: sticky;
   top: 65px;
   width: 100%;
+  z-index: 100;
 }
 
 .filt-button button {
@@ -238,13 +239,12 @@
     display: none;
     position: fixed;
     top: 0;
+    max-width: 350px;
     width: 100%;
     height: 100dvh;
     background-color: var(--filter-bg-color);
     z-index: 990;
     padding: 20px;
-    max-width: none;
-    min-width: none;
     overflow: hidden;
   }
 
@@ -295,5 +295,14 @@
 
   .filt-button button:hover {
     background-color: var(--filt-button-bg-hov);
+  }
+}
+
+
+
+@media screen and (max-width: 425px) {
+  .main-filter {
+    width: 100%;
+    max-width: 100%;
   }
 }

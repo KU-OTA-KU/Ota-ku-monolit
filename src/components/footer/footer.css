@@ -56,3 +56,41 @@ footer {
 .documents ul li {
   text-decoration: underline;
 }
+
+@media screen and (max-width: 1024px) {
+  .footer-other {
+    display: flex;
+    gap: 20px;
+  }
+
+  .footer-inner-tit {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-logo p {
+    display: none;
+  }
+
+  .footer-inner-tit {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .documents, .contacts {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .contacts {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-logo {
+   display: none;
+  }
+ }

@@ -3,9 +3,9 @@ function openFilter() {
   let body = document.body;
   anime({
     targets: filterBox,
-    right: ["-100%", 0],
+    left: ["-100%", 0],
     opacity: [0, 1],
-    duration: 300,
+    duration: 450,
     easing: "easeInOutExpo",
     begin: function () {
       console.log("Animation started => open filter <=");
@@ -20,9 +20,9 @@ function closeFilter() {
   let body = document.body;
   anime({
     targets: filterBox,
-    right: [0, "-100"],
+    left: [0, "-100"],
     opacity: [1 , 0],
-    duration: 300,
+    duration: 450,
     easing: "easeInOutExpo",
     complete: function () {
       console.log("Animation Started =>  close filter <=");
