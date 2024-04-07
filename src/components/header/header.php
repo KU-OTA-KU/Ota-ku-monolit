@@ -3,8 +3,8 @@
   <div class="header-inner">
     <div class="header-tit">
       <div class="header-log-and-nav">
-        <div class="header-logo">
-          <img src="./assets/images/animeCo.png" alt="AnimeCO" id="logo" />
+        <div class="header-logo" onclick="window.location.href = 'index.php';">
+          <img src="assets/images/animeCo.png" alt="AnimeCO" id="logo" />
         </div>
         <nav class="header-navigation">
           <a href="#" class="nav-button">КАТАЛОГ</a>
