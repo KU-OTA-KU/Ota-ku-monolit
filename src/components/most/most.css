@@ -83,6 +83,12 @@
   font-size: 0.89em;
 }
 
+.most-content-movie-info .most-name p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .most-content-movie-info .most-status {
   display: flex;
   min-width: 50%;

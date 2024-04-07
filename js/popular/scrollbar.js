@@ -1,47 +1,35 @@
-const container = document.querySelector('.top-popular-animes-content');
+const popularAnimesScrollbar = document.querySelector(
+  ".top-popular-animes-content"
+);
 
 let isDown = false;
 let startX;
 let scrollLeft;
 
-container.addEventListener('mousedown', (e) => {
+popularAnimesScrollbar.addEventListener("mousedown", (e) => {
   isDown = true;
-  startX = e.pageX - container.offsetLeft;
-  scrollLeft = container.scrollLeft;
-  container.style.cursor = "grab";
-  addGrabbingCursorToChildren();
+  startX = e.pageX - popularAnimesScrollbar.offsetLeft;
+  scrollLeft = popularAnimesScrollbar.scrollLeft;
+  popularAnimesScrollbar.style.cursor = "grab";
+  addGrabbingCursorToChildren(popularAnimesScrollbar);
 });
 
-container.addEventListener('mouseleave', () => {
+popularAnimesScrollbar.addEventListener("mouseleave", () => {
   isDown = false;
-  container.style.cursor = "auto";
-  setDefaultCursorToChildren()
+  popularAnimesScrollbar.style.cursor = "auto";
+  setDefaultCursorToChildren(popularAnimesScrollbar);
 });
 
-container.addEventListener('mouseup', () => {
+popularAnimesScrollbar.addEventListener("mouseup", () => {
   isDown = false;
-  container.style.cursor = "auto";
-  setDefaultCursorToChildren()
+  popularAnimesScrollbar.style.cursor = "auto";
+  setDefaultCursorToChildren(popularAnimesScrollbar);
 });
 
-container.addEventListener('mousemove', (e) => {
+popularAnimesScrollbar.addEventListener("mousemove", (e) => {
   if (!isDown) return;
   e.preventDefault();
-  const x = e.pageX - container.offsetLeft;
+  const x = e.pageX - popularAnimesScrollbar.offsetLeft;
   const walk = (x - startX) * 1;
-  container.scrollLeft = scrollLeft - walk;
+  popularAnimesScrollbar.scrollLeft = scrollLeft - walk;
 });
-
-function addGrabbingCursorToChildren() {
-  const children = container.querySelectorAll('*');
-  children.forEach(child => {
-    child.style.cursor = "grabbing";
-  });
-}
-
-function setDefaultCursorToChildren() {
-  const children = container.querySelectorAll('*');
-  children.forEach(child => {
-    child.style.cursor = "pointer";
-  });
-}

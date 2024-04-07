@@ -65,20 +65,20 @@
   </main>
   <!-- main End -->
   <!-- what is it Init start -->
-  <?php include_once 'src/components/anime/anime.php'; ?>
+  <?php // include_once 'src/components/anime/anime.php'; ?>
   <!-- what is it Init end -->
   <!-- footer Init Start -->
   <?php include_once 'src/components/footer/footer.php'; ?>
   <!-- footer Init End -->
 </body>
 <!-- scripts -->
-<!-- dependecies -->
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
   integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- filter -->
+  <script src="js/genAnimeListSkeleton.js"></script>
+<script src="js/other/cursorGrapToScrool.js"></script>
 <script src="js/other/shuffleArray.js"></script>
 <script src="js/flickity/displayAnimeListInFlickity.js"></script>
 <script src="js/popular/displayAnimeListPopular.js"></script>
@@ -89,9 +89,10 @@
 <script src="js/popular/popularAnimes.js"></script>
 <script src="js/animeList.js"></script>
 <script src="js/popular/scrollbar.js"></script>
+<script src="js/genres/scrollbar.js"></script>
 <script src="./js/logo.js"></script>
 <script src="./js/getManga.js"></script>
-<script src="js/randomTyanka.js"></script>
+<!-- <script src="js/randomTyanka.js"></script> -->
 <script src="js/most/displayAnimeListMost.js"></script>
 <script src="js/most/mostAnimes.js"></script>
 <script src="js/flickity/flickityTopAnimes.js"></script>

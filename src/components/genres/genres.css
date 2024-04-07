@@ -1,0 +1,52 @@
+.all-genres {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.all-genres .all-genres-list-inner {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.all-genres-list-inner .all-genres-list-tit {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.all-genres-list-tit .all-genres-list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.all-genres-list-container::-webkit-scrollbar {
+  height: 0;
+}
+
+.all-genres-list-container .genre-cont {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px 40px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.all-genres-list-container .genre-cont:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.all-genres-list-container .genre-cont h3 {
+  font-size: 1em;
+}
+
+.all-genres-list-container .genre-cont span {
+  color: var(--status-font-color);
+}

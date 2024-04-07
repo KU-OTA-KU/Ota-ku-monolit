@@ -2,9 +2,12 @@ let currpage = 1;
 const limit = 50;
 let loading = false;
 let nextPageTimeout = null;
+let maxFetchsInAnimeList = 0;
 
 function isNearBottom() {
-  return window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000;
+  return (
+    window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000
+  );
 }
 
 function loadNextPage() {
@@ -17,7 +20,12 @@ function loadNextPage() {
 
     nextPageTimeout = setTimeout(() => {
       currpage++;
-      fetchAnimeData();
+      if (currpage <= maxFetchsInAnimeList) {
+        generateAnimeListStekelton(50, ".main-content");
+        fetchAnimeData();
+      } else {
+        console.log("goodbye my love!");
+      }
     }, 100);
   }
 }
@@ -35,7 +43,6 @@ function fetchAnimeData() {
         animes(season: "2020_2024", limit: ${limit}, page: ${currpage}, kind: "tv,movie,special,tv_special") {
           name
           russian
-          licenseNameRu
           english
           japanese
           kind
@@ -47,20 +54,23 @@ function fetchAnimeData() {
           }
         }
       }
-      `.replace(/\n/g, ''),
+      `.replace(/\n/g, ""),
     }),
   })
-  .then((response) => response.json())
-  .then((data) => {
-    console.log("NEW DATA ADDED SUCCESSFULLy!");
-    const filteredAnime = data.data.animes.filter(anime => anime.score > 0 && anime.name);
-    displayAnimeList(filteredAnime, ".main-content");
-    loading = false;
-  })
-  .catch((error) => {
-    console.error("Request Error => ", error);
-    loading = false;
-  });
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("NEW DATA ADDED SUCCESSFULLy!");
+      const filter_1 = data.data.animes.filter(
+        (anime) => anime.score > 0 && anime.name
+      );
+      const filteredAnime = shuffleArray(filter_1);
+      displayAnimeList(filteredAnime, ".main-content");
+      loading = false;
+    })
+    .catch((error) => {
+      console.error("Request Error => ", error);
+      loading = false;
+    });
 }
 
 window.addEventListener("scroll", () => {
