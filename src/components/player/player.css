@@ -1,0 +1,72 @@
+.player  {
+  background-color: #171717;
+  margin: 50px 0;
+  width: 100%;
+}
+
+.player-inner {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.player .player-tit {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.player-tit .player-container {
+   width: 75%;
+   padding: 20px 0;
+   aspect-ratio: 1 / 0.60;
+}
+
+.player-tit .player-right-panel {
+  padding: 20px 0;
+  width: 25%;
+}
+
+.ozvucka-or-player {
+  width: 100%;
+  padding-bottom: 20px;
+  display: flex;
+}
+
+.ozvucka-or-player button {
+  width: 50%;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px 0;
+}
+
+.ozvucka-or-player button i {
+  margin-right: 10px;
+  font-size: 1.2em;
+  color: white;
+}
+
+.ozvucka-or-player #is-on {
+  background-color: rgba(25, 118, 210, 0.2);
+}
+
+.player-right-panel-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.player-right-panel-content a {
+  padding: 5px 0;
+  transition: color 0.2s;
+}
+
+.player-right-panel-content a:hover {
+  color: #1976D2;
+}
