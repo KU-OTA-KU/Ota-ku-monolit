@@ -70,3 +70,24 @@
 .player-right-panel-content a:hover {
   color: #1976D2;
 }
+
+
+@media screen and (max-width: 900px) {
+  .player-container {
+    width: 100% !important;
+  }
+
+  .player-tit {
+    flex-direction: column !important;
+  }
+
+  .player-right-panel {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .player-tit {
+    flex-direction: column-reverse !important;
+  }
+}
