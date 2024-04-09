@@ -18,10 +18,11 @@
     <form action="catalog.php" method="GET">
       <div class="filter-fl-genre filter-box">
         <label for="select-status">Статус:</label>
-        <div class="custom-select" onclick="openCustomSelect(this)">
-          <div class="custom-select-title">Выберите Статус</div>
+        <div class="custom-select">
+          <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите Статус</div>
           <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
-            <div><input type="checkbox" id="status1" name="status" value="wdwd"><label for="status1">Анонсировано</label>
+            <div><input type="checkbox" id="status1" name="status" value="wdwd"><label
+                for="status1">Анонсировано</label>
             </div>
             <div><input type="checkbox" id="status2" name="status" value=""><label for="status2">Сейчас выходит</label>
             </div>
@@ -32,8 +33,8 @@
           </div>
         </div>
         <label for="select-type">Тип:</label>
-        <div class="custom-select" onclick="openCustomSelect(this)">
-          <div class="custom-select-title">Выберите Тип</div>
+        <div class="custom-select">
+          <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите Тип</div>
           <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
             <div><input type="checkbox" id="type1" name="status" value=""><label for="type1">Анонсировано</label>
             </div>
@@ -52,8 +53,8 @@
           </div>
         </div>
         <label for="select-sorting">Сортировка:</label>
-        <div class="custom-select" onclick="openCustomSelect(this)">
-          <div class="custom-select-title">Сортировать по</div>
+        <div class="custom-select">
+          <div class="custom-select-title" onclick="openCustomSelect(this)">Сортировать по</div>
           <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
             <div><input type="checkbox" id="type1" name="status" value=""><label for="sort1">По рейтингу</label>
             </div>
@@ -70,8 +71,8 @@
           </div>
         </div>
         <label for="select-season">Сезон:</label>
-        <div class="custom-select" onclick="openCustomSelect(this)">
-          <div class="custom-select-title">Выберите сезон</div>
+        <div class="custom-select">
+          <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите сезон</div>
           <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
             <div><input type="checkbox" id="season1" name="season" value=""><label for="season1">Лето 2024</label></div>
             <div><input type="checkbox" id="season2" name="season" value=""><label for="season2">Весна 2024</label>
@@ -82,8 +83,8 @@
           </div>
         </div>
         <label for="select-rating">Оценка:</label>
-        <div class="custom-select" onclick="openCustomSelect(this)">
-          <div class="custom-select-title">Выберите оценку</div>
+        <div class="custom-select">
+          <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите оценку</div>
           <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
             <div><input type="checkbox" id="rating1" name="rating" value=""><label for="rating1">8+</label></div>
             <div><input type="checkbox" id="rating2" name="rating" value=""><label for="rating2">7+</label></div>
@@ -91,8 +92,8 @@
           </div>
         </div>
         <label for="select-audience">Аудитория:</label>
-        <div class="custom-select" onclick="openCustomSelect(this)">
-          <div class="custom-select-title">Выберите аудиторию</div>
+        <div class="custom-select">
+          <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите аудиторию</div>
           <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
             <div><input type="checkbox" id="audience1" name="audience" value=""><label for="audience1">Сёнен</label>
             </div>
@@ -107,8 +108,8 @@
           </div>
         </div>
         <label for="select-genres">Жанры:</label>
-        <div class="custom-select" onclick="openCustomSelect(this)">
-          <div class="custom-select-title">Выберите жанр</div>
+        <div class="custom-select">
+          <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите жанр</div>
           <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
             <div><input type="checkbox" id="genre1" name="genres" value=""><label for="genre1">Авангард</label></div>
             <div><input type="checkbox" id="genre2" name="genres" value=""><label for="genre2">Гурман</label></div>
@@ -134,8 +135,8 @@
           </div>
         </div>
         <label for="select-themes">Темы:</label>
-        <div class="custom-select" onclick="openCustomSelect(this)">
-          <div class="custom-select-title">Выберите тему</div>
+        <div class="custom-select">
+          <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите тему</div>
           <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
             <div><input type="checkbox" id="theme1" name="themes" value=""><label for="theme1">Вампиры</label></div>
             <div><input type="checkbox" id="theme2" name="themes" value=""><label for="theme2">Гарем</label></div>

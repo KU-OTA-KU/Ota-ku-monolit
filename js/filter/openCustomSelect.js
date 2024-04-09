@@ -1,5 +1,5 @@
 function openCustomSelect(element) {
-  var selectOptions = element.querySelector('.custom-select-options');
+  var selectOptions = element.nextElementSibling; // Получаем следующий элемент после кликнутого заголовка
 
   if (selectOptions.style.display !== 'none') {
     anime({
@@ -14,19 +14,18 @@ function openCustomSelect(element) {
       },
     });
   } else {
-    var allSelects = document.querySelectorAll('.custom-select');
+    var allSelectOptions = document.querySelectorAll('.custom-select-options');
 
-    allSelects.forEach(function(select) {
-      let otherSelectOptions = select.querySelector('.custom-select-options');
-      if (otherSelectOptions.style.display !== 'none' && select !== element) {
+    allSelectOptions.forEach(function(option) {
+      if (option !== selectOptions) {
         anime({
-          targets: otherSelectOptions,
+          targets: option,
           translateY: "10px",
           opacity: 0,
           duration: 100,
           easing: "easeInOutQuad",
           complete: function() {
-            otherSelectOptions.style.display = "none";
+            option.style.display = "none";
             console.log("Closed other select");
           },
         });
