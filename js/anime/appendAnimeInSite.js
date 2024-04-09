@@ -111,7 +111,7 @@ async function main() {
             mainCharactersCount++;
           }
         });
-
+        mainCharactersCount--;
         for (let i = 0; i < mainCharactersCount; i++) {
           let newCharacterBlock = `
             <div class="character-content">
