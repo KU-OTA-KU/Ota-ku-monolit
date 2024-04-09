@@ -15,13 +15,13 @@
     </button>
   </div>
   <div class="filter-selector">
-    <form action="index.php">
+    <form action="catalog.php" method="GET">
       <div class="filter-fl-genre filter-box">
         <label for="select-status">Статус:</label>
         <div class="custom-select" onclick="openCustomSelect(this)">
           <div class="custom-select-title">Выберите Статус</div>
           <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
-            <div><input type="checkbox" id="status1" name="status" value=""><label for="status1">Анонсировано</label>
+            <div><input type="checkbox" id="status1" name="status" value="wdwd"><label for="status1">Анонсировано</label>
             </div>
             <div><input type="checkbox" id="status2" name="status" value=""><label for="status2">Сейчас выходит</label>
             </div>

@@ -82,7 +82,6 @@
 <script src="js/filter/filter.js"></script>
 <script src="js/filter/openCustomSelect.js"></script>
 <script src="js/displayAnimeList.js"></script>
-<script src="js/_cursor/cursor.js"></script>
 <script src="js/popular/popularAnimes.js"></script>
 <script src="js/animeList.js"></script>
 <script src="js/popular/scrollbar.js"></script>
