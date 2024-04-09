@@ -211,7 +211,7 @@
 }
 
 .custom-select .custom-select-options::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
 }
 
 .custom-select .custom-select-options div {
@@ -231,6 +231,10 @@
 }
 
 @media screen and (max-width: 930px) {
+  .custom-select .custom-select-options::-webkit-scrollbar {
+    width: 0px;
+  }
+
   .main-filter {
     display: none;
   }
