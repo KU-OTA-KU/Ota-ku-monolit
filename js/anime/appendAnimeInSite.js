@@ -78,7 +78,9 @@ async function main() {
     }
 
     // 9) append anime stills
-    let animeStillsContentList = document.querySelectorAll(".anime-stills-content");
+    let animeStillsContentList = document.querySelectorAll(
+      ".anime-stills-content"
+    );
     if (_ANIME_SCREENSHOTS_ && _ANIME_SCREENSHOTS_.length > 0) {
       animeStillsContentList.forEach((animeStillsContent, index) => {
         if (_ANIME_SCREENSHOTS_[index]) {
@@ -99,23 +101,32 @@ async function main() {
 
     // 10) append anime Characters
     async function createCharactersBlocks() {
-      let animeCharacters = document.querySelectorAll(".characters-list-container");
+      let animeCharacters = document.querySelectorAll(
+        ".characters-list-container"
+      );
       animeCharacters.forEach((element, index) => {
-          for (let i = 0; i < _ANIME_CHARACTER_ROLES_.length - 1; i++) {
-              let newCharacterBlock = `
-                  <div class="character-content">
-                      <div class="character-content-image"></div>
-                      <p></p>
-                  </div>
-              `;
-              element.insertAdjacentHTML("beforeend", newCharacterBlock);
+        let mainCharactersCount = 0;
+        _ANIME_CHARACTER_ROLES_.forEach((characterRole) => {
+          if (characterRole.rolesEn.includes("Main")) {
+            mainCharactersCount++;
           }
+        });
+
+        for (let i = 0; i < mainCharactersCount; i++) {
+          let newCharacterBlock = `
+            <div class="character-content">
+              <div class="character-content-image"></div>
+              <p></p>
+            </div>
+          `;
+          element.insertAdjacentHTML("beforeend", newCharacterBlock);
+        }
       });
-  }
-  
-  async function appendCharactersBlocks() {
-    let characterBlocks = document.querySelectorAll(".character-content");
-    characterBlocks.forEach((block, index) => {
+    }
+
+    async function appendCharactersBlocks() {
+      let characterBlocks = document.querySelectorAll(".character-content");
+      characterBlocks.forEach((block, index) => {
         let character = _ANIME_CHARACTER_ROLES_[index];
         if (!character) return;
         let characterHTML = `
@@ -124,12 +135,11 @@ async function main() {
         `;
         block.innerHTML = characterHTML;
         // block.insertAdjacentHTML("beforeend", characterHTML);
-    });
-}
+      });
+    }
 
-  await createCharactersBlocks();
-  await appendCharactersBlocks();
-    
+    await createCharactersBlocks();
+    await appendCharactersBlocks();
   } else {
     console.warn("No anime data found in sessionStorage.");
   }
