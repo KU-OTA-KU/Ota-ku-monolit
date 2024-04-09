@@ -130,8 +130,8 @@
             <div><input type="checkbox" id="genre14" name="genres" value=""><label for="genre14">Фэнтези</label></div>
             <div><input type="checkbox" id="genre15" name="genres" value=""><label for="genre15">Экшен</label></div>
             <div><input type="checkbox" id="genre16" name="genres" value=""><label for="genre16">Этти</label></div>
-            <div><input type="checkbox" id="genre17" name="genres" value=""><label for="genre17">Эротика</label></div>
-            <div><input type="checkbox" id="genre18" name="genres" value=""><label for="genre18">Хентай</label></div>
+            <!-- <div><input type="checkbox" id="genre17" name="genres" value=""><label for="genre17">Эротика</label></div>
+            <div><input type="checkbox" id="genre18" name="genres" value=""><label for="genre18">Хентай</label></div> -->
           </div>
         </div>
         <label for="select-themes">Темы:</label>
