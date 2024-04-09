@@ -19,7 +19,6 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="stylesheet" href="src/components/header/header.css" />
-  <link rel="stylesheet" href="src/components/_cursor/cursor.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="src/components/_filter/filter.css" />
   <link rel="stylesheet" href="src/components/_content/content.css" />

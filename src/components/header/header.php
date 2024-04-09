@@ -4,10 +4,10 @@
     <div class="header-tit">
       <div class="header-log-and-nav">
         <div class="header-logo" onclick="window.location.href = 'index.php';">
-          <img src="assets/images/animeCo.png" alt="AnimeCO" id="logo" />
+          <img src="" alt="" id="logo" />
         </div>
         <nav class="header-navigation">
-          <a href="#" class="nav-button">КАТАЛОГ</a>
+          <a href="catalog.php" class="nav-button">КАТАЛОГ</a>
           <a href="#" class="nav-button">ТОП</a>
         </nav>
         <div class="header-search">

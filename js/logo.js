@@ -9,5 +9,8 @@ function changeImagePath() {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  changeImagePath();
+});
 window.onload = changeImagePath;
 window.onresize = changeImagePath;
