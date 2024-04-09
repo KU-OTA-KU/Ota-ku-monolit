@@ -2,7 +2,7 @@ let currpage = 1;
 const limit = 50;
 let loading = false;
 let nextPageTimeout = null;
-let maxFetchsInAnimeList = 2;
+let maxFetchsInAnimeList = 10;
 
 function isNearBottom() {
   return (
