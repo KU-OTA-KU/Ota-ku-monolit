@@ -11,11 +11,11 @@
           <a href="#" class="nav-button">ТОП</a>
         </nav>
         <div class="header-search">
-          <form action="#">
+          <form action="catalog.php" method="GET">
             <button type="submit">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <input type="text" required placeholder="Что мы ищем, Сенпай?" class="search-input-fa" />
+            <input type="text" required placeholder="Что мы ищем, Сенпай?" class="search-input-fa" name="search" />
           </form>
           <!-- search result Start -->
           <div class="search-results"></div>
