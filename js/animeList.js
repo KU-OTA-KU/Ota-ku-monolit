@@ -1,9 +1,9 @@
 let currpage = 1;
-const limit = 50;
+const limit = 30;
 let loading = false;
 let nextPageTimeout = null;
 let maxFetchsInAnimeList = 3;
-
+generateAnimeListStekelton( limit, ".main-content");
 function isNearBottom() {
   return (
     window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000

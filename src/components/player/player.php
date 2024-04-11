@@ -2,8 +2,7 @@
   <div class="player-inner">
     <div class="player-tit">
       <div class="player-container">
-        <iframe src="//kodik.info/seria/1258911/c7a0c7db262e1a684c5b355620db3b14/720p" width="100%" height="100%"
-          frameborder="0" AllowFullScreen allow="autoplay *; fullscreen *"></iframe>
+          <iframe src="//kodik.info/serial/58618/b9c9d4b65853a7272f0d9092d034c765/720p" width="100%" height="100%" frameborder="0" AllowFullScreen allow="autoplay *; fullscreen *"></iframe>
       </div>
       <div class="player-right-panel">
         <div class="ozvucka-or-player">
@@ -16,4 +15,4 @@
       </div>
     </div>
   </div>
-</section>  
+</section>

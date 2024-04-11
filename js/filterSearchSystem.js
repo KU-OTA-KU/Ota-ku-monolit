@@ -22,7 +22,7 @@ function loadNextPage() {
         nextPageTimeout = setTimeout(() => {
             currpage++;
             // if (currpage <= maxFetchsInAnimeList) {
-            generateAnimeListStekelton(50, ".main-content");
+            // generateAnimeListStekelton(50, ".main-content");
             fetchAnimeData();
             // } else {
             //   console.log("goodbye my love!");
@@ -114,7 +114,8 @@ async function fetchAnimeData() {
         .then((response) => response.json())
         .then((data) => {
             console.log("NEW DATA ADDED SUCCESSFULLY!");
-            const animes = data.data.animes;
+             const animes = data.data.animes;
+             generateAnimeListStekelton(animes.length, ".main-content");
             displayAnimeList(animes, ".main-content");
             loading = false;
         })

@@ -1,3 +1,24 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$status = $_GET['status'] ?? [];
+$kind = $_GET['kind'] ?? [];
+$sort = $_GET['sort'] ?? '';
+$season = $_GET['season'] ?? '';
+$rating = $_GET['rating'] ?? '';
+$genres = $_GET['genres'] ?? '';
+
+function isChecked($value, $param)
+{
+    if (is_array($param)) {
+        return in_array($value, $param) ? 'checked' : '';
+    } else {
+        return $value == $param ? 'checked' : '';
+    }
+}
+?>
+
 <!-- filter Start -->
 <section class="main-filter">
     <div class="filter-clear">
@@ -21,167 +42,124 @@
                 <div class="custom-select">
                     <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите Статус</div>
                     <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
-                        <div>
-                            <input type="checkbox" id="status1" name="status[]" value="anons"><label
-                                    for="status1">Анонсировано</label>
-                        </div>
-                        <div><input type="checkbox" id="status2" name="status[]" value="ongoing"><label for="status2">Сейчас
-                                выходит</label>
-                        </div>
-                        <div><input type="checkbox" id="status3" name="status[]" value="released"><label
-                                    for="status3">Вышедшее</label></div>
+                        <div><input type="checkbox" id="status1" name="status[]" value="anons" <?php echo isChecked('anons', $status); ?>><label for="status1">Анонсировано</label></div>
+                        <div><input type="checkbox" id="status2" name="status[]" value="ongoing" <?php echo isChecked('ongoing', $status); ?>><label for="status2">Сейчас выходит</label></div>
+                        <div><input type="checkbox" id="status3" name="status[]" value="released" <?php echo isChecked('released', $status); ?>><label for="status3">Вышедшее</label></div>
                     </div>
                 </div>
                 <label for="select-type">Тип:</label>
                 <div class="custom-select">
                     <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите Тип</div>
                     <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
-                        <div><input type="checkbox" id="type2" name="kind[]" value="tv"><label for="type2">Аниме</label>
-                        </div>
-                        <div><input type="checkbox" id="type3" name="kind[]" value="movie"><label
-                                    for="type3">Фильм</label>
-                        </div>
-                        <!--                        <div><input type="checkbox" id="type4" name="kind[]" value="ova"><label for="type4">OVA</label>-->
-                        <!--                        </div>-->
-                        <!--                        <div><input type="checkbox" id="type5" name="kind[]" value="ona"><label-->
-                        <!--                                    for="type5">ONA</label>-->
-                        <!--                        </div>-->
-                        <div><input type="checkbox" id="type6" name="kind[]" value="special"><label
-                                    for="type6">Спецвыпуск</label>
-                        </div>
-                        <div><input type="checkbox" id="type7" name="kind[]" value="tv_special"><label
-                                    for="type7">TV-спецвыпуск</label>
-                        </div>
-                        <!--                        <div><input type="checkbox" id="type8" name="kind[]" value="pv"><label for="type7">PV-->
-                        <!--                                (промо-видео)</label>-->
-                        <!--                        </div>-->
-                        <!--                        <div><input type="checkbox" id="type9" name="kind[]" value="cm"><label for="type7">CM-->
-                        <!--                                (реклама)</label>-->
-                        <!--                        </div>-->
-                        <div><input type="checkbox" id="type10" name="kind[]" value="tv_13"><label for="type10">
-                                TV_13</label>
-                        </div>
-                        <div><input type="checkbox" id="type11" name="kind[]" value="tv_24"><label for="type11">
-                                TV_24</label>
-                        </div>
-                        <div><input type="checkbox" id="type12" name="kind[]" value="tv_48"><label for="type12">
-                                TV_48</label>
-                        </div>
+                        <div><input type="checkbox" id="type2" name="kind[]" value="tv" <?php echo isChecked('tv', $kind); ?>><label for="type2">Аниме</label></div>
+                        <div><input type="checkbox" id="type3" name="kind[]" value="movie" <?php echo isChecked('movie', $kind); ?>><label for="type3">Фильм</label></div>
+                        <!-- <div><input type="checkbox" id="type4" name="kind[]" value="ova" <?php echo isChecked('ova', $kind); ?>><label for="type4">OVA</label></div> -->
+                        <!-- <div><input type="checkbox" id="type5" name="kind[]" value="ona" <?php echo isChecked('ona', $kind); ?>><label for="type5">ONA</label></div> -->
+                        <div><input type="checkbox" id="type6" name="kind[]" value="special" <?php echo isChecked('special', $kind); ?>><label for="type6">Спецвыпуск</label></div>
+                        <div><input type="checkbox" id="type7" name="kind[]" value="tv_special" <?php echo isChecked('tv_special', $kind); ?>><label for="type7">TV-спецвыпуск</label></div>
+                        <!-- <div><input type="checkbox" id="type8" name="kind[]" value="pv" <?php echo isChecked('pv', $kind); ?>><label for="type7">PV (промо-видео)</label></div> -->
+                        <!-- <div><input type="checkbox" id="type9" name="kind[]" value="cm" <?php echo isChecked('cm', $kind); ?>><label for="type7">CM (реклама)</label></div> -->
+                        <div><input type="checkbox" id="type10" name="kind[]" value="tv_13" <?php echo isChecked('tv_13', $kind); ?>><label for="type10">TV_13</label></div>
+                        <div><input type="checkbox" id="type11" name="kind[]" value="tv_24" <?php echo isChecked('tv_24', $kind); ?>><label for="type11">TV_24</label></div>
+                        <div><input type="checkbox" id="type12" name="kind[]" value="tv_48" <?php echo isChecked('tv_48', $kind); ?>><label for="type12">TV_48</label></div>
                     </div>
                 </div>
                 <label for="select-sorting">Сортировка:</label>
                 <div class="custom-select">
                     <div class="custom-select-title" onclick="openCustomSelect(this)">Сортировать по</div>
                     <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
-                        <div><input type="radio" id="sort1" name="sort" value="ranked"><label for="sort1">По рейтингу</label></div>
-                        <div><input type="radio" id="sort2" name="sort" value="popularity"><label for="sort2">По Популярности</label></div>
-                        <div><input type="radio" id="sort3" name="sort" value="name"><label for="sort3">По алфавиту</label></div>
-                        <div><input type="radio" id="sort4" name="sort" value="aired_on"><label for="sort4">По дате выхода</label></div>
-                        <div><input type="radio" id="sort5" name="sort" value="status"><label for="sort5">Случайно</label></div>
-                        <div><input type="radio" id="sort6" name="sort" value="episodes"><label for="sort6">По количеству Серии</label></div>
-                        <div><input type="radio" id="sort7" name="sort" value="id"><label for="sort7">По ID</label></div>
+                        <div><input type="radio" id="sort1" name="sort" value="ranked" <?php echo isChecked('ranked', $sort); ?>><label for="sort1">По рейтингу</label></div>
+                        <div><input type="radio" id="sort2" name="sort" value="popularity" <?php echo isChecked('popularity', $sort); ?>><label for="sort2">По Популярности</label></div>
+                        <div><input type="radio" id="sort3" name="sort" value="name" <?php echo isChecked('name', $sort); ?>><label for="sort3">По алфавиту</label></div>
+                        <div><input type="radio" id="sort4" name="sort" value="aired_on" <?php echo isChecked('aired_on', $sort); ?>><label for="sort4">По дате выхода</label></div>
+                        <div><input type="radio" id="sort5" name="sort" value="status" <?php echo isChecked('status', $sort); ?>><label for="sort5">Случайно</label></div>
+                        <div><input type="radio" id="sort6" name="sort" value="episodes" <?php echo isChecked('episodes', $sort); ?>><label for="sort6">По количеству Серии</label></div>
+                        <div><input type="radio" id="sort7" name="sort" value="id" <?php echo isChecked('id', $sort); ?>><label for="sort7">По ID</label>
+                        </div>
                     </div>
                 </div>
                 <label for="select-season">Сезон:</label>
                 <div class="custom-select">
                     <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите сезон</div>
                     <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
-                        <div><input type="radio" id="season1" name="season" value="summer_2024"><label for="season1">Лето 2024</label></div>
-                        <div><input type="radio" id="season2" name="season" value="spring_2024"><label for="season2">Весна 2024</label></div>
-                        <div><input type="radio" id="season3" name="season" value="winter_2024"><label for="season3">Зима 2024</label></div>
-                        <div><input type="radio" id="season4" name="season" value="fall_2024"><label for="season4">Осень 2024</label></div>
-                        <div><input type="radio" id="season5" name="season" value="2024"><label for="season5"></label>2024 год</div>
-                        <div><input type="radio" id="season6" name="season" value="2023"><label for="season6"></label>2023 год</div>
-                        <div><input type="radio" id="season7" name="season" value="2021_2022"><label for="season7"></label>2021-2022</div>
-                        <div><input type="radio" id="season8" name="season" value="2016_2020"><label for="season8"></label>2016-2020</div>
-                        <div><input type="radio" id="season9" name="season" value="2010_2015"><label for="season9"></label>2010-2015</div>
-                        <div><input type="radio" id="season10" name="season" value="2000_2009"><label for="season10"></label>2000-2009</div>
-                        <div><input type="radio" id="season11" name="season" value="1999"><label for="season11"></label>1999е годы</div>
-                        <div><input type="radio" id="season12" name="season" value="1980"><label for="season12"></label>1980е годы</div>
+                        <div><input type="radio" id="season1" name="season" value="summer_2024" <?php echo isChecked('summer_2024', $season); ?>><label for="season1">Лето 2024</label></div>
+                        <div><input type="radio" id="season2" name="season" value="spring_2024" <?php echo isChecked('spring_2024', $season); ?>><label for="season2">Весна 2024</label></div>
+                        <div><input type="radio" id="season3" name="season" value="winter_2024" <?php echo isChecked('winter_2024', $season); ?>><label for="season3">Зима 2024</label></div>
+                        <div><input type="radio" id="season4" name="season" value="fall_2024" <?php echo isChecked('fall_2024', $season); ?>><label for="season4">Осень 2024</label></div>
+                        <div><input type="radio" id="season5" name="season" value="2024" <?php echo isChecked('2024', $season); ?>><label for="season5">2024 год</label></div>
+                        <div><input type="radio" id="season6" name="season" value="2023" <?php echo isChecked('2023', $season); ?>><label for="season6">2023 год</label></div>
+                        <div><input type="radio" id="season7" name="season" value="2021_2022" <?php echo isChecked('2021_2022', $season); ?>><label for="season7">2021-2022</label></div>
+                        <div><input type="radio" id="season8" name="season" value="2016_2020" <?php echo isChecked('2016_2020', $season); ?>><label for="season8">2016-2020</label></div>
+                        <div><input type="radio" id="season9" name="season" value="2010_2015" <?php echo isChecked('2010_2015', $season); ?>><label for="season9">2010-2015</label></div>
+                        <div><input type="radio" id="season10" name="season" value="2000_2009" <?php echo isChecked('2000_2009', $season); ?>><label for="season10">2000-2009</label></div>
+                        <div><input type="radio" id="season11" name="season" value="1999" <?php echo isChecked('1999', $season); ?>><label for="season11">1999е годы</label></div>
+                        <div><input type="radio" id="season12" name="season" value="1980" <?php echo isChecked('1980', $season); ?>><label for="season12">1980е годы</label></div>
                     </div>
                 </div>
                 <label for="select-rating">Оценка:</label>
                 <div class="custom-select">
                     <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите оценку</div>
                     <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
-                        <div><input type="radio" id="rating1" name="rating" value="none"><label for="rating1">Без оценки</label></div>
-                        <div><input type="radio" id="rating2" name="rating" value="g"><label for="rating2">Все оценки</label></div>
-                        <div><input type="radio" id="rating3" name="rating" value="pg"><label for="rating3">PG - для детей</label></div>
-                        <div><input type="radio" id="rating4" name="rating" value="pg_13"><label for="rating4">PG_13 - для детей 13 лет</label></div>
-                        <div><input type="radio" id="rating5" name="rating" value="r"><label for="rating5">r - для подростков 17+</label></div>
-                        <div><input type="radio" id="rating6" name="rating" value="r_plus"><label for="rating6">R_plus - умеренная ногота</label></div>
-<!--                        <div><input type="radio" id="rating7" name="rating" value="rx"><label for="rating7">RX - Хентай</label></div>-->
+                        <div><input type="radio" id="rating1" name="rating" value="none" <?php echo isChecked('none', $rating); ?>><label for="rating1">Без оценки</label></div>
+                        <div><input type="radio" id="rating2" name="rating" value="g" <?php echo isChecked('g', $rating); ?>><label for="rating2">Все оценки</label></div>
+                        <div><input type="radio" id="rating3" name="rating" value="pg" <?php echo isChecked('pg', $rating); ?>><label for="rating3">PG - для детей</label></div>
+                        <div><input type="radio" id="rating4" name="rating" value="pg_13" <?php echo isChecked('pg_13', $rating); ?>><label for="rating4">PG_13 - для детей 13 лет</label></div>
+                        <div><input type="radio" id="rating5" name="rating" value="r" <?php echo isChecked('r', $rating); ?>><label for="rating5">r - для подростков 17+</label></div>
+                        <div><input type="radio" id="rating6" name="rating" value="r_plus" <?php echo isChecked('r_plus', $rating); ?>><label for="rating6">R_plus - умеренная ногота</label></div>
+                        <!-- <div><input type="radio" id="rating7" name="rating" value="rx"><label for="rating7">RX - Хентай</label></div> -->
                     </div>
                 </div>
 <!--                <label for="select-audience">Аудитория:</label>-->
 <!--                <div class="custom-select">-->
 <!--                    <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите аудиторию</div>-->
-<!--                    <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">-->
-<!--                        <div><input type="checkbox" id="audience1" name="audience" value=""><label-->
-<!--                                    for="audience1">Сёнен</label>-->
-<!--                        </div>-->
-<!--                        <div><input type="checkbox" id="audience2" name="audience" value=""><label-->
-<!--                                    for="audience2">Сёдзё</label>-->
-<!--                        </div>-->
-<!--                        <div><input type="checkbox" id="audience3" name="audience" value=""><label for="audience3">Сэйнэн</label>-->
-<!--                        </div>-->
-<!--                        <div><input type="checkbox" id="audience4" name="audience" value=""><label for="audience4">Дзёсей</label>-->
-<!--                        </div>-->
-<!--                        <div><input type="checkbox" id="audience5" name="audience" value=""><label for="audience5">Детское</label>-->
-<!--                        </div>-->
+<!--                    <div class="custom-select-options" style="display: block; transform: translateY(10px); opacity: 1;">-->
+<!--                        <div><input type="checkbox" id="audience1" name="audience" value=""><label for="audience1">Сёнен</label></div>-->
+<!--                        <div><input type="checkbox" id="audience2" name="audience" value=""><label for="audience2">Сёдзё</label></div>-->
+<!--                        <div><input type="checkbox" id="audience3" name="audience" value=""><label for="audience3">Сэйнэн</label></div>-->
+<!--                        <div><input type="checkbox" id="audience4" name="audience" value=""><label for="audience4">Дзёсей</label></div>-->
+<!--                        <div><input type="checkbox" id="audience5" name="audience" value=""><label for="audience5">Детское</label></div>-->
 <!--                    </div>-->
 <!--                </div>-->
                 <label for="select-genres">Жанры:</label>
                 <div class="custom-select">
                     <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите жанр</div>
                     <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
-                        <div><input type="checkbox" id="genre1" name="genres" value="5"><label for="genre1">Авангард</label></div>
-                        <div><input type="checkbox" id="genre2" name="genres" value="543"><label for="genre2">Гурман</label></div>
-                        <div><input type="checkbox" id="genre3" name="genres" value="8"><label for="genre3">Драма</label></div>
-                        <div><input type="checkbox" id="genre4" name="genres" value="4"><label for="genre4">Комедия</label></div>
-                        <div><input type="checkbox" id="genre5" name="genres" value="36"><label for="genre5">Повседневность</label></div>
-                        <div><input type="checkbox" id="genre6" name="genres" value="2"><label for="genre6">Приключения</label></div>
-                        <div><input type="checkbox" id="genre7" name="genres" value="22"><label for="genre7">Романтика</label></div>
-                        <div><input type="checkbox" id="genre8" name="genres" value="37"><label for="genre8">Сверхъестественное</label></div>
-                        <div><input type="checkbox" id="genre9" name="genres" value="30"><label for="genre9">Спорт</label></div>
-                        <div><input type="checkbox" id="genre10" name="genres" value="7"><label for="genre10">Тайна</label></div>
-                        <div><input type="checkbox" id="genre11" name="genres" value="117"><label for="genre11">Триллер</label></div>
-                        <div><input type="checkbox" id="genre12" name="genres" value="14"><label for="genre12">Ужасы</label></div>
-                        <div><input type="checkbox" id="genre13" name="genres" value="24"><label for="genre13">Фантастика</label></div>
-                        <div><input type="checkbox" id="genre14" name="genres" value="10"><label for="genre14">Фэнтези</label></div>
-                        <div><input type="checkbox" id="genre15" name="genres" value="1"><label for="genre15">Экшен</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres" value="9"><label for="genre16">Этти</label></div>
+                        <div><input type="checkbox" id="genre1" name="genres" value="5" <?php echo isChecked('5', $genres); ?>><label for="genre1">Авангард</label></div>
+                        <div><input type="checkbox" id="genre2" name="genres" value="543" <?php echo isChecked('543', $genres); ?>><label for="genre2">Гурман</label></div>
+                        <div><input type="checkbox" id="genre3" name="genres" value="8" <?php echo isChecked('8', $genres); ?>><label for="genre3">Драма</label></div>
+                        <div><input type="checkbox" id="genre4" name="genres" value="4" <?php echo isChecked('4', $genres); ?>><label for="genre4">Комедия</label></div>
+                        <div><input type="checkbox" id="genre5" name="genres" value="36" <?php echo isChecked('36', $genres); ?>><label for="genre5">Повседневность</label></div>
+                        <div><input type="checkbox" id="genre6" name="genres" value="2" <?php echo isChecked('2', $genres); ?>><label for="genre6">Приключения</label></div>
+                        <div><input type="checkbox" id="genre7" name="genres" value="22" <?php echo isChecked('22', $genres); ?>><label for="genre7">Романтика</label></div>
+                        <div><input type="checkbox" id="genre8" name="genres" value="37" <?php echo isChecked('37', $genres); ?>><label for="genre8">Сверхъестественное</label></div>
+                        <div><input type="checkbox" id="genre9" name="genres" value="30" <?php echo isChecked('30', $genres); ?>><label for="genre9">Спорт</label></div>
+                        <div><input type="checkbox" id="genre10" name="genres" value="7" <?php echo isChecked('7', $genres); ?>><label for="genre10">Тайна</label></div>
+                        <div><input type="checkbox" id="genre11" name="genres" value="117" <?php echo isChecked('117', $genres); ?>><label for="genre11">Триллер</label></div>
+                        <div><input type="checkbox" id="genre12" name="genres" value="14" <?php echo isChecked('14', $genres); ?>><label for="genre12">Ужасы</label></div>
+                        <div><input type="checkbox" id="genre13" name="genres" value="24" <?php echo isChecked('24', $genres); ?>><label for="genre13">Фантастика</label></div>
+                        <div><input type="checkbox" id="genre14" name="genres" value="10" <?php echo isChecked('10', $genres); ?>><label for="genre14">Фэнтези</label></div>
+                        <div><input type="checkbox" id="genre15" name="genres" value="1" <?php echo isChecked('1', $genres); ?>><label for="genre15">Экшен</label></div>
+                        <div><input type="checkbox" id="genre16" name="genres" value="9" <?php echo isChecked('9', $genres); ?>><label for="genre16">Этти</label></div>
                         <!-- <div><input type="checkbox" id="genre17" name="genres" value="539"><label for="genre17">Эротика</label></div>
                         <div><input type="checkbox" id="genre18" name="genres" value="12"><label for="genre18">Хентай</label></div> -->
                     </div>
                 </div>
-<!--                <label for="select-themes">Темы:</label>-->
-<!--                <div class="custom-select">-->
-<!--                    <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите тему</div>-->
-<!--                    <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">-->
-<!--                        <div><input type="checkbox" id="theme1" name="themes" value=""><label-->
-<!--                                    for="theme1">Вампиры</label></div>-->
-<!--                        <div><input type="checkbox" id="theme2" name="themes" value=""><label for="theme2">Гарем</label>-->
-<!--                        </div>-->
-<!--                        <div><input type="checkbox" id="theme3" name="themes" value=""><label for="theme3">Гонки</label>-->
-<!--                        </div>-->
-<!--                        <div><input type="checkbox" id="theme4" name="themes" value=""><label for="theme4">Идолы</label>-->
-<!--                        </div>-->
-<!--                        <div><input type="checkbox" id="theme5" name="themes" value=""><label-->
-<!--                                    for="theme5">Исэкай</label></div>-->
-<!--                        <div><input type="checkbox" id="theme6" name="themes" value=""><label-->
-<!--                                    for="theme6">Иясикэй</label></div>-->
-<!--                        <div><input type="checkbox" id="theme7" name="themes" value=""><label-->
-<!--                                    for="theme7">Космос</label></div>-->
-<!--                        <div><input type="checkbox" id="theme8" name="themes" value=""><label for="theme8">Школа</label>-->
-<!--                        </div>-->
-<!--                        <div><input type="checkbox" id="theme9" name="themes" value=""><label-->
-<!--                                    for="theme9">Хулиганы</label></div>-->
-<!--                        <div><input type="checkbox" id="theme10" name="themes" value=""><label for="theme10">Супер-->
-<!--                                сила</label>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <!-- <label for="select-themes">Темы:</label> -->
+                <!-- <div class="custom-select"> -->
+                <!--     <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите тему</div> -->
+                <!--     <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;"> -->
+                <!--         <div><input type="checkbox" id="theme1" name="themes" value=""><label for="theme1">Вампиры</label></div> -->
+                <!--         <div><input type="checkbox" id="theme2" name="themes" value=""><label for="theme2">Гарем</label></div> -->
+                <!--         <div><input type="checkbox" id="theme3" name="themes" value=""><label for="theme3">Гонки</label></div> -->
+                <!--         <div><input type="checkbox" id="theme4" name="themes" value=""><label for="theme4">Идолы</label></div> -->
+                <!--         <div><input type="checkbox" id="theme5" name="themes" value=""><label for="theme5">Исэкай</label></div> -->
+                <!--         <div><input type="checkbox" id="theme6" name="themes" value=""><label for="theme6">Иясикэй</label></div> -->
+                <!--         <div><input type="checkbox" id="theme7" name="themes" value=""><label for="theme7">Космос</label></div> -->
+                <!--         <div><input type="checkbox" id="theme8" name="themes" value=""><label for="theme8">Школа</label></div> -->
+                <!--         <div><input type="checkbox" id="theme9" name="themes" value=""><label for="theme9">Хулиганы</label></div> -->
+                <!--         <div><input type="checkbox" id="theme10" name="themes" value=""><label for="theme10">Супер сила</label></div> -->
+                <!--     </div> -->
+                <!-- </div> -->
             </div>
             <div class="submit">
                 <button type="submit">Искать</button>

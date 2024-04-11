@@ -17,5 +17,3 @@ async function generateAnimeListStekelton(count, selector) {
     mainContent.insertAdjacentHTML("beforeend", animeHTML);
   }
 }
-
-generateAnimeListStekelton(50, ".main-content");
