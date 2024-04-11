@@ -7,7 +7,7 @@
           <div class="anime-back-panel-left">
             <div class="anime-back-global-info-image"></div>
             <div class="anime-back-global-info-watch-button">
-              <button><i class="fa-solid fa-play"></i>Смотреть</button>
+              <button onclick="scrollToAnchor('watch');"><i class="fa-solid fa-play"></i>Смотреть</button>
               <button><i class="fa-solid fa-exclamation"></i>Пожаловаться</button>
             </div>
           </div>

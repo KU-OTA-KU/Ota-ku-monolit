@@ -62,5 +62,5 @@ if (isset($_GET['animeId'])) {
 <script src="js/anime/appendAnimeInSite.js"></script>
 <script src="js/logo.js"></script>
 <script src="js/anime/charactersScrollbar.js"></script>
-
+<script src="js/other/scrollToAnchor.js"></script>
 </html>

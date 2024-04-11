@@ -1,4 +1,4 @@
-<section class="player">
+<section class="player" name="watch">
   <div class="player-inner">
     <div class="player-tit">
       <div class="player-container">
