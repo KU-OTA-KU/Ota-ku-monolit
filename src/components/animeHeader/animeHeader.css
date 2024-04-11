@@ -322,8 +322,12 @@
 }
 
 @media screen and (max-width: 425px) {
+  .anime-back-content {
+    margin-top: 100px !important;
+  }
+
   .anime-background {
-    min-height: 953px !important;
+    min-height: 853px !important;
   }
 
   .anime-about {
