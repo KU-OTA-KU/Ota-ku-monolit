@@ -1,12 +1,12 @@
 let currpage = 1;
-const limit = 30;
+const limit = 20;
 let loading = false;
 let nextPageTimeout = null;
 let maxFetchsInAnimeList = 3;
-generateAnimeListStekelton( limit, ".main-content");
+
 function isNearBottom() {
   return (
-    window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000
+    window.innerHeight + window.scrollY >= document.body.offsetHeight - 2000
   );
 }
 
@@ -21,7 +21,7 @@ function loadNextPage() {
     nextPageTimeout = setTimeout(() => {
       currpage++;
       if (currpage <= maxFetchsInAnimeList) {
-        generateAnimeListStekelton(50, ".main-content");
+        //generateAnimeListStekelton(50, ".main-content");
         fetchAnimeData();
       } else {
         console.log("goodbye my love!");
@@ -65,6 +65,7 @@ function fetchAnimeData() {
         (anime) => anime.score > 0 && anime.name
       );
       const filteredAnime = shuffleArray(filter_1);
+      generateAnimeListStekelton( limit, ".main-content");
       displayAnimeList(filteredAnime, ".main-content");
       loading = false;
     })
