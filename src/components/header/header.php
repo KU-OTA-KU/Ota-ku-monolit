@@ -32,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="user-is-reg-2" style="display: flex">
+                <div class="user-is-reg-2" style="display: none">
                     <button onclick="">
                         Войти
                     </button>
