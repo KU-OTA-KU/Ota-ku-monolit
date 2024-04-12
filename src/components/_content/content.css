@@ -94,7 +94,6 @@
 }
 
 .empty-anime-message {
-  position: absolute;
   z-index: 100;
   width: 100%;
   padding: 50px 0 20px 0;

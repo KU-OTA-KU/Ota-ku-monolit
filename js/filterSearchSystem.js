@@ -61,8 +61,12 @@ function displayNoAnimeBanner(element) {
 
     let emptyAnimeMessage = `
       <div class="empty-anime-message"><h3>Ничего не нашлось, сенпай 😔</h3></div>
+      <style>
+       .main-content {
+       grid-template-columns: repeat(1, minmax(100px, 1fr));
+       }
+      </style>
     `;
-
     mainContent.insertAdjacentHTML('beforeend', emptyAnimeMessage);
 }
 
