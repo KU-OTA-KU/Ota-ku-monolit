@@ -92,8 +92,9 @@ function isChecked($value, $param)
                         <div><input type="radio" id="season8" name="season" value="2016_2020" <?php echo isChecked('2016_2020', $season); ?>><label for="season8">2016-2020</label></div>
                         <div><input type="radio" id="season9" name="season" value="2010_2015" <?php echo isChecked('2010_2015', $season); ?>><label for="season9">2010-2015</label></div>
                         <div><input type="radio" id="season10" name="season" value="2000_2009" <?php echo isChecked('2000_2009', $season); ?>><label for="season10">2000-2009</label></div>
-                        <div><input type="radio" id="season11" name="season" value="1999" <?php echo isChecked('1999', $season); ?>><label for="season11">1999е годы</label></div>
-                        <div><input type="radio" id="season12" name="season" value="1980" <?php echo isChecked('1980', $season); ?>><label for="season12">1980е годы</label></div>
+                        <div><input type="radio" id="season11" name="season" value="1980_1999" <?php echo isChecked('1980_1999', $season); ?>><label for="season11">1999е годы</label></div>
+                        <div><input type="radio" id="season12" name="season" value="1970_1980" <?php echo isChecked('1970_1980', $season); ?>><label for="season12">1980е годы</label></div>
+                        <div><input type="radio" id="season13" name="season" value="1968_1999" <?php echo isChecked('1968_1999', $season); ?>><label for="season13">Динозавры 1968г</label></div>
                     </div>
                 </div>
                 <label for="select-rating">Оценка:</label>
