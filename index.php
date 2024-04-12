@@ -14,9 +14,7 @@
     <link rel="stylesheet" href="css/scrollbar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link rel="stylesheet" href="src/components/header/header.css"/>
     <link rel="stylesheet" href="css/main.css"/>
@@ -89,7 +87,6 @@
 <script src="js/popular/scrollbar.js"></script>
 <script src="js/genres/scrollbar.js"></script>
 <script src="js/logo.js"></script>
-<!-- <script src="js/randomTyanka.js"></script> -->
 <script src="js/most/displayAnimeListMost.js"></script>
 <script src="js/most/mostAnimes.js"></script>
 <script src="js/topSlider/flickityTopAnimes.js"></script>

@@ -1,4 +1,4 @@
-async function flickityTopAnimesOpen() {
+async function flickityTopAnimesOpen(limit) {
   try {
     const response = await fetch("https://shikimori.one/api/graphql", {
       method: "POST",
@@ -9,7 +9,7 @@ async function flickityTopAnimesOpen() {
       body: JSON.stringify({
         query: `
           query {
-            animes(season: "2024", limit: 20, order: popularity, status: "released", kind: "tv,movie,special,tv_special") {
+            animes(season: "2024", limit: ${limit}, order: popularity, status: "released", kind: "tv") {
               id
               name
               russian
@@ -49,8 +49,8 @@ async function flickityTopAnimesOpen() {
     console.warn("Request error => ", error);
     console.log("try again...")
     await delay(1000); 
-    await flickityTopAnimesOpen();
+    await flickityTopAnimesOpen(5);
   }
 }
 
-flickityTopAnimesOpen();
+flickityTopAnimesOpen(5);
