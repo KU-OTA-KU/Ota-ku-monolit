@@ -36,12 +36,14 @@ header {
 .header-logo {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .header-logo img {
   max-height: 35px;
   margin-right: 35px;
-  cursor: pointer;
+  /*cursor: pointer;*/
+  pointer-events: none;
 }
 
 .header-navigation {
