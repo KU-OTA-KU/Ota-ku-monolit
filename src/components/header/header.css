@@ -146,6 +146,7 @@ header {
   border: none;
   height: 100%;
   margin: auto;
+  cursor: pointer;
 }
 
 .header-search form button i {
