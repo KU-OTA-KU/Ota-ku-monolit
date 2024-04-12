@@ -13,10 +13,8 @@ async function fetchPopularAnimes(limit) {
                         id
                         name
                         russian
-                        english
                         kind
                         score
-                        status
                         poster {
                           originalUrl
                         }
@@ -37,9 +35,9 @@ async function fetchPopularAnimes(limit) {
             anime.name !== null && anime.name.trim() !== ""
         );
 
-        if (animeList.length < 15) {
+        if (animeList.length < 10) {
             await delay(1000);
-            await fetchPopularAnimes(15);
+            await fetchPopularAnimes(10);
         } else {
             displayAnimeListPopular(animeList, ".top-popular-animes-content");
         }
@@ -47,7 +45,7 @@ async function fetchPopularAnimes(limit) {
         console.warn("Request error => ", error);
         console.log("Trying again to fetch popular animes");
         await delay(1000);
-        await fetchPopularAnimes(15);
+        await fetchPopularAnimes(10);
     }
 }
 
