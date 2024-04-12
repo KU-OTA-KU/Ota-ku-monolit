@@ -75,6 +75,7 @@
         integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/other/delay.js"></script>
+<script src="js/_BLACKLIST.js"></script>
 <script src="js/genAnimeListSkeleton.js"></script>
 <script src="js/other/cursorGrapToScrool.js"></script>
 <script src="js/other/shuffleArray.js"></script>
@@ -93,5 +94,4 @@
 <script src="js/most/mostAnimes.js"></script>
 <script src="js/flickity/flickityTopAnimes.js"></script>
 <script src="js/flickity/isSelected.js"></script>
-
 </html>

@@ -38,9 +38,13 @@ async function flickityTopAnimesOpen() {
 
     const data = await response.json();
     console.log("flickity popular animes top Detected!");
-    const popularAnime = data.data.animes;
-    const filteredAnime = shuffleArray(popularAnime);
-    displayAnimeListInFlickity(filteredAnime, ".flickity-slider");
+    // const popularAnime = data.data.animes;
+    // const filteredAnime = shuffleArray(popularAnime);
+    const animeList = data.data.animes.filter(anime =>
+        !blacklistedAnimeIds.includes(anime.id) &&
+        anime.name !== null && anime.name.trim() !== ""
+    );
+    displayAnimeListInFlickity(animeList, ".flickity-slider");
   } catch (error) {
     console.warn("Request error => ", error);
     console.log("try again...")

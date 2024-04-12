@@ -131,8 +131,11 @@ async function fetchAnimeData() {
         .then((response) => response.json())
         .then((data) => {
             console.log("NEW DATA ADDED SUCCESSFULLY!");
-            const animes = data.data.animes;
-            if (animes.length == 0) {
+            const animeList = data.data.animes.filter(anime =>
+                !blacklistedAnimeIds.includes(anime.id) &&
+                anime.name !== null && anime.name.trim() !== ""
+            );
+            if (animeList.length == 0) {
                 console.log("no data");
                 if (!animeFound) {
                     displayNoAnimeBanner(".main-content");
@@ -140,8 +143,8 @@ async function fetchAnimeData() {
             } else {
                 animeFound = true;
             }
-            generateAnimeListStekelton(animes.length, ".main-content");
-            displayAnimeList(animes, ".main-content");
+            generateAnimeListStekelton(animeList.length, ".main-content");
+            displayAnimeList(animeList, ".main-content");
             loading = false;
         })
         .catch((error) => {

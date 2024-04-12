@@ -30,9 +30,13 @@ async function mostFetchOnGoing() {
     });
     const data = await response.json();
     console.log("Most ongoing animes has detected append!!");
-    const popularAnime = data.data.animes;
-    const filteredAnime = shuffleArray(popularAnime);
-    displayAnimeListMost(filteredAnime, ".most-content-animes-list-option-1");
+    // const popularAnime = data.data.animes;
+    // const filteredAnime = shuffleArray(popularAnime);
+    const animeList = data.data.animes.filter(anime =>
+        !blacklistedAnimeIds.includes(anime.id) &&
+        anime.name !== null && anime.name.trim() !== ""
+    );
+    displayAnimeListMost(animeList, ".most-content-animes-list-option-1");
     await delay(1000)
     await mostFetchOnAnonse();
   } catch (error) {
@@ -74,9 +78,13 @@ async function mostFetchOnAnonse() {
     });
     const data = await response.json();
     console.log("Most ongoing animes has detected append!!");
-    const popularAnime = data.data.animes;
-    const filteredAnime = shuffleArray(popularAnime);
-    displayAnimeListMost(filteredAnime, ".most-content-animes-list-option-2");
+    // const popularAnime = data.data.animes;
+    // const filteredAnime = shuffleArray(popularAnime);
+    const animeList = data.data.animes.filter(anime =>
+        !blacklistedAnimeIds.includes(anime.id) &&
+        anime.name !== null && anime.name.trim() !== ""
+    );
+    displayAnimeListMost(animeList, ".most-content-animes-list-option-2");
     await delay(1000)
     await mostFetchOnTop();
   } catch (error) {
@@ -118,9 +126,13 @@ async function mostFetchOnTop() {
     });
     const data = await response.json();
     console.log("Most ongoing animes has detected append!!");
-    const popularAnime = data.data.animes;
-    const filteredAnime = shuffleArray(popularAnime);
-    displayAnimeListMost(filteredAnime, ".most-content-animes-list-option-3");
+    // const popularAnime = data.data.animes;
+    // const filteredAnime = shuffleArray(popularAnime);
+    const animeList = data.data.animes.filter(anime =>
+        !blacklistedAnimeIds.includes(anime.id) &&
+        anime.name !== null && anime.name.trim() !== ""
+    );
+    displayAnimeListMost(animeList, ".most-content-animes-list-option-3");
     await delay(1000)
     await mostFetchOnReleased();
   } catch (error) {
@@ -141,7 +153,7 @@ async function mostFetchOnReleased() {
       body: JSON.stringify({
         query: `
         query {
-          animes(, limit: 5, order: ranked, status: "released", kind: "tv") {
+          animes(, limit: 5, order: popularity, status: "released", kind: "tv") {
             id
             name
             russian
@@ -162,9 +174,13 @@ async function mostFetchOnReleased() {
     });
     const data = await response.json();
     console.log("Most ongoing animes has detected append!!");
-    const popularAnime = data.data.animes;
-    const filteredAnime = shuffleArray(popularAnime);
-    displayAnimeListMost(filteredAnime, ".most-content-animes-list-option-4");
+    // const popularAnime = data.data.animes;
+    // const filteredAnime = shuffleArray(popularAnime);
+    const animeList = data.data.animes.filter(anime =>
+        !blacklistedAnimeIds.includes(anime.id) &&
+        anime.name !== null && anime.name.trim() !== ""
+    );
+    displayAnimeListMost(animeList, ".most-content-animes-list-option-4");
   } catch (error) {
     console.warn("Request error => ", error);
     delay(1000)
