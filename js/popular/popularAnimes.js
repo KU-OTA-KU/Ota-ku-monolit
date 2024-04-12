@@ -1,41 +1,54 @@
-fetch("https://shikimori.one/api/graphql", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-  },
-  body: JSON.stringify({
-    query: `
-    query {
-      animes(season: "2024", limit: 30, order: popularity, status: "released", kind: "tv,movie,special,tv_special") {
-        id
-        name
-        russian
-        english
-        kind
-        score
-        status
-        poster {
-          originalUrl
+async function fetchPopularAnimes(limit) {
+    try {
+        const response = await fetch("https://shikimori.one/api/graphql", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify({
+                query: `
+                    query {
+                      animes(season: "2024", limit: ${limit}, order: popularity, status: "released", kind: "tv") {
+                        id
+                        name
+                        russian
+                        english
+                        kind
+                        score
+                        status
+                        poster {
+                          originalUrl
+                        }
+                      }
+                    }
+                `,
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-      }
+
+        const data = await response.json();
+        console.log("Popular animes have been detected and appended!!");
+        const animeList = data.data.animes.filter(anime =>
+            !blacklistedAnimeIds.includes(anime.id) &&
+            anime.name !== null && anime.name.trim() !== ""
+        );
+
+        if (animeList.length < 15) {
+            await delay(1000);
+            await fetchPopularAnimes(15);
+        } else {
+            displayAnimeListPopular(animeList, ".top-popular-animes-content");
+        }
+    } catch (error) {
+        console.warn("Request error => ", error);
+        console.log("Trying again to fetch popular animes");
+        await delay(1000);
+        await fetchPopularAnimes(15);
     }
-    `,
-  }),
-})
-  .then((response) => response.json())
-  .then((data) => {
-    console.log("Popular animes has detected append!!");
-    //const popularAnime = data.data.animes;
-    //const filteredAnime = shuffleArray(popularAnime);
-      const animeList = data.data.animes.filter(anime =>
-          !blacklistedAnimeIds.includes(anime.id) &&
-          anime.name !== null && anime.name.trim() !== ""
-      );
-    displayAnimeListPopular(animeList, ".top-popular-animes-content");
-  })
-  .catch((error) => {
-    console.error("Request error => ", error);
-  });
+}
 
-
+fetchPopularAnimes(15);
