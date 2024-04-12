@@ -56,6 +56,9 @@
   crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/logo.js"></script>
 <script src="js/_BLACKLIST.js"></script>
+
+<script defer src="js/flickity/genres.js"></script>
+
 <script src="js/other/cursorGrapToScrool.js"></script>
 <script src="js/other/shuffleArray.js"></script>
 <script src="js/genAnimeListSkeleton.js"></script>

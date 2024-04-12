@@ -1,60 +1,64 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 *::after,
 *::before {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 @media screen and (max-width: 768px) {
-  ::selection {
-    background: transparent;
-  }
+    ::selection {
+        background: transparent;
+    }
 
-  :active {
-    text-decoration: none !important;
-    outline: none !important;
-  }
+    :active {
+        text-decoration: none !important;
+        outline: none !important;
+    }
 
-  * {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -ms-touch-action: manipulation;
-  }
+    * {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -ms-touch-action: manipulation;
+    }
 }
 
 /* body */
 body {
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-  min-height: 100vh;
-  overflow-y: scroll;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 14px;
-  scroll-behavior: smooth;
-  color: var(--body-font-color);
-  background-color: var(--body-background-color);
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    min-height: 100vh;
+    overflow-y: scroll;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    scroll-behavior: smooth;
+    color: var(--body-font-color);
+    background-color: var(--body-background-color);
 }
 
 
 button {
- font-size: 1em;
- font-family: "Poppins", sans-serif;
- font-weight: bold;
+    font-size: 1em;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 a {
-  color: currentColor;
-  text-decoration: none;
+    color: currentColor;
+    text-decoration: none;
 }

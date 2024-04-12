@@ -72,6 +72,7 @@
 <!-- scripts -->
 <script src="js/_BLACKLIST.js"></script>
 <script src="js/other/delay.js"></script>
+<script src="js/logo.js"></script>
 
 <script src="js/flickity/genres.js"></script>
 <script src="js/flickity/popularAnimes.js"></script>
@@ -84,7 +85,7 @@
 <script src="js/filter/openCustomSelect.js"></script>
 <script src="js/displayAnimeList.js"></script>
 <script src="js/animeList.js"></script>
-<script src="js/logo.js"></script>
+
 
 <script defer src="js/popular/displayAnimeListPopular.js"></script>
 <script defer src="js/popular/popularAnimes.js"></script>
