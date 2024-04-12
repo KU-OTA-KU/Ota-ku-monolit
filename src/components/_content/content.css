@@ -4,6 +4,7 @@
   grid-template-columns: repeat(6, minmax(100px, 1fr));
   gap: 10px;
   position: relative;
+  height: 41px;
 }
 
 .movie {
@@ -32,6 +33,7 @@
   height: 100%;
   left: 0;
   pointer-events: none;
+  object-fit: cover;
 }
 
 .status {
