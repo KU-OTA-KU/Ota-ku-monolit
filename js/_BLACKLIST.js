@@ -5,6 +5,7 @@ id [58357} => null
 id [58506] => null
 id [57099] => null
 id [58426] => null
+id [57102] => Ханако, призрак с внеклассными историями
  */
 
 var blacklistedAnimeIds = [
@@ -14,4 +15,5 @@ var blacklistedAnimeIds = [
     '58506',
     '57099',
     '58426',
+    '57102',
 ];
