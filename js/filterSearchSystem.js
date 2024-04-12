@@ -1,5 +1,5 @@
 let currpage = 1;
-const limit = 50;
+const limit = 10;
 let loading = false;
 let nextPageTimeout = null;
 let animeFound = false;
@@ -56,7 +56,7 @@ function getSearchParams() {
     return searchValue !== null ? searchValue : null;
 }
 
-function displayNoAnimeBanner(element) {
+function displayNotAnimeFound(element) {
     let mainContent = document.querySelector(element);
 
     let emptyAnimeMessage = `
@@ -138,7 +138,7 @@ async function fetchAnimeData() {
             if (animeList.length == 0) {
                 console.log("no data");
                 if (!animeFound) {
-                    displayNoAnimeBanner(".main-content");
+                    displayNotAnimeFound(".main-content");
                 }
             } else {
                 animeFound = true;
