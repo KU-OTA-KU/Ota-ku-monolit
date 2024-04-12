@@ -1,12 +1,12 @@
 let currpage = 1;
-const limit = 20;
+const limit = 10;
 let loading = false;
 let nextPageTimeout = null;
 let maxFetchsInAnimeList = 5;
 
 function isNearBottom() {
     return (
-        window.innerHeight + window.scrollY >= document.body.offsetHeight - 2000
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000
     );
 }
 
@@ -68,7 +68,7 @@ function fetchAnimeData() {
             );
             //const filteredAnime = shuffleArray(animeList);
             generateAnimeListStekelton(animeList.length, ".main-content");
-            displayAnimeList(animeList, ".main-content");
+            //displayAnimeList(animeList, ".main-content");
             loading = false;
         })
         .catch((error) => {
@@ -82,5 +82,3 @@ window.addEventListener("scroll", () => {
         loadNextPage();
     }
 });
-
-fetchAnimeData();

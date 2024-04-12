@@ -158,5 +158,3 @@ window.addEventListener("scroll", () => {
         loadNextPage();
     }
 });
-
-fetchAnimeData();
