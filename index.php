@@ -74,6 +74,7 @@
 <script src="js/other/delay.js"></script>
 
 <script src="js/flickity/genres.js"></script>
+<script src="js/flickity/popularAnimes.js"></script>
 
 <script src="js/topSlider/isSelected.js"></script>
 <script src="js/genAnimeListSkeleton.js"></script>

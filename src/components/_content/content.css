@@ -4,7 +4,6 @@
   grid-template-columns: repeat(6, minmax(100px, 1fr));
   gap: 10px;
   position: relative;
-  height: 41px;
 }
 
 .movie {
@@ -14,6 +13,7 @@
 }
 
 .movie-image {
+  width: 100%;
   margin-bottom: 5px;
   background: rgb(23, 23, 23);
   background: linear-gradient(
@@ -33,7 +33,7 @@
   height: 100%;
   left: 0;
   pointer-events: none;
-  object-fit: cover;
+  /*object-fit: cover;*/
 }
 
 .status {

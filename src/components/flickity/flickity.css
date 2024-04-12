@@ -12,11 +12,11 @@
   background: #121212;
 }
 
-.flickity-viewport {
+.flickity  .flickity-viewport {
   width: 100%;
 }
 
-.flickity-slider {
+.flickity .flickity-slider {
   width: 100%;
   /* aspect-ratio: 1 / 2;*/
   display: flex;

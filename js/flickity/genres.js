@@ -5,16 +5,16 @@ document.addEventListener('DOMContentLoaded', function () {
         pageDots: false,
     });
 
-    let isDragging = false;
+    let genresIsDragging = false;
 
     genresScroll.on('dragStart', function (event, pointer) {
-        isDragging = true;
+        genresIsDragging = true;
         document.querySelector('.all-genres-list-container').classList.add('is-dragging');
     });
 
     genresScroll.on('pointerUp', function () {
         setTimeout(function () {
-            isDragging = false;
+            genresIsDragging = false;
             document.querySelector('.all-genres-list-container').classList.remove('is-dragging');
         }, 500);
     });
