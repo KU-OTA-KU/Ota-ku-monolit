@@ -36,45 +36,56 @@ function joinObjectValues(obj) {
 }
 
 function getUrlParams() {
-  const searchParams = new URLSearchParams(window.location.search);
-  const params = {};
-  for (const [key, value] of searchParams) {
-    const paramName = key.replace(/\[\]$/, '');  // yanm banem anm ara
-    if (paramName in params) {
-      params[paramName] += `,${value}`;
-    } else {
-      params[paramName] = value;
+    const searchParams = new URLSearchParams(window.location.search);
+    const params = {};
+    for (const [key, value] of searchParams) {
+        const paramName = key.replace(/\[\]$/, '');  // yanm banem anm ara
+        if (paramName in params) {
+            params[paramName] += `,${value}`;
+        } else {
+            params[paramName] = value;
+        }
     }
-  }
-  console.log(params);
-  return params;
+    console.log(params);
+    return params;
 }
 
 function getSearchParams() {
-  const searchParams = new URLSearchParams(window.location.search);
-  const searchValue = searchParams.get('search');
-  return searchValue !== null ? searchValue : null;
+    const searchParams = new URLSearchParams(window.location.search);
+    const searchValue = searchParams.get('search');
+    return searchValue !== null ? searchValue : null;
 }
 
+function displayNoAnimeBanner(element) {
+    let mainContent = document.querySelector(element);
+
+    let emptyAnimeMessage = `
+      <div class="empty-anime-message"><h3>Ничего не нашлось, сенпай 😔</h3></div>
+    `;
+
+    mainContent.insertAdjacentHTML('beforeend', emptyAnimeMessage);
+}
+
+
 async function fetchAnimeData() {
-  const params = getUrlParams();
-  const search = getSearchParams();
-  const season = params['season'];
-  const status = params['status'];
-  const kind = params['kind'];
-  const sort = params['sort'];
-  const rating = params['rating'];
-  const genres = params['genres'];
-  // check all
-  const searchString = search || '';
-  const seasonString = season || '2000_2024';
-  const kindString = kind || 'tv';
-  const statusString = status || 'released';
-  const sortString  = sort || 'ranked';
-  const ratingString = rating || '';
-  const genresString = genres || '';
-  // console.log(statusString)
-  const query = `
+    const params = getUrlParams();
+    const search = getSearchParams();
+    const season = params['season'];
+    const status = params['status'];
+    const kind = params['kind'];
+    const sort = params['sort'];
+    const rating = params['rating'];
+    const genres = params['genres'];
+    // check all
+    const searchString = search || '';
+    const seasonString = season || '2000_2024';
+    const kindString = kind || 'tv';
+    const statusString = status || 'released';
+    const sortString = sort || 'ranked';
+    const ratingString = rating || '';
+    const genresString = genres || '';
+    // console.log(statusString)
+    const query = `
       query {
         animes(
           search: "${searchString}",
@@ -114,8 +125,12 @@ async function fetchAnimeData() {
         .then((response) => response.json())
         .then((data) => {
             console.log("NEW DATA ADDED SUCCESSFULLY!");
-             const animes = data.data.animes;
-             generateAnimeListStekelton(animes.length, ".main-content");
+            const animes = data.data.animes;
+            if (animes.length == 0) {
+                console.log("no data");
+                displayNoAnimeBanner(".main-content");
+            }
+            generateAnimeListStekelton(animes.length, ".main-content");
             displayAnimeList(animes, ".main-content");
             loading = false;
         })

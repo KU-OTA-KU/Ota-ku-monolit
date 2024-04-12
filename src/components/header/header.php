@@ -16,7 +16,7 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                         <input type="text" required placeholder="Что будем искать в мире аниме?" class="search-input-fa"
-                               name="search" autocomplete="off" value="<?php if(isset($_GET['search'])){echo $_GET['search'];} ?>">/>
+                               name="search" autocomplete="off" value="<?php if(isset($_GET['search'])){echo $_GET['search'];} ?>">
                     </form>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                     <input type="text" required placeholder="Что будем искать в мире аниме?" class="search-input-fa"
-                           name="search" autocomplete= "off" value="<?php if(isset($_GET['search'])){echo $_GET['search'];} ?>">/>/>
+                           name="search" autocomplete= "off" value="<?php if(isset($_GET['search'])){echo $_GET['search'];} ?>">
                 </form>
             </div>
         </div>
