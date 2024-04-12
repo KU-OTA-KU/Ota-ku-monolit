@@ -71,6 +71,8 @@ function displayNoAnimeBanner(element) {
 }
 
 
+let animeFound = false; // Переменная, отслеживающая наличие найденного аниме
+
 async function fetchAnimeData() {
     const params = getUrlParams();
     const search = getSearchParams();
@@ -132,7 +134,11 @@ async function fetchAnimeData() {
             const animes = data.data.animes;
             if (animes.length == 0) {
                 console.log("no data");
-                displayNoAnimeBanner(".main-content");
+                if (!animeFound) {
+                    displayNoAnimeBanner(".main-content");
+                }
+            } else {
+                animeFound = true;
             }
             generateAnimeListStekelton(animes.length, ".main-content");
             displayAnimeList(animes, ".main-content");
