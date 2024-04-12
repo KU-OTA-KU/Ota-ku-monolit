@@ -72,21 +72,25 @@
 <!-- scripts -->
 <script src="js/_BLACKLIST.js"></script>
 <script src="js/other/delay.js"></script>
+
 <script src="js/flickity/genres.js"></script>
+
 <script src="js/topSlider/isSelected.js"></script>
 <script src="js/genAnimeListSkeleton.js"></script>
 <script src="js/other/shuffleArray.js"></script>
 <script src="js/topSlider/displayAnimeListInFlickity.js"></script>
-<script src="js/popular/displayAnimeListPopular.js"></script>
 <script src="js/filter/filter.js"></script>
 <script src="js/filter/openCustomSelect.js"></script>
 <script src="js/displayAnimeList.js"></script>
-<script src="js/popular/popularAnimes.js"></script>
 <script src="js/animeList.js"></script>
 <script src="js/logo.js"></script>
+
+<script defer src="js/popular/displayAnimeListPopular.js"></script>
+<script defer src="js/popular/popularAnimes.js"></script>
+
 <script defer src="js/most/displayAnimeListMost.js"></script>
 <script defer src="js/most/mostAnimes.js"></script>
-<script src="js/topSlider/flickityTopAnimes.js"></script>
 
+<script defer src="js/topSlider/flickityTopAnimes.js"></script>
 </body>
 </html>
