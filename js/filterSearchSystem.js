@@ -2,7 +2,7 @@ let currpage = 1;
 const limit = 50;
 let loading = false;
 let nextPageTimeout = null;
-
+let animeFound = false;
 // let maxFetchsInAnimeList = 10;
 
 function isNearBottom() {
@@ -71,7 +71,7 @@ function displayNoAnimeBanner(element) {
 }
 
 
-let animeFound = false; // Переменная, отслеживающая наличие найденного аниме
+
 
 async function fetchAnimeData() {
     const params = getUrlParams();
