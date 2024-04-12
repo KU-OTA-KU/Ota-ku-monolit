@@ -1,4 +1,6 @@
 function displayAnimeListInFlickity(animeList, selector) {
+  console.log(animeList)
+  console.log(selector)
   let mainContent = document.querySelector(selector);
   let galleryCells = mainContent.querySelectorAll(".gallery-cell");
 

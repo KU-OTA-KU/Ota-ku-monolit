@@ -79,7 +79,7 @@
 <script src="js/genAnimeListSkeleton.js"></script>
 <script src="js/other/cursorGrapToScrool.js"></script>
 <script src="js/other/shuffleArray.js"></script>
-<script src="js/flickity/displayAnimeListInFlickity.js"></script>
+<script src="js/topSlider/displayAnimeListInFlickity.js"></script>
 <script src="js/popular/displayAnimeListPopular.js"></script>
 <script src="js/filter/filter.js"></script>
 <script src="js/filter/openCustomSelect.js"></script>
@@ -92,6 +92,6 @@
 <!-- <script src="js/randomTyanka.js"></script> -->
 <script src="js/most/displayAnimeListMost.js"></script>
 <script src="js/most/mostAnimes.js"></script>
-<script src="js/flickity/flickityTopAnimes.js"></script>
-<script src="js/flickity/isSelected.js"></script>
+<script src="js/topSlider/flickityTopAnimes.js"></script>
+<script src="js/topSlider/isSelected.js"></script>
 </html>

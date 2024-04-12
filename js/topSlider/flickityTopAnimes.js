@@ -37,7 +37,7 @@ async function flickityTopAnimesOpen() {
     }
 
     const data = await response.json();
-    console.log("flickity popular animes top Detected!");
+    console.log("topSlider popular animes top Detected!");
     // const popularAnime = data.data.animes;
     // const filteredAnime = shuffleArray(popularAnime);
     const animeList = data.data.animes.filter(anime =>
