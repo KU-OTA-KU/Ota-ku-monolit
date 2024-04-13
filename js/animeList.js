@@ -72,6 +72,9 @@ function displayAnimeList(animeList, selector) {
     `;
 
         currentCell.insertAdjacentHTML('beforeend', animeHTML);
+        setTimeout(() => {
+            currentCell.querySelector('.movie-image img').style.opacity = '1';
+        }, 500);
         currentCell.id = "appended";
         currentCell.onclick = function () {
             window.location.href = `anime.php?animeId=${anime.id}`;

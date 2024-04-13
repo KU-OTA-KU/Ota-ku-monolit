@@ -83,7 +83,7 @@
 <script defer>
     async function __INIT__() {
         await flickityTopAnimesOpen(5);
-        await delay(1000);
+        await delay(500);
         await mostFetchOnGoing(5);
         await delay(1000);
         await fetchPopularAnimes(11);

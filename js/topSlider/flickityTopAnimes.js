@@ -24,6 +24,9 @@ function displayAnimeListInFlickity(animeList, selector) {
             </div>
         `;
         galleryCells[index].insertAdjacentHTML("beforeend", animeHTML);
+        setTimeout(() => {
+            galleryCells[index].querySelector('.gallery-cell-image img').style.opacity = '1';
+        }, 100);
     });
 }
 

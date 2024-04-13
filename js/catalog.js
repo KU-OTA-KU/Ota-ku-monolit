@@ -52,7 +52,7 @@ async function fetchAnimeData() {
     const genres = params['genres'];
     // check all
     const searchString = search || '';
-    const seasonString = season || '';
+    const seasonString = season || '2020_2024';
     const kindString = kind || 'tv,special,tv_special';
     const statusString = status || '';
     const sortString = sort || 'ranked';
@@ -96,6 +96,7 @@ async function fetchAnimeData() {
         .then((response) => response.json())
         .then((data) => {
             console.log("%cУСПЕШНО!", "color: greenyellow");
+            currpage++;
             const animeList = data.data.animes.filter(anime =>
                 !blacklistedAnimeIds.includes(anime.id) &&
                 anime.name !== null && anime.name.trim() !== ""
@@ -146,6 +147,9 @@ function displayAnimeList(animeList, selector) {
 
         currentCell.insertAdjacentHTML('beforeend', animeHTML);
         currentCell.id = "appended";
+        setTimeout(() => {
+            currentCell.querySelector('.movie-image img').style.opacity = '1';
+        }, 500);
         currentCell.onclick = function () {
             window.location.href = `anime.php?animeId=${anime.id}`;
         };

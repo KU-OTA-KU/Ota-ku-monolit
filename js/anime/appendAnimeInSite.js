@@ -35,6 +35,9 @@ async function main() {
     );
     let appendAnimeImageBlock = `<img src="${_ANIME_IMAGE_}" alt="${_ANIME_ENGLISH_NAME_}">`;
     animeImageBlock.insertAdjacentHTML("beforeend", appendAnimeImageBlock);
+    setTimeout(() => {
+      animeImageBlock.querySelector('img').style.opacity = '1';
+    }, 100);
 
     // 4) append anime names in eng and japance
     let animeNameEngJpg = document.querySelector(".anime-eng-jpg-name");

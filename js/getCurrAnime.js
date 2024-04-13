@@ -1,4 +1,5 @@
 async function getCurrAnime(GET) {
+
   fetch("https://shikimori.one/api/graphql", {
     method: "POST",
     headers: {
@@ -17,7 +18,6 @@ async function getCurrAnime(GET) {
         kind
         score
         status
-        url
         poster {
           originalUrl
         }
@@ -63,5 +63,3 @@ async function getCurrAnime(GET) {
       console.warn("Request error => ", error);
     });
 }
-
-getCurrAnime(currAnime);
