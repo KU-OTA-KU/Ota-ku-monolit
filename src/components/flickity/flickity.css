@@ -117,7 +117,8 @@
   border: none !important;
   border-radius: 0 !important;
   color: rgb(185, 185, 185);
-  transition: color 0.3s ease-in-out;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
 }
 
 .flickity-genres-list a:hover {
