@@ -55,7 +55,7 @@ async function getCurrAnime(GET) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log("topSlider popular animes top Detected!");
+      console.log("%cУСПЕШНО!", "color: greenyellow");
       const anime = data.data.animes;
       appendAnimeInSite(anime);
     })

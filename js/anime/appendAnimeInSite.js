@@ -69,14 +69,17 @@ async function main() {
 
     // 8) append anime about
     let animeAbout = document.querySelector(".anime-about");
+    let animeDescription = document.querySelector(".anime-description .anime-description-tit");
     if (_ANIME_DESCRIPTION_ !== null) {
       const cleanedDescription = _ANIME_DESCRIPTION_.replace(/\[.*?\]/g, "");
       let appendAnimeAbout = `<p>${cleanedDescription}</p>`;
       animeAbout.insertAdjacentHTML("beforeend", appendAnimeAbout);
+      animeDescription.insertAdjacentHTML("beforeend", appendAnimeAbout);
       animeAbout.style.cssText = "background: transparent !important;";
     } else {
       let appendAnimeAbout = `<p>Описание не доступно</p>`;
       animeAbout.insertAdjacentHTML("beforeend", appendAnimeAbout);
+      animeDescription.insertAdjacentHTML("beforeend", appendAnimeAbout);
       animeAbout.style.cssText = "background: transparent !important;";
     }
 
