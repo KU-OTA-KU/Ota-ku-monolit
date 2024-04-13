@@ -3,38 +3,8 @@ const limit = 10;
 let loading = false;
 let nextPageTimeout = null;
 let animeFound = false;
-
 // let maxFetchsInAnimeList = 10;
 
-function isNearBottom() {
-    return (
-        window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000
-    );
-}
-
-function loadNextPage() {
-    if (!loading) {
-        loading = true;
-
-        if (nextPageTimeout) {
-            clearTimeout(nextPageTimeout);
-        }
-
-        nextPageTimeout = setTimeout(() => {
-            currpage++;
-            // if (currpage <= maxFetchsInAnimeList) {
-            // generateAnimeListStekelton(50, ".main-content");
-            fetchAnimeData();
-            // } else {
-            //   console.log("goodbye my love!");
-            // }
-        }, 100);
-    }
-}
-
-function joinObjectValues(obj) {
-    return Object.values(obj).join(',');
-}
 
 function getUrlParams() {
     const searchParams = new URLSearchParams(window.location.search);
@@ -70,7 +40,6 @@ function displayNotAnimeFound(element) {
     `;
     mainContent.insertAdjacentHTML('beforeend', emptyAnimeMessage);
 }
-
 
 async function fetchAnimeData() {
     const params = getUrlParams();
@@ -149,32 +118,6 @@ async function fetchAnimeData() {
         });
 }
 
-window.addEventListener("scroll", () => {
-    if (isNearBottom()) {
-        loadNextPage();
-    }
-});
-
-async function generateAnimeListStekelton(count, selector) {
-    let mainContent = document.querySelector(selector);
-
-    for (let i = 0; i < count; i++) {
-        let animeHTML = `
-        <div class="movie" id="not-appended">
-        <div class="movie-image"></div>
-        <div class="movie-name">
-        <div class="status">
-          <div class="type"></div>
-            <div class="rating"></div>
-          </div>
-          <div class="name"></div>
-        </div>
-      </div>
-      `;
-        mainContent.insertAdjacentHTML("beforeend", animeHTML);
-    }
-}
-
 function displayAnimeList(animeList, selector) {
     let mainContent = document.querySelector(selector);
     let movies = mainContent.querySelectorAll('.movie:not(#appended)');
@@ -208,3 +151,47 @@ function displayAnimeList(animeList, selector) {
         };
     });
 }
+
+async function generateAnimeListStekelton(count, selector) {
+    let mainContent = document.querySelector(selector);
+
+    for (let i = 0; i < count; i++) {
+        let animeHTML = `
+        <div class="movie" id="not-appended">
+        <div class="movie-image"></div>
+        <div class="movie-name">
+        <div class="status">
+          <div class="type"></div>
+            <div class="rating"></div>
+          </div>
+          <div class="name"></div>
+        </div>
+      </div>
+      `;
+        mainContent.insertAdjacentHTML("beforeend", animeHTML);
+    }
+}
+
+function isNearBottom() {
+    const mainContent = document.querySelector(".main-content");
+    const mainContentBottom = mainContent.offsetTop + mainContent.offsetHeight;
+    return window.innerHeight + window.scrollY >= mainContentBottom - 200;
+}
+
+function loadNextPage() {
+    if (!loading) {
+        loading = true;
+        // if (currPage <= maxFetchsInAnimeList) {
+        fetchAnimeData();
+        // } else {
+        //     console.log(`%cДостигнут лимит загрузок аниме: ${maxFetchsInAnimeList}`, "color: aqua");
+        //     window.removeEventListener("scroll", loadNextPage);
+        // }
+    }
+}
+
+window.addEventListener("scroll", () => {
+    if (isNearBottom()) {
+        loadNextPage();
+    }
+});

@@ -8,7 +8,7 @@
                 </div>
                 <nav class="header-navigation">
                     <a href="catalog.php" class="nav-button">КАТАЛОГ</a>
-                    <a href="#main-content" class="nav-button">ТОП</a>
+                    <a href="#" class="nav-button" onclick="scrollToAnchor('main-content')">ТОП</a>
                 </nav>
                 <div class="header-search">
                     <form action="catalog.php" method="GET">

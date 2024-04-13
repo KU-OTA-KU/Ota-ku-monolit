@@ -39,7 +39,7 @@ body {
  font-weight: 400;
  font-style: normal;
  font-size: 14px;
- scroll-behavior: smooth;
+ scroll-behavior: smooth !important;
  color: var(--body-font-color);
  background-color: var(--body-background-color);
 }

@@ -73,6 +73,7 @@
 <script defer src="js/logo.js"></script>
 <script defer src="js/other/delay.js"></script>
 <script defer src="js/other/shuffleArray.js"></script>
+<script defer src="js/other/scrollToAnchor.js"></script>
 
 <script defer src="js/most/mostAnimes.js"></script>
 <script defer src="js/popular/popularAnimes.js"></script>

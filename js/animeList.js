@@ -122,13 +122,3 @@ window.addEventListener("scroll", () => {
         loadNextPage();
     }
 });
-
-document.addEventListener("click", (event) => {
-    const target = event.target;
-    if (target.closest(".movie")) {
-        const animeId = target.closest(".movie").dataset.animeId;
-        if (animeId) {
-            window.location.href = `anime.php?animeId=${animeId}`;
-        }
-    }
-});

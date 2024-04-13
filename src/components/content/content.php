@@ -1,1 +1,1 @@
-<section class="main-content" id="main-content"></section>
+<section class="main-content" id="main-content" name="main-content"></section>
