@@ -21,6 +21,7 @@ function displayAnimeListInFlickity(animeList, selector) {
                         <p>Название: ${anime.japanese}</p>
                         <p>Оценка: ${anime.score} <i class="fa-solid fa-star" aria-hidden="true"></i></p>
                         <div class="flickity-genres-list">
+                            Жанры: 
                             ${genres} 
                         </div>
                         <a href="anime.php?animeId=${anime.id}">Подробнее</a>

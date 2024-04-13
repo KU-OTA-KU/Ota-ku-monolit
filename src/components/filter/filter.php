@@ -7,7 +7,7 @@ $kind = $_GET['kind'] ?? [];
 $sort = $_GET['sort'] ?? '';
 $season = $_GET['season'] ?? '';
 $rating = $_GET['rating'] ?? '';
-$genres = $_GET['genres'] ?? '';
+$genres = $_GET['genres'] ?? [];
 
 function isChecked($value, $param)
 {
@@ -125,22 +125,22 @@ function isChecked($value, $param)
                 <div class="custom-select">
                     <div class="custom-select-title" onclick="openCustomSelect(this)">Выберите жанр</div>
                     <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
-                        <div><input type="checkbox" id="genre1" name="genres" value="5" <?php echo isChecked('5', $genres); ?>><label for="genre1">Авангард</label></div>
-                        <div><input type="checkbox" id="genre2" name="genres" value="543" <?php echo isChecked('543', $genres); ?>><label for="genre2">Гурман</label></div>
-                        <div><input type="checkbox" id="genre3" name="genres" value="8" <?php echo isChecked('8', $genres); ?>><label for="genre3">Драма</label></div>
-                        <div><input type="checkbox" id="genre4" name="genres" value="4" <?php echo isChecked('4', $genres); ?>><label for="genre4">Комедия</label></div>
-                        <div><input type="checkbox" id="genre5" name="genres" value="36" <?php echo isChecked('36', $genres); ?>><label for="genre5">Повседневность</label></div>
-                        <div><input type="checkbox" id="genre6" name="genres" value="2" <?php echo isChecked('2', $genres); ?>><label for="genre6">Приключения</label></div>
-                        <div><input type="checkbox" id="genre7" name="genres" value="22" <?php echo isChecked('22', $genres); ?>><label for="genre7">Романтика</label></div>
-                        <div><input type="checkbox" id="genre8" name="genres" value="37" <?php echo isChecked('37', $genres); ?>><label for="genre8">Сверхъестественное</label></div>
-                        <div><input type="checkbox" id="genre9" name="genres" value="30" <?php echo isChecked('30', $genres); ?>><label for="genre9">Спорт</label></div>
-                        <div><input type="checkbox" id="genre10" name="genres" value="7" <?php echo isChecked('7', $genres); ?>><label for="genre10">Тайна</label></div>
-                        <div><input type="checkbox" id="genre11" name="genres" value="117" <?php echo isChecked('117', $genres); ?>><label for="genre11">Триллер</label></div>
-                        <div><input type="checkbox" id="genre12" name="genres" value="14" <?php echo isChecked('14', $genres); ?>><label for="genre12">Ужасы</label></div>
-                        <div><input type="checkbox" id="genre13" name="genres" value="24" <?php echo isChecked('24', $genres); ?>><label for="genre13">Фантастика</label></div>
-                        <div><input type="checkbox" id="genre14" name="genres" value="10" <?php echo isChecked('10', $genres); ?>><label for="genre14">Фэнтези</label></div>
-                        <div><input type="checkbox" id="genre15" name="genres" value="1" <?php echo isChecked('1', $genres); ?>><label for="genre15">Экшен</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres" value="9" <?php echo isChecked('9', $genres); ?>><label for="genre16">Этти</label></div>
+                        <div><input type="checkbox" id="genre1" name="genres[]" value="5" <?php echo isChecked('5', $genres); ?>><label for="genre1">Авангард</label></div>
+                        <div><input type="checkbox" id="genre2" name="genres[]" value="543" <?php echo isChecked('543', $genres); ?>><label for="genre2">Гурман</label></div>
+                        <div><input type="checkbox" id="genre3" name="genres[]" value="8" <?php echo isChecked('8', $genres); ?>><label for="genre3">Драма</label></div>
+                        <div><input type="checkbox" id="genre4" name="genres[]" value="4" <?php echo isChecked('4', $genres); ?>><label for="genre4">Комедия</label></div>
+                        <div><input type="checkbox" id="genre5" name="genres[]" value="36" <?php echo isChecked('36', $genres); ?>><label for="genre5">Повседневность</label></div>
+                        <div><input type="checkbox" id="genre6" name="genres[]" value="2" <?php echo isChecked('2', $genres); ?>><label for="genre6">Приключения</label></div>
+                        <div><input type="checkbox" id="genre7" name="genres[]" value="22" <?php echo isChecked('22', $genres); ?>><label for="genre7">Романтика</label></div>
+                        <div><input type="checkbox" id="genre8" name="genres[]" value="37" <?php echo isChecked('37', $genres); ?>><label for="genre8">Сверхъестественное</label></div>
+                        <div><input type="checkbox" id="genre9" name="genres[]" value="30" <?php echo isChecked('30', $genres); ?>><label for="genre9">Спорт</label></div>
+                        <div><input type="checkbox" id="genre10" name="genres[]" value="7" <?php echo isChecked('7', $genres); ?>><label for="genre10">Тайна</label></div>
+                        <div><input type="checkbox" id="genre11" name="genres[]" value="117" <?php echo isChecked('117', $genres); ?>><label for="genre11">Триллер</label></div>
+                        <div><input type="checkbox" id="genre12" name="genres[]" value="14" <?php echo isChecked('14', $genres); ?>><label for="genre12">Ужасы</label></div>
+                        <div><input type="checkbox" id="genre13" name="genres[]" value="24" <?php echo isChecked('24', $genres); ?>><label for="genre13">Фантастика</label></div>
+                        <div><input type="checkbox" id="genre14" name="genres[]" value="10" <?php echo isChecked('10', $genres); ?>><label for="genre14">Фэнтези</label></div>
+                        <div><input type="checkbox" id="genre15" name="genres[]" value="1" <?php echo isChecked('1', $genres); ?>><label for="genre15">Экшен</label></div>
+                        <div><input type="checkbox" id="genre16" name="genres[]" value="9" <?php echo isChecked('9', $genres); ?>><label for="genre16">Этти</label></div>
                         <!-- <div><input type="checkbox" id="genre17" name="genres" value="539"><label for="genre17">Эротика</label></div>
                         <div><input type="checkbox" id="genre18" name="genres" value="12"><label for="genre18">Хентай</label></div> -->
                     </div>
