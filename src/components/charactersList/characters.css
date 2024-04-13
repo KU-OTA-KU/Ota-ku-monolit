@@ -28,8 +28,8 @@
 .characters-list-tit .characters-list-container {
   display: flex;
   gap: 10px;
-  overflow: hidden;
-  overflow-x: scroll;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .characters-list-tit .characters-list-container::-webkit-scrollbar {
@@ -92,5 +92,13 @@
 @media screen and (max-width: 425px) {
   .characters-list-title h2 {
     display: none;
+  }
+
+  .characters-list-tit .characters-list-container {
+    justify-content: space-evenly !important;
+  }
+
+  .characters-list-title h6{
+    text-align: center;
   }
 }

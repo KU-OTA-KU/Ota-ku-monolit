@@ -11,7 +11,7 @@ function displayAnimeListMost(animeList, selector) {
         </div>
         <div class="most-content-movie-info">
           <div class="most-name" style="background: transparent !important;">
-            <p>${anime.russian}</p>
+            <a href="anime.php?animeId=${anime.id}">${anime.russian}</a>
           </div>
           <div class="most-status" style="background: transparent !important;">
             <div class="most-type">${anime.kind}</div>
