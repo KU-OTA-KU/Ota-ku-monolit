@@ -25,6 +25,9 @@
 
 .all-genres-list-tit .all-genres-list-container {
   width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
 }
 
 .all-genres-list-container::-webkit-scrollbar {

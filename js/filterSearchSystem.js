@@ -3,6 +3,7 @@ const limit = 10;
 let loading = false;
 let nextPageTimeout = null;
 let animeFound = false;
+
 // let maxFetchsInAnimeList = 10;
 
 function isNearBottom() {
@@ -69,8 +70,6 @@ function displayNotAnimeFound(element) {
     `;
     mainContent.insertAdjacentHTML('beforeend', emptyAnimeMessage);
 }
-
-
 
 
 async function fetchAnimeData() {

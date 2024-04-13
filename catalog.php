@@ -20,8 +20,8 @@
   <link rel="stylesheet" href="src/components/genres/genres.css" />
   <link rel="stylesheet" href="src/components/footer/footer.css" />
   <link rel="stylesheet" href="src/_root/catalog.css">
-  <link rel="stylesheet" href="src/components/_content/content.css" />
-  <link rel="stylesheet" href="src/components/_filter/filter.css" />
+  <link rel="stylesheet" href="src/components/content/content.css" />
+  <link rel="stylesheet" href="src/components/filter/filter.css" />
 </head>
 
 <body>
@@ -36,10 +36,10 @@
     <div class="main-inner">
       <div class="main-tit">
         <!-- filter Init Start -->
-        <?php include_once 'src/components/_filter/filter.php'; ?>
+        <?php include_once 'src/components/filter/filter.php'; ?>
         <!-- filter Init End -->
         <!-- content Start -->
-        <?php include_once 'src/components/_content/content.php'; ?>
+        <?php include_once 'src/components/content/content.php'; ?>
         <!-- content End -->
       </div>
     </div>
