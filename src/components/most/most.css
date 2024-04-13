@@ -162,14 +162,15 @@
  /*.most-container {*/
  /* display: none;*/
  /*}*/
-
  .most-content-movie {
   flex-direction: column;
   align-items: center;
  }
+
  .most-content-movie-image {
   width: 80% !important;
   margin-bottom: 5px;
+  border-radius: 5px;
  }
 
  .most-content-movie-info {

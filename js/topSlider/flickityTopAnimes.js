@@ -8,7 +8,10 @@ function displayAnimeListInFlickity(animeList, selector) {
     // }
 
     animeList.forEach((anime, index) => {
-        const genres = anime.genres.map(genre => genre.russian).slice(0, 4).join(", ");
+        const genres = anime.genres.slice(0, 3).map(genre => {
+            return `<a href="catalog.php?genres=${genre.id}">${genre.russian}</a>`;
+        }).join(" ");
+
         const animeHTML = `
             <div class="flickity-content-gallery-block">
                 <div class="gallery-cell-content">
@@ -17,7 +20,9 @@ function displayAnimeListInFlickity(animeList, selector) {
                         <h2>${anime.russian}</h2>
                         <p>Название: ${anime.japanese}</p>
                         <p>Оценка: ${anime.score} <i class="fa-solid fa-star" aria-hidden="true"></i></p>
-                        <p>Жанры: ${genres}</p>
+                        <div class="flickity-genres-list">
+                            ${genres} 
+                        </div>
                         <a href="anime.php?animeId=${anime.id}">Подробнее</a>
                     </div>
                 </div>
@@ -51,6 +56,7 @@ async function flickityTopAnimesOpen(limit) {
                                 originalUrl
                             }
                             genres {
+                                id
                                 russian
                             }
                         }
