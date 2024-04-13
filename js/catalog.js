@@ -52,7 +52,7 @@ async function fetchAnimeData() {
     const genres = params['genres'];
     // check all
     const searchString = search || '';
-    const seasonString = season || '2020_2024';
+    const seasonString = season || '';
     const kindString = kind || 'tv,special,tv_special';
     const statusString = status || '';
     const sortString = sort || 'ranked';
