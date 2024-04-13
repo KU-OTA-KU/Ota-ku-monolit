@@ -40,14 +40,14 @@ function getUrlParams() {
     const searchParams = new URLSearchParams(window.location.search);
     const params = {};
     for (const [key, value] of searchParams) {
-        const paramName = key.replace(/\[\]$/, '');  // yanm banem anm ara
+        const paramName = key.replace(/\[\]$/, '');
         if (paramName in params) {
             params[paramName] += `,${value}`;
         } else {
             params[paramName] = value;
         }
     }
-    console.log(params);
+    // console.log(params);
     return params;
 }
 
@@ -106,12 +106,9 @@ async function fetchAnimeData() {
           id
           name
           russian
-          english
-          japanese
           kind
           score
           status
-          url
           poster {
             originalUrl
           }
@@ -129,7 +126,7 @@ async function fetchAnimeData() {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log("NEW DATA ADDED SUCCESSFULLY!");
+            console.log("%cУСПЕШНО!", "color: greenyellow");
             const animeList = data.data.animes.filter(anime =>
                 !blacklistedAnimeIds.includes(anime.id) &&
                 anime.name !== null && anime.name.trim() !== ""
@@ -157,3 +154,57 @@ window.addEventListener("scroll", () => {
         loadNextPage();
     }
 });
+
+async function generateAnimeListStekelton(count, selector) {
+    let mainContent = document.querySelector(selector);
+
+    for (let i = 0; i < count; i++) {
+        let animeHTML = `
+        <div class="movie" id="not-appended">
+        <div class="movie-image"></div>
+        <div class="movie-name">
+        <div class="status">
+          <div class="type"></div>
+            <div class="rating"></div>
+          </div>
+          <div class="name"></div>
+        </div>
+      </div>
+      `;
+        mainContent.insertAdjacentHTML("beforeend", animeHTML);
+    }
+}
+
+function displayAnimeList(animeList, selector) {
+    let mainContent = document.querySelector(selector);
+    let movies = mainContent.querySelectorAll('.movie:not(#appended)');
+
+    animeList.forEach((anime, index) => {
+        let currentCell = movies[index];
+        if (!currentCell) return;
+        currentCell.innerHTML = '';
+        let animeHTML = `
+      <div class="movie-image">
+        <img src="${anime.poster.originalUrl}" alt="${anime.name}">
+      </div>
+      <div class="movie-name">
+        <div class="status" style="background: transparent !important;">
+          <div class="type">${anime.kind}</div>
+          <div class="rating">
+            ${anime.score}
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+        <div class="name" style="background: transparent !important;">
+          <a href="anime.php?animeId=${anime.id}">${anime.russian}</a>
+        </div>
+      </div>
+    `;
+
+        currentCell.insertAdjacentHTML('beforeend', animeHTML);
+        currentCell.id = "appended";
+        currentCell.onclick = function () {
+            window.location.href = `anime.php?animeId=${anime.id}`;
+        };
+    });
+}
