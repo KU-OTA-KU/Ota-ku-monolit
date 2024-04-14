@@ -5,7 +5,7 @@ function changeImagePath() {
   if (windowWidth <= changeSize) {
     logo.src = "./assets/images/fav-icon.png";
   } else {
-    logo.src = "./assets/images/animeCo.png";
+    logo.src = "./assets/images/ota-ku.png";
   }
 }
 

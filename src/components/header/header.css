@@ -47,6 +47,7 @@ header {
 }
 
 .header-navigation {
+  font-weight: bold;
   display: flex;
   gap: 30px;
 }
@@ -57,11 +58,11 @@ header {
  
 .nav-button {
   padding: 7px 0;
-  transition: all 0.2s;
+  transition: color 0.2s;
 }
 
 .nav-button:hover {
-  color: var(--nav-button-hov-color);
+  color: #4265E9;
 }
 
 /* header login */

@@ -4,7 +4,7 @@
         <div class="header-tit">
             <div class="header-log-and-nav">
                 <div class="header-logo" onclick="window.location.href = 'index.php';">
-                    <img src="" alt="" id="logo"/>
+                    <img src="assets/images/ota-ku.png" alt="" id="logo"/>
                 </div>
                 <nav class="header-navigation">
                     <a href="catalog.php" class="nav-button">КАТАЛОГ</a>
