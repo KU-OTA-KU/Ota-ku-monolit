@@ -177,18 +177,6 @@ async function generateAnimeListStekelton(count, selector) {
     }
 }
 
-function loadNextPage() {
-    if (!loading) {
-        loading = true;
-        // if (currPage <= maxFetchsInAnimeList) {
-        fetchAnimeData();
-        // } else {
-        //     console.log(`%cДостигнут лимит загрузок аниме: ${maxFetchsInAnimeList}`, "color: aqua");
-        //     window.removeEventListener("scroll", loadNextPage);
-        // }
-    }
-}
-
 function isNearBottom() {
     const mainContent = document.querySelector(".main-content");
     const mainContentBottom = mainContent.offsetTop + mainContent.offsetHeight;

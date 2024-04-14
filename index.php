@@ -6,7 +6,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>OTA-KU Смотреть аниме Онлайн</title>
-    <link rel="shortcut icon" href="./assets/images/fav-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/images/ota-ku-sign.ico" type="image/x-icon">
     <link rel="stylesheet" href="src/_root/root.css"/>
     <link rel="stylesheet" href="css/palette_dark.css"/>
     <link rel="stylesheet" href="css/scrollbar.css">

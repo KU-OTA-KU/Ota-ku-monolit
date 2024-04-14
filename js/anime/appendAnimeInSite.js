@@ -23,7 +23,7 @@ async function main() {
         const _ANIME_SCREENSHOTS_ = JSON.parse(storedData)[0].screenshots;
         const _ANIME_CHARACTER_ROLES_ = JSON.parse(storedData)[0].characterRoles;
         // 1) append anime title
-        document.title = `AnimeCO ${_ANIME_RUSSIAN_NAME_}`;
+        document.title = `OTA-KU ${_ANIME_RUSSIAN_NAME_}`;
 
         // 2) append background image
         let background = document.querySelector(".anime-background");

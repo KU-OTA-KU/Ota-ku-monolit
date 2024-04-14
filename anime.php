@@ -13,8 +13,8 @@ if (isset($_GET['animeId'])) {
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>AnimeCO Смотреть аниме Онлайн</title>
-    <link rel="shortcut icon" href="./assets/images/fav-icon.png" type="image/x-icon">
+    <title>OTA-KU</title>
+    <link rel="shortcut icon" href="./assets/images/ota-ku-sign.ico" type="image/x-icon">
     <link rel="stylesheet" href="src/_root/root.css"/>
     <link rel="stylesheet" href="css/palette_dark.css"/>
     <link rel="stylesheet" href="css/scrollbar.css">
@@ -65,25 +65,6 @@ if (isset($_GET['animeId'])) {
 
 <script defer src="js/anime/getCurrAnime.js"></script>
 <script defer src="js/anime/appendAnimeInSite.js"></script>
-
-<div id="kodik-player"></div>
-
-<script>
-    var kodikAddPlayers = {
-        width: "100%",
-        height: "100%",
-        onDomReady: false,
-        shikimoriID: `${currentAnime}`,
-        foundCallback: function (data, link) {},
-        notFoundCallback: function (data) {},
-        types: "anime,anime-serial",
-        start_from: "НОМЕР_СЕКУНДЫ"
-    };
-
-    !function(e,n,t,r,a){r=e.createElement(n),a=e.getElementsByTagName(n)
-        [0],r.async=!0,r.src=t,a.parentNode.insertBefore(r,a)}
-    (document,"script","//kodik-add.com/add-players.min.js");
-</script>
 <script defer>
     async function __INIT__() {
         await getCurrAnime(currentAnime);
