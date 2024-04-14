@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/flickity.min.css">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>AnimeCO Каталог</title>
+    <title>OTA-KU Каталог</title>
     <link rel="shortcut icon" href="./assets/images/fav-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="src/_root/root.css"/>
     <link rel="stylesheet" href="css/palette_dark.css"/>

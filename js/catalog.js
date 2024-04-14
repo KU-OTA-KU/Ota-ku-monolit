@@ -3,6 +3,7 @@ const limit = 10;
 let loading = false;
 let nextPageTimeout = null;
 let animeFound = false;
+
 // let maxFetchsInAnimeList = 10;
 
 
@@ -176,10 +177,32 @@ async function generateAnimeListStekelton(count, selector) {
     }
 }
 
+function loadNextPage() {
+    if (!loading) {
+        loading = true;
+        // if (currPage <= maxFetchsInAnimeList) {
+        fetchAnimeData();
+        // } else {
+        //     console.log(`%cДостигнут лимит загрузок аниме: ${maxFetchsInAnimeList}`, "color: aqua");
+        //     window.removeEventListener("scroll", loadNextPage);
+        // }
+    }
+}
+
 function isNearBottom() {
     const mainContent = document.querySelector(".main-content");
     const mainContentBottom = mainContent.offsetTop + mainContent.offsetHeight;
     return window.innerHeight + window.scrollY >= mainContentBottom - 200;
+}
+
+function canScroll() {
+    const body = document.body;
+    const html = document.documentElement;
+    const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+    const bodyHeight = body.scrollHeight;
+    const htmlHeight = html.scrollHeight;
+    const maxScroll = Math.max(bodyHeight, htmlHeight) - windowHeight;
+    return maxScroll > 0 && (bodyHeight > windowHeight || htmlHeight > windowHeight);
 }
 
 function loadNextPage() {
@@ -194,8 +217,24 @@ function loadNextPage() {
     }
 }
 
+window.addEventListener("load", () => {
+    triggerScrollUntilScrollAppears();
+});
+
 window.addEventListener("scroll", () => {
     if (isNearBottom()) {
         loadNextPage();
     }
 });
+
+function triggerScrollUntilScrollAppears() {
+    if (!canScroll()) {
+        setTimeout(() => {
+            loadNextPage()
+            triggerScrollUntilScrollAppears();
+        }, 500);
+    }
+    // } else {
+    //     console.log("Scrollni erevmaaaa");
+    // }
+}

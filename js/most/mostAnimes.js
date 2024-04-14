@@ -128,12 +128,12 @@ async function mostFetchOnGoing(limit) {
             await mostFetchOnGoing(limit);
         } else {
             displayAnimeListMost(animeList, ".most-content-animes-list-option-1");
-            await delay(500);
+            await delay(400);
             await mostFetchOnAnonse(5);
         }
     } catch (error) {
         console.warn("Request error => ", error);
-        await delay(500);
+        await delay(400);
         await mostFetchOnGoing(5);
     }
 }
@@ -184,12 +184,12 @@ async function mostFetchOnAnonse(limit) {
             await mostFetchOnAnonse(limit);
         } else {
             displayAnimeListMost(animeList, ".most-content-animes-list-option-2");
-            await delay(500);
+            await delay(400);
             await mostFetchOnTop(5);
         }
     } catch (error) {
         console.warn("Request error => ", error);
-        await delay(500);
+        await delay(400);
         await mostFetchOnAnonse(5);
     }
 }
@@ -240,12 +240,12 @@ async function mostFetchOnTop(limit) {
             await mostFetchOnTop(limit);
         } else {
             displayAnimeListMost(animeList, ".most-content-animes-list-option-3");
-            await delay(500);
+            await delay(400);
             await mostFetchOnReleased(5);
         }
     } catch (error) {
         console.warn("Request error => ", error);
-        await delay(500);
+        await delay(400);
         await mostFetchOnTop(5);
     }
 }
@@ -295,7 +295,7 @@ async function mostFetchOnReleased(limit) {
         displayAnimeListMost(animeList, ".most-content-animes-list-option-4");
     } catch (error) {
         console.warn("Request error => ", error);
-        await delay(500);
+        await delay(400);
         await mostFetchOnReleased(5);
     }
 }
