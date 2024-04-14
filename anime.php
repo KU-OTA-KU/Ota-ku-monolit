@@ -57,6 +57,7 @@ if (isset($_GET['animeId'])) {
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/anime/getAnimeInKodik.js"></script>
 
 <script defer src="js/_BLACKLIST.js"></script>
 <script defer src="js/other/delay.js"></script>
@@ -64,9 +65,29 @@ if (isset($_GET['animeId'])) {
 
 <script defer src="js/anime/getCurrAnime.js"></script>
 <script defer src="js/anime/appendAnimeInSite.js"></script>
+
+<div id="kodik-player"></div>
+
+<script>
+    var kodikAddPlayers = {
+        width: "100%",
+        height: "100%",
+        onDomReady: false,
+        shikimoriID: `${currentAnime}`,
+        foundCallback: function (data, link) {},
+        notFoundCallback: function (data) {},
+        types: "anime,anime-serial",
+        start_from: "НОМЕР_СЕКУНДЫ"
+    };
+
+    !function(e,n,t,r,a){r=e.createElement(n),a=e.getElementsByTagName(n)
+        [0],r.async=!0,r.src=t,a.parentNode.insertBefore(r,a)}
+    (document,"script","//kodik-add.com/add-players.min.js");
+</script>
 <script defer>
     async function __INIT__() {
         await getCurrAnime(currentAnime);
+
     }
 
     window.addEventListener('load', async () => {

@@ -44,6 +44,7 @@ header {
   margin-right: 35px;
   /*cursor: pointer;*/
   pointer-events: none;
+  user-select: none;
 }
 
 .header-navigation {

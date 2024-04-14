@@ -131,7 +131,8 @@
 }
 
 .gallery-cell-info p:nth-child(2) {
-  color: pink;
+  /*color: #4265E9;*/
+  color: white;
 }
 
 .gallery-cell-info p:nth-child(3) i {
