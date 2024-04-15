@@ -154,6 +154,12 @@
   }
 }
 
+@media screen and (max-width: 425px) {
+  .main-content {
+    gap: 5px;
+  }
+}
+
 @media screen and (max-width: 350px) {
   .main-content {
     grid-template-columns: repeat(2, minmax(50px, 170px));
@@ -166,6 +172,3 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
-  /*  */
-}

@@ -120,7 +120,7 @@
 }
 
 .tags-checkbox::-webkit-scrollbar-thumb:hover {
-  background-color: #a5263b;
+  background-color: #4265E9;
 }
 
 .tags-checkbox label {
@@ -130,17 +130,19 @@
 .filter-selector .submit button {
   width: 100%;
   padding: 0 20px;
-  background-color: var(--user-log-in-1-button-backrogund-color);
+  /*background-color: var(--user-log-in-1-button-backrogund-color);*/
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  transition: all 0.2s;
+  background-color: #1976d2;
+  transition: background-color 0.2s;
   height: 40px;
   color: var(--color-white);
 }
 
 .filter-selector .submit button:hover {
-  background-color: var(--user-log-in-1-button-hov-backrogund-color);
+  /*background-color: var(--user-log-in-1-button-hov-backrogund-color);*/
+  background-color: #4265E9;
 }
 
 .filt-button {
@@ -191,7 +193,6 @@
   cursor: pointer;
   position: relative;
   display: inline-block;
-  width: 100%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -256,7 +257,6 @@
     overflow: auto;
     height: 100%;
     max-width: none;
-    min-width: none;
   }
 
   #clear-button {
@@ -292,13 +292,15 @@
     width: 100%;
     border: none;
     border-radius: 15px;
-    background-color: var(--filt-button-bg-color);
+    /*background-color: var(--filt-button-bg-color);*/
+    background-color: rgba(25, 118, 210, 0.60);
     color: var(--color-white);
     transition: 0.2s all;
   }
 
   .filt-button button:hover {
-    background-color: var(--filt-button-bg-hov);
+    /*background-color: var(--filt-button-bg-hov);*/
+    background-color: #4265E9;
   }
 }
 

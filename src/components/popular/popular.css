@@ -49,11 +49,11 @@
 
 
 @media screen and (max-width: 425px) {
-  .top-popular-animes-title-h2 h2 {
-    display: none;
-  }
-
-  /*.top-popular-animes {*/
+  /*.top-popular-animes-title-h2 h2 {*/
   /*  display: none;*/
   /*}*/
+
+  .top-popular-animes {
+    display: none;
+  }
 }
