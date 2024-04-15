@@ -168,19 +168,19 @@ function displayFilterParam($paramName, $paramValue)
                         <div><input type="checkbox" id="genre14" name="genres[]" value="10" <?php echo isChecked('10', $genres); ?>><label for="genre14">Фэнтези</label></div>
                         <div><input type="checkbox" id="genre15" name="genres[]" value="1" <?php echo isChecked('1', $genres); ?>><label for="genre15">Экшен</label></div>
                         <div><input type="checkbox" id="genre16" name="genres[]" value="9" <?php echo isChecked('9', $genres); ?>><label for="genre16">Этти</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="143" <?php echo isChecked('143', $genres); ?>><label for="genre16">Антропоморфизм</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="119" <?php echo isChecked('119', $genres); ?>><label for="genre16">CGDCT</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="17" <?php echo isChecked('17', $genres); ?>><label for="genre16">Боевые исскусства</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="32" <?php echo isChecked('32', $genres); ?>><label for="genre16">Вампиры</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="104" <?php echo isChecked('104', $genres); ?>><label for="genre16">Взрослые персонажы</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="103" <?php echo isChecked('103', $genres); ?>><label for="genre16">Видеоигры</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="38" <?php echo isChecked('38', $genres); ?>><label for="genre16">Военое</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="141" <?php echo isChecked('141', $genres); ?>><label for="genre16">Выживание</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="35" <?php echo isChecked('35', $genres); ?>><label for="genre16">Гарем</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="3" <?php echo isChecked('3', $genres); ?>><label for="genre16">Гонки</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="112" <?php echo isChecked('112', $genres); ?>><label for="genre16">Гэг-юмор</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="39" <?php echo isChecked('39', $genres); ?>><label for="genre16">Детектив</label></div>
-                        <div><input type="checkbox" id="genre16" name="genres[]" value="105" <?php echo isChecked('105', $genres); ?>><label for="genre16">Жесткость</label></div>
+                        <div><input type="checkbox" id="genre17" name="genres[]" value="143" <?php echo isChecked('143', $genres); ?>><label for="genre17">Антропоморфизм</label></div>
+                        <div><input type="checkbox" id="genre18" name="genres[]" value="119" <?php echo isChecked('119', $genres); ?>><label for="genre18">CGDCT</label></div>
+                        <div><input type="checkbox" id="genre19" name="genres[]" value="17" <?php echo isChecked('17', $genres); ?>><label for="genre19">Боевые исскусства</label></div>
+                        <div><input type="checkbox" id="genre20" name="genres[]" value="32" <?php echo isChecked('32', $genres); ?>><label for="genre20">Вампиры</label></div>
+                        <div><input type="checkbox" id="genre21" name="genres[]" value="104" <?php echo isChecked('104', $genres); ?>><label for="genre21">Взрослые персонажы</label></div>
+                        <div><input type="checkbox" id="genre22" name="genres[]" value="103" <?php echo isChecked('103', $genres); ?>><label for="genre22">Видеоигры</label></div>
+                        <div><input type="checkbox" id="genre23" name="genres[]" value="38" <?php echo isChecked('38', $genres); ?>><label for="genre23">Военое</label></div>
+                        <div><input type="checkbox" id="genre24" name="genres[]" value="141" <?php echo isChecked('141', $genres); ?>><label for="genre24">Выживание</label></div>
+                        <div><input type="checkbox" id="genre25" name="genres[]" value="35" <?php echo isChecked('35', $genres); ?>><label for="genre25">Гарем</label></div>
+                        <div><input type="checkbox" id="genre26" name="genres[]" value="3" <?php echo isChecked('3', $genres); ?>><label for="genre26">Гонки</label></div>
+                        <div><input type="checkbox" id="genre27" name="genres[]" value="112" <?php echo isChecked('112', $genres); ?>><label for="genre27">Гэг-юмор</label></div>
+                        <div><input type="checkbox" id="genre28" name="genres[]" value="39" <?php echo isChecked('39', $genres); ?>><label for="genre28">Детектив</label></div>
+                        <div><input type="checkbox" id="genre29" name="genres[]" value="105" <?php echo isChecked('105', $genres); ?>><label for="genre29">Жесткость</label></div>
                         <!-- <div><input type="checkbox" id="genre17" name="genres" value="539"><label for="genre17">Эротика</label></div>
                         <div><input type="checkbox" id="genre18" name="genres" value="12"><label for="genre18">Хентай</label></div> -->
                     </div>

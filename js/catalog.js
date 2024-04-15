@@ -2,7 +2,7 @@ let currpage = 1;
 const limit = 10;
 let loading = false;
 let nextPageTimeout = null;
-let animeFound = false;
+let animeFound = undefined;
 
 // let maxFetchsInAnimeList = 10;
 
@@ -59,7 +59,7 @@ async function fetchAnimeData() {
     const sortString = sort || 'ranked';
     const ratingString = rating || '';
     const genresString = genres || '';
-    // console.log(statusString)
+
     const query = `
       query {
         animes(
@@ -102,16 +102,17 @@ async function fetchAnimeData() {
                 !blacklistedAnimeIds.includes(anime.id) &&
                 anime.name !== null && anime.name.trim() !== ""
             );
-            if (animeList.length == 0) {
-                console.log("no data");
+            if (animeList.length === 0) {
+                animeFound = false;
                 if (!animeFound) {
                     displayNotAnimeFound(".main-content");
+                    return;
                 }
             } else {
                 animeFound = true;
+                generateAnimeListStekelton(animeList.length, ".main-content");
+                displayAnimeList(animeList, ".main-content");
             }
-            generateAnimeListStekelton(animeList.length, ".main-content");
-            displayAnimeList(animeList, ".main-content");
             loading = false;
         })
         .catch((error) => {
@@ -119,6 +120,7 @@ async function fetchAnimeData() {
             loading = false;
         });
 }
+
 
 function displayAnimeList(animeList, selector) {
     let mainContent = document.querySelector(selector);
@@ -211,7 +213,8 @@ window.addEventListener("scroll", () => {
 });
 
 function triggerScrollUntilScrollAppears() {
-    if (!canScroll()) {
+    console.log(animeFound)
+    if (!canScroll() && animeFound === true || animeFound === undefined) {
         setTimeout(() => {
             loadNextPage()
             triggerScrollUntilScrollAppears();

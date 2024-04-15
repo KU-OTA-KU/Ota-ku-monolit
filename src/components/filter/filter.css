@@ -14,6 +14,7 @@
 
 #close-button {
  display: none;
+ white-space: nowrap;
 }
 
 .main-filter .filter-title {
@@ -77,7 +78,8 @@
 }
 
 .filter-selector label {
- font-size: 0.9em
+ font-size: 0.9em;
+ width: 100%;
 }
 
 .filter-selector select:focus {
@@ -93,8 +95,7 @@
 }
 
 .filter-box {
- transition: height 0.5s ease-in-out, padding 0.3s ease-in-out;
- height: 350px;
+ height: 100%;
  padding: 10px;
  background-color: var(--filter-box-bg-color);
  border-radius: 10px;
