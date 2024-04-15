@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="src/components/flickity/flickity.css"/>
     <link rel="stylesheet" href="src/components/genres/genres.css"/>
     <link rel="stylesheet" href="src/components/most/most.css"/>
-<!--    <link rel="stylesheet" href="src/components/popular/popular.css"/>-->
+    <!--    <link rel="stylesheet" href="src/components/popular/popular.css"/>-->
     <link rel="stylesheet" href="src/components/filter/filter.css"/>
     <link rel="stylesheet" href="src/components/content/content.css"/>
     <link rel="stylesheet" href="src/components/footer/footer.css"/>
@@ -35,7 +35,11 @@
 <?php include_once 'src/components/genres/genres.php'; ?>
 <!-- all genres Init End -->
 <!-- most Init Start -->
-<?php include_once 'src/components/most/most.php'; ?>
+<?php
+if (isset($_COOKIE['mobileMode']) && $_COOKIE['mobileMode'] == 'true') {
+     include_once 'src/components/most/most.php';
+}
+?>
 <!-- most Init End -->
 <!-- popular Init Start -->
 <?php // include_once 'src/components/popular/popular.php'; ?>
@@ -61,7 +65,9 @@
 <!-- scripts -->
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
+        integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/flickity/genres.js"></script>
 <!--<script src="js/flickity/popularAnimes.js"></script>-->
 <script src="js/topSlider/flickityTopAnimes.js"></script>
