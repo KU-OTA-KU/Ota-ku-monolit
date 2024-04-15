@@ -1,3 +1,9 @@
+<?php
+global $isMobile;
+require_once('inc/other/set_mobile_cookie.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -7,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>OTA-KU Смотреть аниме Онлайн</title>
     <link rel="shortcut icon" href="./assets/images/ota-ku-sign.ico" type="image/x-icon">
+    <script src="js/other/mobileMode.js"></script>
     <link rel="stylesheet" href="src/_root/root.css"/>
     <link rel="stylesheet" href="css/palette_dark.css"/>
     <link rel="stylesheet" href="css/scrollbar.css">
@@ -16,7 +23,7 @@
     <link rel="stylesheet" href="src/components/flickity/flickity.css"/>
     <link rel="stylesheet" href="src/components/genres/genres.css"/>
     <link rel="stylesheet" href="src/components/most/most.css"/>
-    <!--    <link rel="stylesheet" href="src/components/popular/popular.css"/>-->
+    <link rel="stylesheet" href="src/components/popular/popular.css"/>
     <link rel="stylesheet" href="src/components/filter/filter.css"/>
     <link rel="stylesheet" href="src/components/content/content.css"/>
     <link rel="stylesheet" href="src/components/footer/footer.css"/>
@@ -36,13 +43,17 @@
 <!-- all genres Init End -->
 <!-- most Init Start -->
 <?php
-if (isset($_COOKIE['mobileMode']) && $_COOKIE['mobileMode'] == 'true') {
-     include_once 'src/components/most/most.php';
+if (!$isMobile) {
+  include_once 'src/components/most/most.php';
 }
 ?>
 <!-- most Init End -->
 <!-- popular Init Start -->
-<?php // include_once 'src/components/popular/popular.php'; ?>
+<?php
+if (!$isMobile) {
+  include_once 'src/components/popular/popular.php';
+}
+?>
 <!-- popular Init End -->
 <!-- main Start -->
 <main class="main">
@@ -63,13 +74,29 @@ if (isset($_COOKIE['mobileMode']) && $_COOKIE['mobileMode'] == 'true') {
 <!-- footer Init End -->
 
 <!-- scripts -->
+<script>
+    if (!checkMobileModeStatus()) {
+        let script0 = document.createElement('script');
+        script0.src = 'js/flickity/popularAnimes.js';
+        document.body.appendChild(script0);
+
+        let script1 = document.createElement('script');
+        script1.src = 'js/most/mostAnimes.js';
+        script1.defer = true;
+        document.body.appendChild(script1);
+
+        let script2 = document.createElement('script');
+        script2.src = 'js/popular/popularAnimes.js';
+        script2.defer = true;
+        document.body.appendChild(script2);
+    }
+</script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
         integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/flickity/genres.js"></script>
-<!--<script src="js/flickity/popularAnimes.js"></script>-->
 <script src="js/topSlider/flickityTopAnimes.js"></script>
 
 <script defer src="js/_BLACKLIST.js"></script>
@@ -77,18 +104,17 @@ if (isset($_COOKIE['mobileMode']) && $_COOKIE['mobileMode'] == 'true') {
 <script defer src="js/other/shuffleArray.js"></script>
 <script defer src="js/other/scrollToAnchor.js"></script>
 
-<script defer src="js/most/mostAnimes.js"></script>
-<!--<script defer src="js/popular/popularAnimes.js"></script>-->
 <script defer src="js/animeList.js"></script>
-
 <script defer src="js/filter/filter.js"></script>
 <script defer>
     async function __INIT__() {
         await flickityTopAnimesOpen(5);
-        await delay(500);
-        await mostFetchOnGoing(5);
-        //await delay(1000);
-        //await fetchPopularAnimes(11);
+        if (!checkMobileModeStatus()) {
+            await delay(500);
+            await mostFetchOnGoing(5);
+            await delay(500);
+            await fetchPopularAnimes(11);
+        }
         await delay(500);
         await fetchAnimeData();
     }
@@ -98,6 +124,5 @@ if (isset($_COOKIE['mobileMode']) && $_COOKIE['mobileMode'] == 'true') {
         await __INIT__()
     });
 </script>
-
 </body>
 </html>
