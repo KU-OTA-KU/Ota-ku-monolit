@@ -7,7 +7,7 @@ function displayAnimeListMost(animeList, selector) {
         currentCell.innerHTML = '';
         let animeHTML = `
         <div class="most-content-movie-image">
-        <img src="${anime.poster.originalUrl}" alt="${anime.name}">
+        <img src="${anime.poster.mainUrl}" alt="${anime.name}">
         </div>
         <div class="most-content-movie-info">
           <div class="most-name" style="background: transparent !important;">
@@ -60,7 +60,7 @@ async function fetchAdditionalAnime(count, status) {
                         kind
                         score
                         poster {
-                          originalUrl
+                          mainUrl
                         }
                         airedOn {
                           year
@@ -100,7 +100,7 @@ async function mostFetchOnGoing(limit) {
                         kind
                         score
                         poster {
-                          originalUrl
+                           mainUrl
                         }
                         airedOn {
                           year
@@ -156,7 +156,7 @@ async function mostFetchOnAnonse(limit) {
                         kind
                         score
                         poster {
-                          originalUrl
+                          mainUrl
                         }
                         airedOn {
                           year
@@ -212,7 +212,7 @@ async function mostFetchOnTop(limit) {
                         kind
                         score
                         poster {
-                          originalUrl
+                          mainUrl
                         }
                         airedOn {
                           year
@@ -268,7 +268,7 @@ async function mostFetchOnReleased(limit) {
                         kind
                         score
                         poster {
-                          originalUrl
+                          mainUrl
                         }
                         airedOn {
                           year

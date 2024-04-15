@@ -7,7 +7,7 @@ function displayAnimeListPopular(animeList, selector) {
         currentCell.innerHTML = '';
         let animeHTML = `
           <div class="movie-image">
-            <img src="${anime.poster.originalUrl}" alt="${anime.name}">
+            <img src="${anime.poster.mainUrl}" alt="${anime.name}">
           </div>
           <div class="movie-name">
           <div class="status" style="background: transparent !important;">
@@ -50,7 +50,7 @@ async function fetchPopularAnimes(limit) {
                         kind
                         score
                         poster {
-                          originalUrl
+                           mainUrl
                         }
                       }
                     }

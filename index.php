@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="src/components/flickity/flickity.css"/>
     <link rel="stylesheet" href="src/components/genres/genres.css"/>
     <link rel="stylesheet" href="src/components/most/most.css"/>
-    <link rel="stylesheet" href="src/components/popular/popular.css"/>
+<!--    <link rel="stylesheet" href="src/components/popular/popular.css"/>-->
     <link rel="stylesheet" href="src/components/filter/filter.css"/>
     <link rel="stylesheet" href="src/components/content/content.css"/>
     <link rel="stylesheet" href="src/components/footer/footer.css"/>
@@ -38,7 +38,7 @@
 <?php include_once 'src/components/most/most.php'; ?>
 <!-- most Init End -->
 <!-- popular Init Start -->
-<?php include_once 'src/components/popular/popular.php'; ?>
+<?php // include_once 'src/components/popular/popular.php'; ?>
 <!-- popular Init End -->
 <!-- main Start -->
 <main class="main">
@@ -63,7 +63,7 @@
 <script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/flickity/genres.js"></script>
-<script src="js/flickity/popularAnimes.js"></script>
+<!--<script src="js/flickity/popularAnimes.js"></script>-->
 <script src="js/topSlider/flickityTopAnimes.js"></script>
 
 <script defer src="js/_BLACKLIST.js"></script>
@@ -72,7 +72,7 @@
 <script defer src="js/other/scrollToAnchor.js"></script>
 
 <script defer src="js/most/mostAnimes.js"></script>
-<script defer src="js/popular/popularAnimes.js"></script>
+<!--<script defer src="js/popular/popularAnimes.js"></script>-->
 <script defer src="js/animeList.js"></script>
 
 <script defer src="js/filter/filter.js"></script>
@@ -81,9 +81,9 @@
         await flickityTopAnimesOpen(5);
         await delay(500);
         await mostFetchOnGoing(5);
-        await delay(1000);
-        await fetchPopularAnimes(11);
-        await delay(1000);
+        //await delay(1000);
+        //await fetchPopularAnimes(11);
+        await delay(500);
         await fetchAnimeData();
     }
 

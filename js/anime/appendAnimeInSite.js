@@ -85,7 +85,7 @@ async function main() {
         if (_ANIME_SCREENSHOTS_ && _ANIME_SCREENSHOTS_.length > 0) {
             animeStillsContentList.forEach((animeStillsContent, index) => {
                 if (_ANIME_SCREENSHOTS_[index]) {
-                    const stillUrl = _ANIME_SCREENSHOTS_[index].originalUrl;
+                    const stillUrl = _ANIME_SCREENSHOTS_[index].x332Url;
                     animeStillsContent.insertAdjacentHTML(
                         "beforeend",
                         `<img src="${stillUrl}"></img>`
@@ -131,7 +131,7 @@ async function main() {
                 let character = _ANIME_CHARACTER_ROLES_[index];
                 if (!character) return;
                 let characterHTML = `
-            <div class="character-content-image"><img src="${character.character.poster.originalUrl}" alt="${character.character.name}"></div>
+            <div class="character-content-image"><img src="${character.character.poster.mini2xUrl}" alt="${character.character.name}"></div>
             <p style="background: transparent !important;">${character.character.name}</p>
         `;
                 block.innerHTML = characterHTML;

@@ -18,7 +18,8 @@ footer {
 }
 
 .footer-inner-tit img {
-  height: 40px;
+  height: 30px;
+  margin-bottom: 5px;
 }
 
 .footer-inner-tit p {

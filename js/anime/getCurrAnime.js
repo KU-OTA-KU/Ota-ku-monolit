@@ -32,7 +32,7 @@ async function getCurrAnime(GET) {
         }
         screenshots { 
           id
-          originalUrl
+          x332Url
         }
         characterRoles {
           id
@@ -43,7 +43,7 @@ async function getCurrAnime(GET) {
             name 
             poster { 
               id 
-              originalUrl
+              mini2xUrl
             }
           }
         }

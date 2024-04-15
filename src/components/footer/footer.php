@@ -1,28 +1,34 @@
 <footer>
-  <div class="footer-inner-container">
-    <div class="footer-inner-tit">
-      <div class="footer-logo">
-        <img src="assets/images/animeCo.png" alt="animeCo">
-        <p>Открой мир японской анимации с нашим приложением, специально созданным для настоящих ценителей аниме. Мы
-          предлагаем вам самые новые и популярные аниме-сериалы, доступные на вашем устройстве в любое время.</p>
-      </div>
-      <div class="footer-other">
-        <div class="documents">
-          <h3>Документы</h3>
-          <ul>
-            <li><a href="#">Политика конфиденциальности</a></li>
-            <li><a href="#">Пользовательское соглашение</a></li>
-            <li><a href="#">Правообладатели</a></li>
-          </ul>
+    <div class="footer-inner-container">
+        <div class="footer-inner-tit">
+            <div class="footer-logo">
+                <img src="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/assets/images/ota-ku.png" alt="animeCo">
+                <p>Весь контент на сайте предназначен исключительно для личного ознакомления. Мы используем материалы из
+                    свободных источников. Если какой-то контент нарушает ваши авторские права, пожалуйста, свяжитесь с
+                    нами, и мы незамедлительно удалим его. Однако мы не можем гарантировать, что он не будет загружен на
+                    сайт снова другими пользователями. Копирование материала с сайта разрешено только после получения
+                    разрешения администрации. Сайт предназначен для лиц старше 16+ лет.</p>
+            </div>
+            <div class="footer-other">
+                <div class="documents">
+                    <h3>Документы</h3>
+                    <ul>
+                        <!--<li><a href="#">Правила сайта</a></li>-->
+                        <!--<li><a href="#">Политика конфиденциальности</a></li>-->
+                        <li><a href="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/doc/terms_ru.php">Пользовательское
+                                соглашение</a></li>
+                        <li><a href="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/doc/authors_ru.php">Правообладатели</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contacts">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Email: w33bv.gl@gmail.com</li>
+                        <li>Телефон: +374(94)161-331</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="contacts">
-          <h3>Контакты</h3>
-          <ul>
-            <li>Email: w33bv.gl@gmail.com</li>
-            <li>Телефон: +374(94)161-331</li>
-          </ul>
-        </div>
-      </div>
     </div>
-  </div>
 </footer>

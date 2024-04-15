@@ -3,8 +3,8 @@
     <div class="header-inner">
         <div class="header-tit">
             <div class="header-log-and-nav">
-                <div class="header-logo" onclick="window.location.href = 'index.php';">
-                    <img src="assets/images/ota-ku.png" alt="" id="logo"/>
+                <div class="header-logo" onclick="window.location.href = '<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/index.php';">
+                    <img src="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/assets/images/ota-ku.png" alt="" id="logo"/>
                 </div>
                 <nav class="header-navigation">
                     <a href="catalog.php" class="nav-button">КАТАЛОГ</a>
