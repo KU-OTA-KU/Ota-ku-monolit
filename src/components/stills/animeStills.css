@@ -68,6 +68,10 @@
 
 
 @media screen and (max-width: 425px) {
+ .anime-stills-container {
+  gap: 5px;
+ }
+
  .anime-stills-title h2 {
   display: none;
  }

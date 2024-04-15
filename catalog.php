@@ -61,7 +61,7 @@
 
 <script defer>
     async function __INIT__() {
-        await fetchAnimeData();
+         // nema function
     }
 
     window.addEventListener('load', async () => {
