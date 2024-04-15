@@ -17,6 +17,17 @@ function isChecked($value, $param)
         return $value == $param ? 'checked' : '';
     }
 }
+
+// Функция для вывода параметров фильтра
+function displayFilterParam($paramName, $paramValue)
+{
+  if (!empty($paramValue)) {
+    if (is_array($paramValue)) {
+      $paramValue = implode(', ', $paramValue);
+    }
+    echo "<div class='filter-item'>$paramName: $paramValue</div>";
+  }
+}
 ?>
 
 <!-- filter Start -->
@@ -35,6 +46,22 @@ function isChecked($value, $param)
             <i class="fa-solid fa-xmark"></i>
         </button>
     </div>
+    <section class="filter-query">
+        <div class="filter-title">
+            <i class="fa-solid fa-search"></i>
+            <p>Ваши запросы:</p>
+        </div>
+        <div class="filter-query-content">
+          <?php
+          displayFilterParam('Статус', $status);
+          displayFilterParam('Тип', $kind);
+          displayFilterParam('Сортировка', $sort);
+          displayFilterParam('Сезон', $season);
+          displayFilterParam('Оценка', $rating);
+          displayFilterParam('Жанры', $genres);
+          ?>
+        </div>
+    </section>
     <div class="filter-selector">
         <form action="catalog.php" method="GET">
             <div class="filter-fl-genre filter-box">
@@ -163,7 +190,7 @@ function isChecked($value, $param)
                 <!-- </div> -->
             </div>
             <div class="submit">
-                <button type="submit">Искать</button>
+                <button type="submit">Поищем, сэмпай 😊?</button>
             </div>
         </form>
     </div>

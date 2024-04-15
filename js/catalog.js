@@ -204,11 +204,6 @@ function loadNextPage() {
         // }
     }
 }
-
-window.addEventListener("load", () => {
-    triggerScrollUntilScrollAppears();
-});
-
 window.addEventListener("scroll", () => {
     if (isNearBottom()) {
         loadNextPage();
