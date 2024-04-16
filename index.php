@@ -108,10 +108,8 @@ if (!$isMobile) {
         if (!checkMobileModeStatus()) {
             await delay(500);
             await mostFetchOnGoing(5);
-            await delay(500);
             await fetchPopularAnimes(11);
         }
-        await delay(500);
         await fetchAnimeData();
     }
 

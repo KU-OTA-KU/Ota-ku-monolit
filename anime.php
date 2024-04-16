@@ -73,7 +73,6 @@ if (isset($_GET['animeId'])) {
 <script defer>
     async function __INIT__() {
         await getCurrAnime(currentAnime);
-
     }
 
     window.addEventListener('load', async () => {
