@@ -17,3 +17,7 @@ header {
 .header-navigation {
   display: none;
 }
+
+.footer-inner-tit {
+  max-width: 1300px;
+}

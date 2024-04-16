@@ -24,6 +24,7 @@ if (isset($_GET['animeId'])) {
     <link rel="stylesheet" href="src/components/animeDescription/animeDescription.css"/>
     <link rel="stylesheet" href="src/components/stills/animeStills.css"/>
     <link rel="stylesheet" href="src/components/player/player.css"/>
+    <link rel="stylesheet" href="src/components/animeRelated/animeRelated.css"/>
     <link rel="stylesheet" href="src/components/charactersList/characters.css"/>
     <link rel="stylesheet" href="src/components/footer/footer.css"/>
 
@@ -43,9 +44,12 @@ if (isset($_GET['animeId'])) {
 <!-- anime Stills Init Start -->
 <?php include_once 'src/components/stills/animeStills.php'; ?>
 <!-- anime Stills Init End -->
-<!-- anime pleer Init Start -->
+<!-- anime player Init Start -->
 <?php include_once 'src/components/player/player.php'; ?>
-<!-- anime pleer Init End -->
+<!-- anime player Init End -->
+<!-- anime related Init Start-->
+<?php include_once 'src/components/animeRelated/animeRelated.php'; ?>
+<!-- anime related Init End-->
 <!-- anime characters Init Start -->
 <?php include_once 'src/components/charactersList/characters.php' ?>
 <!-- anime charactrs Init End -->
@@ -65,6 +69,7 @@ if (isset($_GET['animeId'])) {
 
 <script defer src="js/anime/getCurrAnime.js"></script>
 <script defer src="js/anime/appendAnimeInSite.js"></script>
+<script defer src="js/animeRelated/animeRelated.js"></script>
 <script defer>
     async function __INIT__() {
         await getCurrAnime(currentAnime);

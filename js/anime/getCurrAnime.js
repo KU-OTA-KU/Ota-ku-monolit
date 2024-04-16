@@ -46,6 +46,20 @@ async function getCurrAnime(GET) {
               mini2xUrl
             }
           }
+        }   
+        related {
+          anime {
+           id
+           russian
+           kind  
+           airedOn {
+             year
+           }
+           poster {
+              mini2xUrl
+           }
+          }
+         relationRu
         }
         description
       }

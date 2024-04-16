@@ -27,7 +27,6 @@ require_once('inc/other/set_mobile_cookie.php');
     <link rel="stylesheet" href="src/components/filter/filter.css"/>
     <link rel="stylesheet" href="src/components/content/content.css"/>
     <link rel="stylesheet" href="src/components/footer/footer.css"/>
-
     <link rel="stylesheet" href="src/_root/index.css"/>
 </head>
 
@@ -76,10 +75,6 @@ if (!$isMobile) {
 <!-- scripts -->
 <script>
     if (!checkMobileModeStatus()) {
-        let script0 = document.createElement('script');
-        script0.src = 'js/flickity/popularAnimes.js';
-        document.body.appendChild(script0);
-
         let script1 = document.createElement('script');
         script1.src = 'js/most/mostAnimes.js';
         script1.defer = true;
@@ -97,6 +92,7 @@ if (!$isMobile) {
         integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/flickity/genres.js"></script>
+<script src="js/flickity/popularAnimes.js"></script>
 <script src="js/topSlider/flickityTopAnimes.js"></script>
 
 <script defer src="js/_BLACKLIST.js"></script>

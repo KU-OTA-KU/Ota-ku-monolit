@@ -22,6 +22,8 @@ async function main() {
         const _ANIME_DESCRIPTION_ = JSON.parse(storedData)[0].description;
         const _ANIME_SCREENSHOTS_ = JSON.parse(storedData)[0].screenshots;
         const _ANIME_CHARACTER_ROLES_ = JSON.parse(storedData)[0].characterRoles;
+        let _ANIME_RELATED_ = JSON.parse(storedData)[0].related;
+        _ANIME_RELATED_ = _ANIME_RELATED_.filter(anime => anime.anime && anime.anime.id);
         // 1) append anime title
         document.title = `OTA-KU ${_ANIME_RUSSIAN_NAME_}`;
 
@@ -141,6 +143,65 @@ async function main() {
 
         await createCharactersBlocks();
         await appendCharactersBlocks();
+
+        // 11) append curr anime related animes
+        async function createRelatedAnimeBlocks() {
+            let relatedContainers = document.querySelectorAll(".related-animes-container");
+
+            relatedContainers.forEach((container) => {
+                let mainAnimeRelated = _ANIME_RELATED_.filter(anime => anime.anime && anime.anime.id);
+                let mainAnimeRelatedCount = mainAnimeRelated.length;
+                mainAnimeRelatedCount--;
+                for (let i = 0; i < mainAnimeRelatedCount; i++) {
+                    let newAnimeRelatedCount = `
+                <div class="related-animes-block">
+                    <div class="related-animes-name">
+                        <a href=""></a>
+                    </div>
+                    <div class="related-animes-info">
+                        <div class="related-animes-info-image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="related-animes-type-year">
+                            <p></p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            `;
+                    container.insertAdjacentHTML("beforeend", newAnimeRelatedCount);
+                }
+            });
+        }
+
+        async function appendRelatedAnimeBlocks() {
+            let relatedBlocks = document.querySelectorAll(".related-animes-block");
+
+            relatedBlocks.forEach((block, index) => {
+                let relatedAnime = _ANIME_RELATED_[index];
+                if (!relatedAnime || !relatedAnime.anime) return;
+
+                let relatedAnimeHTML = `
+                    <div class="related-animes-name" style="background: transparent !important;">
+                        <a href="anime.php?animeId=${relatedAnime.anime.id}">${relatedAnime.anime.russian}</a>
+                    </div>
+                    <div class="related-animes-info">
+                        <div class="related-animes-info-image">
+                            <img src="${relatedAnime.anime.poster.mini2xUrl}" alt="related-${_ANIME_ENGLISH_NAME_}">
+                        </div>
+                        <div class="related-animes-type-year">
+                             <p style="background: transparent !important;">${relatedAnime.anime.kind} / ${relatedAnime.anime.airedOn.year}</p>
+                             <p style="background: transparent !important;">${relatedAnime.relationRu}</p>
+                        </div>
+                    </div>
+                `;
+                block.innerHTML = relatedAnimeHTML;
+            });
+        }
+
+        await createRelatedAnimeBlocks();
+        await appendRelatedAnimeBlocks();
+
     } else {
         console.warn("No anime data found in sessionStorage.");
     }
