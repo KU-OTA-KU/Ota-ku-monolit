@@ -114,6 +114,10 @@ async function main() {
                         mainCharactersCount++;
                     }
                 });
+                if (mainCharactersCount <= 0) {
+                    let charactersMainBlock = document.querySelector(".characters-list");
+                    charactersMainBlock.style.display = "none";
+                }
                 mainCharactersCount--;
                 for (let i = 0; i < mainCharactersCount; i++) {
                     let newCharacterBlock = `
@@ -146,11 +150,14 @@ async function main() {
 
         // 11) append curr anime related animes
         async function createRelatedAnimeBlocks() {
+            let relatedAnimeMainBlock = document.querySelector(".animes-related");
             let relatedContainers = document.querySelectorAll(".related-animes-container");
-
+            let mainAnimeRelated = _ANIME_RELATED_.filter(anime => anime.anime && anime.anime.id);
+            let mainAnimeRelatedCount = mainAnimeRelated.length;
+            if (mainAnimeRelatedCount <= 0) {
+                relatedAnimeMainBlock.style.display = "none";
+            }
             relatedContainers.forEach((container) => {
-                let mainAnimeRelated = _ANIME_RELATED_.filter(anime => anime.anime && anime.anime.id);
-                let mainAnimeRelatedCount = mainAnimeRelated.length;
                 mainAnimeRelatedCount--;
                 for (let i = 0; i < mainAnimeRelatedCount; i++) {
                     let newAnimeRelatedCount = `
