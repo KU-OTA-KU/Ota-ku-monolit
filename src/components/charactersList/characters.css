@@ -26,10 +26,11 @@
 }
 
 .characters-list-tit .characters-list-container {
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(80px, 1fr));
   gap: 10px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  position: relative;
 }
 
 .characters-list-tit .characters-list-container::-webkit-scrollbar {
@@ -39,9 +40,8 @@
 .characters-list-container .character-content {
   display: flex;
   flex-direction: column;
-  width: 95px;
+  width: 100%;
   height: 100%;
-  min-width: 95px;
   overflow: hidden;
 }
 
@@ -88,6 +88,37 @@
   align-items: center;
 }
 
+@media screen and (max-width:  1140px) {
+  .characters-list-tit .characters-list-container {
+    grid-template-columns: repeat(10, minmax(80px, 1fr));
+  }
+}
+
+
+@media screen and (max-width:  920px) {
+  .characters-list-tit .characters-list-container {
+    grid-template-columns: repeat(7, minmax(80px, 1fr));
+  }
+}
+
+@media screen and (max-width:  768px) {
+  .characters-list-tit .characters-list-container {
+    grid-template-columns: repeat(6, minmax(80px, 1fr));
+  }
+}
+
+
+@media screen and (max-width:  570px) {
+  .characters-list-tit .characters-list-container {
+    grid-template-columns: repeat(5, minmax(80px, 1fr));
+  }
+}
+
+@media screen and (max-width:  500px) {
+  .characters-list-tit .characters-list-container {
+    grid-template-columns: repeat(4, minmax(80px, 1fr));
+  }
+}
 
 @media screen and (max-width: 425px) {
   .characters-list-title h2 {
@@ -100,5 +131,11 @@
 
   .characters-list-title h6{
     text-align: center;
+  }
+}
+
+@media screen and (max-width:  370px) {
+  .characters-list-tit .characters-list-container {
+    grid-template-columns: repeat(3, minmax(80px, 1fr));
   }
 }
