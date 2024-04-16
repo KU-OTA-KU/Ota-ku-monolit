@@ -3,7 +3,7 @@ const limit = 10;
 let loading = false;
 let nextPageTimeout = null;
 let animeFound = undefined;
-
+let animeFoundInitialized = false;
 // let maxFetchsInAnimeList = 10;
 
 
@@ -104,12 +104,14 @@ async function fetchAnimeData() {
             );
             if (animeList.length === 0) {
                 animeFound = false;
-                if (!animeFound) {
+                if (!animeFoundInitialized) {
                     displayNotAnimeFound(".main-content");
+                    animeFoundInitialized = true;
                     return;
                 }
             } else {
                 animeFound = true;
+                animeFoundInitialized = true;
                 generateAnimeListStekelton(animeList.length, ".main-content");
                 displayAnimeList(animeList, ".main-content");
             }
