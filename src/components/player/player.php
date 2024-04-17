@@ -10,7 +10,7 @@
                     <button id="is-off"><i class="fa-solid fa-microphone"></i>Озвучка</button>
                 </div>
                 <div class="player-right-panel-content">
-                    <a href="">Kodik</a>
+                    <a href="javascript:void(0)">Kodik</a>
                 </div>
             </div>
         </div>
