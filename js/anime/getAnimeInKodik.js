@@ -20,7 +20,7 @@ async function animesNotfound() {
 
     let noAnimeHTML = `
       <div class="kodik-anime-not-found">
-        <h3>Aниме не найдено. 😔🚫</h3>
+        <h3>Нечего не найдено. 😔🚫</h3>
       </div>
     `;
     kodikSelector.insertAdjacentHTML('beforeend', noAnimeHTML);
