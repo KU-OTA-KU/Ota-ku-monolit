@@ -104,7 +104,7 @@ if (!$isMobile) {
 ?>
 <!-- popular Init End -->
 <!-- anime Ban_1 Init Start -->
-<?php include_once 'src/components/banners/ban_1.php'; ?>
+<?php include_once 'src/components/banners/ban_1_type_1.php'; ?>
 <!-- anime Ban_1 Init End-->
 <!-- main Start -->
 <main class="main">
@@ -121,7 +121,7 @@ if (!$isMobile) {
 </main>
 <!-- main End -->
 <!-- anime Ban_1 Init Start -->
-<?php include_once 'src/components/banners/ban_1.php'; ?>
+<?php include_once 'src/components/banners/ban_1_type_1.php'; ?>
 <!-- anime Ban_1 Init End-->
 <!-- footer Init Start -->
 <?php include_once 'src/components/footer/footer.php'; ?>

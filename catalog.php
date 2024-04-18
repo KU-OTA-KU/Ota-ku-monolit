@@ -42,7 +42,7 @@
 <?php include_once 'src/components/genres/genres.php'; ?>
 <!-- all genres Init End -->
 <!-- anime Ban_1 Init Start -->
-<?php include_once  'src/components/banners/ban_1.php'; ?>
+<?php include_once 'src/components/banners/ban_1_type_1.php'; ?>
 <!-- anime Ban_1 Init End-->
 <!-- main Start -->
 <main class="main">

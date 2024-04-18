@@ -57,15 +57,15 @@ if (isset($_GET['animeId'])) {
 <!-- anime Stills Init Start -->
 <?php include_once 'src/components/stills/animeStills.php'; ?>
 <!-- anime Stills Init End -->
-<!-- anime Ban_1 Init Start -->
-<?php include_once  'src/components/banners/ban_1.php'; ?>
-<!-- anime Ban_1 Init End-->
+<!-- anime Ban_1_type_1 Init Start -->
+<?php include_once 'src/components/banners/ban_1_type_1.php'; ?>
+<!-- anime Ban_1_type1 Init End-->
 <!-- anime player Init Start -->
 <?php include_once 'src/components/player/player.php'; ?>
 <!-- anime player Init End -->
-<!-- anime Ban_1 Init Start -->
-<?php include_once  'src/components/banners/ban_1.php'; ?>
-<!-- anime Ban_1 Init End-->
+<!-- anime Ban_2_type_1 Init Start -->
+<?php include_once 'src/components/banners/ban_2_type_1.php'; ?>
+<!-- anime Ban_2_type_1 Init End-->
 <!-- anime related Init Start-->
 <?php include_once 'src/components/animeRelated/animeRelated.php'; ?>
 <!-- anime related Init End-->
