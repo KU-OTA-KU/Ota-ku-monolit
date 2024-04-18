@@ -20,6 +20,9 @@ if (isset($_GET['animeId'])) {
 
         gtag('config', 'G-XKSYJXXKPB');
     </script>
+    <!-- Yandex.RTB -->
+    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>OTA-KU Смотрть Аниме</title>

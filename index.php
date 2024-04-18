@@ -17,6 +17,9 @@ require_once('inc/other/set_mobile_cookie.php');
 
         gtag('config', 'G-XKSYJXXKPB');
     </script>
+    <!-- Yandex.RTB -->
+    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
     <link rel="stylesheet" href="css/flickity.min.css">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -32,6 +35,7 @@ require_once('inc/other/set_mobile_cookie.php');
     <link rel="stylesheet" href="src/components/flickity/flickity.css"/>
     <link rel="stylesheet" href="src/components/genres/genres.css"/>
     <link rel="stylesheet" href="src/components/most/most.css"/>
+    <link rel="stylesheet" href="src/components/banners/banners.css"/>
     <link rel="stylesheet" href="src/components/popular/popular.css"/>
     <link rel="stylesheet" href="src/components/filter/filter.css"/>
     <link rel="stylesheet" href="src/components/content/content.css"/>
@@ -56,6 +60,9 @@ if (!$isMobile) {
 }
 ?>
 <!-- most Init End -->
+<!-- anime Ban_1 Init Start -->
+<?php include_once  'src/components/banners/ban_1.php'; ?>
+<!-- anime Ban_1 Init End-->
 <!-- popular Init Start -->
 <?php
 if (!$isMobile) {
