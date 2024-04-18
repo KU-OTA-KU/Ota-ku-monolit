@@ -8,10 +8,19 @@ require_once('inc/other/set_mobile_cookie.php');
 <html lang="ru">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XKSYJXXKPB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XKSYJXXKPB');
+    </script>
     <link rel="stylesheet" href="css/flickity.min.css">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>OTA-KU Смотреть аниме Онлайн</title>
+    <title>OTA-KU Путь Отаку</title>
     <link rel="shortcut icon" href="./assets/images/ota-ku-sign.ico" type="image/x-icon">
     <script src="js/other/mobileMode.js"></script>
     <link rel="stylesheet" href="src/_root/root.css"/>

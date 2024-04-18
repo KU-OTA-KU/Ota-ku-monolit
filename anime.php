@@ -11,9 +11,18 @@ if (isset($_GET['animeId'])) {
 <html lang="ru">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XKSYJXXKPB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XKSYJXXKPB');
+    </script>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>OTA-KU</title>
+    <title>OTA-KU Смотрть Аниме</title>
     <link rel="shortcut icon" href="./assets/images/ota-ku-sign.ico" type="image/x-icon">
     <link rel="stylesheet" href="src/_root/root.css"/>
     <link rel="stylesheet" href="css/palette_dark.css"/>
