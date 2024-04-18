@@ -61,8 +61,37 @@ if (isset($_GET['animeId'])) {
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://kit.fontawesome.com/36abf4b57f.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/anime/getAnimeInKodik.js"></script>
+<!--<script src="js/anime/getAnimeInKodik.js"></script>-->
+<script>
+    var kodikAddPlayers = {
+        width: "100%",
+        height: "100%",
+        onDomReady: false,
+        shikimoriID: `${currentAnime}`,
+        foundCallback: function (data, link) {},
+        notFoundCallback: function (data) {
+            console.log("eta anime chkaa ara");
+            animesNotfound()
+        },
+        translationID: "voices",
+        types: "anime,anime-serial",
+    };
 
+    !function(e,n,t,r,a){r=e.createElement(n),a=e.getElementsByTagName(n)
+        [0],r.async=!0,r.src=t,a.parentNode.insertBefore(r,a)}
+    (document,"script","//kodik-add.com/add-players.min.js");
+
+    async function animesNotfound() {
+        let kodikSelector = document.getElementById("kodik-player");
+
+        let noAnimeHTML = `
+      <div class="kodik-anime-not-found">
+        <h3>Нечего не найдено. 😔🚫</h3>
+      </div>
+    `;
+        kodikSelector.insertAdjacentHTML('beforeend', noAnimeHTML);
+    }
+</script>
 <script defer src="js/_BLACKLIST.js"></script>
 <script defer src="js/other/delay.js"></script>
 <script defer src="js/other/scrollToAnchor.js"></script>
