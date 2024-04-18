@@ -12,19 +12,55 @@ require_once('inc/other/set_mobile_cookie.php');
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XKSYJXXKPB"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'G-XKSYJXXKPB');
     </script>
     <!-- Yandex.RTB -->
-    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script>window.yaContextCb = window.yaContextCb || []</script>
     <script src="https://yandex.ru/ads/system/context.js" async></script>
     <link rel="stylesheet" href="css/flickity.min.css">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>OTA-KU Путь Отаку</title>
-    <link rel="shortcut icon" href="./assets/images/ota-ku-sign.ico" type="image/x-icon">
+    <!-- SEO -->
+    <link rel="shortcut icon" href="assets/images/ota-ku-sign.ico" type="image/x-icon">
+    <meta name="description"
+          content="OTA-KU - ваш путеводитель в мир аниме. Наши рекомендации и обширная коллекция помогут вам насладиться лучшими аниме.">
+    <meta name="keywords"
+          content="
+          ota-ku Смотреть аниме онлайн,
+          OTA-KU,
+          аниме сайт для прасмотора любимых аниме,
+          сайт аниме сериалов  ота-ку,
+          сайт аниме отаку,
+          аниме смотреть онлайн на русском языке,
+          аниме смотреть,
+          искать аниме,
+          Смотреть аниме на русском,
+          смотреть аниме онлайн,
+          анимация,
+          аниме,
+          манга,
+          отаку,
+          япония,
+          японская культура,
+          японская анимация,
+          японская музыка,
+          аниме-подборка,
+          аниме-премьера,
+          аниме-легенды,
+          аниме-забавы,
+          аниме-персонажи,
+          аниме,
+          отаку,
+          рекомендации по прасмотору любимых аниме">
+
     <script src="js/other/mobileMode.js"></script>
     <link rel="stylesheet" href="src/_root/root.css"/>
     <link rel="stylesheet" href="css/palette_dark.css"/>
@@ -60,9 +96,6 @@ if (!$isMobile) {
 }
 ?>
 <!-- most Init End -->
-<!-- anime Ban_1 Init Start -->
-<?php include_once  'src/components/banners/ban_1.php'; ?>
-<!-- anime Ban_1 Init End-->
 <!-- popular Init Start -->
 <?php
 if (!$isMobile) {
@@ -70,6 +103,9 @@ if (!$isMobile) {
 }
 ?>
 <!-- popular Init End -->
+<!-- anime Ban_1 Init Start -->
+<?php include_once 'src/components/banners/ban_1.php'; ?>
+<!-- anime Ban_1 Init End-->
 <!-- main Start -->
 <main class="main">
     <div class="main-inner">
@@ -84,6 +120,9 @@ if (!$isMobile) {
     </div>
 </main>
 <!-- main End -->
+<!-- anime Ban_1 Init Start -->
+<?php include_once 'src/components/banners/ban_1.php'; ?>
+<!-- anime Ban_1 Init End-->
 <!-- footer Init Start -->
 <?php include_once 'src/components/footer/footer.php'; ?>
 <!-- footer Init End -->

@@ -161,12 +161,24 @@
 
 .filt-button button {
  display: flex;
+ width: 100%;
+ outline: none;
+ border-radius: 15px;
  align-items: center;
+ border: none;
  justify-content: center;
  gap: 5px;
- padding: 7px;
- font-size: 1em;
+ padding: 8px 0;
+ font-size: 1.1em;
  cursor: pointer;
+ background-color: rgba(25, 118, 210, 0.80);
+ color: white;
+ transition: background-color 0.2s ease-in-out;
+}
+
+.filt-button button:hover {
+ /*background-color: var(--filt-button-bg-hov);*/
+ background-color: rgba(39, 134, 228, 0.80);
 }
 
 .filt-button button i {
@@ -312,27 +324,7 @@
  .main-tit {
   flex-direction: column;
  }
-
- .filt-button button {
-  width: 100%;
-  border: none;
-  border-radius: 15px;
-  /*background-color: var(--filt-button-bg-color);*/
-  background-color: rgba(25, 118, 210, 0.60);
-  color: var(--color-white);
-  transition: 0.2s all;
- }
-
- .filt-button button:hover {
-  /*background-color: var(--filt-button-bg-hov);*/
-  background-color: #4265E9;
- }
 }
-
-
-
-
-
 
 @media screen and (max-width: 425px) {
  .main-filter {

@@ -127,6 +127,7 @@
 
   .characters-list-tit .characters-list-container {
     justify-content: space-evenly !important;
+    gap: 5px;
   }
 
   .characters-list-title h6{

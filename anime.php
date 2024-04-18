@@ -36,6 +36,7 @@ if (isset($_GET['animeId'])) {
     <link rel="stylesheet" href="src/components/animeDescription/animeDescription.css"/>
     <link rel="stylesheet" href="src/components/stills/animeStills.css"/>
     <link rel="stylesheet" href="src/components/player/player.css"/>
+    <link rel="stylesheet" href="src/components/banners/banners.css"/>
     <link rel="stylesheet" href="src/components/animeRelated/animeRelated.css"/>
     <link rel="stylesheet" href="src/components/charactersList/characters.css"/>
     <link rel="stylesheet" href="src/components/footer/footer.css"/>
@@ -56,9 +57,15 @@ if (isset($_GET['animeId'])) {
 <!-- anime Stills Init Start -->
 <?php include_once 'src/components/stills/animeStills.php'; ?>
 <!-- anime Stills Init End -->
+<!-- anime Ban_1 Init Start -->
+<?php include_once  'src/components/banners/ban_1.php'; ?>
+<!-- anime Ban_1 Init End-->
 <!-- anime player Init Start -->
 <?php include_once 'src/components/player/player.php'; ?>
 <!-- anime player Init End -->
+<!-- anime Ban_1 Init Start -->
+<?php include_once  'src/components/banners/ban_1.php'; ?>
+<!-- anime Ban_1 Init End-->
 <!-- anime related Init Start-->
 <?php include_once 'src/components/animeRelated/animeRelated.php'; ?>
 <!-- anime related Init End-->

@@ -158,6 +158,11 @@
   .main-content {
     gap: 5px;
   }
+
+  .main-content {
+    grid-template-columns: repeat(2, minmax(50px, 180px));
+    justify-content: space-evenly;
+  }
 }
 
 @media screen and (max-width: 350px) {
