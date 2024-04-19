@@ -132,24 +132,6 @@ if (!$isMobile) {
     </div>
 </main>
 <!-- main End -->
-<!--  banner init start-->
-<section class="ban_1-container">
-    <div class="ban_1-container-inner">
-        <div class="ban_1-container-tit">
-            <!-- Yandex.RTB R-A-7609325-2 -->
-            <div id="yandex_rtb_R-A-7609325-2"></div>
-            <script>
-                window.yaContextCb.push(()=>{
-                    Ya.Context.AdvManager.render({
-                        "blockId": "R-A-7609325-2",
-                        "renderTo": "yandex_rtb_R-A-7609325-2"
-                    })
-                })
-            </script>
-        </div>
-    </div>
-</section>
-<!--  banner init end -->
 <!-- footer Init Start -->
 <?php include_once 'src/components/footer/footer.php'; ?>
 <!-- footer Init End -->

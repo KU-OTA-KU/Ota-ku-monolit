@@ -138,13 +138,15 @@ window.addEventListener("scroll", () => {
 
 function triggerScrollUntilScrollAppears() {
     console.log(animeFound)
-    if (!canScroll() && animeFound === true || animeFound === undefined) {
-        setTimeout(() => {
-            loadNextPage()
-            triggerScrollUntilScrollAppears();
-        }, 500);
+    if(currPage <= maxFetchsInAnimeList) {
+        if (!canScroll() && animeFound === true || animeFound === undefined) {
+            setTimeout(() => {
+                loadNextPage()
+                triggerScrollUntilScrollAppears();
+            }, 500);
+        }
+        // } else {
+        //     console.log("Scrollni erevmaaaa");
+        // }
     }
-    // } else {
-    //     console.log("Scrollni erevmaaaa");
-    // }
 }

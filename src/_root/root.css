@@ -31,9 +31,11 @@
  font-family: 'Roboto-regular';
  src: url('../../assets/fonts/roboto/Roboto-Regular.ttf') format('truetype');
 }
+
 /* body */
 body {
  display: flex;
+ gap: 10px;
  flex-wrap: wrap;
  flex-direction: column;
  overflow: hidden;
@@ -48,6 +50,11 @@ body {
  background-color: var(--body-background-color);
 }
 
+@media screen and (max-width: 425px) {
+ body {
+  gap: 5px !important;
+ }
+}
 
 button {
  font-size: 1em;
@@ -69,6 +76,15 @@ h2 {
  font-size: 1.5em;
 }
 
+ul {
+ list-style-type: none;
+}
+
+a {
+ color: currentColor;
+ text-decoration: none;
+}
+
 @media screen and (max-width: 1024px) {
  h2 {
   font-size: 1.3em;
@@ -81,11 +97,4 @@ h2 {
  }
 }
 
-ul {
- list-style-type: none;
-}
 
-a {
- color: currentColor;
- text-decoration: none;
-}

@@ -1,6 +1,5 @@
 .top-popular-animes {
   width: 100%;
-  padding: 10px 0;
 }
 
 .top-popular-animes .top-popular-animes-inner {
@@ -44,7 +43,7 @@
 }
 
 .top-popular-animes-content::-webkit-scrollbar {
-  height: 0px;
+  height: 0;
 }
 
 
