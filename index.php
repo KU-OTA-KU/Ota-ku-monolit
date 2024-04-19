@@ -30,8 +30,34 @@ require_once('inc/other/set_mobile_cookie.php');
     <title>OTA-KU: Смотреть аниме онлайн бесплатно в хорошем качестве</title>
     <!-- SEO -->
     <link rel="shortcut icon" href="assets/images/ota-ku-sign.ico" type="image/x-icon">
-    <meta name="description" content="OTA-KU - ваш путеводитель в мир аниме. Наши рекомендации и обширная коллекция помогут вам насладиться лучшими аниме.">
-    <meta name="keywords" content="OTA-KU, аниме, сайт, смотреть, онлайн, рекомендации">
+    <meta name="description"
+          content="OTA-KU - ваш путеводитель в мир аниме. Наши рекомендации и обширная коллекция помогут вам насладиться лучшими аниме.">
+    <meta name="keywords" content="OTA-KU, аниме, сайт, смотреть, онлайн, ота-ку сайт аниме,">
+    <meta name="subject"
+          content="Аниме, Смотреть аниме на русском языке Бесплатно, сайт просмотра аниме, смотреть лучшие аниме на хорошем качестве онлайн без регистрации, аниме сериалы, аниме фильмы, японская анимация, озвучка на русском, субтитры, популярные аниме, новинки аниме">
+    <meta name="language" content="RU">
+    <meta name="robots" content="index, follow">
+    <meta name="revised" content="Friday August 26th 2018 5:55 pm">
+    <meta name="abstract" content="OTA-KU - ваш путеводитель в мир аниме">
+    <meta name="topic"
+          content="Аниме, Смотреть аниме на русском языке Бесплатно, сайт просмотра аниме, смотреть лучшие аниме на хорошем качестве онлайн без регистрации, аниме сериалы, аниме фильмы, японская анимация, озвучка на русском, субтитры, популярные аниме, новинки аниме">
+    <meta name="summary" content="OTA-KU - ваш путеводитель в мир аниме">
+    <meta name="Classification" content="Entertainment">
+    <meta name="author" content="Vahe Sargsyan">
+    <meta name="category" content="просмотр аниме">
+    <meta name="reply-to" content="w33bv.gl@domain.com">
+    <meta name="url" content="https://www.ota-ku.ru">
+    <meta name="identifier-URL" content="https://www.ota-ku.ru">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="1 day">
+    <meta property="og:title" content="OTA-KU">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ota-ku.ru">
+    <meta property="og:image" content="assets/images/ota-ku-sign.ico">
+    <meta property="og:site_name" content="OTA-KU">
+    <meta property="og:description"
+          content="OTA-KU - ваш путеводитель в мир аниме. Наши рекомендации и обширная коллекция помогут вам насладиться лучшими аниме.">
     <script src="js/other/mobileMode.js"></script>
     <link rel="stylesheet" href="src/_root/root.css"/>
     <link rel="stylesheet" href="css/palette_dark.css"/>
@@ -74,9 +100,24 @@ if (!$isMobile) {
 }
 ?>
 <!-- popular Init End -->
-<!-- anime Ban_1 Init Start -->
-<?php include_once 'src/components/banners/ban_1_type_1.php'; ?>
-<!-- anime Ban_1 Init End-->
+<!--  banner init start-->
+<section class="ban_1-container">
+    <div class="ban_1-container-inner">
+        <div class="ban_1-container-tit">
+            <!-- Yandex.RTB R-A-7609325-1 -->
+            <div id="yandex_rtb_R-A-7609325-1"></div>
+            <script>
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-7609325-1",
+                        "renderTo": "yandex_rtb_R-A-7609325-1"
+                    })
+                })
+            </script>
+        </div>
+    </div>
+</section>
+<!--  banner init end -->
 <!-- main Start -->
 <main class="main">
     <div class="main-inner">
@@ -91,6 +132,24 @@ if (!$isMobile) {
     </div>
 </main>
 <!-- main End -->
+<!--  banner init start-->
+<section class="ban_1-container">
+    <div class="ban_1-container-inner">
+        <div class="ban_1-container-tit">
+            <!-- Yandex.RTB R-A-7609325-2 -->
+            <div id="yandex_rtb_R-A-7609325-2"></div>
+            <script>
+                window.yaContextCb.push(()=>{
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-7609325-2",
+                        "renderTo": "yandex_rtb_R-A-7609325-2"
+                    })
+                })
+            </script>
+        </div>
+    </div>
+</section>
+<!--  banner init end -->
 <!-- footer Init Start -->
 <?php include_once 'src/components/footer/footer.php'; ?>
 <!-- footer Init End -->
@@ -114,8 +173,8 @@ if (!$isMobile) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
         integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/flickity/genres.js"></script>
 <script src="js/flickity/popularAnimes.js"></script>
+<script src="js/flickity/genres.js"></script>
 <script src="js/topSlider/flickityTopAnimes.js"></script>
 
 <script defer src="js/_BLACKLIST.js"></script>
@@ -133,7 +192,7 @@ if (!$isMobile) {
             await mostFetchOnGoing(5);
             await fetchPopularAnimes(11);
         }
-        await fetchAnimeData();
+        triggerScrollUntilScrollAppears();
     }
 
     window.addEventListener('load', async () => {
@@ -142,4 +201,5 @@ if (!$isMobile) {
     });
 </script>
 </body>
+
 </html>

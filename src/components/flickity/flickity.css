@@ -122,6 +122,16 @@
   transition: color 0.2s ease-in-out;
 }
 
+.top-slider-anime-more-button {
+  transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.gallery-cell:hover .gallery-cell-info .top-slider-anime-more-button {
+  border: 2px solid #2786e4;
+  color: #2786e4;
+  border-radius: 30px;
+}
+
 .flickity-genres-list a:hover {
   color: white;
 }

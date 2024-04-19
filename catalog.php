@@ -41,9 +41,24 @@
 <!-- all genres Init Start -->
 <?php include_once 'src/components/genres/genres.php'; ?>
 <!-- all genres Init End -->
-<!-- anime Ban_1 Init Start -->
-<?php include_once 'src/components/banners/ban_1_type_1.php'; ?>
-<!-- anime Ban_1 Init End-->
+<!--  banner init start-->
+<section class="ban_1-container">
+    <div class="ban_1-container-inner">
+        <div class="ban_1-container-tit">
+            <!-- Yandex.RTB R-A-7609325-3 -->
+            <div id="yandex_rtb_R-A-7609325-3"></div>
+            <script>
+                window.yaContextCb.push(()=>{
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-7609325-3",
+                        "renderTo": "yandex_rtb_R-A-7609325-3"
+                    })
+                })
+            </script>
+        </div>
+    </div>
+</section>
+<!--  banner init end -->
 <!-- main Start -->
 <main class="main">
     <div class="main-inner">

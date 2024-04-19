@@ -203,7 +203,7 @@ function displayFilterParam($paramName, $paramValue)
                 <!-- </div> -->
             </div>
             <div class="submit">
-                <button type="submit">Поищем, сэмпай 😊?</button>
+                <button type="submit"><!--Поищем, сэмпай 😊?--> Искать</button>
             </div>
         </form>
     </div>

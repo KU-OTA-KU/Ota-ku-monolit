@@ -24,7 +24,7 @@ function displayAnimeListInFlickity(animeList, selector) {
                             Жанры: 
                             ${genres} 
                         </div>
-                        <a href="anime.php?animeId=${anime.id}">Подробнее</a>
+                        <a href="anime.php?animeId=${anime.id}" class="top-slider-anime-more-button">Подробнее</a>
                     </div>
                 </div>
             </div>

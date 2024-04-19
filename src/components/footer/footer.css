@@ -6,6 +6,10 @@ footer {
  margin-top: 10px;
 }
 
+footer:hover .footer-inner-tit img {
+ filter: grayscale(0);
+}
+
 .footer-inner-container {
  width: 100%;
  padding: 0 10px;
@@ -33,10 +37,6 @@ footer {
  filter: grayscale(1);
  margin-bottom: 5px;
  transition: filter 0.2s ease-in-out;
-}
-
-.footer-inner-tit img:hover {
- filter: grayscale(0);
 }
 
 .footer-inner-tit p {
@@ -93,7 +93,7 @@ footer {
 }
 
 .footer-copyright a {
- color: #2994ff;
+ color: #1976D2;
  cursor: pointer;
  text-decoration: underline;
  transition: color 0.2s ease-in-out;

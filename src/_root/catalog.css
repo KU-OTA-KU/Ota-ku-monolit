@@ -4,4 +4,5 @@
 
 header .header-navigation .nav-button:nth-child(2) {
   pointer-events: none;
+  display: none;
 }

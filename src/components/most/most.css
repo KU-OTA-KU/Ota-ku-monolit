@@ -17,6 +17,8 @@
  justify-content: space-between;
 }
 
+
+
 .most-container-tit .most-content-gallery-cell {
  width: calc(25% - 20px);
 }
@@ -34,6 +36,10 @@
  flex-direction: row;
  border-bottom: 1px solid rgba(255, 255, 255, 0.075);
  cursor: pointer;
+}
+
+.most-content-movie:hover .most-name {
+   color: #2786e4;
 }
 
 .most-content-movie .most-content-movie-image {
@@ -75,6 +81,7 @@
  overflow: hidden;
  text-overflow: ellipsis;
  width: 100%;
+ transition: color 0.2s ease-in-out;
  border-radius: 5px;
  height: 17px !important;
  background: linear-gradient(
@@ -103,7 +110,6 @@
            rgba(23, 23, 23, 1) 40%,
            rgba(32, 32, 32, 1) 100%
  );
- border-radius: 5px;
  font-size: 0.8em;
  color: var(--status-font-color);
  align-items: center;

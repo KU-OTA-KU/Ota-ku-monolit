@@ -57,15 +57,41 @@ if (isset($_GET['animeId'])) {
 <!-- anime Stills Init Start -->
 <?php include_once 'src/components/stills/animeStills.php'; ?>
 <!-- anime Stills Init End -->
-<!-- anime Ban_1_type_1 Init Start -->
-<?php include_once 'src/components/banners/ban_1_type_1.php'; ?>
-<!-- anime Ban_1_type1 Init End-->
+<section class="ban_1-container">
+    <div class="ban_1-container-inner">
+        <div class="ban_1-container-tit">
+            <!-- Yandex.RTB R-A-7609325-4 -->
+            <div id="yandex_rtb_R-A-7609325-4"></div>
+            <script>
+                window.yaContextCb.push(()=>{
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-7609325-4",
+                        "renderTo": "yandex_rtb_R-A-7609325-4"
+                    })
+                })
+            </script>
+        </div>
+    </div>
+</section>
 <!-- anime player Init Start -->
 <?php include_once 'src/components/player/player.php'; ?>
 <!-- anime player Init End -->
-<!-- anime Ban_2_type_1 Init Start -->
-<?php include_once 'src/components/banners/ban_2_type_1.php'; ?>
-<!-- anime Ban_2_type_1 Init End-->
+<section class="ban_1-container">
+    <div class="ban_1-container-inner">
+        <div class="ban_1-container-tit">
+            <!-- Yandex.RTB R-A-7609325-5 -->
+            <div id="yandex_rtb_R-A-7609325-5"></div>
+            <script>
+                window.yaContextCb.push(()=>{
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-7609325-5",
+                        "renderTo": "yandex_rtb_R-A-7609325-5"
+                    })
+                })
+            </script>
+        </div>
+    </div>
+</section>
 <!-- anime related Init Start-->
 <?php include_once 'src/components/animeRelated/animeRelated.php'; ?>
 <!-- anime related Init End-->

@@ -137,7 +137,11 @@ header {
   display: flex;
   width: 100%;
   border-radius: 20px;
-  padding: 10px 20px;
+  padding: 9px 20px;
+  height: 100%;
+  transition: border 0.2s ease-in-out;
+  max-height: 35px;
+  border: 1px solid transparent;
 }
 
 .header-search form button {
@@ -153,6 +157,7 @@ header {
 
 .header-search form button i {
   font-size: 1em;
+  transition: color 0.2s ease-in-out;
   color: var(--header-search-form-button-i-color);
 }
 
@@ -190,6 +195,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-search:hover form button i {
+  color: #1976d2;
+}
+
+.header-search:hover form{
+  border: 1px solid #1976d2;
 }
 
 /* media requests */

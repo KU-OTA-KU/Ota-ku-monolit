@@ -140,7 +140,7 @@
  border: none;
  border-radius: 20px;
  cursor: pointer;
- background-color: #1976d2;
+ background-color: #1976D2;
  transition: background-color 0.2s;
  height: 40px;
  color: var(--color-white);
@@ -148,7 +148,7 @@
 
 .filter-selector .submit button:hover {
  /*background-color: var(--user-log-in-1-button-hov-backrogund-color);*/
- background-color: #4265E9;
+ background-color: #2786e4;
 }
 
 .filt-button {

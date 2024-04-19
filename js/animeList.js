@@ -1,8 +1,8 @@
 let currPage = 1;
 const limit = 10;
 let loading = false;
-let maxFetchsInAnimeList = 5;
-let animeList = [];
+let maxFetchsInAnimeList = 3;
+let animeFound = undefined;
 
 async function fetchAnimeData() {
     try {
@@ -108,6 +108,16 @@ function isNearBottom() {
     return window.innerHeight + window.scrollY >= mainContentBottom - 200;
 }
 
+function canScroll() {
+    const body = document.body;
+    const html = document.documentElement;
+    const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+    const bodyHeight = body.scrollHeight;
+    const htmlHeight = html.scrollHeight;
+    const maxScroll = Math.max(bodyHeight, htmlHeight) - windowHeight;
+    return maxScroll > 0 && (bodyHeight > windowHeight || htmlHeight > windowHeight);
+}
+
 function loadNextPage() {
     if (!loading) {
         loading = true;
@@ -125,3 +135,16 @@ window.addEventListener("scroll", () => {
         loadNextPage();
     }
 });
+
+function triggerScrollUntilScrollAppears() {
+    console.log(animeFound)
+    if (!canScroll() && animeFound === true || animeFound === undefined) {
+        setTimeout(() => {
+            loadNextPage()
+            triggerScrollUntilScrollAppears();
+        }, 500);
+    }
+    // } else {
+    //     console.log("Scrollni erevmaaaa");
+    // }
+}

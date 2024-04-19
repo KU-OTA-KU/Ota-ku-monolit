@@ -208,6 +208,7 @@ function loadNextPage() {
         // }
     }
 }
+
 window.addEventListener("scroll", () => {
     if (isNearBottom()) {
         loadNextPage();
