@@ -1,6 +1,6 @@
 <footer>
     <div class="footer-inner-container">
-        <div class="footer-inner-tit">
+        <div class="footer-inner-tit" id="wdwdwdtit">
             <div class="footer-one-container">
                 <div class="footer-logo">
                     <img src="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/assets/images/ota-ku.png" alt="animeCo">

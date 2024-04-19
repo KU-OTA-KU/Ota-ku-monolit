@@ -11,13 +11,13 @@ footer {
  padding: 0 10px;
 }
 
-.footer-inner-tit {
+.footer-inner-tit, #wdwdwdtit {
  max-width: 1500px;
  margin: 0 auto;
- height: 100%;
+ width: 100%;
  display: flex;
- flex-direction: column;
- gap: 10px;
+ flex-direction: column !important;
+ gap: 10px !important;
 }
 
 .footer-one-container {
@@ -56,7 +56,7 @@ footer {
 }
 
 .contacts ul li span {
-  color: white;
+ color: white;
 }
 
 .documents h3,
@@ -81,28 +81,28 @@ footer {
 }
 
 .documents ul li a {
-  transition: color 0.2s ease-in-out;
+ transition: color 0.2s ease-in-out;
 }
 
 .documents ul li a:hover {
-  color: white;
+ color: white;
 }
 
 .footer-copyright {
-  width: 100%;
+ width: 100%;
 }
 
 .footer-copyright a {
-  color: #2994ff;
-  cursor: pointer;
-  text-decoration: underline;
-  transition: color 0.2s ease-in-out;
+ color: #2994ff;
+ cursor: pointer;
+ text-decoration: underline;
+ transition: color 0.2s ease-in-out;
 }
-
 
 .footer-copyright a:hover {
-  color: #2786e4;
+ color: #2786e4;
 }
+
 @media screen and (max-width: 1440px) {
  .footer-other {
   display: flex;

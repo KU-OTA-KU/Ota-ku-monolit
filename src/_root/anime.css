@@ -19,5 +19,9 @@ header {
 }
 
 .footer-inner-tit {
-  max-width: 1300px;
+  max-width: 1300px !important;
+}
+
+.ban_1-container-tit {
+  max-width: 1300px !important;
 }
