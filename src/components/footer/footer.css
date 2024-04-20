@@ -3,7 +3,6 @@ footer {
  padding: 20px 0;
  border-top: 1px solid var(--footer-border-top-color);
  width: 100%;
- margin-top: 10px;
 }
 
 footer:hover .footer-inner-tit img {

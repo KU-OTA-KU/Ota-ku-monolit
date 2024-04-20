@@ -103,4 +103,9 @@
  --characters-anime-content-p-background-color: linear-gradient(90deg, rgba(31, 35, 38, 1) 0%, rgba(31, 35, 38, 1) 40%, rgba(255, 255, 255, 0.09) 100%);
 /* Player */
  --player-background-color: #0C1013;
+/* what-is-anime */
+ --what-is-anime-container-h1-color: #2786e4;
+ --what-is-anime-container-h1-color-hover: #2786e4;
+ --what-is-anime-social-item-2-hover-color-youtube: #FB0000;
+ --what-is-anime-social-item-3-hover-color-telegram: #279EDA;
 }

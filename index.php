@@ -68,6 +68,7 @@ require_once('inc/other/set_mobile_cookie.php');
     <link rel="stylesheet" href="src/components/flickity/flickity.css"/>
     <link rel="stylesheet" href="src/components/genres/genres.css"/>
     <link rel="stylesheet" href="src/components/most/most.css"/>
+    <link rel="stylesheet" href="src/components/animeWelcome/whatisAnime.css"/>
     <link rel="stylesheet" href="src/components/banners/banners.css"/>
     <link rel="stylesheet" href="src/components/popular/popular.css"/>
     <link rel="stylesheet" href="src/components/filter/filter.css"/>
@@ -93,6 +94,7 @@ if (!$isMobile) {
 }
 ?>
 <!-- most Init End -->
+
 <!-- popular Init Start -->
 <?php
 if (!$isMobile) {
@@ -132,6 +134,9 @@ if (!$isMobile) {
     </div>
 </main>
 <!-- main End -->
+<!-- what is anime Init Start-->
+<?php include_once  'src/components/animeWelcome/whatIsAnime.php'; ?>
+<!-- what is anime Init End-->
 <!-- footer Init Start -->
 <?php include_once 'src/components/footer/footer.php'; ?>
 <!-- footer Init End -->

@@ -66,6 +66,10 @@ p, h1, h2, h3, h4, h5, h6, span, strong, b, pre, a {
  user-select: none;
 }
 
+h1 {
+ font-size: 2.2em;
+}
+
 h2 {
  font-size: 2em;
 }
@@ -85,13 +89,21 @@ a {
 
 @media screen and (max-width: 1024px) {
  h2 {
-  font-size: 1.3em;
+  font-size: 1.8em;
+ }
+
+ h1 {
+  font-size: 2em;
  }
 }
 
 @media screen and (max-width: 425px) {
  h2 {
-  font-size: 1em;
+  font-size: 1.5em;
+ }
+
+ h1 {
+  font-size: 1.7em;
  }
 }
 
