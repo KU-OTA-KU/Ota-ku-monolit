@@ -49,11 +49,11 @@ async function main() {
 
         // 5) append anime Name
         let animeName = document.querySelector(".anime-title-h2");
-        let appendAnimeName = `<h2>${_ANIME_RUSSIAN_NAME_}</h2>`;
+        let appendAnimeName = `<h1>${_ANIME_RUSSIAN_NAME_}</h1>`;
         animeName.insertAdjacentHTML("beforeend", appendAnimeName);
         animeName.style.cssText = "background: transparent !important;";
 
-        // 6) appemd anime Score
+        // 6) append anime Score
         let animeScore = document.querySelector(".anime-score");
         let appendAnimeScore = `<p><i class="fa-solid fa-star"></i>${_ANIME_SCORE_}</p>`;
         animeScore.insertAdjacentHTML("beforeend", appendAnimeScore);
@@ -65,19 +65,16 @@ async function main() {
         animeGenresList.insertAdjacentHTML("beforeend", genresHTML);
 
         // 8) append anime about
-        let animeAbout = document.querySelector(".anime-about");
         let animeDescription = document.querySelector(".anime-description .anime-description-tit");
         if (_ANIME_DESCRIPTION_ !== null) {
             const cleanedDescription = _ANIME_DESCRIPTION_.replace(/\[.*?\]/g, "");
             let appendAnimeAbout = `<p>${cleanedDescription}</p>`;
-            animeAbout.insertAdjacentHTML("beforeend", appendAnimeAbout);
             animeDescription.insertAdjacentHTML("beforeend", appendAnimeAbout);
-            animeAbout.style.cssText = "background: transparent !important;";
         } else {
-            let appendAnimeAbout = `<p>Описание не доступно</p>`;
-            animeAbout.insertAdjacentHTML("beforeend", appendAnimeAbout);
-            animeDescription.insertAdjacentHTML("beforeend", appendAnimeAbout);
-            animeAbout.style.cssText = "background: transparent !important;";
+            animeDescription.style.display = "none";
+            console.log("no have description")
+            // let appendAnimeAbout = `<p>Описание не доступно</p>`;
+            // animeDescription.insertAdjacentHTML("beforeend", appendAnimeAbout);
         }
 
         // 9) append anime stills
@@ -137,8 +134,8 @@ async function main() {
                 let character = _ANIME_CHARACTER_ROLES_[index];
                 if (!character) return;
                 let characterHTML = `
-            <div class="character-content-image"><img src="${character.character.poster.mini2xUrl}" alt="${character.character.name}"></div>
-            <p style="background: transparent !important;">${character.character.name}</p>
+            <div class="character-content-image"><img src="${character.character.poster.mini2xUrl}" alt="Аниме Персонаж ${character.character.name}"></div>
+            <p style="background: transparent !important;">${character.character.russian}</p>
         `;
                 block.innerHTML = characterHTML;
                 // block.insertAdjacentHTML("beforeend", characterHTML);

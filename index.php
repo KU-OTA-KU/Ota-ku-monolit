@@ -60,7 +60,7 @@ require_once('inc/other/set_mobile_cookie.php');
           content="OTA-KU - ваш путеводитель в мир аниме. Наши рекомендации и обширная коллекция помогут вам насладиться лучшими аниме.">
     <script src="js/other/mobileMode.js"></script>
     <link rel="stylesheet" href="src/_root/root.css"/>
-    <link rel="stylesheet" href="css/palette_dark.css"/>
+    <link rel="stylesheet" href="css/palette/dark_1.css"/>
     <link rel="stylesheet" href="css/scrollbar.css">
     <link rel="stylesheet" href="css/main.css"/>
 

@@ -20,11 +20,7 @@
  width: 100%;
  aspect-ratio: 1 / 0.62;
  background: rgb(23, 23, 23);
- background: linear-gradient(
-           90deg,
-           rgba(23, 23, 23, 1) 40%,
-           rgba(32, 32, 32, 1) 100%
- );
+ background: var(--stills-anime-content-background-color);
  border-radius: 5px;
  overflow: hidden;
  position: relative;
@@ -50,13 +46,12 @@
 .anime-stills-title {
  width: 100%;
  margin-bottom: 5px;
- font-size: 1.5em;
  color: #ececec;
 }
 
 .anime-stills-title h6 {
  font-weight: normal;
- color: var(--top-popular-title-h6-color);
+ color: var(--stills-anime-title-h6-color);
 }
 
 @media screen and (max-width: 768px) {
@@ -69,6 +64,7 @@
 @media screen and (max-width: 425px) {
  .anime-stills-container {
   gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
  }
 
  .anime-stills-title h2 {

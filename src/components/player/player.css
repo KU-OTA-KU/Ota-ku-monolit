@@ -1,5 +1,5 @@
 .player {
- background-color: #171717;
+ background-color: var(--player-background-color);
  width: 100%;
 }
 
@@ -18,15 +18,16 @@
 }
 
 .player-tit .player-container {
- width: 75%;
- padding: 20px 0;
- aspect-ratio: 177 / 105;
+ /*width: 75%;*/
+ width: 100%;
+ padding: 10px 0;
+ aspect-ratio: 177 / 95;
 }
 
-.player-tit .player-right-panel {
- padding: 20px 0;
- width: 25%;
-}
+/*.player-tit .player-right-panel {*/
+/* padding: 20px 0;*/
+/* width: 25%;*/
+/*}*/
 
 .ozvucka-or-player {
  width: 100%;
@@ -95,27 +96,34 @@
 @media screen and (max-width: 900px) {
  .player-container {
   width: 100% !important;
-  padding-bottom: 0 !important;
  }
 
- .player-tit {
-  flex-direction: column !important;
-  gap: 0 !important;
- }
+ /*.player-tit {*/
+ /* flex-direction: column !important;*/
+ /* gap: 0 !important;*/
+ /*}*/
 
- .player-right-panel {
-  width: 100% !important;
- }
+ /*.player-right-panel {*/
+ /* width: 100% !important;*/
+ /*}*/
 }
 
 @media screen and (max-width: 768px) {
  /*.player {*/
  /*  margin: 20px 0 ;*/
  /*}*/
+
+ .player-tit .player-container {
+  aspect-ratio: 177 / 110;
+ }
 }
 
 @media screen and (max-width: 425px) {
  /*.player-tit {*/
  /*  flex-direction: column-reverse !important;*/
  /*}*/
+
+ .player-tit .player-container {
+  aspect-ratio: 177 / 115;
+ }
 }

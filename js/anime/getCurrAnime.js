@@ -40,7 +40,8 @@ async function getCurrAnime(GET) {
           rolesEn
           character { 
             id 
-            name 
+            name
+            russian
             poster { 
               id 
               mini2xUrl

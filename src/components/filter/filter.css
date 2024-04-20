@@ -28,19 +28,18 @@
 }
 
 
-
 .filter-clear button {
- padding: 4.5px 10px;
+ padding: 5px 10px;
  display: flex;
  align-items: center;
  font-size: 1em;
  gap: 8px;
  border-radius: 20px;
- color: var(--filter-clear-button-color);
+ color: var(--filter-filter-clear-button);
  background-color: transparent;
  border: none;
  cursor: pointer;
- transition: 0.2s;
+ transition: background-color 0.2s ease-in-out;
 }
 
 .filter-clear button img {
@@ -50,7 +49,7 @@
 }
 
 .filter-clear button:hover {
- background-color: rgba(255, 255, 255, 0.09);
+ background-color: var(--filter-filter-clear-button-hover);
 }
 
 .filter-selector {
@@ -59,14 +58,9 @@
 
 .filter-selector select {
  padding: 10px 15px;
- font-family: "Poppins", sans-serif;
- font-weight: 400;
- font-style: normal;
- font-size: 1em;
- width: 100%;
  border: none;
  color: rgba(255, 255, 255, 0.8);
- background-color: var(--filter-clear-select-background-color);
+ background-color: var(--filter-filter-select-background-color);
  cursor: pointer;
  position: relative;
  display: inline-block;
@@ -78,8 +72,10 @@
 }
 
 .filter-selector label {
- font-size: 0.9em;
+ font-size: 1em;
+ padding: 10px 0 3px 0;
  width: 100%;
+ display: block;
 }
 
 .filter-selector select:focus {
@@ -96,8 +92,8 @@
 
 .filter-box {
  height: 100%;
- padding: 10px;
- background-color: var(--filter-box-bg-color);
+ padding: 20px 10px;
+ background-color: var(--filter-filter-genre-box-color);
  border-radius: 10px;
 }
 
@@ -137,18 +133,19 @@
  width: 100%;
  padding: 0 20px;
  /*background-color: var(--user-log-in-1-button-backrogund-color);*/
- border: none;
  border-radius: 20px;
  cursor: pointer;
- background-color: #1976D2;
- transition: background-color 0.2s;
+ background-color: var(--filter-filter-search-button-color);
+ border: 2px solid var(--filter-filter-search-button-border-color);
+ transition: background-color 0.2s ease-in-out;
  height: 40px;
  color: var(--color-white);
 }
 
 .filter-selector .submit button:hover {
  /*background-color: var(--user-log-in-1-button-hov-backrogund-color);*/
- background-color: #2786e4;
+ background-color: var(--filter-filter-search-button-hover-color);
+ border: 2px solid var(--filter-filter-search-button-border-hover-color);
 }
 
 .filt-button {
@@ -171,14 +168,13 @@
  padding: 8px 0;
  font-size: 1.1em;
  cursor: pointer;
- background-color: rgba(25, 118, 210, 0.80);
+ background-color: var(--filter-filter-filt-button);
  color: white;
  transition: background-color 0.2s ease-in-out;
 }
 
 .filt-button button:hover {
- /*background-color: var(--filt-button-bg-hov);*/
- background-color: rgba(39, 134, 228, 0.80);
+ background-color: var(--filter-filter-filt-button);
 }
 
 .filt-button button i {
@@ -193,7 +189,7 @@
 .filter-query {
  padding: 10px;
  width: 100%;
- background-color: #171717;
+ background-color: var(--filter-filter-query-background-color);
  margin-top: 10px;
 }
 
@@ -214,26 +210,22 @@
 }
 
 .filter-query .filter-item {
-  padding-top: 5px;
+ padding-top: 5px;
 }
 
 .custom-select .custom-select-title {
  padding: 8px 15px;
- font-family: "Poppins", sans-serif;
- font-weight: 400;
- font-style: normal;
  font-size: 1em;
  width: 100%;
  border: none;
- color: rgba(255, 255, 255, 0.8);
- background-color: var(--filter-clear-select-background-color);
+ color: var(--filter-filter-custom-select-title-color);
+ background-color: var(--filter-filter-custom-select-title-background-color);
  cursor: pointer;
  position: relative;
  display: inline-block;
  -webkit-appearance: none;
  -moz-appearance: none;
  appearance: none;
- margin-bottom: 5px;
 }
 
 .custom-select .custom-select-options {
@@ -243,7 +235,7 @@
  overflow-y: scroll;
  position: absolute;
  width: 100%;
- background-color: var(--filter-custom-select-background-color);
+ background-color: var(--filter-filter-custom-select-options-background-color);
  padding: 8px 15px;
  border: 1px solid var(--filter-custom-select-border-color)
 }
@@ -261,16 +253,17 @@
 .custom-select .custom-select-options div input,
 .custom-select .custom-select-options div label {
  cursor: pointer;
+ padding: 0;
 }
 
 .custom-select .custom-select-options div input {
  margin-right: 10px;
- transform: scale(1.2);
+ transform: scale(1.4);
 }
 
 @media screen and (max-width: 930px) {
  .custom-select .custom-select-options::-webkit-scrollbar {
-  width: 0px;
+  width: 0;
  }
 
  .main-filter {
@@ -284,7 +277,7 @@
   max-width: 350px;
   width: 100%;
   height: 100dvh;
-  background-color: var(--filter-bg-color);
+  background-color: var(--filter-filter-background-color);
   z-index: 990;
   padding: 20px;
   overflow: hidden;

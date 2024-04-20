@@ -20,7 +20,7 @@
     <title>OTA-KU Каталог</title>
     <link rel="shortcut icon" href="./assets/images/ota-ku-sign.ico" type="image/x-icon">
     <link rel="stylesheet" href="src/_root/root.css"/>
-    <link rel="stylesheet" href="css/palette_dark.css"/>
+    <link rel="stylesheet" href="css/palette/dark_1.css"/>
     <link rel="stylesheet" href="css/scrollbar.css">
     <link rel="stylesheet" href="css/main.css"/>
 

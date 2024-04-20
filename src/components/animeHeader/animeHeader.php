@@ -18,7 +18,6 @@
               <div class="anime-score"></div>
               <div class="anime-genres-list"></div>
             </div>
-            <div class="anime-about"></div>
           </div>
         </div>
       </div>

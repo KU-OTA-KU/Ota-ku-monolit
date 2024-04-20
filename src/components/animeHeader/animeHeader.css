@@ -7,31 +7,11 @@
  position: relative;
 }
 
-.anime-background::before {
- content: '';
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- background-repeat: no-repeat;
- background-size: cover;
- background-position: center;
- opacity: 0; /* Начальная прозрачность */
- transition: opacity 0.3s ease-in-out; /* Плавный переход прозрачности */
-}
-
 .anime-background .anime-back-gradient {
  position: absolute;
  width: 100%;
  height: 100%;
- /*background: linear-gradient(*/
- /*        0deg,*/
- /*        rgba(18, 18, 18, 1) 0%,*/
- /*        rgba(18, 18, 18, 1) 30%,*/
- /*        rgba(18, 18, 18, 0.5895133053221288) 100%*/
- /*);*/
- background: linear-gradient(0deg, rgb(18 18 18) 0%, rgb(18 18 18 / 99%) 50%, rgb(18 18 18 / 66%) 100%);
+ background: var(--anime-header-background-back-gradient);
 }
 
 .anime-background .anime-back-content {
@@ -67,13 +47,7 @@
 .anime-back-global-info-image {
  width: 100%;
  aspect-ratio: 1 / 1.4;
- background: rgb(23, 23, 23);
- background: linear-gradient(
-           90deg,
-           rgba(23, 23, 23, 1) 40%,
-           rgba(32, 32, 32, 1) 100%
- );
- aspect-ratio: 1 / 1.4;
+ background: var(--anime-header-global-info-image-background-gradient);
  position: relative;
  border-radius: 5px;
  overflow: hidden;
@@ -101,12 +75,12 @@
  width: 100%;
  padding: 10px 0;
  outline: none;
- border: none;
- background-color: #1976d2;
+ background-color: var(--anime-header-global-info-watch-button-background-color);
  color: white;
+ border: 2px solid var(--anime-header-global-info-watch-button-border-color);
  cursor: pointer;
  transition: background-color 0.2s;
- text-wrap: nowrap;
+ white-space: nowrap;
 }
 
 .anime-back-global-info-watch-button button:nth-child(1) i {
@@ -115,7 +89,8 @@
 }
 
 .anime-back-global-info-watch-button button:nth-child(1):hover {
- background-color: #2786e4;
+ border-color: var( --anime-header-global-info-watch-button-border-color-hover);
+ background-color: var(--anime-header-global-info-watch-button-background-color-hover);
 }
 
 .anime-back-global-info-watch-button button:nth-child(2) {
@@ -123,21 +98,22 @@
  padding: 10px 0;
  outline: none;
  border: none;
- background-color: transparent;
- color: white;
+ background-color: var(--anime-header-global-info-report-button-background-color);
+ color: var(--anime-header-global-info-report-button-text-color);
  cursor: pointer;
- transition: background-color 0.2s;
- text-wrap: nowrap;
+ transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+ white-space: nowrap;
 }
 
 .anime-back-global-info-watch-button button:nth-child(2):hover {
- background-color: rgba(255, 255, 255, 0.05);
+ background-color: var(--anime-header-global-info-report-button-background-color-hover);
+ color: var(--anime-header-global-info-report-button-text-color-hover);
 }
 
 .anime-back-global-info-watch-button button:nth-child(2) i {
  font-size: 1.2em;
  margin-right: 10px;
- color: orange;
+ color: yellow;
 }
 
 .anime-back-global-current-anime-information {
@@ -149,13 +125,7 @@
  display: flex;
  height: 20px !important;
  border-radius: 4px;
- background: linear-gradient(
-           90deg,
-           rgba(23, 23, 23, 1) 40%,
-           rgba(32, 32, 32, 1) 100%
- );
- font-size: 1em;
- color: var(--status-font-color);
+ color: var(--anime-header-global-info-status-text-color);
  align-items: center;
  justify-content: space-between;
  gap: 5px;
@@ -170,7 +140,7 @@
 }
 
 .anime-eng-jpg-name p:nth-child(2) {
- text-wrap: nowrap;
+ white-space: nowrap
 }
 
 .anime-title-h2 {
@@ -178,20 +148,16 @@
  min-width: 50%;
  min-height: 47px;
  border-radius: 4px;
- background: linear-gradient(
-           90deg,
-           rgba(23, 23, 23, 1) 40%,
-           rgba(32, 32, 32, 1) 100%
- );
+
  font-size: 1.5em;
  align-items: center;
  justify-content: flex-start;
  gap: 5px;
  margin-bottom: 3px;
- display: -webkit-box;
- -webkit-line-clamp: 3;
- -webkit-box-orient: vertical;
- overflow: hidden;
+ /*display: -webkit-box;*/
+ /*-webkit-line-clamp: 3;*/
+ /*-webkit-box-orient: vertical;*/
+ /*overflow: hidden;*/
 }
 
 .anime-title-h2 h2 {
@@ -202,17 +168,11 @@
  display: flex;
  height: 20px !important;
  border-radius: 4px;
- background: linear-gradient(
-           90deg,
-           rgba(23, 23, 23, 1) 40%,
-           rgba(32, 32, 32, 1) 100%
- );
  font-size: 1em;
  color: var(--status-font-color);
  align-items: center;
  justify-content: space-between;
  gap: 5px;
- font-size: 1em;
 }
 
 .anime-score p:nth-child(1) {
@@ -234,55 +194,25 @@
 }
 
 .anime-genres-list {
- background: linear-gradient(
-           90deg,
-           rgba(23, 23, 23, 1) 40%,
-           rgba(32, 32, 32, 1) 100%
- );
+ align-items: center;
  min-height: 21px;
  display: flex;
  border-radius: 4px;
  font-size: 1em;
  overflow: hidden;
- color: var(--status-font-color);
+ color: var(--anime-header-global-info-genres-list-text-color);
  gap: 10px;
 }
 
 .anime-genres-list a {
- transition: color 0.2s;
- text-wrap: nowrap;
+ transition: color 0.2s ease-in-out;
+ white-space: nowrap;
  text-decoration: underline;
 }
 
 .anime-genres-list a:hover {
- color: white;
+ color: var(--anime-header-global-info-genres-list-text-color-hover);
 }
-
-.anime-about {
- margin-top: 10px;
- background: linear-gradient(
-           90deg,
-           rgba(23, 23, 23, 1) 40%,
-           rgba(32, 32, 32, 1) 100%
- );
- min-height: 100px;
- border-radius: 4px;
- font-size: 1em;
- color: white;
- gap: 10px;
- color: rgb(185, 185, 185);
- display: -webkit-box;
- -webkit-box-orient: vertical;
- overflow: hidden;
-}
-
-.anime-about p {
- display: -webkit-box;
- -webkit-line-clamp: 3;
- -webkit-box-orient: vertical;
- overflow: hidden;
-}
-
 @media screen and (max-width: 1440px) {
  /*.anime-about p {*/
  /* -webkit-line-clamp: 5 !important;*/
@@ -293,20 +223,15 @@
  /*.anime-background {*/
  /*  min-height: 661px !important;*/
  /*}*/
- .anime-title-h2 {
-  -webkit-line-clamp: 2 !important;
- }
+ /*.anime-title-h2 {*/
+ /* -webkit-line-clamp: 2 !important;*/
+ /*}*/
 }
 
 @media screen and (max-width: 768px) {
  /*.anime-background {*/
  /*  min-height: 1231px !important;*/
  /*}*/
- .anime-about {
-  /*margin-top: 10px;*/
-  display: none;
- }
-
  .anime-eng-jpg-name {
   margin: 0 0 3px 0;
  }
