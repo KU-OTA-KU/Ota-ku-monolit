@@ -1,12 +1,10 @@
 <?php
 global $isMobile;
 require_once('inc/other/set_mobile_cookie.php');
-
 ?>
 
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XKSYJXXKPB"></script>
@@ -29,7 +27,7 @@ require_once('inc/other/set_mobile_cookie.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>OTA-KU: Смотреть аниме онлайн бесплатно в хорошем качестве</title>
     <!-- SEO -->
-    <link rel="shortcut icon" href="assets/images/ota-ku-sign.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/Ota-ku-logo.ico" type="image/x-icon">
     <meta name="description"
           content="OTA-KU - ваш путеводитель в мир аниме. Наши рекомендации и обширная коллекция помогут вам насладиться лучшими аниме.">
     <meta name="keywords" content="OTA-KU, аниме, сайт, смотреть, онлайн, ота-ку сайт аниме,">
@@ -54,7 +52,7 @@ require_once('inc/other/set_mobile_cookie.php');
     <meta property="og:title" content="OTA-KU">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.ota-ku.ru">
-    <meta property="og:image" content="assets/images/ota-ku-sign.ico">
+    <meta property="og:image" content="assets/images/Ota-ku-logo-6.png">
     <meta property="og:site_name" content="OTA-KU">
     <meta property="og:description"
           content="OTA-KU - ваш путеводитель в мир аниме. Наши рекомендации и обширная коллекция помогут вам насладиться лучшими аниме.">

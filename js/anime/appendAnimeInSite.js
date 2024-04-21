@@ -43,7 +43,15 @@ async function main() {
 
         // 4) append anime names in eng and japance
         let animeNameEngJpg = document.querySelector(".anime-eng-jpg-name");
-        let appendAnimeNameEngJpg = `<p>${_ANIME_ENGLISH_NAME_}  /  ${_ANIME_JAPANESE_NAME}</p><p>${_ANIME_AIR_YEAR_} . ${_ANIME_KIND_} . ${_ANIME_STATUS_} </p>`;
+        let animeRussianStatus;
+        if(_ANIME_STATUS_ === 'released') {
+            animeRussianStatus = 'Завершено';
+        } else if(_ANIME_STATUS_ === 'ongoing') {
+            animeRussianStatus = 'Онгоинг';
+        } else {
+            animeRussianStatus = 'Анонс'
+        }
+        let appendAnimeNameEngJpg = `<p>${_ANIME_ENGLISH_NAME_}  /  ${_ANIME_JAPANESE_NAME}</p><p>${_ANIME_AIR_YEAR_} . ${_ANIME_KIND_} . ${animeRussianStatus}</p>`;
         animeNameEngJpg.insertAdjacentHTML("beforeend", appendAnimeNameEngJpg);
         animeNameEngJpg.style.cssText = "background: transparent !important;";
 

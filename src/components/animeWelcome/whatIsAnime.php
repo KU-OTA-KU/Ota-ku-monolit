@@ -25,7 +25,7 @@
                         <b>Мы в соц Сетях: </b>
                     </div>
                     <div class="what-is-anime-social-item">
-                        <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/channel/UC4W8zn36O0oZwgzE_UnV7ng" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                     <div class="what-is-anime-social-item">
                         <a href="https://t.me/+JixEqAyK48UwY2Vi" target="_blank"><i class="fa-brands fa-telegram"></i></a>
