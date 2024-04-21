@@ -25,7 +25,7 @@ require_once('inc/other/set_mobile_cookie.php');
     <link rel="stylesheet" href="css/flickity.min.css">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>OTA-KU: Смотреть аниме онлайн бесплатно в хорошем качестве</title>
+    <title>OTA-KU Смотреть аниме онлайн бесплатно в хорошем качестве</title>
     <!-- SEO -->
     <link rel="shortcut icon" href="assets/images/Ota-ku-logo.ico" type="image/x-icon">
     <meta name="description"

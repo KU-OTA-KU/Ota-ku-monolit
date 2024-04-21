@@ -22,7 +22,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>OTA-KU Каталог</title>
-    <link rel="shortcut icon" href="./assets/images/ota-ku-sign.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/Ota-ku-logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="src/_root/root.css"/>
     <link rel="stylesheet" href="css/palette/dark_1.css"/>
     <link rel="stylesheet" href="css/scrollbar.css">
