@@ -98,13 +98,13 @@ async function main() {
                         `<img src="${stillUrl}"></img>`
                     );
                 } else {
-                    console.warn(
-                        `No screenshot found for anime-stills-content ${index + 1}`
-                    );
+                    let animeStills = document.querySelector(".anime-stills");
+                    animeStills.style.display = 'none';
                 }
             });
         } else {
-            console.warn("No screenshots found for this anime.");
+            let animeStills = document.querySelector(".anime-stills");
+            animeStills.style.display = 'none';
         }
 
         // 10) append anime Characters
