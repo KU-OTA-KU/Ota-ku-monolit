@@ -49,14 +49,13 @@
  text-overflow: ellipsis;
  height: 17px !important;
  border-radius: 5px;
+ transition: color 0.2s ease-in-out;
+ cursor: pointer;
  background: var(--related-anime-content-name-background-color);
 }
 
-
-.related-animes-container .related-animes-block .related-animes-name a {
- white-space: nowrap;
- overflow: hidden;
- text-overflow: ellipsis;
+.related-animes-container .related-animes-block .related-animes-name:hover {
+ color: var(--related-anime-continer-animes-name-link-hover-color);
 }
 
 .related-animes-container .related-animes-block .related-animes-info {

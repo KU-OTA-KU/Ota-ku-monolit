@@ -18,7 +18,7 @@
                     <div class="documents">
                         <h3>Документы</h3>
                         <ul>
-                            <li><a href="#">Политика конфиденциальности</a></li>
+                            <li><a href="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/doc/privacy_policy_ru.php">Политика конфиденциальности</a></li>
                             <li><a href="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/doc/terms_ru.php">Пользовательское
                                     соглашение</a></li>
                             <li><a href="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/doc/authors_ru.php">Правообладатели</a>

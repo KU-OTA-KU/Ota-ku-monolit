@@ -129,7 +129,6 @@ if (isset($_GET['animeId'])) {
     !function(e,n,t,r,a){r=e.createElement(n),a=e.getElementsByTagName(n)
         [0],r.async=!0,r.src=t,a.parentNode.insertBefore(r,a)}
     (document,"script","//kodik-add.com/add-players.min.js");
-
     async function animesNotfound() {
         let kodikSelector = document.getElementById("kodik-player");
 
