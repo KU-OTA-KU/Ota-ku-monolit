@@ -64,6 +64,7 @@
                 <button onclick="window.location.href = 'catalog.php'"><i class="fa-solid fa-layer-group"></i>Каталог</button>
                 <button><i class="fa-solid fa-bolt"></i>Топ</button>
                 <button><i class="fa-regular fa-calendar-days"></i>Расписание Аниме</button>
+                <button><i class="fa-solid fa-film"></i>Reels</button>
                 <button><i class="fa-solid fa-user"></i>Персонажи</button>
                 <button onclick="const randomId = Math.floor(Math.random() *(9999 - 1000 + 1))+ 1000; window.location.href = `anime.php?animeId=${randomId}`"><i class="fa-solid fa-dice"></i>Случайное Аниме</button>
             </div>
