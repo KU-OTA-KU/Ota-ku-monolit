@@ -62,6 +62,7 @@ async function getCurrAnime(GET) {
           }
          relationRu
         }
+        nextEpisodeAt
         description
       }
     }

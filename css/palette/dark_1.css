@@ -89,6 +89,8 @@
  --anime-header-global-info-status-text-color: #b9b9b9;
  --anime-header-global-info-genres-list-text-color: #b9b9b9;
  --anime-header-global-info-genres-list-text-color-hover: white;
+ --anime-header-next-episode-block-color: #b9b9b9;
+ --anime-header-anime-status-info-block-color: #b9b9b9;
  /* Anime Stills */
  --stills-anime-content-background-color: linear-gradient(90deg, rgba(31, 35, 38, 1) 0%, rgba(31, 35, 38, 1) 40%, rgba(255, 255, 255, 0.09) 100%);
  --stills-anime-title-h6-color: #b9b9b9;

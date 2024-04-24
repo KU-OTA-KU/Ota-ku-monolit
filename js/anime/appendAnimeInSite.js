@@ -23,6 +23,7 @@ async function main() {
         const _ANIME_SCREENSHOTS_ = JSON.parse(storedData)[0].screenshots;
         const _ANIME_CHARACTER_ROLES_ = JSON.parse(storedData)[0].characterRoles;
         let _ANIME_RELATED_ = JSON.parse(storedData)[0].related;
+        const _ANIME_NEXT_EPISODE_DATE_ = JSON.parse(storedData)[0].nextEpisodeAt;
         _ANIME_RELATED_ = _ANIME_RELATED_.filter(anime => anime.anime && anime.anime.id);
         // 1) append anime title
         document.title = `OTA-KU ${_ANIME_RUSSIAN_NAME_}`;
@@ -44,9 +45,9 @@ async function main() {
         // 4) append anime names in eng and japance
         let animeNameEngJpg = document.querySelector(".anime-eng-jpg-name");
         let animeRussianStatus;
-        if(_ANIME_STATUS_ === 'released') {
+        if (_ANIME_STATUS_ === 'released') {
             animeRussianStatus = 'Завершено';
-        } else if(_ANIME_STATUS_ === 'ongoing') {
+        } else if (_ANIME_STATUS_ === 'ongoing') {
             animeRussianStatus = 'Онгоинг';
         } else {
             animeRussianStatus = 'Анонс'
@@ -214,6 +215,27 @@ async function main() {
         await createRelatedAnimeBlocks();
         await appendRelatedAnimeBlocks();
 
+        //12) append anime next episode
+        let nextEpisodeBlock = document.querySelector(".anime-next-episode-block");
+        if (_ANIME_STATUS_ === 'ongoing') {
+            moment.locale("ru");
+            const episodeTime = moment(_ANIME_NEXT_EPISODE_DATE_).calendar();
+            let nextEpisodeBlockHTML = `
+              <p>Cледуюший Эпизод: ${episodeTime}</p>
+          `;
+            nextEpisodeBlock.insertAdjacentHTML("beforeend", nextEpisodeBlockHTML);
+            // console.log(episodeTime)
+        } else {
+            nextEpisodeBlock.style.display = "none";
+            console.log("anime not ongoing for gen next episode time");
+        }
+
+        // 13) append anime status info
+        let animeStatusInfoBlock = document.querySelector(".anime-status");
+        let animeStatusInfoBlockHTML = `
+              <p>Статус: <span class="status-core-block ${_ANIME_STATUS_}">${animeRussianStatus}</span></p>
+          `;
+        animeStatusInfoBlock.insertAdjacentHTML("beforeend", animeStatusInfoBlockHTML);
     } else {
         console.warn("No anime data found in sessionStorage.");
     }

@@ -1,0 +1,6 @@
+User-agent: *
+Host: www.ota-ku.ru
+Disallow: /catalog.php
+Disallow: /doc/privacy_policy_ru.php
+Disallow: /doc/terms_ru.php
+Disallow: /doc/authors_ru.php

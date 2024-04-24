@@ -211,6 +211,34 @@
 .anime-genres-list a:hover {
  color: var(--anime-header-global-info-genres-list-text-color-hover);
 }
+
+.anime-next-episode-block {
+ margin-top: 10px;
+ color: var(--anime-header-next-episode-block-color);
+}
+
+.anime-status {
+ position: relative;
+ display: block;
+ margin-top: 10px;
+ color: var(--anime-header-anime-status-info-block-color);
+}
+.anime-status .status-core-block {
+ color: white;
+ padding: 2px 10px;
+}
+.anime-status .status-core-block.ongoing {
+ background-color: #1D78B7;
+}
+
+.anime-status .status-core-block.released {
+ background-color: #419541;
+}
+
+.anime-status .status-core-block.anons {
+ background-color: #CA4929;
+}
+
 @media screen and (max-width: 1440px) {
  /*.anime-about p {*/
  /* -webkit-line-clamp: 5 !important;*/

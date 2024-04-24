@@ -19,6 +19,7 @@
                             <div class="anime-genres-list"></div>
                         </div>
                         <div class="anime-status"></div>
+                        <div class="anime-next-episode-block"></div>
                     </div>
                 </div>
             </div>
