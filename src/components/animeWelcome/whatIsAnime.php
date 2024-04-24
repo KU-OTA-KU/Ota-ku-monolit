@@ -30,6 +30,9 @@
                     <div class="what-is-anime-social-item">
                         <a href="https://t.me/+JixEqAyK48UwY2Vi" target="_blank"><i class="fa-brands fa-telegram"></i></a>
                     </div>
+                    <div class="what-is-anime-social-item">
+                        <a href="https://www.tiktok.com/@ota_ku.off" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="what-is-anime-other">

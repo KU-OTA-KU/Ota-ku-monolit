@@ -71,6 +71,10 @@
  color: var(--what-is-anime-social-item-3-hover-color-telegram);
 }
 
+.what-is-anime-social .what-is-anime-social-item:nth-child(4):hover i {
+ color: var(--what-is-anime-social-item-3-hover-color-tiktok);
+}
+
 @media screen and (max-width: 1020px) {
  .what-is-anime-other {
   display: none;

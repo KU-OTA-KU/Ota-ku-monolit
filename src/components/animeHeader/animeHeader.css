@@ -89,7 +89,7 @@
 }
 
 .anime-back-global-info-watch-button button:nth-child(1):hover {
- border-color: var( --anime-header-global-info-watch-button-border-color-hover);
+ border-color: var(--anime-header-global-info-watch-button-border-color-hover);
  background-color: var(--anime-header-global-info-watch-button-background-color-hover);
 }
 
@@ -223,20 +223,22 @@
  margin-top: 10px;
  color: var(--anime-header-anime-status-info-block-color);
 }
+
 .anime-status .status-core-block {
  color: white;
  padding: 2px 10px;
 }
+
 .anime-status .status-core-block.ongoing {
- background-color: #1D78B7;
+ background-color: var(--anime-header-status-core-block-ongoing-color);
 }
 
 .anime-status .status-core-block.released {
- background-color: #419541;
+ background-color: var(--anime-header-status-core-block-released-color);
 }
 
 .anime-status .status-core-block.anons {
- background-color: #CA4929;
+ background-color: var(--anime-header-status-core-block-anons-color);
 }
 
 @media screen and (max-width: 1440px) {
