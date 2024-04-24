@@ -2,7 +2,7 @@
   color: #4265E9;
 }
 
-header .header-navigation .nav-button:nth-child(2) {
+header .header-navigation {
   pointer-events: none;
   display: none;
 }

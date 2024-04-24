@@ -205,6 +205,105 @@ header {
  border: 1px solid var(--header-search-form-hover-border-color);
 }
 
+.header-navigation button {
+ background-color: #2786E4;
+ height: 35px;
+ width: 50px;
+ border-radius: 2px;
+ display: flex;
+ outline: none;
+ align-items: center;
+ justify-content: center;
+ font-size: 1.4em;
+ color: white;
+ border: 2px solid #2786E4;
+ cursor: pointer;
+ transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.sidenav-name-container {
+ padding: 20px 0;
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+}
+
+.sidenav-name-container button {
+ font-size: 1em;
+ padding: 10px 0;
+ cursor: pointer;
+ width: 100%;
+ transition: color 0.2s ease-in-out;
+ background-color: transparent;
+ display: flex;
+ outline: none;
+ color: white;
+ border: none;
+ font-weight: normal;
+}
+
+.sidenav-name-container button:hover {
+ color: #2786E4 !important;
+}
+
+.sidenav-name-container i {
+ font-size: 1.3em;
+ margin-right: 10px;
+}
+
+
+.header-navigation button:hover {
+ color: #2786E4;
+ background-color: transparent;
+}
+
+.my-sidenav {
+ background-color: #131619;
+ border-right: 2px solid #ffffff12;
+ position: fixed;
+ display: flex;
+ top: 0;
+ opacity: 0;
+ left: -100%;
+ z-index: 1000;
+ height: 100%;
+ padding: 20px 15px;
+}
+
+.my-sidenav .sidenav-inner {
+ width: 100%;
+}
+
+.my-sidenav .sidenav-tit .sidenav-top-name-close-button button {
+ padding: 5px 10px;
+ display: flex;
+ align-items: center;
+ font-size: 1em;
+ gap: 8px;
+ border-radius: 20px;
+ color: var(--filter-filter-clear-button);
+ background-color: transparent;
+ border: none;
+ cursor: pointer;
+ transition: background-color 0.2s ease-in-out;
+}
+
+.my-sidenav .sidenav-tit .sidenav-top-name-close-button button:hover {
+ background-color: #ffffff17;
+}
+
+.sidenav-top-name-close-button {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ font-weight: bold;
+ gap: 50px;
+}
+
+.sidenav-top-name-close-button p {
+ font-size: 1.1em;
+}
+
 /* media requests */
 @media screen and (max-width: 1024px) {
  /* empty  */
@@ -239,6 +338,12 @@ header {
 
 @media screen and (max-width: 468px) {
  /* empty */
+}
+
+@media screen and (max-width: 425px) {
+ .my-sidenav {
+  width: 100%;
+ }
 }
 
 @media screen and (max-width: 375px) {

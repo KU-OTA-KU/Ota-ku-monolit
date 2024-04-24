@@ -166,6 +166,7 @@ if (!$isMobile) {
 <script defer src="js/other/delay.js"></script>
 <script defer src="js/other/shuffleArray.js"></script>
 <script defer src="js/other/scrollToAnchor.js"></script>
+<script defer src="js/header/sidenav.js"></script>
 
 <script defer src="js/animeList.js"></script>
 <script defer src="js/filter/filter.js"></script>
