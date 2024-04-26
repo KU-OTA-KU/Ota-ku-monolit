@@ -26,12 +26,16 @@
 
 .player-tit .player-right-panel {
  width: 25%;
+ border: 1px solid rgb(255 255 255 / 7%);
+ border-radius: 5px;
+ overflow: hidden;
 }
 
 .ozvucka-or-player {
  width: 100%;
  padding-bottom: 20px;
  display: flex;
+
 }
 
 .ozvucka-or-player button {
@@ -42,6 +46,7 @@
  color: white;
  border: none;
  padding: 10px 0;
+ transition: background-color 0.2s ease-in-out;
 }
 
 .ozvucka-or-player button i {
@@ -50,7 +55,7 @@
  color: white;
 }
 
-.ozvucka-or-player #is-on {
+.ozvucka-or-player .active {
  background-color: rgba(25, 118, 210, 0.2);
 }
 
@@ -58,11 +63,13 @@
  width: 100%;
  display: flex;
  flex-direction: column;
- padding: 0 10px;
+ overflow: hidden;
+ height: 450px;
 }
 
 .player-right-panel-content a {
  padding: 5px 0;
+ margin-left: 20px;
  transition: color 0.2s;
 }
 
@@ -92,6 +99,45 @@
  font-size: 1.8em;
 }
 
+.player-right-panel-content .seasons-container {
+ width: 100%;
+ flex-direction: column;
+ gap: 10px;
+ overflow: hidden;
+ overflow-y: scroll;
+ display: flex;
+ height: 100%;
+}
+
+.player-right-panel-content .voices-and-subtitles-container::-webkit-scrollbar,
+.player-right-panel-content .seasons-container::-webkit-scrollbar {
+ width: 0;
+}
+
+.player-right-panel-content .voices-and-subtitles-container {
+ width: 100%;
+ flex-direction: column;
+ gap: 10px;
+ overflow: hidden;
+ overflow-y: scroll;
+ display: none;
+ height: 100%;
+}
+
+.player-right-panel-content .voices-and-subtitles-container a {
+ padding: 5px 0;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.player-right-panel-content .voices-and-subtitles-container a span {
+ font-size: 0.8em;
+ margin-right: 20px;
+ color: var(--player-player-right-panel-voices-seasons-cout-span-color);
+}
+
+
 @media screen and (max-width: 1024px) {
  .player-container {
   width: 100% !important;
@@ -99,36 +145,25 @@
 
  .player-tit {
   flex-direction: column !important;
-  gap: 0 !important;
+  gap: 10px !important;
  }
 
  .player-right-panel {
   width: 100% !important;
  }
-
- .player-right-panel {
-  padding-top: 10px;
- }
 }
 
 @media screen and (max-width: 768px) {
  .player {
-   margin: 20px 0 ;
+  margin: 20px 0;
  }
 
  .player-tit .player-container {
   aspect-ratio: 177 / 110;
  }
-
-
 }
 
 @media screen and (max-width: 425px) {
-
- .player-tit {
-   flex-direction: column-reverse !important;
- }
-
  .player-tit .player-container {
   aspect-ratio: 177 / 115;
  }

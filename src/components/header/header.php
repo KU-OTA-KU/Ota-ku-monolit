@@ -5,15 +5,16 @@
             <div class="header-log-and-nav">
                 <div class="header-logo"
                      onclick="window.location.href = '<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/index.php';">
-                    <img src="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/assets/images/ota-ku.webp" alt=""
+                    <img src="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/assets/images/ota-ku.webp"
+                         alt="Логотип Ota Ku - лучший аниме"
                          id="ota-ku-best-anime-logo"/>
                 </div>
                 <nav class="header-navigation">
                     <button onclick="openSidenav()">
                         <i class="fa-sharp fa-solid fa-bars"></i>
                     </button>
-<!--                    <a href="catalog.php" class="nav-button">КАТАЛОГ</a>-->
-<!--                    <a href="javascript:void(0)" class="nav-button" onclick="scrollToAnchor('main-content')">ТОП</a>-->
+                    <!--                    <a href="catalog.php" class="nav-button">КАТАЛОГ</a>-->
+                    <!--                    <a href="javascript:void(0)" class="nav-button" onclick="scrollToAnchor('main-content')">ТОП</a>-->
                 </nav>
                 <div class="header-search">
                     <form action="catalog.php" method="GET">
@@ -60,14 +61,35 @@
                 </button>
             </div>
             <div class="sidenav-name-container">
-                <button onclick="window.location.href = 'index.php'"><i class="fa-solid fa-house"></i>Главная</button>
-                <button onclick="window.location.href = 'catalog.php'"><i class="fa-solid fa-layer-group"></i>Каталог</button>
+                <button onclick="window.location.href = '/index.php'"><i class="fa-solid fa-house"></i>Главная</button>
+                <button onclick="window.location.href = '/catalog.php'"><i class="fa-solid fa-layer-group"></i>Каталог
+                </button>
                 <button><i class="fa-solid fa-bolt"></i>Топ</button>
                 <button><i class="fa-regular fa-calendar-days"></i>Расписание Аниме</button>
                 <button><i class="fa-solid fa-user"></i>Персонажи</button>
                 <button><i class="fa-solid fa-film"></i>Reels</button>
                 <button><i class="fa-solid fa-blog"></i>Блог</button>
-                <button onclick="const randomId = Math.floor(Math.random() *(9999 - 1000 + 1))+ 1000; window.location.href = `anime.php?animeId=${randomId}`"><i class="fa-solid fa-dice"></i>Случайное Аниме</button>
+                <button onclick="const randomId = Math.floor(Math.random() *(9999 - 1000 + 1))+ 1000; window.location.href = `anime.php?animeId=${randomId}`">
+                    <i class="fa-solid fa-dice"></i>Случайное Аниме
+                </button>
+            </div>
+            <div class="sidenav-user-settings">
+                <p>Настройки:</p>
+                <select class="sidenav-user-sett-selector">
+                    <option>Тема сайта</option>
+                    <option>Темная</option>
+                    <option>Светлая</option>
+                </select>
+                <select class="sidenav-user-sett-selector" id="voice-selector">
+                    <option value="null">Озвучка</option>
+                    <option value="610">Anilibria.TV</option>
+                    <option value="609">AniDub</option>
+                    <option value="910">AniStar</option>
+                    <option value="923">AnimeVost</option>
+                    <option value="767">SHIZA PROJECT</option>
+                    <option value="1071">AniRise.Субтитры</option>
+                    <option value="1291">Crunchyroll.Субтитры</option>
+                </select>
             </div>
         </div>
     </div>

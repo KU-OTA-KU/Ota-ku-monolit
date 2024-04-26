@@ -163,6 +163,7 @@ if (!$isMobile) {
 <script src="js/topSlider/flickityTopAnimes.js"></script>
 
 <script defer src="js/_BLACKLIST.js"></script>
+<script defer src="js/other/setCookie.js"></script>
 <script defer src="js/other/delay.js"></script>
 <script defer src="js/other/shuffleArray.js"></script>
 <script defer src="js/other/scrollToAnchor.js"></script>

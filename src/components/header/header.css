@@ -304,6 +304,29 @@ header {
  font-size: 1.1em;
 }
 
+.sidenav-user-settings {
+ width: 100%;
+ display: flex;
+ gap: 10px;
+ flex-direction: column;
+}
+
+.sidenav-user-settings  select {
+ padding: 8px 15px;
+ font-size: 1em;
+ width: 100%;
+ border: none;
+ color: var(--filter-filter-custom-select-title-color);
+ background-color: var(--filter-filter-custom-select-title-background-color);
+ cursor: pointer;
+ position: relative;
+ display: inline-block;
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ appearance: none;
+ outline: none;
+}
+
 /* media requests */
 @media screen and (max-width: 1024px) {
  /* empty  */

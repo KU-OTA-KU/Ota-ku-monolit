@@ -2,7 +2,7 @@
     <div class="what-is-anime-container-inner">
         <div class="what-is-anime-container-tit">
             <div class="what-is-anime-main">
-                <h1><a href="https://ota-ku.ru">オタ-KU</a> – лучший портал для любителей аниме!</h1>
+                <h1><a href="https://ota-ku.ru">OTA-KU</a> – Смотреть аниме онлайн бесплатно!</h1>
                 <div class="what-is-cont-1">
                     <p><strong>Аниме</strong> – это не просто анимация из Японии, это волшебный мир, где реальность
                         переплетается с фантазией, а обыденное становится необыкновенным! Здесь ты можешь отправиться в

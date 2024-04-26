@@ -5,14 +5,18 @@
                 <div id="kodik-player"></div>
             </div>
             <div class="player-right-panel">
-               <div class="rating-anime">
-                   <div>
-                       <p>shikimori: 8.3</p>
-                   </div>
-                   <div>
-                       <p>IMDB: 2.3</p>
-                   </div>
-               </div>
+                <div class="ozvucka-or-player">
+                    <button class="player-buttons active" id="seasons-button" onclick="selectSeasons()"><i class="fa-solid fa-film"></i>Серии</button>
+                    <button class="player-buttons" id="voices-button" onclick="selectVoices()"><i class="fa-solid fa-microphone"></i>Озвучка</button>
+                </div>
+                <div class="player-right-panel-content">
+                    <div class="voices-and-subtitles-container">
+
+                    </div>
+                    <div class="seasons-container">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>

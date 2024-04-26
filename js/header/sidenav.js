@@ -8,7 +8,7 @@ function openSidenav() {
             targets: sidenav,
             left: ["-100%", 0],
             opacity: [0, 1],
-            duration: 250,
+            duration: 450,
             easing: "easeInOutExpo",
             begin: function () {
                 console.log("Animation started => open sidenav <=");
@@ -28,7 +28,7 @@ function closeSidenav() {
         targets: sidenav,
         left: [0, "-100"],
         opacity: [1, 0],
-        duration: 250,
+        duration: 450,
         easing: "easeInOutExpo",
         complete: function () {
             console.log("Animation Started =>  close sidenav <=");
@@ -37,3 +37,23 @@ function closeSidenav() {
         },
     });
 }
+
+document.getElementById("voice-selector").addEventListener("change", function() {
+    const selectedVoice = this.value;
+    console.log(selectedVoice)
+    setCookie("selectedVoice", selectedVoice, 30);
+});
+
+
+const selectedVoice = getCookie("selectedVoice");
+if (selectedVoice) {
+    const voiceSelector = document.getElementById("voice-selector");
+    const options = voiceSelector.options;
+    for (let i = 0; i < options.length; i++) {
+        if (options[i].value === selectedVoice) {
+            options[i].selected = true;
+            break;
+        }
+    }
+}
+
