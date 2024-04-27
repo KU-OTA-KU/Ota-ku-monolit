@@ -3,7 +3,7 @@
         <div class="footer-inner-tit" id="wdwdwdtit">
             <div class="footer-one-container">
                 <div class="footer-logo">
-                    <img src="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/assets/images/ota-ku.png" alt="animeCo">
+                    <img src="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/assets/images/ota-ku.webp" alt="animeCo">
                     <p>Весь контент на сайте предназначен исключительно для личного ознакомления. Мы используем
                         материалы из
                         свободных источников. Если какой-то контент нарушает ваши авторские права, пожалуйста, свяжитесь

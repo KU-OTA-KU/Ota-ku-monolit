@@ -12,10 +12,23 @@ if (isset($_GET['animeId'])) {
     $animeVoice = null;
     echo "<script>let currentAnimeVoice = $animeVoice</script>";
   }
+
+  if (isset($_GET['episode'])) {
+    $episode = $_GET['episode'];
+    echo "<script>let currentEpisode = $episode</script>";
+  } else if (isset($_COOKIE['selectedEpisode'])) {
+    $episode = $_COOKIE['selectedEpisode'];
+    echo "<script>let currentEpisode = $episode</script>";
+  } else {
+    $episode = "empty";
+    echo "<script>let currentEpisode = '$episode'</script>";
+  }
+
   echo "<script>let currentAnime = $currentAnime;</script>";
   // echo $currentAnime;
 } else {
-  echo "get parametr id not defined!";
+  echo "get parameter id not defined!";
+  header("Location: index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -125,27 +138,27 @@ if (isset($_GET['animeId'])) {
         integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!--<script src="js/anime/getAnimeInKodik.js"></script>-->
-<script>
-    var kodikAddPlayers = {
-        width: "100%",
-        height: "100%",
-        onDomReady: false,
-        shikimoriID: `${currentAnime}`,
-        foundCallback: function (data, link) {
-        },
-        notFoundCallback: function (data) {
-            console.log("eta anime chkaa ara");
-            animesNotfound()
-        },
-        translationID: "voices",
-        types: "anime,anime-serial",
-    };
-
-    !function (e, n, t, r, a) {
-        r = e.createElement(n), a = e.getElementsByTagName(n)
-            [0], r.async = !0, r.src = t, a.parentNode.insertBefore(r, a)
-    }
-    (document, "script", "//kodik-add.com/add-players.min.js");
+<script defer>
+    // var kodikAddPlayers = {
+    //     width: "100%",
+    //     height: "100%",
+    //     onDomReady: false,
+    //     shikimoriID: `${currentAnime}`,
+    //     foundCallback: function (data, link) {
+    //     },
+    //     notFoundCallback: function (data) {
+    //         console.log("eta anime chkaa ara");
+    //         animesNotfound()
+    //     },
+    //     translationID: "voices",
+    //     types: "anime,anime-serial",
+    // };
+    //
+    // !function (e, n, t, r, a) {
+    //     r = e.createElement(n), a = e.getElementsByTagName(n)
+    //         [0], r.async = !0, r.src = t, a.parentNode.insertBefore(r, a)
+    // }
+    // (document, "script", "//kodik-add.com/add-players.min.js");
 
     async function animesNotfound() {
         let kodikSelector = document.getElementById("kodik-player");
@@ -156,6 +169,16 @@ if (isset($_GET['animeId'])) {
       </div>
     `;
         kodikSelector.insertAdjacentHTML('beforeend', noAnimeHTML);
+    }
+
+    function displayAnime(data, voice, episode, season) {
+        console.log("eta data" + voice  + "wdwdw " + season)
+        let currAnimeData = data.results.find(item => item.translation.id === currentAnimeVoice);
+        console.log(currAnimeData)
+        let currAnimeEpisode = currAnimeData.seasons[season].episodes[episode].link;
+        let kodikIframe = document.querySelector("#kodik-player iframe");
+        kodikIframe.src = currAnimeEpisode;
+        console.log(currAnimeEpisode)
     }
 
     fetch(`https://kodikapi.com/search?token=3cf56f8708e24622e6a5cc6747d0d3ee&shikimori_id=${currentAnime}&with_seasons=true&with_episodes_data=true&with_material_data=true`)
@@ -185,19 +208,31 @@ if (isset($_GET['animeId'])) {
                 </a>
             `;
                 voicesBlockContainer.insertAdjacentHTML('beforeend', VoicesLinkTemplateHTML);
-                console.log(totalEpisodesCount);
             });
 
             let seasonsBlockContainer = document.querySelector(".seasons-container");
             let currentAnimeResult;
             if (currentAnimeVoice == null) {
                 currentAnimeResult = data.results[0];
+                currentAnimeVoice = data.results[0].translation.id;
             } else if (data.results.find(item => item.translation.id === currentAnimeVoice)) {
                 currentAnimeResult = data.results.find(item => item.translation.id === currentAnimeVoice);
-            }
-            else if (data.results.find(item => item.translation.id !== currentAnimeVoice)) {
+            } else if (data.results.find(item => item.translation.id !== currentAnimeVoice)) {
                 currentAnimeResult = data.results[0];
+                currentAnimeVoice = data.results[0].translation.id;
                 console.log("sins")
+            }
+
+            if (currentAnimeVoice === null) {
+                let activeVoiceContLink = document.querySelector(".voices-and-subtitles-container a:nth-child(1)");
+                activeVoiceContLink.classList.add("active");
+            } else if (data.results.find(item => item.translation.id === currentAnimeVoice)) {
+                console.log(currentAnimeVoice)
+                let activeVoiceContLink = document.querySelector(`.voice-${currentAnimeVoice}`);
+                activeVoiceContLink.classList.add("active");
+            } else {
+                let activeVoiceContLink = document.querySelector(".voices-and-subtitles-container a:nth-child(1)");
+                activeVoiceContLink.classList.add("active");
             }
 
             if (currentAnimeResult) {
@@ -209,19 +244,40 @@ if (isset($_GET['animeId'])) {
                             if (season.episodes.hasOwnProperty(key)) {
                                 let episode = season.episodes[key];
                                 let episodeBlockContainerHTML = `
-                    <a href="/anime.php">Сезон ${seasonIndex}, Серия ${key}</a>
-                `;
+                    <a data-animeEpisode="${key}" data-animeSeason="${seasonIndex}" class="anime-episode-${key}" href="/anime.php?animeId=${currentAnime}&voice=${currentAnimeVoice}&episode=${key}">Сезон ${seasonIndex}, Серия ${key}</a>
+                                `;
                                 seasonsBlockContainer.insertAdjacentHTML('beforeend', episodeBlockContainerHTML);
                             }
                         }
                     }
                 }
             }
+
+            let selectedSeason;
+            if (currentEpisode === null) {
+                let activeEpisodesBlock = document.querySelector(".seasons-container a:nth-child(1)");
+                activeEpisodesBlock.classList.add("active");
+                selectedSeason = activeEpisodesBlock.getAttribute("data-animeSeason");
+                console.log("wdw")
+            } else if (currentEpisode === "empty") {
+                let activeEpisodesBlockFirst = document.querySelector(".seasons-container a:nth-child(1)");
+                currentEpisode = activeEpisodesBlockFirst.getAttribute("data-animeEpisode");
+                let activeEpisodesBlock = document.querySelector(`.anime-episode-${currentEpisode}`);
+                selectedSeason = activeEpisodesBlock.getAttribute("data-animeSeason");
+                activeEpisodesBlock.classList.add("active");
+            } else {
+                console.log(currentEpisode)
+                let activeEpisodesBlock = document.querySelector(`.anime-episode-${currentEpisode}`);
+                console.log(activeEpisodesBlock)
+                selectedSeason = activeEpisodesBlock.getAttribute("data-animeSeason");
+                activeEpisodesBlock.classList.add("active");
+            }
+            console.log(selectedSeason)
+            displayAnime(data, currentAnimeVoice, currentEpisode, selectedSeason)
         })
         .catch(error => {
             console.error('fetch error => ', error);
         });
-
 
 </script>
 <script defer src="js/_BLACKLIST.js"></script>

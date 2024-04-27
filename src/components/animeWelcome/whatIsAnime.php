@@ -4,13 +4,12 @@
             <div class="what-is-anime-main">
                 <h1><a href="https://ota-ku.ru">OTA-KU</a> – Смотреть аниме онлайн бесплатно!</h1>
                 <div class="what-is-cont-1">
-                    <p><strong>Аниме</strong> – это не просто анимация из Японии, это волшебный мир, где реальность
-                        переплетается с фантазией, а обыденное становится необыкновенным! Здесь ты можешь отправиться в
-                        захватывающее путешествие по разным жанрам, от веселых комедий до захватывающих приключений и
-                        драматических историй. Аниме способно поразить своим разнообразием и глубиной, оставляя
-                        незабываемый след в сердцах своих зрителей. Каждая история - это уникальное приключение, полное
-                        эмоций и вдохновения, готовое погрузить тебя в фантастический мир возможностей и неожиданных
-                        поворотов!</p>
+                    <p>Хочешь смотреть лучшие аниме онлайн бесплатно на русском? У нас ты найдешь огромную базу самых
+                        популярных аниме с качественной русской озвучкой! Наслаждайся захватывающими приключениями,
+                        яркими персонажами и захватывающим сюжетом, не отходя от экрана. Мы предлагаем только лучшие
+                        аниме в HD качестве, чтобы ты мог полностью погрузиться в мир японской анимации. Забудь о поиске
+                        по разным сайтам – у нас все аниме собраны на одной платформе! Присоединяйся к нам прямо сейчас
+                        и окунись в увлекательный мир аниме без каких-либо ограничений!</p>
                 </div>
                 <div class="what-is-cont-2">
                     <p><strong>Ота-ку</strong> (от японского слова <strong>"отаку" "オタク"</strong>.) – это не просто
@@ -25,10 +24,12 @@
                         <b>Мы в соц Сетях: </b>
                     </div>
                     <div class="what-is-anime-social-item">
-                        <a href="https://www.youtube.com/channel/UC4W8zn36O0oZwgzE_UnV7ng" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/channel/UC4W8zn36O0oZwgzE_UnV7ng" target="_blank"><i
+                                    class="fa-brands fa-youtube"></i></a>
                     </div>
                     <div class="what-is-anime-social-item">
-                        <a href="https://t.me/+JixEqAyK48UwY2Vi" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="https://t.me/+JixEqAyK48UwY2Vi" target="_blank"><i
+                                    class="fa-brands fa-telegram"></i></a>
                     </div>
                     <div class="what-is-anime-social-item">
                         <a href="https://www.tiktok.com/@ota_ku.off" target="_blank"><i class="fa-brands fa-tiktok"></i></a>

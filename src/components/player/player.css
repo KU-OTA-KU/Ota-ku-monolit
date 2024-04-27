@@ -68,8 +68,8 @@
 }
 
 .player-right-panel-content a {
- padding: 5px 0;
- margin-left: 20px;
+ padding: 5px 10px;
+ margin: 0 10px;
  transition: color 0.2s;
 }
 
@@ -125,7 +125,6 @@
 }
 
 .player-right-panel-content .voices-and-subtitles-container a {
- padding: 5px 0;
  display: flex;
  justify-content: space-between;
  align-items: center;
@@ -133,8 +132,14 @@
 
 .player-right-panel-content .voices-and-subtitles-container a span {
  font-size: 0.8em;
- margin-right: 20px;
  color: var(--player-player-right-panel-voices-seasons-cout-span-color);
+}
+
+.voices-and-subtitles-container a.active,
+.seasons-container a.active {
+ background-color: white !important;
+ border-radius: 5px;
+ color: #1976D2 !important;
 }
 
 
