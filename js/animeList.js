@@ -15,7 +15,7 @@ async function fetchAnimeData() {
             body: JSON.stringify({
                 query: `
                     query {
-                        animes(season: "2020_2024", limit: ${limit}, page: ${currPage}, kind: "tv") {
+                        animes(season: "2020_2024", limit: ${limit}, page: ${currPage}, kind: "tv,tv_special,ova,ona,special") {
                             id
                             name
                             russian

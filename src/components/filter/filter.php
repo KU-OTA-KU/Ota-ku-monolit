@@ -80,8 +80,8 @@ function displayFilterParam($paramName, $paramValue)
                     <div class="custom-select-options" style="display: none; transform: translateY(10px); opacity: 0;">
                         <div><input type="checkbox" id="type2" name="kind[]" value="tv" <?php echo isChecked('tv', $kind); ?>><label for="type2">Аниме</label></div>
                         <div><input type="checkbox" id="type3" name="kind[]" value="movie" <?php echo isChecked('movie', $kind); ?>><label for="type3">Фильм</label></div>
-                        <!-- <div><input type="checkbox" id="type4" name="kind[]" value="ova" <?php echo isChecked('ova', $kind); ?>><label for="type4">OVA</label></div> -->
-                        <!-- <div><input type="checkbox" id="type5" name="kind[]" value="ona" <?php echo isChecked('ona', $kind); ?>><label for="type5">ONA</label></div> -->
+                        <div><input type="checkbox" id="type4" name="kind[]" value="ova" <?php echo isChecked('ova', $kind); ?>><label for="type4">OVA</label></div>
+                        <div><input type="checkbox" id="type5" name="kind[]" value="ona" <?php echo isChecked('ona', $kind); ?>><label for="type5">ONA</label></div>
                         <div><input type="checkbox" id="type6" name="kind[]" value="special" <?php echo isChecked('special', $kind); ?>><label for="type6">Спецвыпуск</label></div>
                         <div><input type="checkbox" id="type7" name="kind[]" value="tv_special" <?php echo isChecked('tv_special', $kind); ?>><label for="type7">TV-спецвыпуск</label></div>
                         <!-- <div><input type="checkbox" id="type8" name="kind[]" value="pv" <?php echo isChecked('pv', $kind); ?>><label for="type7">PV (промо-видео)</label></div> -->

@@ -54,7 +54,7 @@ async function fetchAnimeData() {
     // check all
     const searchString = search || '';
     const seasonString = season || '';
-    const kindString = kind || 'tv,special,tv_special';
+    const kindString = kind || 'tv,tv_special,ova,ona,special';
     const statusString = status || '';
     const sortString = sort || 'ranked';
     const ratingString = rating || '';
