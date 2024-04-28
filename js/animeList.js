@@ -1,7 +1,7 @@
 let currPage = 1;
-const limit = 10;
+const limit = 30;
 let loading = false;
-let maxFetchsInAnimeList = 3;
+let maxFetchsInAnimeList = 1;
 let animeFound = undefined;
 
 async function fetchAnimeData() {

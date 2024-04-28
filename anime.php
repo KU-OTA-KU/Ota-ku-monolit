@@ -7,7 +7,7 @@ if (isset($_GET['animeId'])) {
   } else if (isset($_COOKIE['selectedVoice'])) {
     $animeVoice = $_COOKIE['selectedVoice'];
   } else {
-    $animeVoice = null;
+    $animeVoice = "null";
   }
 
   if (isset($_GET['episode'])) {
