@@ -102,7 +102,7 @@
     }
 
     window.addEventListener('load', async () => {
-        console.log("%cНачинаю Выполнение запросов...", "color: aqua");
+        console.log("%cStarting Request Execution...", "color: aqua");
         await __INIT__()
     });
 </script>

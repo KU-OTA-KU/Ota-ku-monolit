@@ -346,6 +346,10 @@ header {
   display: none;
  }
 
+ .header-log-and-nav {
+  justify-content: space-between;
+ }
+
  .search {
   display: flex !important;
  }

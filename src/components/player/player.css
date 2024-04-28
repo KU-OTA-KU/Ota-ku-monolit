@@ -21,7 +21,7 @@
 .player-tit .player-container {
  width: 75%;
  /*width: 100%;*/
- aspect-ratio: 177 / 95;
+ aspect-ratio: 177 / 100;
 }
 
 .player-tit .player-right-panel {
@@ -156,6 +156,10 @@
  .player-right-panel {
   width: 100% !important;
  }
+
+ .player-right-panel-content {
+  height: 200px;
+ }
 }
 
 @media screen and (max-width: 768px) {
@@ -163,13 +167,7 @@
   margin: 20px 0;
  }
 
- .player-tit .player-container {
-  aspect-ratio: 177 / 110;
- }
 }
 
 @media screen and (max-width: 425px) {
- .player-tit .player-container {
-  aspect-ratio: 177 / 115;
- }
 }

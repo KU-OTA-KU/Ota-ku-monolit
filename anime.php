@@ -4,26 +4,22 @@ if (isset($_GET['animeId'])) {
 
   if (isset($_GET['voice'])) {
     $animeVoice = $_GET['voice'];
-    echo "<script>let currentAnimeVoice = $animeVoice</script>";
   } else if (isset($_COOKIE['selectedVoice'])) {
     $animeVoice = $_COOKIE['selectedVoice'];
-    echo "<script>let currentAnimeVoice = $animeVoice</script>";
   } else {
     $animeVoice = null;
-    echo "<script>let currentAnimeVoice = $animeVoice</script>";
   }
 
   if (isset($_GET['episode'])) {
     $episode = $_GET['episode'];
-    echo "<script>let currentEpisode = $episode</script>";
   } else if (isset($_COOKIE['selectedEpisode'])) {
     $episode = $_COOKIE['selectedEpisode'];
-    echo "<script>let currentEpisode = $episode</script>";
   } else {
     $episode = "empty";
-    echo "<script>let currentEpisode = '$episode'</script>";
   }
 
+  echo "<script>let currentEpisode = '$episode'</script>";
+  echo "<script>let currentAnimeVoice = $animeVoice</script>";
   echo "<script>let currentAnime = $currentAnime;</script>";
   // echo $currentAnime;
 } else {
@@ -172,7 +168,7 @@ if (isset($_GET['animeId'])) {
     }
 
     function displayAnime(data, voice, episode, season) {
-        console.log("eta data" + voice  + "wdwdw " + season)
+        console.log("eta data" + voice + "wdwdw " + season)
         let currAnimeData = data.results.find(item => item.translation.id === currentAnimeVoice);
         console.log(currAnimeData)
         let currAnimeEpisode = currAnimeData.seasons[season].episodes[episode].link;
@@ -187,93 +183,103 @@ if (isset($_GET['animeId'])) {
         })
         .then(data => {
             console.log(data);
-            let voicesBlockContainer = document.querySelector(".voices-and-subtitles-container");
+            if (data.results.length === 0) {
+                console.log("epmtyAnimeNOt found");
+                let player = document.querySelector(".player")
+                player.style.display = "none";
+            } else {
+                let voicesBlockContainer = document.querySelector(".voices-and-subtitles-container");
 
-            data.results.forEach(function (item) {
-                console.log(item.translation.title);
+                data.results.forEach(function (item) {
+                    console.log(item.translation.title);
 
-                let totalEpisodesCount = 0;
-                if (item.seasons) {
-                    Object.values(item.seasons).forEach(season => {
-                        if (season.episodes) {
-                            totalEpisodesCount += Object.keys(season.episodes).length;
-                        }
-                    });
-                }
+                    let totalEpisodesCount = 0;
+                    if (item.seasons) {
+                        Object.values(item.seasons).forEach(season => {
+                            if (season.episodes) {
+                                totalEpisodesCount += Object.keys(season.episodes).length;
+                            }
+                        });
+                    }
 
-                let VoicesLinkTemplateHTML = `
+                    let VoicesLinkTemplateHTML = `
                 <a class="voice-${item.translation.id}" href="/anime.php?animeId=${currentAnime}&voice=${item.translation.id}">
                     ${item.translation.title}
                     <span>${totalEpisodesCount} серии</span>
                 </a>
             `;
-                voicesBlockContainer.insertAdjacentHTML('beforeend', VoicesLinkTemplateHTML);
-            });
+                    voicesBlockContainer.insertAdjacentHTML('beforeend', VoicesLinkTemplateHTML);
+                });
 
-            let seasonsBlockContainer = document.querySelector(".seasons-container");
-            let currentAnimeResult;
-            if (currentAnimeVoice == null) {
-                currentAnimeResult = data.results[0];
-                currentAnimeVoice = data.results[0].translation.id;
-            } else if (data.results.find(item => item.translation.id === currentAnimeVoice)) {
-                currentAnimeResult = data.results.find(item => item.translation.id === currentAnimeVoice);
-            } else if (data.results.find(item => item.translation.id !== currentAnimeVoice)) {
-                currentAnimeResult = data.results[0];
-                currentAnimeVoice = data.results[0].translation.id;
-                console.log("sins")
-            }
+                let seasonsBlockContainer = document.querySelector(".seasons-container");
+                let currentAnimeResult;
+                if (currentAnimeVoice === null) {
+                    currentAnimeResult = data.results[0];
+                    currentAnimeVoice = data.results[0].translation.id;
+                } else if (data.results.find(item => item.translation.id === currentAnimeVoice)) {
+                    currentAnimeResult = data.results.find(item => item.translation.id === currentAnimeVoice);
+                } else if (data.results.find(item => item.translation.id !== currentAnimeVoice)) {
+                    currentAnimeResult = data.results[0];
+                    currentAnimeVoice = data.results[0].translation.id;
+                    console.log("sins")
+                } else {
+                    currentAnimeResult = data.results[0];
+                    currentAnimeVoice = data.results[0].translation.id;
+                    console.log("sins")
+                }
 
-            if (currentAnimeVoice === null) {
-                let activeVoiceContLink = document.querySelector(".voices-and-subtitles-container a:nth-child(1)");
-                activeVoiceContLink.classList.add("active");
-            } else if (data.results.find(item => item.translation.id === currentAnimeVoice)) {
-                console.log(currentAnimeVoice)
-                let activeVoiceContLink = document.querySelector(`.voice-${currentAnimeVoice}`);
-                activeVoiceContLink.classList.add("active");
-            } else {
-                let activeVoiceContLink = document.querySelector(".voices-and-subtitles-container a:nth-child(1)");
-                activeVoiceContLink.classList.add("active");
-            }
+                if (currentAnimeVoice === null) {
+                    let activeVoiceContLink = document.querySelector(".voices-and-subtitles-container a:nth-child(1)");
+                    activeVoiceContLink.classList.add("active");
+                } else if (data.results.find(item => item.translation.id === currentAnimeVoice)) {
+                    console.log(currentAnimeVoice)
+                    let activeVoiceContLink = document.querySelector(`.voice-${currentAnimeVoice}`);
+                    activeVoiceContLink.classList.add("active");
+                } else {
+                    let activeVoiceContLink = document.querySelector(".voices-and-subtitles-container a:nth-child(1)");
+                    activeVoiceContLink.classList.add("active");
+                }
 
-            if (currentAnimeResult) {
-                console.log(currentAnimeResult);
-                for (let seasonIndex in currentAnimeResult.seasons) {
-                    if (currentAnimeResult.seasons.hasOwnProperty(seasonIndex)) {
-                        let season = currentAnimeResult.seasons[seasonIndex];
-                        for (let key in season.episodes) {
-                            if (season.episodes.hasOwnProperty(key)) {
-                                let episode = season.episodes[key];
-                                let episodeBlockContainerHTML = `
+                if (currentAnimeResult) {
+                    console.log(currentAnimeResult);
+                    for (let seasonIndex in currentAnimeResult.seasons) {
+                        if (currentAnimeResult.seasons.hasOwnProperty(seasonIndex)) {
+                            let season = currentAnimeResult.seasons[seasonIndex];
+                            for (let key in season.episodes) {
+                                if (season.episodes.hasOwnProperty(key)) {
+                                    let episode = season.episodes[key];
+                                    let episodeBlockContainerHTML = `
                     <a data-animeEpisode="${key}" data-animeSeason="${seasonIndex}" class="anime-episode-${key}" href="/anime.php?animeId=${currentAnime}&voice=${currentAnimeVoice}&episode=${key}">Сезон ${seasonIndex}, Серия ${key}</a>
                                 `;
-                                seasonsBlockContainer.insertAdjacentHTML('beforeend', episodeBlockContainerHTML);
+                                    seasonsBlockContainer.insertAdjacentHTML('beforeend', episodeBlockContainerHTML);
+                                }
                             }
                         }
                     }
                 }
-            }
 
-            let selectedSeason;
-            if (currentEpisode === null) {
-                let activeEpisodesBlock = document.querySelector(".seasons-container a:nth-child(1)");
-                activeEpisodesBlock.classList.add("active");
-                selectedSeason = activeEpisodesBlock.getAttribute("data-animeSeason");
-                console.log("wdw")
-            } else if (currentEpisode === "empty") {
-                let activeEpisodesBlockFirst = document.querySelector(".seasons-container a:nth-child(1)");
-                currentEpisode = activeEpisodesBlockFirst.getAttribute("data-animeEpisode");
-                let activeEpisodesBlock = document.querySelector(`.anime-episode-${currentEpisode}`);
-                selectedSeason = activeEpisodesBlock.getAttribute("data-animeSeason");
-                activeEpisodesBlock.classList.add("active");
-            } else {
-                console.log(currentEpisode)
-                let activeEpisodesBlock = document.querySelector(`.anime-episode-${currentEpisode}`);
-                console.log(activeEpisodesBlock)
-                selectedSeason = activeEpisodesBlock.getAttribute("data-animeSeason");
-                activeEpisodesBlock.classList.add("active");
+                let selectedSeason;
+                if (currentEpisode === null) {
+                    let activeEpisodesBlock = document.querySelector(".seasons-container a:nth-child(1)");
+                    activeEpisodesBlock.classList.add("active");
+                    selectedSeason = activeEpisodesBlock.getAttribute("data-animeSeason");
+                    console.log("wdw")
+                } else if (currentEpisode === "empty") {
+                    let activeEpisodesBlockFirst = document.querySelector(".seasons-container a:nth-child(1)");
+                    currentEpisode = activeEpisodesBlockFirst.getAttribute("data-animeEpisode");
+                    let activeEpisodesBlock = document.querySelector(`.anime-episode-${currentEpisode}`);
+                    selectedSeason = activeEpisodesBlock.getAttribute("data-animeSeason");
+                    activeEpisodesBlock.classList.add("active");
+                } else {
+                    console.log(currentEpisode)
+                    let activeEpisodesBlock = document.querySelector(`.anime-episode-${currentEpisode}`);
+                    console.log(activeEpisodesBlock)
+                    selectedSeason = activeEpisodesBlock.getAttribute("data-animeSeason");
+                    activeEpisodesBlock.classList.add("active");
+                }
+                console.log(selectedSeason)
+                displayAnime(data, currentAnimeVoice, currentEpisode, selectedSeason)
             }
-            console.log(selectedSeason)
-            displayAnime(data, currentAnimeVoice, currentEpisode, selectedSeason)
         })
         .catch(error => {
             console.error('fetch error => ', error);
@@ -294,7 +300,7 @@ if (isset($_GET['animeId'])) {
     }
 
     window.addEventListener('load', async () => {
-        console.log("%cНачинаю Выполнение запросов...", "color: aqua");
+        console.log("%cStarting Request Execution...", "color: aqua");
         await __INIT__()
     });
 </script>
