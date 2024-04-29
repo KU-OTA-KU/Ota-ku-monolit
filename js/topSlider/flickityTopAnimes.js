@@ -15,16 +15,16 @@ function displayAnimeListInFlickity(animeList, selector) {
         const animeHTML = `
             <div class="flickity-content-gallery-block">
                 <div class="gallery-cell-content">
-                    <div class="gallery-cell-image"><img src="${anime.poster.originalUrl}" alt="${anime.name}"></div>
+                    <div class="gallery-cell-image"><img src="${anime.poster.originalUrl}" alt="ota-ku-топ аниме-${anime.name}"></div>
                     <div class="gallery-cell-info">
                         <h2>${anime.russian}</h2>
-                        <p>Название: ${anime.japanese}</p>
-                        <p>Оценка: ${anime.score} <i class="fa-solid fa-star" aria-hidden="true"></i></p>
+                        <p>Название: <span>${anime.japanese}</span></p>
+                        <p>Оценка: <span>${anime.score}</span> <i class="fa-solid fa-star" aria-hidden="true"></i></p>
                         <div class="flickity-genres-list">
                             Жанры: 
                             ${genres} 
                         </div>
-                        <a href="anime.php?animeId=${anime.id}" class="top-slider-anime-more-button">Подробнее</a>
+                        <a class="gallery-cell-top-a-watch" href="anime.php?animeId=${anime.id}" class="top-slider-anime-more-button"><i class="fa-solid fa-play"></i>Cмотреть</a>
                     </div>
                 </div>
             </div>

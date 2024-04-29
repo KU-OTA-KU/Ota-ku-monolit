@@ -112,11 +112,6 @@
  transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
-.gallery-cell:hover .gallery-cell-info .top-slider-anime-more-button {
- border: 2px solid var(--top-slider-gallery-cell-content-more-button-border-color);
- color: var(--top-slider-gallery-cell-content-more-button-text-color);
- border-radius: 30px;
-}
 
 .flickity-genres-list a:hover {
  color: var(--top-slider-gallery-cell-content-genres-link-a-hover);
@@ -127,7 +122,7 @@
 }
 
 .gallery-cell-info p, .flickity-genres-list {
- font-size: 0.8em;
+ font-size: 0.7em;
 }
 
 .gallery-cell-info p:nth-child(2) {
@@ -140,9 +135,13 @@
 }
 
 .gallery-cell-info p:nth-child(3) i {
- margin-left: 5px;
+ margin-left: 1px;
  color: var(--top-slider-gallery-cell-content-rating-star-color);
  font-size: 1.1em;
+}
+
+.gallery-cell-info span {
+ color: var(--top-slider-gallery-cell-span-font-color);
 }
 
 .gallery-cell-info a {
@@ -150,12 +149,28 @@
  margin: 10px 0;
  border: 2px solid white;
  border-radius: 30px;
- font-size: 0.8em;
+ display: flex;
+ align-items: center;
+}
+
+.gallery-cell-info .gallery-cell-top-a-watch {
+ font-size: 0.7em;
+ transition: color 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.gallery-cell-info .gallery-cell-top-a-watch:hover {
+ border: 2px solid var(--top-slider-gallery-cell-content-more-button-border-color);
+ color: var(--top-slider-gallery-cell-content-more-button-text-color);
+ border-radius: 30px;
+}
+
+.gallery-cell-info .gallery-cell-top-a-watch i {
+ margin-right: 10px;
 }
 
 .gallery-cell-genres {
  width: 100%;
- padding: 10px 0 0 0 ;
+ padding: 10px 0 0 0;
 }
 
 .gallery-cell-genres a {

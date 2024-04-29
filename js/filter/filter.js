@@ -48,7 +48,7 @@ function openCustomSelect(element) {
             },
         });
     } else {
-        var allSelectOptions = document.querySelectorAll('.custom-select-options');
+        let allSelectOptions = document.querySelectorAll('.custom-select-options');
 
         allSelectOptions.forEach(function (option) {
             if (option !== selectOptions) {

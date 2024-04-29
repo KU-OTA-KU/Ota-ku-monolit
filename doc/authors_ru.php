@@ -1,3 +1,7 @@
+ <?php
+ require_once('../inc/other/theme_init.php');
+
+ ?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -8,7 +12,7 @@
     <title>OTA-KU Праваобладатели</title>
     <link rel="shortcut icon" href="../assets/images/Ota-ku-logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="../src/_root/root.css"/>
-    <link rel="stylesheet" href="../css/palette/dark_1.css"/>
+    <link class="theme-link" rel="stylesheet" href="../css/palette/<?php echo $currentTheme; ?>.css"/>
     <link rel="stylesheet" href="../css/scrollbar.css">
     <link rel="stylesheet" href="../css/main.css"/>
 
@@ -130,5 +134,7 @@
         </div>
     </div>
 </div>
+<script defer src="../js/other/setCookie.js"></script>
+<script defer src="../js/other/theme.js"></script>
 </body>
 </html>

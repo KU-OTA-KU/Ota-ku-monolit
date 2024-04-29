@@ -1,6 +1,7 @@
 <?php
 global $isMobile;
 require_once('inc/other/set_mobile_cookie.php');
+require_once('inc/other/theme_init.php');
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +59,7 @@ require_once('inc/other/set_mobile_cookie.php');
           content="OTA-KU - ваш путеводитель в мир аниме. Наши рекомендации и обширная коллекция помогут вам насладиться лучшими аниме.">
     <script src="js/other/mobileMode.js"></script>
     <link rel="stylesheet" href="src/_root/root.css"/>
-    <link rel="stylesheet" href="css/palette/dark_1.css"/>
+    <link class="theme-link" rel="stylesheet" href="css/palette/<?php echo $currentTheme; ?>.css"/>
     <link rel="stylesheet" href="css/scrollbar.css">
     <link rel="stylesheet" href="css/main.css"/>
 
@@ -83,7 +84,7 @@ require_once('inc/other/set_mobile_cookie.php');
 <?php include_once 'src/components/flickity/flickity.php'; ?>
 <!-- heading Init end -->
 <!-- all genres Init Start -->
-<?php include_once 'src/components/genres/genres.php'; ?>
+<?php //include_once 'src/components/genres/genres.php'; ?>
 <!-- all genres Init End -->
 <!-- most Init Start -->
 <?php
@@ -100,24 +101,7 @@ if (!$isMobile) {
 }
 ?>
 <!-- popular Init End -->
-<!--  banner init start-->
-<section class="ban_1-container">
-    <div class="ban_1-container-inner">
-        <div class="ban_1-container-tit">
-            <!-- Yandex.RTB R-A-7609325-1 -->
-            <div id="yandex_rtb_R-A-7609325-1"></div>
-            <script>
-                window.yaContextCb.push(() => {
-                    Ya.Context.AdvManager.render({
-                        "blockId": "R-A-7609325-1",
-                        "renderTo": "yandex_rtb_R-A-7609325-1"
-                    })
-                })
-            </script>
-        </div>
-    </div>
-</section>
-<!--  banner init end -->
+
 <!-- main Start -->
 <main class="main">
     <div class="main-inner">
@@ -135,6 +119,23 @@ if (!$isMobile) {
 <!-- what is anime Init Start-->
 <?php include_once 'src/components/animeWelcome/whatIsAnime.php'; ?>
 <!-- what is anime Init End-->
+<!--  banner init start-->
+<section class="ban_1-container">
+    <div class="ban_1-container-inner">
+        <div class="ban_1-container-tit">
+            <div id="yandex_rtb_R-A-7609325-1"></div>
+            <script>
+                window.yaContextCb.push(() => {
+                    Ya.Context.AdvManager.render({
+                        "blockId": "R-A-7609325-1",
+                        "renderTo": "yandex_rtb_R-A-7609325-1"
+                    })
+                })
+            </script>
+        </div>
+    </div>
+</section>
+<!--  banner init end -->
 <!-- footer Init Start -->
 <?php include_once 'src/components/footer/footer.php'; ?>
 <!-- footer Init End -->
@@ -159,7 +160,7 @@ if (!$isMobile) {
         integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="js/flickity/popularAnimes.js"></script>
-<script src="js/flickity/genres.js"></script>
+<!--<script src="js/flickity/genres.js"></script>-->
 <script src="js/topSlider/flickityTopAnimes.js"></script>
 
 <script defer src="js/_BLACKLIST.js"></script>
@@ -168,6 +169,7 @@ if (!$isMobile) {
 <script defer src="js/other/shuffleArray.js"></script>
 <script defer src="js/other/scrollToAnchor.js"></script>
 <script defer src="js/header/sidenav.js"></script>
+<script defer src="js/other/theme.js"></script>
 
 <script defer src="js/animeList.js"></script>
 <script defer src="js/filter/filter.js"></script>
@@ -175,7 +177,6 @@ if (!$isMobile) {
     async function __INIT__() {
         await flickityTopAnimesOpen(5);
         if (!checkMobileModeStatus()) {
-            await delay(500);
             await mostFetchOnGoing(5);
             await fetchPopularAnimes(11);
         }

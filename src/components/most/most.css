@@ -102,7 +102,7 @@
 }
 
 .most-content-movie-info .most-status i {
- color: yellow;
+ color: var(--most-content-movie-status-star-color);
 }
 
 

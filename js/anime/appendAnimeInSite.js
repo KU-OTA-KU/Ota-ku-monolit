@@ -16,6 +16,8 @@ async function main() {
         const _ANIME_IMAGE_ = JSON.parse(storedData)[0].poster.originalUrl;
         const _ANIME_AIR_YEAR_ = JSON.parse(storedData)[0].airedOn.year;
         const _ANIME_KIND_ = JSON.parse(storedData)[0].kind;
+        const _ANIME_DURATION_ = JSON.parse(storedData)[0].duration;
+        const _ANIME_RATING_ = JSON.parse(storedData)[0].rating;
         const _ANIME_STATUS_ = JSON.parse(storedData)[0].status;
         const _ANIME_SCORE_ = JSON.parse(storedData)[0].score;
         const _ANIME_GENRES_ = JSON.parse(storedData)[0].genres;
@@ -221,7 +223,7 @@ async function main() {
             moment.locale("ru");
             const episodeTime = moment(_ANIME_NEXT_EPISODE_DATE_).calendar();
             let nextEpisodeBlockHTML = `
-              <p>Cледуюший Эпизод: ${episodeTime}</p>
+              <p>Cледуюший Эпизод: <span>${episodeTime}</span></p>
           `;
             nextEpisodeBlock.insertAdjacentHTML("beforeend", nextEpisodeBlockHTML);
             // console.log(episodeTime)
@@ -236,6 +238,27 @@ async function main() {
               <p>Статус: <span class="status-core-block ${_ANIME_STATUS_}">${animeRussianStatus}</span></p>
           `;
         animeStatusInfoBlock.insertAdjacentHTML("beforeend", animeStatusInfoBlockHTML);
+
+        // 14) append anime year info
+        let animeYearInfoBlock = document.querySelector(".anime-year");
+        let animeYearInfoBlockHTML = `
+              <p>Год выхода: <span>${_ANIME_AIR_YEAR_}</span></p>
+          `;
+        animeYearInfoBlock.insertAdjacentHTML("beforeend", animeYearInfoBlockHTML);
+
+        // 15) append anime duration
+        let animeDurationBlock = document.querySelector(".anime-duration");
+        let animeDurationBlockHTML = `
+              <p>Длительность: ~ <span>${_ANIME_DURATION_} мин.</span></p>
+          `;
+        animeDurationBlock.insertAdjacentHTML("beforeend", animeDurationBlockHTML);
+
+        // 16) append anime rating
+        let animeRatingBlock = document.querySelector(".anime-rating");
+        let animeRatingBlockHTML = `
+              <p>Возрастные ограничения: <span>${_ANIME_RATING_}</span></p>
+          `;
+        animeRatingBlock.insertAdjacentHTML("beforeend", animeRatingBlockHTML);
     } else {
         console.warn("No anime data found in sessionStorage.");
     }

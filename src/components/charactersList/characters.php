@@ -3,7 +3,7 @@
         <div class="characters-list-tit">
             <div class="characters-list-title">
                 <h2>Персонажи</h2>
-                <h6>Главные герои и персонажи из аниме</h6>
+                <h6>Персонажи из аниме</h6>
             </div>
             <div class="characters-list-container">
                 <div class="character-content">

@@ -76,7 +76,7 @@
  padding: 10px 0;
  outline: none;
  background-color: var(--anime-header-global-info-watch-button-background-color);
- color: white;
+ color: var(--anime-header-global-info-watch-button-font-color);
  border: 2px solid var(--anime-header-global-info-watch-button-border-color);
  cursor: pointer;
  transition: background-color 0.2s;
@@ -97,9 +97,9 @@
  width: 100%;
  padding: 10px 0;
  outline: none;
- border: none;
  background-color: var(--anime-header-global-info-report-button-background-color);
  color: var(--anime-header-global-info-report-button-text-color);
+ border: 2px solid var(--anime-header-global-info-report-button-border-color);
  cursor: pointer;
  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
  white-space: nowrap;
@@ -113,11 +113,16 @@
 .anime-back-global-info-watch-button button:nth-child(2) i {
  font-size: 1.2em;
  margin-right: 10px;
- color: yellow;
+ color: var(--anime-header-global-info-report-button-i-color);
 }
 
 .anime-back-global-current-anime-information {
  width: 75%;
+}
+
+.anime-year, .anime-duration, .anime-rating {
+ margin-top: 10px;
+ color: var(--anime-header-next-episode-block-color);
 }
 
 .anime-eng-jpg-name {
@@ -146,7 +151,6 @@
 .anime-title-h2 {
  display: flex;
  min-width: 50%;
- min-height: 47px;
  border-radius: 4px;
  align-items: center;
  justify-content: flex-start;
@@ -217,6 +221,10 @@
  color: var(--anime-header-next-episode-block-color);
 }
 
+.anime-back-global-current-anime-information span {
+ color: var(--anime-back-global-span-font-color);
+}
+
 .anime-status {
  position: relative;
  display: block;
@@ -225,7 +233,7 @@
 }
 
 .anime-status .status-core-block {
- color: white;
+ color: var(--anime-header-anime-status-core-block-color);
  padding: 2px 10px;
 }
 

@@ -18,6 +18,8 @@ async function getCurrAnime(GET) {
         kind
         score
         status
+        duration
+        rating
         poster {
           originalUrl
         }

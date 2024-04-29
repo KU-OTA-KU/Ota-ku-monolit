@@ -1,3 +1,6 @@
+<?php
+require_once('inc/other/theme_init.php');
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -16,7 +19,7 @@
         gtag('config', 'G-XKSYJXXKPB');
     </script>
     <!-- Yandex.RTB -->
-    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script>window.yaContextCb = window.yaContextCb || []</script>
     <script src="https://yandex.ru/ads/system/context.js" async></script>
     <link rel="stylesheet" href="css/flickity.min.css">
     <meta charset="UTF-8"/>
@@ -24,7 +27,7 @@
     <title>OTA-KU Каталог</title>
     <link rel="shortcut icon" href="assets/images/Ota-ku-logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="src/_root/root.css"/>
-    <link rel="stylesheet" href="css/palette/dark_1.css"/>
+    <link class="theme-link" rel="stylesheet" href="css/palette/<?php echo $currentTheme; ?>.css"/>
     <link rel="stylesheet" href="css/scrollbar.css">
     <link rel="stylesheet" href="css/main.css"/>
 
@@ -46,22 +49,22 @@
 <?php include_once 'src/components/genres/genres.php'; ?>
 <!-- all genres Init End -->
 <!--  banner init start-->
-<section class="ban_1-container">
-    <div class="ban_1-container-inner">
-        <div class="ban_1-container-tit">
-            <!-- Yandex.RTB R-A-7609325-3 -->
-            <div id="yandex_rtb_R-A-7609325-3"></div>
-            <script>
-                window.yaContextCb.push(()=>{
-                    Ya.Context.AdvManager.render({
-                        "blockId": "R-A-7609325-3",
-                        "renderTo": "yandex_rtb_R-A-7609325-3"
-                    })
-                })
-            </script>
-        </div>
-    </div>
-</section>
+<!--<section class="ban_1-container">-->
+<!--    <div class="ban_1-container-inner">-->
+<!--        <div class="ban_1-container-tit">-->
+<!--            -->
+<!--            <div id="yandex_rtb_R-A-7609325-3"></div>-->
+<!--            <script>-->
+<!--                window.yaContextCb.push(() => {-->
+<!--                    Ya.Context.AdvManager.render({-->
+<!--                        "blockId": "R-A-7609325-3",-->
+<!--                        "renderTo": "yandex_rtb_R-A-7609325-3"-->
+<!--                    })-->
+<!--                })-->
+<!--            </script>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <!--  banner init end -->
 <!-- main Start -->
 <main class="main">

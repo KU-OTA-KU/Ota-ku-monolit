@@ -56,38 +56,11 @@
  padding: 10px 0;
 }
 
-.filter-selector select {
- padding: 10px 15px;
- border: none;
- color: rgba(255, 255, 255, 0.8);
- background-color: var(--filter-filter-select-background-color);
- cursor: pointer;
- position: relative;
- display: inline-block;
- -webkit-appearance: none;
- -moz-appearance: none;
- appearance: none;
- margin: 5px 0 10px 0;
- height: 100%;
-}
-
 .filter-selector label {
  font-size: 1em;
  padding: 10px 0 3px 0;
  width: 100%;
  display: block;
-}
-
-.filter-selector select:focus {
- outline: none;
- border: none;
-}
-
-.filter-selector select option {
- padding: 10px 15px;
- margin: 40px;
- background: var(--filter-clear-select-option);
- color: #fff;
 }
 
 .filter-box {
@@ -117,12 +90,12 @@
 }
 
 .tags-checkbox::-webkit-scrollbar-track {
- background-color: #ffffff24;
+ background-color: var(--filter-filter-scrollbar-color-track);
  border-radius: 5px;
 }
 
 .tags-checkbox::-webkit-scrollbar-thumb:hover {
- background-color: #4265E9;
+ background-color: var(--filter-filter-scrollbar-color-hover);
 }
 
 .tags-checkbox label {
@@ -139,7 +112,7 @@
  border: 2px solid var(--filter-filter-search-button-border-color);
  transition: background-color 0.2s ease-in-out;
  height: 40px;
- color: var(--color-white);
+ color: var(--filter-filter-search-button-font-color);
 }
 
 .filter-selector .submit button:hover {
@@ -214,7 +187,7 @@
 }
 
 .custom-select .custom-select-title {
- padding: 8px 15px;
+ padding: 10px 15px;
  font-size: 1em;
  width: 100%;
  border: none;

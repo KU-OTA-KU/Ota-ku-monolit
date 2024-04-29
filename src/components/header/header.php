@@ -75,11 +75,10 @@
             </div>
             <div class="sidenav-user-settings">
                 <p>Настройки:</p>
-<!--                <select class="sidenav-user-sett-selector">-->
-<!--                    <option>Выбрать Тему</option>-->
-<!--                    <option>Темная</option>-->
-<!--                    <option>Светлая</option>-->
-<!--                </select>-->
+                <select class="sidenav-user-sett-selector" id="theme-selector">
+                    <option value="dark_1">Темная (океан)</option>
+                    <option value="light_1">Светлая</option>
+                </select>
                 <select class="sidenav-user-sett-selector" id="voice-selector">
                     <option value="null">Выбрать Озвучку</option>
                     <option value="610">Anilibria.TV</option>

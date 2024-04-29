@@ -3,7 +3,7 @@
         <div class="animes-related-tit">
             <div class="related-animes-list-title">
                 <h2>Связенное</h2>
-                <h6>Связенные с франшизой сериалы, фильмы</h6>
+                <h6>Связенные с франшизой</h6>
             </div>
             <div class="related-animes-container">
               <div class="related-animes-block">

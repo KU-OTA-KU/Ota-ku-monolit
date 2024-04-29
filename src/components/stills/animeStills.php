@@ -3,7 +3,7 @@
     <div class="anime-stills-tit">
       <div class="anime-stills-title">
         <h2>Кадры</h2>
-        <h6>Топ Кадры из Аниме</h6>
+        <h6>Кадры из Аниме</h6>
       </div>
       </div>
       <div class="anime-stills-container">

@@ -125,15 +125,16 @@ async function mostFetchOnGoing(limit) {
         }
 
         if (animeList.length < limit) {
+            console.log("qica ")
             await mostFetchOnGoing(limit);
         } else {
             displayAnimeListMost(animeList, ".most-content-animes-list-option-1");
-            await delay(400);
+            await delay(200);
             await mostFetchOnAnonse(5);
         }
     } catch (error) {
         console.warn("Request error => ", error);
-        await delay(400);
+        await delay(200);
         await mostFetchOnGoing(5);
     }
 }
@@ -181,15 +182,16 @@ async function mostFetchOnAnonse(limit) {
         }
 
         if (animeList.length < limit) {
+            console.log("qica ")
             await mostFetchOnAnonse(limit);
         } else {
             displayAnimeListMost(animeList, ".most-content-animes-list-option-2");
-            await delay(400);
+            await delay(200);
             await mostFetchOnTop(5);
         }
     } catch (error) {
         console.warn("Request error => ", error);
-        await delay(400);
+        await delay(200);
         await mostFetchOnAnonse(5);
     }
 }
@@ -237,15 +239,16 @@ async function mostFetchOnTop(limit) {
         }
 
         if (animeList.length < limit) {
+            console.log("qica ")
             await mostFetchOnTop(limit);
         } else {
             displayAnimeListMost(animeList, ".most-content-animes-list-option-3");
-            await delay(400);
+            await delay(200);
             await mostFetchOnReleased(5);
         }
     } catch (error) {
         console.warn("Request error => ", error);
-        await delay(400);
+        await delay(200);
         await mostFetchOnTop(5);
     }
 }
@@ -287,6 +290,7 @@ async function mostFetchOnReleased(limit) {
         );
 
         if (animeList.length < limit) {
+            console.log("qica ")
             const additionalAnimeCount = limit - animeList.length;
             const additionalAnime = await fetchAdditionalAnime(additionalAnimeCount, "released");
             animeList.push(...additionalAnime);
@@ -295,7 +299,7 @@ async function mostFetchOnReleased(limit) {
         displayAnimeListMost(animeList, ".most-content-animes-list-option-4");
     } catch (error) {
         console.warn("Request error => ", error);
-        await delay(400);
+        await delay(200);
         await mostFetchOnReleased(5);
     }
 }
