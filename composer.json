@@ -1,9 +1,9 @@
 {
-    "name": "vendor/animeco",
-    "description": "animeco",
+    "name": "vendor/ota-ku",
+    "description": "ota-ku",
     "autoload": {
         "psr-4": {
-            "Vendor\\Animeco\\": "src/"
+            "Vendor\\ota-ku\\": "src/"
         }
     },
     "authors": [
