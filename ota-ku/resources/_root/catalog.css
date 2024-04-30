@@ -1,8 +1,0 @@
-.header-navigation a:nth-child(1) {
-  color: #4265E9;
-}
-
-header .header-navigation {
-  pointer-events: none;
-  display: none;
-}
