@@ -34,12 +34,12 @@
 
 @font-face {
  font-family: 'Montserrat-regular';
- src: url('../../assets/fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
+ src: url('../../ota-ku/assets/fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
 }
 
 @font-face {
  font-family: 'inter-regular';
- src: url('../../assets/fonts/inter/inter-Regular.ttf') format('truetype');
+ src: url('../../ota-ku/assets/fonts/inter/inter-Regular.ttf') format('truetype');
 }
 
 /* body */
