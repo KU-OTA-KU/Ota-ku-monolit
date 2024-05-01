@@ -5,8 +5,26 @@
  */
 
 import "./bootstrap";
-import { createApp } from "vue";
-import router from "./router";
+import { createRouter, createWebHistory } from "vue-router";
+
+// components
+import IndexComponent from "./components/ExampleComponent.vue";
+import wwwww from "./components/kas.vue";
+const router = createRouter({
+    history: createWebHistory(),
+    routes: [
+        {
+            path: "/lol",
+            component: IndexComponent,
+        },
+        {
+          path: "/kas",
+          component: wwwww,
+      },
+    ],
+});
+
+export default router;
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -14,7 +32,10 @@ import router from "./router";
  * to use in your application's views. An example is included for you.
  */
 
-const app = createApp({});
+// const app = createApp({});
+
+// import ExampleComponent from './components/ExampleComponent.vue';
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -24,22 +45,7 @@ const app = createApp({});
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-import ExampleComponent from './components/index.vue';
-app.component('example-component', ExampleComponent);
-
-app.use(router);
-app.mount("#app");
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-
-// import.meta.glob('./**/*.vue', { eager: true }).forEach(([path, definition]) => {
+// Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
 //     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
 // });
 
@@ -48,3 +54,5 @@ app.mount("#app");
  * an "id" attribute of "app". This element is included with the "auth"
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
+
+// app.mount('#app');

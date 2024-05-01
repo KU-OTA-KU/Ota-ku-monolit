@@ -14,5 +14,17 @@
         "sass": "^1.56.1",
         "vite": "^5.0.0",
         "vue": "^3.2.37"
+    },
+    "name": "ota-ku",
+    "description": "composer create-project laravel/laravel ota-ku",
+    "version": "1.0.0",
+    "main": "vite.config.js",
+    "directories": {
+        "test": "tests"
+    },
+    "author": "vahe",
+    "license": "ISC",
+    "dependencies": {
+        "vue-router": "^4.3.2"
     }
 }
