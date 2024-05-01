@@ -24,8 +24,8 @@ const app = createApp({});
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-import ExampleComponent from './components/index.vue';
-app.component('example-component', ExampleComponent);
+import application from './components/_app.vue';
+app.component('ota-ku-application', application);
 
 app.use(router);
 app.mount("#app");

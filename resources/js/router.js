@@ -8,19 +8,25 @@ import "./bootstrap";
 import { createRouter, createWebHistory } from "vue-router";
 
 // components
-import IndexComponent from "./components/ExampleComponent.vue";
-import wwwww from "./components/kas.vue";
+import IndexComponent from "./components/index.vue";
+import CatalogComponent from "./components/catalog.vue";
+import OpenAnimeComponent from "./components/anime.vue";
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: "/lol",
+            path: "/",
             component: IndexComponent,
         },
         {
-          path: "/kas",
-          component: wwwww,
-      },
+            path: "/catalog",
+            component: CatalogComponent,
+        },
+        {
+            path: "/anime",
+            component: OpenAnimeComponent,
+        },
     ],
 });
 
@@ -35,7 +41,6 @@ export default router;
 // const app = createApp({});
 
 // import ExampleComponent from './components/ExampleComponent.vue';
-
 
 /**
  * The following block of code may be used to automatically register your
