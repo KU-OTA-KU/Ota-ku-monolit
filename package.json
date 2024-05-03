@@ -25,6 +25,7 @@
     "author": "vahe",
     "license": "ISC",
     "dependencies": {
+        "flickity": "^3.0.0",
         "vue-router": "^4.3.2"
     }
 }

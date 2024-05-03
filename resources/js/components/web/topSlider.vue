@@ -1,7 +1,6 @@
 <template>
   <section class="flickity">
-    <div class="flickity-inner"
-      data-flickity='{ "cellAlign": "center", "contain": true, "wrapAround": true, "prevNextButtons": false, "autoPlay": 5000, "pageDots": false}'>
+    <div class="flickity-inner" ref="flickityContainer">
       <div class="gallery-cell" ref="cell0"></div>
       <div class="gallery-cell" ref="cell1"></div>
       <div class="gallery-cell" ref="cell2"></div>
@@ -12,10 +11,15 @@
 </template>
 
 <script>
+import { shuffleArray } from '../../other/shuffleArray.js';
+import Flickity from 'flickity';
+import 'flickity/css/flickity.css';
+
 export default {
   data() {
     return {
       animeList: [],
+      shuffleArray
     };
   },
   methods: {
@@ -50,17 +54,17 @@ export default {
         });
 
         if (!response.ok) {
-          throw new Error("Ошибка загрузки данных аниме");
+          throw new Error("Error loading anime data");
         }
 
         const data = await response.json();
         const popularAnime = data.data.animes;
-        const filteredAnime = this.shuffleArray(popularAnime)
+        const filteredAnime = shuffleArray(popularAnime)
 
         this.animeList = filteredAnime;
         this.displayAnimeList();
       } catch (error) {
-        console.error("Ошибка загрузки списка аниме:", error);
+        throw new Error("Error loading anime data");
       }
     },
     displayAnimeList() {
@@ -104,22 +108,32 @@ export default {
         images.forEach(image => {
           image.style.opacity = '1';
         });
-      }, 500);
-    },
-    shuffleArray(array) {
-      let currentIndex = array.length, randomIndex;
-
-      while (currentIndex != 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-      }
-
-      return array;
+      }, 300);
     },
   },
   mounted() {
-    this.fetchAnimeList(5);
+    let elem = this.$refs.flickityContainer;
+    let flcky = new Flickity(elem, {
+      cellAlign: "center",
+      pageDots: false,
+      wrapAround: true,
+      prevNextButtons: false,
+      autoPlay: 5000
+    });
+
+    let isDragging = false;
+
+    flcky.on('dragStart', function () {
+      isDragging = true;
+      flcky.pausePlayer();
+    });
+
+    flcky.on('dragEnd', function () {
+      isDragging = false;
+      flcky.unpausePlayer();
+    });
+
+    this.fetchAnimeList(10);
   }
 };
 </script>
