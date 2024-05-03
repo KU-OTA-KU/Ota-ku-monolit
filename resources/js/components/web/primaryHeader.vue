@@ -38,9 +38,9 @@
           </button>
         </div>
         <div class="sidenav-name-container">
-          <button onclick="window.location.href = '/index.php'"><i class="fa-solid fa-house"></i>Главная</button>
-          <button onclick="window.location.href = '/catalog.php'"><i
-              class="fa-solid fa-layer-group"></i>Каталог</button>
+          <router-link :to="'/'"><i class="fa-solid fa-house"></i>Главная</router-link>
+          <router-link :to="'/catalog'"><i
+              class="fa-solid fa-layer-group"></i>Каталог</router-link>
         </div>
         <div class="sidenav-user-settings">
           <p>Настройки:</p>
@@ -378,7 +378,7 @@ header {
   gap: 5px;
 }
 
-.sidenav-name-container button {
+.sidenav-name-container a {
   font-size: 1em;
   padding: 10px 0;
   cursor: pointer;
@@ -392,7 +392,7 @@ header {
   font-weight: normal;
 }
 
-.sidenav-name-container button:hover {
+.sidenav-name-container a:hover {
   color: var(--header-sidenav-name-container-button-hover-color) !important;
 }
 

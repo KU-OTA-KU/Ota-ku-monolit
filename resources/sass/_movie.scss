@@ -1,0 +1,169 @@
+.movie {
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.movie:hover .name {
+    color: var(--content-movie-name-color-hover);
+}
+
+.movie:hover .movie-image img {
+    transform: scale(1.1);
+}
+
+.movie:hover .rating i {
+    color: var(--content-movie-hover-rating-star-color);
+}
+
+.movie .movie-image {
+    width: 100%;
+    margin-bottom: 5px;
+    background: var(--content-movie-movie-image-background-gradient);
+    aspect-ratio: 1 / 1.4;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.movie-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    transition: transform 0.1s ease-in-out;
+    pointer-events: none;
+    user-select: none;
+    /*object-fit: cover;*/
+}
+
+.movie .status {
+    display: flex;
+    font-size: 0.8em;
+    color: var(--content-movie-status-color);
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    height: 18px !important;
+    border-radius: 5px;
+    background: var(--content-movie-movie-status-background-gradient);
+}
+
+.movie .rating i {
+    font-size: 1em;
+    transition: color 0.2s ease-in-out;
+    margin-left: 3px;
+}
+
+.movie .rating {
+    display: flex;
+    align-items: center;
+}
+
+.movie .name {
+    transition: color 0.2s ease-in-out;
+    text-align: left;
+    margin-top: 5px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    border-radius: 5px;
+    height: 18px !important;
+    background: var(--content-movie-movie-name-background-gradient);
+}
+
+// movie_2
+
+.movie_2 {
+    width: 100%;
+    padding: 15px 10px;
+    background-color: var(--content-movie-2-background-color);
+    border-radius: 5px;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.movie_2:hover h3 {
+    color: var(--content-movie-2-hover-h3-font-color);
+}
+
+.movie_2:hover .movie_2-image img {
+    transform: scale(1.1);
+}
+
+.movie_2 .movie_2-image {
+    width: 200px;
+    min-width: 200px;
+    aspect-ratio: 1 / 1.4;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--content-movie-2-background-image-gradient);
+}
+
+.movie_2 .movie_2-image img {
+    pointer-events: none;
+    user-select: none;
+    width: 100%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.movie_2 h3 {
+    font-size: 2em;
+    transition: color 0.2s ease-in-out;
+    font-family: "inter-regular", sans-serif;
+}
+
+.movie_2 .movie_2-info-about {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.movie_2 .movie_2-info-about {
+    margin-top: 5px;
+    color: var(--content-movie-2-info-about-p-font-color);
+    font-size: 0.9em;
+    line-height: 21px;
+}
+
+.movie_2 .movie_2-info-genres-list {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 3px;
+    color: var(--content-movie-2-info-genres-list-font-color);
+    text-decoration: underline;
+}
+
+.movie_2 .movie_2-info-info-anime {
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+}
+
+.movie_2 .movie_2-info-info-anime span {
+    color: var(--content-movie-2-info-anime-span-font-color);
+    padding: 0 10px;
+    font-size: 0.9em;
+}
+
+.movie_2 .movie_2-info-info-anime i {
+    color: var(--content-movie-2-info-anime-rating-star-color);
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 520px) {
+    .movie_2 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
