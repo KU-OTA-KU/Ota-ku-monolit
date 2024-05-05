@@ -15,7 +15,7 @@
     <main class="main">
         <div class="main-inner">
             <div class="main-tit">
-                <content></content>
+                <Content></Content>
                 <Filter></Filter>
             </div>
         </div>
@@ -33,8 +33,7 @@
 import TopSlider from './web/topSlider.vue';
 import PrimaryHeader from './web/primaryHeader.vue';
 import MostAnimes from './web/mostAnimes.vue';
-// import TopAnimes from './web/popularAnimes.vue';
-import content from './web/animeList.vue';
+import Content from './web/animeList.vue';
 import Filter from './web/filter.vue';
 import Welcome from './web/welcome.vue';
 import Footer from './web/footer.vue';
@@ -44,41 +43,16 @@ export default {
         PrimaryHeader,
         TopSlider,
         MostAnimes,
-        // TopAnimes,
-        content,
+        Content,
         Filter,
         Welcome,
         Footer
     },
     mounted() {
-        console.log('Component mounted.');
+        console.log('Index Mounted!');
     }
 }
 </script>
 
-<style>
-.main {
-    width: 100%;
-    flex: 1;
-}
-
-.main-inner {
-    width: 100%;
-    padding: 0 10px;
-}
-
-.main-tit {
-    max-width: 1500px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-@media screen and (max-width: 1024px) {
-    .main-tit {
-        flex-direction: column-reverse;
-    }
-}
+<style lang="scss" scoped>
 </style>

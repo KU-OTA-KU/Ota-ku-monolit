@@ -14,19 +14,19 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-        <section class="filter-query">
-            <div class="filter-title">
-                <i class="fa-solid fa-search"></i>
-                <p>Ваши запросы:</p>
-            </div>
-            <div class="filter-query-content">
-                <template v-for="(value, name) in filters">
-                    <div v-if="value !== '' && value.length !== 0" :key="name" class="filter-item">
-                        {{ name }}: {{ Array.isArray(value) ? value.join(', ') : value }}
-                    </div>
-                </template>
-            </div>
-        </section>
+<!--        <section class="filter-query">-->
+<!--            <div class="filter-title">-->
+<!--                <i class="fa-solid fa-search"></i>-->
+<!--                <p>Ваши запросы:</p>-->
+<!--            </div>-->
+<!--            <div class="filter-query-content">-->
+<!--                <template v-for="(value, name) in filters">-->
+<!--                    <div v-if="value !== '' && value.length !== 0" :key="name" class="filter-item">-->
+<!--                        {{ name }}: {{ Array.isArray(value) ? value.join(', ') : value }}-->
+<!--                    </div>-->
+<!--                </template>-->
+<!--            </div>-->
+<!--        </section>-->
 
         <div class="filter-selector">
             <form @submit.prevent="submitFilters">
@@ -189,6 +189,11 @@ export default {
             ],
         };
     },
+    mounted() {
+        this.$nextTick(() => {
+            window.addEventListener("scroll", this.handleScroll);
+        });
+    },
     methods: {
         clearFilters() {
             this.filters = {
@@ -199,6 +204,7 @@ export default {
                 rating: '',
                 genre: []
             };
+            this.$router.push('/catalog');
         },
         closeFilter() {
             let filterBox = document.querySelector(".main-filter");
@@ -277,7 +283,22 @@ export default {
             });
         },
         submitFilters() {
+            let queryParams = Object.keys(this.filters)
+                .filter(key => this.filters[key] !== '')
+                .map(key => {
+                    if (Array.isArray(this.filters[key])) {
+                        return `${key}=${this.filters[key].join(',')}`;
+                    } else {
+                        return `${key}=${this.filters[key]}`;
+                    }
+                })
+                .join('&');
+
+            let catalogUrl = `/catalog?${queryParams}`;
             console.log('Отправка фильтров', this.filters);
+            console.log('URL-адрес каталога с параметрами:', catalogUrl);
+            this.$router.push(catalogUrl);
+            // window.location.href = `${catalogUrl}`
         }
     }
 };
@@ -286,12 +307,11 @@ export default {
 <style lang="scss">
 /* filter */
 .main-filter {
-    min-width: 400px;
-    max-width: 400px;
+    min-width: 350px;
+    max-width: 350px;
     top: 80px;
     position: sticky;
 }
-
 
 @media screen and (max-width: 1440px) {
     .main-filter {
@@ -407,7 +427,7 @@ export default {
     width: 100%;
     padding: 0 20px;
     /*background-color: var(--user-log-in-1-button-backrogund-color);*/
-    border-radius: 20px;
+    border-radius: 5px;
     cursor: pointer;
     background-color: var(--filter-filter-search-button-color);
     border: 2px solid var(--filter-filter-search-button-border-color);
@@ -587,10 +607,6 @@ export default {
 
     .filt-button {
         display: flex;
-    }
-
-    .main-tit {
-        flex-direction: column;
     }
 }
 

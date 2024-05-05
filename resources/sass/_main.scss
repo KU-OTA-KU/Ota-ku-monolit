@@ -9,12 +9,16 @@
 }
 
 .main-tit {
-    max-width: 1500px;
+    max-width: var(--ota-ku-max-width);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 10px;
+}
+
+.main-content {
+
 }
 
 @media screen and (max-width: 1024px) {

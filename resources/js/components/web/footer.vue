@@ -65,7 +65,7 @@ footer:hover .footer-inner-tit img {
 }
 
 .footer-inner-tit {
-  max-width: 1500px;
+  max-width: var(--ota-ku-max-width);
   margin: 0 auto;
   width: 100%;
   display: flex;

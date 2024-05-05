@@ -1,0 +1,190 @@
+<template>
+    <section class="main-content" id="main-content" name="main-content">
+        <div v-for="anime in animeList" :key="anime.id" class="movie_2" @click="goToAnime(anime.id)">
+            <div class="movie_2-image">
+                <img :src="anime.poster && anime.poster.mainUrl ? anime.poster.mainUrl : ''" :alt="'Постер аниме ' + (anime.name || anime.russian)">
+            </div>
+            <div class="movie_2-info">
+                <h3>{{ anime.russian }}</h3>
+                <div class="movie_2-info-kind-genres-aired-container">
+                    <div class="movie_2-info-info-anime">
+                        <p v-if="anime.score">{{ anime.score }}<i class="fa-solid fa-star"></i></p>
+                        <span v-if="anime.score">•</span>
+                        <p v-if="anime.kind">{{ anime.kind }}</p>
+                        <span v-if="anime.kind">•</span>
+                        <p v-if="anime.airedOn.year">{{ anime.airedOn.year }}</p>
+                        <span v-if="anime.airedOn.year">•</span>
+                        <p v-if="anime.status">{{ anime.status }}</p>
+                    </div>
+                    <div class="movie_2-info-genres-list">
+                        <p v-if="anime.genres && anime.genres.length > 0">{{ anime.genres[0].russian }}</p>
+                        <p v-if="anime.genres && anime.genres.length > 1">{{ anime.genres[1].russian }}</p>
+                        <p v-if="anime.genres && anime.genres.length > 2">{{ anime.genres[2].russian }}</p>
+                    </div>
+                    <div class="movie_2-info-about">
+                        <p>{{ this.cleanDescription(anime.description) }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-if="!animeFound" class="empty-anime-message">
+            <h3>Ничего не найдено 😔</h3>
+        </div>
+    </section>
+</template>
+
+<script>
+import { cleanDescription } from "../../../js/other/cleanDescription.js";
+
+export default {
+    data() {
+        return {
+            animeList: [],
+            currPage: 1,
+            limit: 10,
+            loading: false,
+            animeFound: true,
+            animeFoundInitialized: false,
+            cleanDescription,
+        };
+    },
+    mounted() {
+        this.fetchAnimeData();
+        window.addEventListener("scroll", this.loadNextPage);
+        this.$watch(
+            () => this.$route.query,
+            () => {
+                this.handleUrlChange();
+            }
+        );
+    },
+    methods: {
+        handleUrlChange() {
+            this.animeList = [];
+            this.currPage = 1;
+            this.fetchAnimeData();
+            window.scrollTo({ top: 0});
+        },
+        async fetchAnimeData() {
+            if (!this.loading) {
+                try {
+                    this.loading = true;
+                    const currentParams = this.getUrlParams();
+                    const response = await fetch("https://shikimori.one/api/graphql", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Accept: "application/json",
+                        },
+                        body: JSON.stringify({
+                            query: `
+                                query {
+                                    animes(
+                                        season: "${currentParams.season || ''}",
+                                        status: "${currentParams.status || ''}",
+                                        kind: "${currentParams.kind || 'tv,tv_special,ova,ona,special'}",
+                                        order: ${currentParams.sort || 'ranked'},
+                                        rating: "${currentParams.rating || ''}",
+                                        genre: "${currentParams.genres || ''}",
+                                        limit: ${this.limit},
+                                        page: ${this.currPage},
+                                    ) {
+                                        id
+                                        name
+                                        russian
+                                        kind
+                                        score
+                                        status
+                                        description
+                                        genres {
+                                            russian
+                                        }
+                                        airedOn {
+                                            year
+                                        }
+                                        poster {
+                                            mainUrl
+                                        }
+                                    }
+                                }
+                            `,
+                        }),
+                    });
+                    const data = await response.json();
+                    const animeList = data.data.animes;
+                    this.animeList = [...this.animeList, ...animeList];
+                    this.currPage++;
+                    // console.log(animeList.length);
+                    if (animeList.length === 0) {
+                        this.animeFound = false;
+                        this.animeFoundInitialized = true;
+                    } else {
+                        this.animeFound = true;
+                        this.animeFoundInitialized = true;
+                    }
+                } catch (error) {
+                    console.error("Ошибка запроса: ", error);
+                } finally {
+                    this.loading = false;
+                }
+            }
+        },
+        getUrlParams() {
+            const searchParams = new URLSearchParams(window.location.search);
+            const params = {};
+            for (const [key, value] of searchParams) {
+                const paramName = key.replace(/\[\]$/, '');
+                if (paramName in params) {
+                    params[paramName] += `,${value}`;
+                } else {
+                    params[paramName] = value;
+                }
+            }
+            return params;
+        },
+        loadNextPage() {
+            if (this.isNearBottom()) {
+                this.fetchAnimeData();
+            }
+        },
+        goToAnime(animeId) {
+            this.$router.push(`/anime?animeId=${animeId}`);
+        },
+        isNearBottom() {
+            const mainContent = document.querySelector(".main-content");
+            const mainContentBottom = mainContent.offsetTop + mainContent.offsetHeight;
+            return window.innerHeight + window.scrollY >= mainContentBottom - 200;
+        },
+    },
+};
+</script>
+
+<style lang="scss">
+.main-content {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    position: relative;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 485px) {
+    .main-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.empty-anime-message {
+    z-index: 100;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-anime-message h3 {
+    font-weight: bold;
+}
+</style>

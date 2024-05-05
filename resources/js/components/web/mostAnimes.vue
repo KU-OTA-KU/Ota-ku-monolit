@@ -394,7 +394,7 @@ export default {
 }
 
 .most-container .most-container-tit {
-    max-width: 1500px;
+    max-width: var(--ota-ku-max-width);
     width: 100%;
     margin: 0 auto;
     display: flex;

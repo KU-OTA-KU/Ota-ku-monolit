@@ -193,7 +193,7 @@ export default {
       elem.style.pointerEvents = 'none';
     });
 
-    flcky.on('dragEnd', function () {  
+    flcky.on('dragEnd', function () {
       setTimeout(() => {
         elem.style.pointerEvents = 'auto';
       }, 500);
@@ -348,7 +348,7 @@ export default {
 }
 
 .top-popular-animes-inner .top-popular-animes-tit {
-  max-width: 1500px;
+  max-width: var(--ota-ku-max-width);
   margin: 0 auto;
 }
 

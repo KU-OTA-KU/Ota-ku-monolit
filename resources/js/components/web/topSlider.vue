@@ -92,7 +92,7 @@ export default {
                 <p>Название: <span>${anime.japanese}</span></p>
                 <p>Оценка: <span>${anime.score}</span> <i class="fa-solid fa-star" aria-hidden="true"></i></p>
                 <div class="flickity-genres-list">
-                  Жанры: 
+                  Жанры:
                   ${genres}
                 </div>
                 <a href="anime.php?animeId=${anime.id}" class="gallery-cell-top-a-watch"><i class="fa-solid fa-play"></i>Cмотреть</a>
@@ -164,7 +164,7 @@ export default {
 }
 
 .gallery-cell {
-  max-width: 1500px;
+  max-width: var(--ota-ku-max-width);
   width: 100%;
   aspect-ratio: 1 / 0.33;
   margin: 10px 40px 10px 0;

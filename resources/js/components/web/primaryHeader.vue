@@ -5,8 +5,9 @@
       <div class="header-tit">
         <div class="header-log-and-nav">
           <div class="header-logo" onclick="">
-            <img src="../../../img/ota-ku/ota-ku.webp" alt="Логотип Ota Ku - лучший аниме"
-              id="ota-ku-best-anime-logo" />
+              <router-link to="/">
+                  <img src="../../../img/ota-ku/ota-ku.webp" alt="Логотип Ota Ku - лучший аниме" id="ota-ku-best-anime-logo" />
+              </router-link>
           </div>
           <nav class="header-navigation">
             <button @click="openSidenav()">
@@ -95,7 +96,6 @@
 
 <script>
 import { setCookie, getCookie } from '../../other/getSetCookie.js';
-
 export default {
   data() {
     return {
@@ -123,7 +123,6 @@ export default {
   methods: {
     openSidenav() {
       let sidenav = this.$refs.sidenav;
-      let body = document.body;
       if (this.sidebarIsOpened === false) {
         anime({
           targets: sidenav,
@@ -133,7 +132,6 @@ export default {
           easing: "easeInOutExpo",
           begin: function () {
             console.log("Animation started => open sidenav <=");
-            body.style.overflow = "hidden";
             this.sidebarIsOpened = true;
           },
         });
@@ -141,7 +139,6 @@ export default {
     },
     closeSidenav() {
       let sidenav = this.$refs.sidenav;
-      let body = document.body;
       anime({
         targets: sidenav,
         left: [0, "-100"],
@@ -150,7 +147,6 @@ export default {
         easing: "easeInOutExpo",
         complete: function () {
           console.log("Animation Started => close sidenav <=");
-          body.style.overflow = "auto";
           this.sidebarIsOpened = false;
         },
       });
@@ -196,7 +192,7 @@ header {
 }
 
 .header-tit {
-  max-width: 1500px;
+  max-width: var(--ota-ku-max-width);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
