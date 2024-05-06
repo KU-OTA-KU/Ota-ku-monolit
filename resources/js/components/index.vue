@@ -49,7 +49,10 @@ export default {
         Footer
     },
     mounted() {
+        document.title = `Смотреть аниме онлайн бесплатно в хорошем качестве`;
+        sessionStorage.removeItem("CurrentAnime");
         console.log('Index Mounted!');
+        window.scrollTo({ top: 0});
     }
 }
 </script>

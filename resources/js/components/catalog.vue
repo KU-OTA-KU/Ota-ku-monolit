@@ -30,9 +30,11 @@ export default {
         TopGenres,
     },
     mounted() {
+        document.title = `Лучший aниме каталог`;
         console.log('catalog Mounted!');
         let headerNavigation = document.querySelector(".header-navigation");
         headerNavigation.style.display = "none";
+        window.scrollTo({ top: 0});
     }
 }
 </script>

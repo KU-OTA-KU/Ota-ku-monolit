@@ -190,9 +190,6 @@ export default {
         };
     },
     mounted() {
-        this.$nextTick(() => {
-            window.addEventListener("scroll", this.handleScroll);
-        });
     },
     methods: {
         clearFilters() {
@@ -253,7 +250,6 @@ export default {
                 this.closeCustomSelect(filter);
             }
         },
-
         openCustomSelect(filter) {
             let selectOptions = document.querySelector(`.custom-select-options[data-filter="${filter}"]`);
             anime({

@@ -131,6 +131,12 @@ a {
     text-decoration: none;
 }
 
+.dot {
+    color: var(--content-movie-2-info-anime-span-font-color);
+    padding: 0 10px;
+    font-size: 0.9em;
+}
+
 @media screen and (max-width: 1024px) {
 }
 

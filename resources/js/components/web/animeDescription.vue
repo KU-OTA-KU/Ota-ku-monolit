@@ -1,0 +1,52 @@
+<template>
+    <section class="anime-description">
+        <div class="anime-description-inner">
+            <div class="anime-description-tit">
+                <p v-if="_ANIME_DESCRIPTION_" >{{ _ANIME_DESCRIPTION_ }}</p>
+            </div>
+        </div>
+    </section>
+</template>
+
+<script>
+import { cleanDescription } from "@/other/cleanDescription.js";
+export  default {
+    data() {
+       return {
+           _ANIME_DESCRIPTION_: null,
+           cleanDescription,
+       };
+    },
+    methods: {
+        main() {
+            const storedData = sessionStorage.getItem("CurrentAnime");
+            if (storedData) {
+                this._ANIME_DESCRIPTION_ = this.cleanDescription(JSON.parse(storedData)[0].description);
+                console.log(this._ANIME_DESCRIPTION_)
+            }
+        },
+    }
+};
+</script>
+
+<style lang="scss">
+.anime-description {
+    width: 100%;
+}
+
+.anime-description .anime-description-inner {
+    width: 100%;
+    padding: 0 10px;
+}
+
+.anime-description .anime-description-inner .anime-description-tit {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    color: var(--anime-description-font-color);
+}
+
+.anime-description-tit p {
+    user-select: auto;
+}
+</style>

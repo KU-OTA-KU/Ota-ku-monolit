@@ -26,6 +26,8 @@
     "license": "ISC",
     "dependencies": {
         "flickity": "^3.0.0",
+        "moment": "^2.30.1",
+        "vue-cookies": "^1.8.4",
         "vue-router": "^4.3.2"
     }
 }

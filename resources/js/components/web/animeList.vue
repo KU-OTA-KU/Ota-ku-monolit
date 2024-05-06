@@ -110,7 +110,6 @@
 
 <script>
 import {cleanDescription} from "@/other/cleanDescription.js";
-
 export default {
     data() {
         return {
@@ -176,8 +175,8 @@ export default {
                         <h3>${anime.russian}</h3>
                         <div class="movie_2-info-kind-genres-aired-container">
                             <div class="movie_2-info-info-anime">
-                                <p>${anime.score}<i class="fa-solid fa-star"></i></p><span>•</span>
-                                <p>${anime.kind}</p><span>•</span>
+                                <p>${anime.score}<i class="fa-solid fa-star"></i></p><span class="dot">•</span>
+                                <p>${anime.kind}</p><span class="dot">•</span>
                                 <p>${anime.airedOn.year}</p>
                             </div>
                             <div class="movie_2-info-genres-list">

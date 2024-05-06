@@ -173,7 +173,7 @@ header {
   position: sticky;
   box-shadow: 0 0 19px 2px var(--header-box-shadow-color);
   top: 0;
-  z-index: 900;
+  z-index: 1000;
   min-height: 55px;
   height: 55px;
 }
@@ -411,7 +411,7 @@ header {
   top: 0;
   opacity: 0;
   left: -100%;
-  z-index: 1000;
+  z-index: 1001;
   height: 100%;
   padding: 20px 15px;
 }
