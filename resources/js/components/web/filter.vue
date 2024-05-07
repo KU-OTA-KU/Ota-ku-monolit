@@ -14,19 +14,19 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-<!--        <section class="filter-query">-->
-<!--            <div class="filter-title">-->
-<!--                <i class="fa-solid fa-search"></i>-->
-<!--                <p>Ваши запросы:</p>-->
-<!--            </div>-->
-<!--            <div class="filter-query-content">-->
-<!--                <template v-for="(value, name) in filters">-->
-<!--                    <div v-if="value !== '' && value.length !== 0" :key="name" class="filter-item">-->
-<!--                        {{ name }}: {{ Array.isArray(value) ? value.join(', ') : value }}-->
-<!--                    </div>-->
-<!--                </template>-->
-<!--            </div>-->
-<!--        </section>-->
+        <!--        <section class="filter-query">-->
+        <!--            <div class="filter-title">-->
+        <!--                <i class="fa-solid fa-search"></i>-->
+        <!--                <p>Ваши запросы:</p>-->
+        <!--            </div>-->
+        <!--            <div class="filter-query-content">-->
+        <!--                <template v-for="(value, name) in filters">-->
+        <!--                    <div v-if="value !== '' && value.length !== 0" :key="name" class="filter-item">-->
+        <!--                        {{ name }}: {{ Array.isArray(value) ? value.join(', ') : value }}-->
+        <!--                    </div>-->
+        <!--                </template>-->
+        <!--            </div>-->
+        <!--        </section>-->
 
         <div class="filter-selector">
             <form @submit.prevent="submitFilters">
@@ -178,14 +178,48 @@ export default {
                 {value: 'id', label: 'По ID'}
             ],
             genreOptions: [
-                {value: 'action', label: 'Боевик'},
-                {value: 'adventure', label: 'Приключения'},
-                {value: 'comedy', label: 'Комедия'},
-                {value: 'drama', label: 'Драма'},
-                {value: 'fantasy', label: 'Фэнтези'},
-                {value: 'horror', label: 'Ужасы'},
-                {value: 'romance', label: 'Романтика'},
-                {value: 'sci-fi', label: 'Научная фантастика'}
+                {value: '5', label: 'Авангард'},
+                {value: '543', label: 'Гурман'},
+                {value: '8', label: 'Драма'},
+                {value: '4', label: 'Комедия'},
+                {value: '36', label: 'Повседневность'},
+                {value: '2', label: 'Приключения'},
+                {value: '22', label: 'Романтика'},
+                {value: '37', label: 'Сверхъестественное'},
+                {value: '30', label: 'Спорт'},
+                {value: '7', label: 'Тайна'},
+                {value: '117', label: 'Триллер'},
+                {value: '14', label: 'Ужасы'},
+                {value: '24', label: 'Фантастика'},
+                {value: '10', label: 'Фэнтези'},
+                {value: '1', label: 'Экшен'},
+                {value: '9', label: 'Этти'},
+                {value: '143', label: 'Антропоморфизм'},
+                {value: '119', label: 'CGDCT'},
+                {value: '17', label: 'Боевые исскусства'},
+                {value: '32', label: 'Вампиры'},
+                {value: '104', label: 'Взрослые персонажы'},
+                {value: '103', label: 'Видеоигры'},
+                {value: '38', label: 'Военное'},
+                {value: '141', label: 'Выживание'},
+                {value: '35', label: 'Гарем'},
+                {value: '3', label: 'Гонки'},
+                {value: '112', label: 'Гэг-юмор'},
+                {value: '39', label: 'Детектив'},
+                {value: '105', label: 'Жесткость'},
+                {value: '134', label: 'Забота о детях'},
+                {value: '146', label: 'Игра с высокими ставками'},
+                {value: '145', label: 'Идолы (жен.)'},
+                {value: '150', label: 'Идолы (муж.)'},
+                {value: '108', label: 'Изобразительное искусство'},
+                {value: '142', label: 'Исполнительское искусство'},
+                {value: '13', label: 'Исторический'},
+                {value: '130', label: 'Исэкай'},
+                {value: '140', label: 'Иясикэй'},
+                {value: '102', label: 'Командный спорт'},
+                {value: '29', label: 'Космос'},
+                {value: '144', label: 'Кроссдрессинг'},
+                {value: '137', label: 'Культура отаку'}
             ],
         };
     },
@@ -377,7 +411,6 @@ export default {
     height: 100%;
     padding: 20px 10px;
     background-color: var(--filter-filter-genre-box-color);
-    border-radius: 10px;
 }
 
 .filter-box span {
@@ -422,18 +455,15 @@ export default {
 .filter-selector .submit button {
     width: 100%;
     padding: 0 20px;
-    /*background-color: var(--user-log-in-1-button-backrogund-color);*/
-    border-radius: 5px;
     cursor: pointer;
     background-color: var(--filter-filter-search-button-color);
     border: 2px solid var(--filter-filter-search-button-border-color);
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
     height: 40px;
     color: var(--filter-filter-search-button-font-color);
 }
 
 .filter-selector .submit button:hover {
-    /*background-color: var(--user-log-in-1-button-hov-backrogund-color);*/
     background-color: var(--filter-filter-search-button-hover-color);
     border: 2px solid var(--filter-filter-search-button-border-hover-color);
 }
@@ -450,7 +480,6 @@ export default {
     display: flex;
     width: 100%;
     outline: none;
-    border-radius: 15px;
     align-items: center;
     border: none;
     justify-content: center;
@@ -569,7 +598,7 @@ export default {
         width: 100%;
         height: 100dvh;
         background-color: var(--filter-filter-background-color);
-        z-index: 990;
+        z-index: 1001;
         padding: 20px;
         overflow: hidden;
     }

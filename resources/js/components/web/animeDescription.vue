@@ -1,5 +1,12 @@
 <template>
-    <section class="anime-description">
+    <section class="anime-description" v-if="!_ANIME_DESCRIPTION_">
+        <div class="anime-description-inner">
+            <div class="anime-description-tit skeleton-cell-slide skeleton-bg skeleton-height-large skeleton-weight">
+
+            </div>
+        </div>
+    </section>
+    <section class="anime-description" v-if="_ANIME_DESCRIPTION_">
         <div class="anime-description-inner">
             <div class="anime-description-tit">
                 <p v-if="_ANIME_DESCRIPTION_" >{{ _ANIME_DESCRIPTION_ }}</p>

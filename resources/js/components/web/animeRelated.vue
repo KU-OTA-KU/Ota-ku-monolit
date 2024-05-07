@@ -1,15 +1,88 @@
 <template>
-    <section class="animes-related">
+    <section class="animes-related" v-if="!_ANIME_RELATED_">
         <div class="animes-related-inner">
             <div class="animes-related-tit">
                 <div class="related-animes-list-title">
                     <h2>Связенное</h2>
-                    <h6>Связенные с франшизой</h6>
+                    <h6>Аниме Связенные с франшизой</h6>
                 </div>
                 <div class="related-animes-container">
-                    <div class="related-animes-block" v-for="(relatedAnime, index) in _ANIME_RELATED_" :key="index">
+                    <div class="related-animes-block">
+                        <div
+                            class="related-animes-name skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></div>
+                        <div class="related-animes-info">
+                            <div
+                                class="related-animes-info-image skeleton-cell-slide skeleton-weight skeleton-bg"></div>
+                            <div class="related-animes-type-year">
+                                <p class="skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></p>
+                                <p class="skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="related-animes-block">
+                        <div
+                            class="related-animes-name skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></div>
+                        <div class="related-animes-info">
+                            <div
+                                class="related-animes-info-image skeleton-cell-slide skeleton-weight skeleton-bg"></div>
+                            <div class="related-animes-type-year">
+                                <p class="skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></p>
+                                <p class="skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="related-animes-block">
+                        <div
+                            class="related-animes-name skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></div>
+                        <div class="related-animes-info">
+                            <div
+                                class="related-animes-info-image skeleton-cell-slide skeleton-weight skeleton-bg"></div>
+                            <div class="related-animes-type-year">
+                                <p class="skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></p>
+                                <p class="skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="related-animes-block">
+                        <div
+                            class="related-animes-name skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></div>
+                        <div class="related-animes-info">
+                            <div
+                                class="related-animes-info-image skeleton-cell-slide skeleton-weight skeleton-bg"></div>
+                            <div class="related-animes-type-year">
+                                <p class="skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></p>
+                                <p class="skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="related-animes-block">
+                        <div
+                            class="related-animes-name skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></div>
+                        <div class="related-animes-info">
+                            <div
+                                class="related-animes-info-image skeleton-cell-slide skeleton-weight skeleton-bg"></div>
+                            <div class="related-animes-type-year">
+                                <p class="skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></p>
+                                <p class="skeleton-cell-slide skeleton-height skeleton-weight skeleton-bg"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="animes-related" v-if="_ANIME_RELATED_">
+        <div class="animes-related-inner">
+            <div class="animes-related-tit">
+                <div class="related-animes-list-title">
+                    <h2>Связенное</h2>
+                    <h6>Аниме Связенные с франшизой</h6>
+                </div>
+                <div class="related-animes-container">
+                    <div class="related-animes-block" v-for="(relatedAnime, index) in _ANIME_RELATED_" :key="index"
+                         @click="goToAnime(relatedAnime.anime.id)">
                         <div class="related-animes-name">
-                            <a :href="'/anime/' + relatedAnime.anime.id">{{ relatedAnime.anime.russian }}</a>
+                            <p :to="'/anime?animeId=' + relatedAnime.anime.id">{{ relatedAnime.anime.russian }}</p>
                         </div>
                         <div class="related-animes-info">
                             <div class="related-animes-info-image">
@@ -40,8 +113,12 @@ export default {
             if (storedData) {
                 this._ANIME_RELATED_ = JSON.parse(storedData)[0].related.filter(anime => anime.anime && anime.anime.id);
             }
-            console.log(this._ANIME_RELATED_)
-        }
+            console.log(this._ANIME_RELATED_);
+        },
+        goToAnime(animeId) {
+            this.$router.push(`/anime?animeId=${animeId}`);
+            window.scrollTo({top: 0});
+        },
     }
 }
 </script>
@@ -96,8 +173,6 @@ export default {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 17px !important;
-    border-radius: 5px;
     transition: color 0.2s ease-in-out;
     cursor: pointer;
 }
@@ -114,8 +189,6 @@ export default {
 .related-animes-info .related-animes-info-image {
     width: 40%;
     aspect-ratio: 1 / 1.5;
-    background: var(--related-anime-content-image-background-color);
-    border-radius: 5px;
     position: relative;
     overflow: hidden;
     -webkit-user-select: none;
@@ -142,8 +215,6 @@ export default {
     overflow: hidden;
     text-overflow: ellipsis;
     display: flex;
-    height: 17px !important;
-    border-radius: 5px;
     align-items: center;
 }
 

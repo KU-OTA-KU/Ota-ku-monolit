@@ -4,7 +4,7 @@
       <div class="footer-inner-tit" id="wdwdwdtit">
         <div class="footer-one-container">
           <div class="footer-logo">
-            <img src="../../../img/ota-ku/ota-ku.webp" alt="animeCo">
+            <img src="/img/ota-ku/ota-ku.webp" alt="animeCo">
             <p>Весь контент на сайте предназначен исключительно для личного ознакомления. Мы используем
               материалы из
               свободных источников. Если какой-то контент нарушает ваши авторские права, пожалуйста, свяжитесь

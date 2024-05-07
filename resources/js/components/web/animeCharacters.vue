@@ -1,5 +1,37 @@
 <template>
-    <section class="characters-list">
+    <section class="characters-list" v-if="!_ANIME_CHARACTER_ROLES_">
+        <div class="characters-list-inner">
+            <div class="characters-list-tit">
+                <div class="characters-list-title">
+                    <h2>Персонажи</h2>
+                    <h6>Персонажи из аниме {{ _ANIME_RUSSIAN_NAME_ }}</h6>
+                </div>
+                <div class="characters-list-container">
+                    <div class="character-content">
+                        <div class="character-content-image skeleton-cell-slide skeleton-bg"></div>
+                        <p class="skeleton-bg skeleton-height skeleton-cell-slide"></p>
+                    </div>
+                    <div class="character-content">
+                        <div class="character-content-image skeleton-cell-slide skeleton-bg"></div>
+                        <p class="skeleton-bg skeleton-height skeleton-cell-slide"></p>
+                    </div>
+                    <div class="character-content">
+                        <div class="character-content-image skeleton-cell-slide skeleton-bg"></div>
+                        <p class="skeleton-bg skeleton-height skeleton-cell-slide"></p>
+                    </div>
+                    <div class="character-content">
+                        <div class="character-content-image skeleton-cell-slide skeleton-bg"></div>
+                        <p class="skeleton-bg skeleton-height skeleton-cell-slide"></p>
+                    </div>
+                    <div class="character-content">
+                        <div class="character-content-image skeleton-cell-slide skeleton-bg"></div>
+                        <p class="skeleton-bg skeleton-height skeleton-cell-slide"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="characters-list" v-if="_ANIME_CHARACTER_ROLES_">
         <div class="characters-list-inner">
             <div class="characters-list-tit">
                 <div class="characters-list-title">
@@ -44,7 +76,6 @@ export default {
     width: 100%;
 }
 
-ds
 .characters-list .characters-list-inner {
     width: 100%;
     padding: 0 10px;
@@ -54,10 +85,6 @@ ds
     max-width: 1300px;
     width: 100%;
     margin: 0 auto;
-}
-
-.characters-list-tit .characters-list-title {
-    margin-bottom: 5px;
 }
 
 .characters-list-tit .characters-list-title h6 {
@@ -88,8 +115,6 @@ ds
 .character-content .character-content-image {
     width: 100%;
     aspect-ratio: 1 / 1.5;
-    background: var(--characters-anime-content-img-background-gradient);
-    border-radius: 5px;
     position: relative;
     overflow: hidden;
     -webkit-user-select: none;
@@ -113,9 +138,6 @@ ds
     text-overflow: ellipsis;
     margin-top: 10px;
     display: flex;
-    height: 17px !important;
-    border-radius: 5px;
-    background: var(--characters-anime-content-p-background-color);
     justify-content: center;
     align-items: center;
 }

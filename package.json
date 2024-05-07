@@ -28,6 +28,7 @@
         "flickity": "^3.0.0",
         "moment": "^2.30.1",
         "vue-cookies": "^1.8.4",
+        "vue-lazyload": "^3.0.0",
         "vue-router": "^4.3.2"
     }
 }

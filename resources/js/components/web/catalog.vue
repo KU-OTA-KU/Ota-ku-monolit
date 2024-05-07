@@ -1,20 +1,82 @@
 <template>
-    <section class="main-content" id="main-content" name="main-content">
+    <section v-if="animeList.length === 0 && animeFound" class="main-content" id="main-content" name="main-content">
+        <div class="movie_2 skeleton-cell-pulse">
+            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+            </div>
+            <div class="movie_2-info">
+                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
+                <div class="movie_2-info-kind-genres-aired-container">
+                    <div class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                </div>
+            </div>
+        </div>
+        <div class="movie_2 skeleton-cell-pulse">
+            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+            </div>
+            <div class="movie_2-info">
+                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
+                <div class="movie_2-info-kind-genres-aired-container">
+                    <div class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                </div>
+            </div>
+        </div>
+        <div class="movie_2 skeleton-cell-pulse">
+            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+            </div>
+            <div class="movie_2-info">
+                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
+                <div class="movie_2-info-kind-genres-aired-container">
+                    <div class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                </div>
+            </div>
+        </div>
+        <div class="movie_2 skeleton-cell-pulse">
+            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+            </div>
+            <div class="movie_2-info">
+                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
+                <div class="movie_2-info-kind-genres-aired-container">
+                    <div class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                </div>
+            </div>
+        </div>
+        <div class="movie_2 skeleton-cell-pulse">
+            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+            </div>
+            <div class="movie_2-info">
+                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
+                <div class="movie_2-info-kind-genres-aired-container">
+                    <div class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section v-if="animeList.length !== 0" class="main-content" id="main-content" name="main-content">
         <div v-for="anime in animeList" :key="anime.id" class="movie_2" @click="goToAnime(anime.id)">
             <div class="movie_2-image">
-                <img :src="anime.poster && anime.poster.mainUrl ? anime.poster.mainUrl : ''" :alt="'Постер аниме ' + (anime.name || anime.russian)">
+                <img :src="anime.poster && anime.poster.mainUrl ? anime.poster.mainUrl : ''" :alt="'Смотреть аниме ' + (anime.name || anime.russian)">
             </div>
             <div class="movie_2-info">
                 <h3>{{ anime.russian }}</h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div class="movie_2-info-info-anime">
                         <p v-if="anime.score">{{ anime.score }}<i class="fa-solid fa-star"></i></p>
-                        <span v-if="anime.score">•</span>
+                        <span class="dot" v-if="anime.score">•</span>
                         <p v-if="anime.kind">{{ anime.kind }}</p>
-                        <span v-if="anime.kind">•</span>
+                        <span class="dot" v-if="anime.kind">•</span>
                         <p v-if="anime.airedOn.year">{{ anime.airedOn.year }}</p>
-                        <span v-if="anime.airedOn.year">•</span>
-                        <p v-if="anime.status">{{ anime.status }}</p>
+                        <span class="dot" v-if="anime.airedOn.year">•</span>
+                        <p v-if="anime.status">{{ translateStatus(anime.status) }}</p>
                     </div>
                     <div class="movie_2-info-genres-list">
                         <p v-if="anime.genres && anime.genres.length > 0">{{ anime.genres[0].russian }}</p>
@@ -27,15 +89,15 @@
                 </div>
             </div>
         </div>
-        <div v-if="!animeFound" class="empty-anime-message">
-            <h3>Ничего не найдено 😔</h3>
-        </div>
     </section>
+    <div v-if="!animeFound" class="empty-anime-message">
+        <h3>Ничего не найдено 😔</h3>
+    </div>
 </template>
 
 <script>
-import { cleanDescription } from "../../../js/other/cleanDescription.js";
-
+import { cleanDescription } from "@/other/cleanDescription.js";
+import { translateStatus } from "@/other/translateStatus.js";
 export default {
     data() {
         return {
@@ -46,6 +108,7 @@ export default {
             animeFound: true,
             animeFoundInitialized: false,
             cleanDescription,
+            translateStatus
         };
     },
     mounted() {
@@ -85,7 +148,7 @@ export default {
                                         kind: "${currentParams.kind || 'tv,tv_special,ova,ona,special'}",
                                         order: ${currentParams.sort || 'ranked'},
                                         rating: "${currentParams.rating || ''}",
-                                        genre: "${currentParams.genres || ''}",
+                                        genre: "${currentParams.genre || ''}",
                                         limit: ${this.limit},
                                         page: ${this.currPage},
                                     ) {

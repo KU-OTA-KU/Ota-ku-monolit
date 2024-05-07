@@ -49,6 +49,8 @@ export default {
         window.scrollTo({top: 0});
         let headerNavigation = document.querySelector(".header-navigation");
         let headerSearch = document.querySelector(".header-search");
+        let headerMobileSearch = document.querySelector(".search");
+        headerMobileSearch.style.display = "none";
         headerNavigation.style.display = "none";
         headerSearch.style.display = "none";
         let header = document.getElementsByTagName("header")[0];
@@ -59,6 +61,15 @@ export default {
         const animeId = this.$route.query.animeId;
         // console.log(animeId)
         this.getCurrAnime(animeId)
+
+        this.$watch(
+            () => this.$route.query.animeId,
+            (newValue, oldValue) => {
+                if (newValue !== oldValue) {
+                    this.getCurrAnime(newValue);
+                }
+            }
+        );
     },
     methods: {
         async appendAnimeInSite(data) {

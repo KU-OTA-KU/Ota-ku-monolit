@@ -1,5 +1,5 @@
 <template>
-    <section class="anime-stills">
+    <section class="anime-stills" v-if="_ANIME_SCREENSHOTS_.length === 0">
         <div class="anime-stills-inner">
             <div class="anime-stills-tit">
                 <div class="anime-stills-title">
@@ -8,10 +8,26 @@
                 </div>
             </div>
             <div class="anime-stills-container">
-                <div class="anime-stills-content"><img v-if="_ANIME_SCREENSHOTS_" :src="_ANIME_SCREENSHOTS_[0].x332Url" :alt="_ANIME_RUSSIAN_NAME_ + 'Кадр из аниме'"></div>
-                <div class="anime-stills-content"><img v-if="_ANIME_SCREENSHOTS_" :src="_ANIME_SCREENSHOTS_[1].x332Url" :alt="_ANIME_RUSSIAN_NAME_ + 'Кадр из аниме'"></div>
-                <div class="anime-stills-content"><img v-if="_ANIME_SCREENSHOTS_" :src="_ANIME_SCREENSHOTS_[2].x332Url" :alt="_ANIME_RUSSIAN_NAME_ + 'Кадр из аниме'"></div>
-                <div class="anime-stills-content"><img v-if="_ANIME_SCREENSHOTS_" :src="_ANIME_SCREENSHOTS_[3].x332Url" :alt="_ANIME_RUSSIAN_NAME_ + 'Кадр из аниме'"></div>
+                <div class="anime-stills-content skeleton-cell-slide skeleton-bg"></div>
+                <div class="anime-stills-content skeleton-cell-slide skeleton-bg"></div>
+                <div class="anime-stills-content skeleton-cell-slide skeleton-bg"></div>
+                <div class="anime-stills-content skeleton-cell-slide skeleton-bg"></div>
+            </div>
+        </div>
+    </section>
+    <section class="anime-stills" v-if="_ANIME_SCREENSHOTS_.length !== 0">
+        <div class="anime-stills-inner">
+            <div class="anime-stills-tit">
+                <div class="anime-stills-title">
+                    <h2>Кадры</h2>
+                    <h6>Кадры из Аниме {{ _ANIME_RUSSIAN_NAME_ }}</h6>
+                </div>
+            </div>
+            <div class="anime-stills-container">
+                <div class="anime-stills-content"><img v-lazy="_ANIME_SCREENSHOTS_[0].x332Url" :alt="_ANIME_RUSSIAN_NAME_ + 'Кадр из аниме'"></div>
+                <div class="anime-stills-content"><img v-lazy="_ANIME_SCREENSHOTS_[1].x332Url" :alt="_ANIME_RUSSIAN_NAME_ + 'Кадр из аниме'"></div>
+                <div class="anime-stills-content"><img v-lazy="_ANIME_SCREENSHOTS_[2].x332Url" :alt="_ANIME_RUSSIAN_NAME_ + 'Кадр из аниме'"></div>
+                <div class="anime-stills-content"><img v-lazy="_ANIME_SCREENSHOTS_[3].x332Url" :alt="_ANIME_RUSSIAN_NAME_ + 'Кадр из аниме'"></div>
             </div>
         </div>
     </section>
@@ -22,7 +38,7 @@ export default {
     data() {
       return {
           _ANIME_RUSSIAN_NAME_: null,
-          _ANIME_SCREENSHOTS_: null,
+          _ANIME_SCREENSHOTS_: [],
       };
     },
     methods: {
@@ -58,8 +74,6 @@ export default {
 .anime-stills-content {
     width: 100%;
     aspect-ratio: 1 / 0.62;
-    background: rgb(23, 23, 23);
-    background: var(--stills-anime-content-background-color);
     border-radius: 5px;
     overflow: hidden;
     position: relative;

@@ -1,106 +1,103 @@
 <template>
-    <section class="main-content" id="main-content" name="main-content">
-        <div class="movie_2">
-            <div class="movie_2-image">
-                <img src="" alt="">
+    <section v-if="animeList.length === 0" class="main-content" id="main-content" name="main-content">
+        <div class="movie_2 skeleton-cell-pulse">
+            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
             </div>
             <div class="movie_2-info">
-                <h3></h3>
+                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
-                    <div class="movie_2-info-info-anime">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                    <div class="movie_2-info-genres-list">
-                        <p></p>
-                    </div>
-                    <div class="movie_2-info-about">
-                        <p></p>
-                    </div>
+                    <div
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
                 </div>
             </div>
         </div>
-        <div class="movie_2">
-            <div class="movie_2-image">
-                <img src="" alt="">
+        <div class="movie_2 skeleton-cell-pulse">
+            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
             </div>
             <div class="movie_2-info">
-                <h3></h3>
+                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
-                    <div class="movie_2-info-info-anime">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                    <div class="movie_2-info-genres-list">
-                        <p></p>
-                    </div>
-                    <div class="movie_2-info-about">
-                        <p></p>
-                    </div>
+                    <div
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
                 </div>
             </div>
         </div>
-        <div class="movie_2">
-            <div class="movie_2-image">
-                <img src="" alt="">
+        <div class="movie_2 skeleton-cell-pulse">
+            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
             </div>
             <div class="movie_2-info">
-                <h3></h3>
+                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
-                    <div class="movie_2-info-info-anime">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                    <div class="movie_2-info-genres-list">
-                        <p></p>
-                    </div>
-                    <div class="movie_2-info-about">
-                        <p></p>
-                    </div>
+                    <div
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
                 </div>
             </div>
         </div>
-        <div class="movie_2">
-            <div class="movie_2-image">
-                <img src="" alt="">
+        <div class="movie_2 skeleton-cell-pulse">
+            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
             </div>
             <div class="movie_2-info">
-                <h3></h3>
+                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
-                    <div class="movie_2-info-info-anime">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                    <div class="movie_2-info-genres-list">
-                        <p></p>
-                    </div>
-                    <div class="movie_2-info-about">
-                        <p></p>
-                    </div>
+                    <div
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
                 </div>
             </div>
         </div>
-        <div class="movie_2">
-            <div class="movie_2-image">
-                <img src="" alt="">
+        <div class="movie_2 skeleton-cell-pulse">
+            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
             </div>
             <div class="movie_2-info">
-                <h3></h3>
+                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
+                <div class="movie_2-info-kind-genres-aired-container">
+                    <div
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-content" id="main-content" name="main-content" v-if="animeList.length !== 0">
+        <div class="movie_2" v-for="(anime, index) in animeList" :key="index" @click="goToAnime(anime.id)">
+            <div class="movie_2-image">
+                <img v-lazy="anime.poster.mainUrl" :alt="anime.russian">
+            </div>
+            <div class="movie_2-info">
+                <h3>{{ anime.russian }}</h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div class="movie_2-info-info-anime">
-                        <p></p>
-                        <p></p>
-                        <p></p>
+                        <p>{{ anime.score }}<i class="fa-solid fa-star"></i></p><span class="dot">•</span>
+                        <p>{{ anime.kind }}</p><span class="dot">•</span>
+                        <p>{{ anime.airedOn.year }}</p>
+                        <span class="dot">•</span>
+                        <p>{{ translateStatus(anime.status) }}</p>
                     </div>
                     <div class="movie_2-info-genres-list">
-                        <p></p>
+                        <router-link v-for="(genre, genreIndex) in anime.genres.slice(0, 3)" :key="genreIndex"
+                                     :to="'/catalog?genre='+ genre.id">{{ genre.russian }}
+                        </router-link>
                     </div>
                     <div class="movie_2-info-about">
-                        <p></p>
+                        <p>{{ cleanDescription(anime.description) }}</p>
                     </div>
                 </div>
             </div>
@@ -109,11 +106,14 @@
 </template>
 
 <script>
-import {cleanDescription} from "@/other/cleanDescription.js";
+import { cleanDescription } from "@/other/cleanDescription.js";
+import { translateStatus } from "@/other/translateStatus.js";
 export default {
     data() {
         return {
-            cleanDescription
+            animeList: [],
+            cleanDescription,
+            translateStatus,
         };
     },
     mounted() {
@@ -136,6 +136,7 @@ export default {
                               russian
                               kind
                               score
+                              status
                               airedOn {
                                 year
                               }
@@ -154,46 +155,14 @@ export default {
                 });
 
                 const data = await response.json();
-                const filteredAnime = data.data.animes;
-                this.displayAnimeList(filteredAnime, ".main-content");
+                this.animeList = data.data.animes;
             } catch (error) {
                 console.error("Error loading anime data:", error);
             }
         },
-        displayAnimeList(animeList, selector) {
-            let mainContent = document.querySelector(selector);
-            let movie = mainContent.querySelectorAll('.movie_2');
-            animeList.forEach((anime, index) => {
-                let currentCell = movie[index];
-                if (currentCell) {
-                    currentCell.innerHTML = '';
-                    let animeHTML = `
-                    <div class="movie_2-image">
-                        <img src="${anime.poster.mainUrl}" alt="${anime.russian}">
-                    </div>
-                    <div class="movie_2-info">
-                        <h3>${anime.russian}</h3>
-                        <div class="movie_2-info-kind-genres-aired-container">
-                            <div class="movie_2-info-info-anime">
-                                <p>${anime.score}<i class="fa-solid fa-star"></i></p><span class="dot">•</span>
-                                <p>${anime.kind}</p><span class="dot">•</span>
-                                <p>${anime.airedOn.year}</p>
-                            </div>
-                            <div class="movie_2-info-genres-list">
-                              ${anime.genres.slice(0, 3).map(genre => `<p>${genre.russian}</p>`).join('')}
-                            </div>
-                            <div class="movie_2-info-about">
-                                <p>${this.cleanDescription(anime.description)}</p>
-                            </div>
-                        </div>
-                    </div>`;
-                    currentCell.insertAdjacentHTML("beforeend", animeHTML)
-                    currentCell.onclick = () => {
-                        this.$router.push(`/anime?animeId=${anime.id}`);
-                    };
-                }
-            });
-        },
+        goToAnime(animeId) {
+            this.$router.push(`/anime?animeId=${animeId}`);
+        }
     },
 };
 </script>
@@ -205,10 +174,8 @@ export default {
     gap: 10px;
     position: relative;
     flex-direction: column;
-}
 
-@media screen and (max-width: 485px) {
-    .main-content {
+    @media screen and (max-width: 485px) {
         flex-direction: row;
         flex-wrap: wrap;
     }
@@ -221,9 +188,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-}
 
-.empty-anime-message h3 {
-    font-weight: bold;
+    h3 {
+        font-weight: bold;
+    }
 }
 </style>

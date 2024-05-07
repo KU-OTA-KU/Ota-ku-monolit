@@ -1,12 +1,40 @@
 <template>
-    <section class="anime-background" :style="'background-image: url(' + _ANIME_IMAGE_ +  ')'">
+    <section v-if="!loaded" class="anime-background" :style="'background-image: url(' + _ANIME_IMAGE_ +  ')'">
         <div class="anime-back-gradient"></div>
         <div class="anime-back-content">
             <div class="anime-back-content-inner">
                 <div class="anime-back-content-tit">
                     <div class="anime-back-global-info">
                         <div class="anime-back-panel-left">
-                            <div class="anime-back-global-info-image"><img v-if="_ANIME_IMAGE_" :src="_ANIME_IMAGE_" :alt="_ANIME_ENGLISH_NAME_"></div>
+                            <div class="anime-back-global-info-image skeleton-bg skeleton-cell-slide"></div>
+                            <div class="anime-back-global-info-watch-button">
+                                <div class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight"></div>
+                                <div class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight"></div>
+                            </div>
+                        </div>
+                        <div class="anime-back-global-current-anime-information">
+                            <div class="anime-eng-jpg-name skeleton-height skeleton-cell-slide skeleton-weight skeleton-bg"></div>
+                            <div class="anime-title-h2 skeleton-height-h1 skeleton-cell-slide skeleton-weight-50 skeleton-bg"></div>
+                            <div class="anime-score-genres skeleton-height skeleton-cell-slide skeleton-weight-50 skeleton-bg"></div>
+                            <div class="anime-status skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg"></div>
+                            <div class="anime-year skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg"></div>
+                            <div class="anime-rating skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg"></div>
+                            <div class="anime-duration skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg"></div>
+                            <div class="anime-next-episode-block skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section v-if="loaded" class="anime-background" :style="'background-image: url(' + _ANIME_IMAGE_ +  ')'">
+        <div class="anime-back-gradient"></div>
+        <div class="anime-back-content">
+            <div class="anime-back-content-inner">
+                <div class="anime-back-content-tit">
+                    <div class="anime-back-global-info">
+                        <div class="anime-back-panel-left">
+                            <div class="anime-back-global-info-image"><img v-lazy="_ANIME_IMAGE_" :alt="_ANIME_ENGLISH_NAME_"></div>
                             <div class="anime-back-global-info-watch-button">
                                 <button onclick="#watch"><i class="fa-solid fa-play"></i>Смотреть
                                 </button>
@@ -40,6 +68,7 @@ import moment from 'moment';
 export default {
     data() {
         return {
+            loaded: false,
             _ANIME_ID_: null,
             _ANIME_IMAGE_: null,
             _ANIME_ENGLISH_NAME_: null,
@@ -90,6 +119,8 @@ export default {
            } else {
                this._ANIME_RUSSIAN_STATUS_ = 'Анонс'
            }
+
+           this.loaded = true;
        }
     }
 };
@@ -145,7 +176,6 @@ export default {
 .anime-back-global-info-image {
     width: 100%;
     aspect-ratio: 1 / 1.4;
-    background: var(--anime-header-global-info-image-background-gradient);
     position: relative;
     border-radius: 5px;
     overflow: hidden;
@@ -224,8 +254,6 @@ export default {
 .anime-eng-jpg-name {
     margin-top: 20px;
     display: flex;
-    height: 20px !important;
-    border-radius: 4px;
     color: var(--anime-header-global-info-status-text-color);
     align-items: center;
     justify-content: space-between;
@@ -247,7 +275,7 @@ export default {
 .anime-title-h2 {
     display: flex;
     min-width: 50%;
-    border-radius: 4px;
+
     align-items: center;
     justify-content: flex-start;
     gap: 5px;
@@ -264,8 +292,6 @@ export default {
 
 .anime-score {
     display: flex;
-    height: 20px !important;
-    border-radius: 4px;
     font-size: 1em;
     color: var(--status-font-color);
     align-items: center;
@@ -293,7 +319,6 @@ export default {
 
 .anime-genres-list {
     align-items: center;
-    min-height: 21px;
     display: flex;
     border-radius: 4px;
     font-size: 1em;

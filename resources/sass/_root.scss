@@ -79,15 +79,6 @@ button {
     font-family: "inter-regular", sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Montserrat-regular", sans-serif;
-}
-
 p,
 h1,
 h2,
@@ -115,7 +106,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 h6 {
@@ -144,7 +135,7 @@ a {
 }
 
 @media screen and (max-width: 425px) {
-    body {
-        gap: 2px !important;
+    #app {
+        gap: 5px !important;
     }
 }

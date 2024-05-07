@@ -1,5 +1,5 @@
 <template>
-    <section class="most-container">
+    <section class="most-container" v-if="animeLists.length === 0">
         <div class="most-container-inner">
             <div class="most-container-tit">
                 <div class="most-content-gallery-cell">
@@ -8,58 +8,48 @@
                     </div>
                     <div class="most-content-animes-list-option-1">
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                     </div>
@@ -70,58 +60,48 @@
                     </div>
                     <div class="most-content-animes-list-option-2">
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                     </div>
@@ -132,58 +112,48 @@
                     </div>
                     <div class="most-content-animes-list-option-3">
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                     </div>
@@ -194,58 +164,83 @@
                     </div>
                     <div class="most-content-animes-list-option-4">
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image"></div>
+                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
                             <div class="most-content-movie-info">
-                                <div class="most-name"></div>
-                                <div class="most-status">
-                                    <div class="most-type"></div>
-                                    <div class="rating"></div>
+                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
                                 </div>
-                                <div class="most-data"></div>
+                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="most-container" v-if="animeLists">
+        <div class="most-container-inner">
+            <div class="most-container-tit">
+                <div class="most-content-gallery-cell" v-for="(animeList, index) in animeLists" :key="index">
+                    <div class="most-content-title-h2">
+                        <h2>{{ animeList.title }}</h2>
+                    </div>
+                    <div class="most-content-animes-list-option"
+                         :class="'most-content-animes-list-option-' + (index + 1)">
+                        <div class="most-content-movie" v-for="(anime, i) in animeList.animes" :key="i"
+                             @click="goToAnime(anime.id)">
+                            <div class="most-content-movie-image">
+                                <img v-lazy="anime.poster.mini2xUrl" :alt="anime.name">
+                            </div>
+                            <div class="most-content-movie-info">
+                                <div class="most-name">
+                                    <router-link :to="'/anime?animeId=' + anime.id">{{ anime.russian }}</router-link>
+                                </div>
+                                <div class="most-status">
+                                    <div class="most-type">{{ anime.kind }}</div>
+                                    <div class="rating">
+                                        {{ anime.score }}
+                                        <i class="fa-solid fa-star" aria-hidden="true" style="cursor: pointer;"></i>
+                                    </div>
+                                </div>
+                                <div class="most-data">
+                                    <p>{{ anime.airedOn.year }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -254,10 +249,13 @@
         </div>
     </section>
 </template>
+
 <script>
 export default {
     data() {
-        return {};
+        return {
+            animeLists: [],
+        };
     },
     mounted() {
         this.fetchAllData();
@@ -333,82 +331,66 @@ export default {
 
                 const data = await response.json();
                 console.log("%cAll data fetched successfully", "color: greenyellow");
-                const ongoingAnimes = data.data.ongoingAnimes;
-                const anonseAnimes = data.data.anonseAnimes;
-                const topAnimes = data.data.topAnimes;
-                const releasedAnimes = data.data.releasedAnimes;
 
-                this.displayAnimeListMost(ongoingAnimes, ".most-content-animes-list-option-1");
-                this.displayAnimeListMost(anonseAnimes, ".most-content-animes-list-option-2");
-                this.displayAnimeListMost(topAnimes, ".most-content-animes-list-option-3");
-                this.displayAnimeListMost(releasedAnimes, ".most-content-animes-list-option-4");
+                this.animeLists.push({
+                    title: "Онгоинги",
+                    animes: data.data.ongoingAnimes,
+                });
+
+                this.animeLists.push({
+                    title: "Анонсы",
+                    animes: data.data.anonseAnimes,
+                });
+
+                this.animeLists.push({
+                    title: "Топ аниме",
+                    animes: data.data.topAnimes,
+                });
+
+                this.animeLists.push({
+                    title: "Завершенные",
+                    animes: data.data.releasedAnimes,
+                });
             } catch (error) {
                 console.warn("Request error => ", error);
-                this.fetchAllData(); // Retry if there's an error
+                this.fetchAllData();
             }
         },
-
-        displayAnimeListMost(animeList, selector) {
-            let mainContent = document.querySelector(selector);
-            let movie = mainContent.querySelectorAll('.most-content-movie');
-
-            animeList.forEach((anime, index) => {
-                let currentCell = movie[index];
-                currentCell.innerHTML = '';
-                let animeHTML = `
-          <div class="most-content-movie-image">
-            <img src="${anime.poster.mini2xUrl}" alt="${anime.name}">
-          </div>
-          <div class="most-content-movie-info">
-            <div class="most-name" style="background: transparent !important;">
-              <router-link :to="/anime?animeId=${anime.id}">${anime.russian}</router-link>
-            </div>
-            <div class="most-status" style="background: transparent !important;">
-              <div class="most-type">${anime.kind}</div>
-              <div class="rating">
-                ${anime.score}
-                <i class="fa-solid fa-star" aria-hidden="true" style="cursor: pointer;"></i>
-              </div>
-            </div>
-            <div class="most-data" style="background: transparent !important;"><p>${anime.airedOn.year}</p></div>
-          </div>
-        `;
-                currentCell.insertAdjacentHTML("beforeend", animeHTML);
-                currentCell.onclick = () => {
-                    this.$router.push(`/anime?animeId=${anime.id}`);
-                };
-            });
+        goToAnime(animeId) {
+            this.$router.push(`/anime?animeId=${animeId}`);
         },
-    }
-}
+    },
+};
 </script>
 
 <style lang="scss">
 .most-container {
     width: 100%;
+
+    &-inner {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    & .most-container-tit {
+        max-width: var(--ota-ku-max-width);
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .most-content-gallery-cell {
+            width: calc(25% - 10px);
+        }
+    }
 }
 
-.most-container-inner {
-    width: 100%;
-    padding: 0 10px;
-}
-
-.most-container .most-container-tit {
-    max-width: var(--ota-ku-max-width);
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.most-container-tit .most-content-gallery-cell {
-    width: calc(25% - 10px);
-}
-
-.most-content-gallery-cell .most-content-title-h2 {
-    /*margin-bottom: 10px;*/
-    color: var(--most-content-title-h2-color);
+.most-content-gallery-cell {
+    .most-content-title-h2 {
+        /*margin-bottom: 10px;*/
+        color: var(--most-content-title-h2-color);
+    }
 }
 
 .most-content-movie {
@@ -418,123 +400,117 @@ export default {
     flex-direction: row;
     border-bottom: 1px solid var(--most-content-movie-border-bottom);
     cursor: pointer;
-}
 
-.most-content-movie:hover .most-name {
-    color: var(--most-content-movie-name-hover);
-}
+    &:hover {
+        .most-name {
+            color: var(--most-content-movie-name-hover);
+        }
+    }
 
-.most-content-movie .most-content-movie-image {
-    background: var(--most-content-movie-content-image-background-gradient);
-    aspect-ratio: 1 / 1.4;
-    position: relative;
-    border-radius: 4px;
-    width: 20%;
-    overflow: hidden;
-}
+    .most-content-movie-image {
+        aspect-ratio: 1 / 1.4;
+        position: relative;
+        width: 20%;
+        overflow: hidden;
 
-.most-content-movie-image img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    pointer-events: none;
-    /*object-fit: cover;*/
-}
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            pointer-events: none;
+            /*object-fit: cover;*/
+        }
+    }
 
-.most-content-movie-info {
-    width: 80%;
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
+    .most-content-movie-info {
+        width: 80%;
+        padding-left: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
 
-.most-content-movie-info .most-name {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-    transition: color 0.2s ease-in-out;
-    border-radius: 5px;
-    height: 17px !important;
-    background: var(--most-content-movie-most-name-background-gradient);
-    text-align: left;
-    margin-bottom: 3px;
-    font-size: 0.9em;
-}
+        .most-name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+            transition: color 0.2s ease-in-out;
 
-.most-content-movie-info .most-name p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+            //background: var(--most-content-movie-most-name-background-gradient);
+            text-align: left;
+            margin-bottom: 3px;
+            font-size: 0.9em;
 
-.most-content-movie-info .most-status {
-    display: flex;
-    min-width: 50%;
-    height: 17px !important;
-    border-radius: 5px;
-    background: var(--most-content-movie-most-status-background-gradient);
-    font-size: 0.8em;
-    color: var(--most-content-movie-status-text-color);
-    align-items: center;
-    justify-content: flex-start;
-    gap: 5px;
-    margin-bottom: 3px;
-}
+            p {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
 
-.most-content-movie-info .most-status i {
-    color: var(--most-content-movie-status-star-color);
-}
+        .most-status {
+            display: flex;
+            min-width: 50%;
+            font-size: 0.8em;
+            color: var(--most-content-movie-status-text-color);
+            align-items: center;
+            justify-content: flex-start;
+            gap: 5px;
+            margin-bottom: 3px;
 
+            i {
+                color: var(--most-content-movie-status-star-color);
+            }
+        }
 
-.most-content-movie-info .most-data {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 50%;
-    border-radius: 5px;
-    height: 18px !important;
-    background: var(--most-content-movie-most-data-background-gradient);
-    text-align: left;
-    font-size: 0.7em;
+        .most-data {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 50%;
+            text-align: left;
+            font-size: 0.7em;
+        }
+    }
 }
 
 @media screen and (max-width: 1024px) {
-    .most-container-tit .most-content-gallery-cell {
-        width: calc(33.33% - 20px);
-    }
+    .most-container-tit {
+        .most-content-gallery-cell {
+            width: calc(33.33% - 20px);
+        }
 
-    .most-container-tit .most-content-gallery-cell:nth-child(4) {
-        display: none;
+        .most-content-gallery-cell:nth-child(4) {
+            display: none;
+        }
     }
 }
 
 @media screen and (max-width: 768px) {
-    .most-container-tit .most-content-gallery-cell {
-        width: calc(50% - 20px);
-    }
-
     .most-container-tit {
         gap: 20px;
-    }
 
-    .most-container-tit .most-content-gallery-cell:nth-child(4) {
-        display: unset;
-    }
+        .most-content-gallery-cell {
+            width: calc(50% - 20px) !important;
+        }
 
-    .most-content-gallery-cell .most-content-title-h2 {
-        text-align: center;
-        font-size: 1.2em !important;
+        .most-content-gallery-cell:nth-child(4) {
+            display: unset;
+        }
+
+        .most-content-gallery-cell .most-content-title-h2 {
+            text-align: center;
+        }
     }
 }
 
 @media screen and (max-width: 425px) {
-    .most-container-tit .most-content-gallery-cell {
-        width: calc(100%);
+    .most-container-tit {
+        .most-content-gallery-cell {
+            width: calc(100%);
+        }
     }
-
 }
 </style>

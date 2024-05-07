@@ -5,30 +5,28 @@
                 <div class="all-genres-list-container" ref="allGenresFlickityContainer">
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=5'">
                         <div class="genre-cont-image-conatiner">
-                            <img
-                                src="../../../img/genres/avant_garde_1.webp"
-                                alt>
+                            <img v-lazy="'/img/genres/avant_garde_1.webp'" alt="ota-ku Авангард">
                         </div>
                         <h3>Авангард</h3>
                     </div>
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=543'">
                         <div class="genre-cont-image-conatiner">
                             <img
-                                src="../../../img/genres/gourmet_1.webp"
+                                v-lazy="'/img/genres/gourmet_1.webp'"
                                 alt>
                         </div>
                         <h3>Гурман</h3>
                     </div>
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=8'">
                         <div class="genre-cont-image-conatiner">
-                            <img src="../../../img/genres/drama_1.webp"
+                            <img  v-lazy="'/img/genres/drama_1.webp'"
                                  alt>
                         </div>
                         <h3>Драмма</h3>
                     </div>
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=4'">
                         <div class="genre-cont-image-conatiner">
-                            <img src="../../../img/genres/comedy_1.webp"
+                            <img  v-lazy="'/img/genres/comedy_1.webp'"
                                  alt>
                         </div>
                         <h3>Комедия</h3>
@@ -36,7 +34,7 @@
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=36'">
                         <div class="genre-cont-image-conatiner">
                             <img
-                                src="../../../img/genres/everyday_life_1.webp"
+                                v-lazy="'/img/genres/everyday_life_1.webp'"
                                 alt>
                         </div>
                         <h3>Повседневность</h3>
@@ -44,7 +42,7 @@
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=2'">
                         <div class="genre-cont-image-conatiner">
                             <img
-                                src="../../../img/genres/adventures_1.webp"
+                                v-lazy="'/img/genres/adventures_1.webp'"
                                 alt>
                         </div>
                         <h3>Приключения</h3>
@@ -52,7 +50,7 @@
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=22'">
                         <div class="genre-cont-image-conatiner">
                             <img
-                                src="../../../img/genres/romance_1.webp"
+                                v-lazy="'/img/genres/romance_1.webp'"
                                 alt>
                         </div>
                         <h3>Романтика</h3>
@@ -60,21 +58,21 @@
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=37'">
                         <div class="genre-cont-image-conatiner">
                             <img
-                                src="../../../img/genres/supernatural_1.webp"
+                                v-lazy="'/img/genres/supernatural_1.webp'"
                                 alt>
                         </div>
                         <h3>Сверхъестественное</h3>
                     </div>
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=30'">
                         <div class="genre-cont-image-conatiner">
-                            <img src="../../../img/genres/sport_1.webp"
+                            <img  v-lazy="'/img/genres/sport_1.webp'"
                                  alt>
                         </div>
                         <h3>Спорт</h3>
                     </div>
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=7'">
                         <div class="genre-cont-image-conatiner">
-                            <img src="../../../img/genres/secret_1.webp"
+                            <img  v-lazy="'/img/genres/secret_1.webp'"
                                  alt>
                         </div>
                         <h3>Тайна</h3>
@@ -82,14 +80,14 @@
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=117'">
                         <div class="genre-cont-image-conatiner">
                             <img
-                                src="../../../img/genres/thriller_1.webp"
+                                v-lazy="'/img/genres/thriller_1.webp'"
                                 alt>
                         </div>
                         <h3>Триллер</h3>
                     </div>
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=14'">
                         <div class="genre-cont-image-conatiner">
-                            <img src="../../../img/genres/horror_1.webp"
+                            <img  v-lazy="'/img/genres/horror_1.webp'"
                                  alt>
                         </div>
                         <h3>Ужасы</h3>
@@ -97,21 +95,21 @@
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=10'">
                         <div class="genre-cont-image-conatiner">
                             <img
-                                src="../../../img/genres/fantasy_1.webp"
+                                v-lazy="'/img/genres/fantasy_1.webp'"
                                 alt>
                         </div>
                         <h3>Фэнтези</h3>
                     </div>
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=1'">
                         <div class="genre-cont-image-conatiner">
-                            <img src="../../../img/genres/action_1.webp"
+                            <img  v-lazy="'/img/genres/action_1.webp'"
                                  alt>
                         </div>
                         <h3>Экшен</h3>
                     </div>
                     <div class="genre-cont" onclick="window.location.href = 'catalog.php?genres=9'">
                         <div class="genre-cont-image-conatiner">
-                            <img src="../../../img/genres/etti_1.webp"
+                            <img  v-lazy="'/img/genres/etti_1.webp'"
                                  alt>
                         </div>
                         <h3>Этти</h3>

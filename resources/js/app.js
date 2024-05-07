@@ -7,7 +7,7 @@
 import "./bootstrap";
 import { createApp } from "vue";
 import router from "./router";
-
+import VueLazyload from 'vue-lazyload';
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -28,6 +28,12 @@ import application from './components/_app.vue';
 app.component('ota-ku-application', application);
 
 app.use(router);
+app.use(VueLazyload, {
+    preLoad: 1.3,
+    error: '/img/other/error.png',
+    loading: '/img/other/loading.png',
+    attempt: 1,
+});
 app.mount("#app");
 
 /**
