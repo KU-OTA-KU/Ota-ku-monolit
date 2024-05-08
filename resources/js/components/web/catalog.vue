@@ -117,6 +117,7 @@ export default {
         this.$watch(
             () => this.$route.query,
             () => {
+                console.log("sisn")
                 this.handleUrlChange();
             }
         );
@@ -125,6 +126,8 @@ export default {
         handleUrlChange() {
             this.animeList = [];
             this.currPage = 1;
+            this.animeFound = true;
+            this.animeFoundInitialized = false;
             this.fetchAnimeData();
             window.scrollTo({ top: 0});
         },
