@@ -74,7 +74,6 @@ export default {
 .anime-stills-content {
     width: 100%;
     aspect-ratio: 1 / 0.62;
-    border-radius: 5px;
     overflow: hidden;
     position: relative;
 }

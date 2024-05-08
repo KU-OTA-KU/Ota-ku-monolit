@@ -24,7 +24,7 @@
                     </div>
                     <div class="player-right-panel-content">
                         <div class="voices-and-subtitles-container" v-if="activePanel === 'voices'">
-                            <a v-if="currentAnimeVoice" v-for="(anime, index) in results"
+                            <a v-for="(anime, index) in results"
                                :key="index"
                                :class="{ 'active': anime.translation.id === currentAnimeVoice }"
                                class="voice-item"
@@ -36,9 +36,11 @@
                         <div class="seasons-container"
                              v-if="activePanel === 'seasons' && currentAnimeResult && currentAnimeVoice"
                              v-for="(season, seasonIndex) in currentAnimeResult.seasons" :key="seasonIndex">
-                                <a :class="'anime-episode-' + episodeIndex" v-for="(episode, episodeIndex) in season.episodes" :key="episodeIndex" @click="changeEpisode(seasonIndex, episodeIndex)">
-                                    Серия {{ episodeIndex }} <span>Сезон {{ seasonIndex }}  Озвучка</span>
-                                </a>
+                            <a :class="'anime-episode-' + episodeIndex"
+                               v-for="(episode, episodeIndex) in season.episodes" :key="episodeIndex"
+                               @click="changeEpisode(seasonIndex, episodeIndex)">
+                                Серия {{ episodeIndex }} <span>Сезон {{ seasonIndex }}</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -65,6 +67,7 @@ export default {
     methods: {
         async fetchData() {
             try {
+                this.clearData();
                 this.currentAnime = this.$route.query.animeId;
                 this.currentAnimeVoice = parseInt(this.VueCookies.get('selectedVoice')) || null;
                 console.log(this.currentAnimeVoice);
@@ -76,6 +79,16 @@ export default {
                 } else {
                     this.results = data.results;
                     this.currentAnimeResult = data.results.find(result => result.translation.id === this.currentAnimeVoice);
+
+                    if (!this.currentAnimeResult) {
+                        if (data.results.length > 0) {
+                            this.currentAnimeResult = data.results[0];
+                            this.currentAnimeVoice = this.currentAnimeResult.translation.id;
+                        } else {
+                            this.currentAnimeResult = null;
+                            this.currentAnimeVoice = null;
+                        }
+                    }
                     console.log(this.currentAnimeResult);
                 }
             } catch (error) {
@@ -112,8 +125,27 @@ export default {
             }
         },
         changeVoice(voiceId) {
-            this.currentAnimeVoice = voiceId;
+            const newAnimeResult = this.results.find(anime => anime.translation.id === voiceId);
+
+            if (newAnimeResult) {
+                this.currentAnimeVoice = voiceId;
+                this.currentAnimeResult = newAnimeResult;
+
+                this.results.forEach(anime => {
+                    anime.isActive = anime.translation.id === voiceId;
+                });
+            } else {
+                console.error("Failed to find anime with voice ID:", voiceId);
+            }
         },
+        clearData() {
+                this.currentAnime = '';
+                this.currentAnimeVoice ='';
+                this.activePanel ='seasons';
+                this.kodikIframeSrc ='';
+                this.results = [];
+                this.currentAnimeResult = null;
+        }
     },
     mounted() {
         this.fetchData();

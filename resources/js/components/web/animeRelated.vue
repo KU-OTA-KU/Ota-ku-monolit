@@ -151,9 +151,13 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    /*min-width: 200px;*/
     max-width: 200px;
     width: 100%;
+    cursor: pointer;
+}
+
+.related-animes-block:hover .related-animes-name {
+    color: #2786e4 !important;
 }
 
 .related-animes-list-title {
@@ -168,7 +172,7 @@ export default {
 .related-animes-container .related-animes-block .related-animes-name {
     font-size: 1em;
     max-width: 200px;
-    text-decoration: underline;
+text-decoration: underline;
     text-align: left;
     white-space: nowrap;
     overflow: hidden;

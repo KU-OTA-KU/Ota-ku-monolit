@@ -16,7 +16,7 @@
                         </button>
                     </nav>
                     <div class="header-search">
-                        <form action="/catalog" method="GET">
+                        <form @submit.prevent="submitForm" action="#" method="GET">
                             <button type="submit">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
@@ -166,6 +166,10 @@ export default {
             const currentThemeLink = document.querySelector('.currentTheme');
             const themeStyleSheetPath = `css/palette/${this.selectedTheme}.css`;
             currentThemeLink.setAttribute('href', themeStyleSheetPath);
+        },
+        submitForm() {
+            const currentPath = this.$route.fullPath;
+            this.$router.push({ path: '/catalog', query: { search: this.searchQuery } });
         }
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <section v-if="animeList.length === 0 && animeFound" class="main-content" id="main-content" name="main-content">
+    <section v-if="animeList.length === 0 && animeFoundInitialized === false" class="main-content" id="main-content" name="main-content">
         <div class="movie_2 skeleton-cell-pulse">
             <div class="movie_2-image skeleton-cell-slide skeleton-bg">
             </div>
@@ -90,7 +90,7 @@
             </div>
         </div>
     </section>
-    <div v-if="!animeFound" class="empty-anime-message">
+    <div  v-if="!animeFound ||  !animeFound && animeFoundInitialized === false" class="empty-anime-message">
         <h3>Ничего не найдено 😔</h3>
     </div>
 </template>
@@ -141,44 +141,44 @@ export default {
                         },
                         body: JSON.stringify({
                             query: `
-                                query {
-                                    animes(
-                                        season: "${currentParams.season || ''}",
-                                        status: "${currentParams.status || ''}",
-                                        kind: "${currentParams.kind || 'tv,tv_special,ova,ona,special'}",
-                                        order: ${currentParams.sort || 'ranked'},
-                                        rating: "${currentParams.rating || ''}",
-                                        genre: "${currentParams.genre || ''}",
-                                        limit: ${this.limit},
-                                        page: ${this.currPage},
-                                    ) {
-                                        id
-                                        name
-                                        russian
-                                        kind
-                                        score
-                                        status
-                                        description
-                                        genres {
-                                            russian
-                                        }
-                                        airedOn {
-                                            year
-                                        }
-                                        poster {
-                                            mainUrl
-                                        }
-                                    }
+                        query {
+                            animes(
+                                search: "${currentParams.search || ''}",
+                                season: "${currentParams.season || ''}",
+                                status: "${currentParams.status || ''}",
+                                kind: "${currentParams.kind || 'tv,tv_special,ova,ona,special'}",
+                                order: ${currentParams.sort || 'ranked'},
+                                rating: "${currentParams.rating || ''}",
+                                genre: "${currentParams.genre || ''}",
+                                limit: ${this.limit},
+                                page: ${this.currPage},
+                            ) {
+                                id
+                                name
+                                russian
+                                kind
+                                score
+                                status
+                                description
+                                genres {
+                                    russian
                                 }
-                            `,
+                                airedOn {
+                                    year
+                                }
+                                poster {
+                                    mainUrl
+                                }
+                            }
+                        }
+                    `,
                         }),
                     });
                     const data = await response.json();
                     const animeList = data.data.animes;
                     this.animeList = [...this.animeList, ...animeList];
                     this.currPage++;
-                    // console.log(animeList.length);
-                    if (animeList.length === 0) {
+                    if (animeList.length === 0 && this.animeFoundInitialized === false) {
                         this.animeFound = false;
                         this.animeFoundInitialized = true;
                     } else {

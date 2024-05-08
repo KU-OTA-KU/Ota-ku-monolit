@@ -12,7 +12,7 @@
     <anime-stills ref="AnimeStills"></anime-stills>
     <!-- ANIME STILLS INIT END -->
     <!-- PLAYER INIT START -->
-    <player></player>
+    <player ref="player"></player>
     <!-- PLAYER INIT END -->
     <!-- ANIME CHARACTERS INIT START -->
     <anime-characters ref="AnimeCharacters"></anime-characters>
@@ -67,6 +67,7 @@ export default {
             (newValue, oldValue) => {
                 if (newValue !== oldValue) {
                     this.getCurrAnime(newValue);
+                    this.$refs.player.fetchData();
                 }
             }
         );

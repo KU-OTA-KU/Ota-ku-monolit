@@ -36,7 +36,7 @@
                         <div class="anime-back-panel-left">
                             <div class="anime-back-global-info-image"><img v-lazy="_ANIME_IMAGE_" :alt="_ANIME_ENGLISH_NAME_"></div>
                             <div class="anime-back-global-info-watch-button">
-                                <button onclick="#watch"><i class="fa-solid fa-play"></i>Смотреть
+                                <button><i class="fa-solid fa-play"></i>Смотреть
                                 </button>
                                 <button><i class="fa-solid fa-exclamation"></i>Пожаловаться</button>
                             </div>
