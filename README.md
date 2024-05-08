@@ -7,4 +7,5 @@ npm install vue-routernpm
 npm install moment
 npm install vue-cookies
 npm install vue-lazyload --save
+composer require laravel/breeze --dev
 
