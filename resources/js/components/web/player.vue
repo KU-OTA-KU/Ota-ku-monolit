@@ -226,11 +226,13 @@ export default {
 .player-right-panel-content a {
     padding: 8px 10px;
     margin: 0 10px;
-    transition: color 0.2s;
+    transition: color 0.2s, background-color 0.2s ease-in-out;
+    cursor: pointer;
 }
 
 .player-right-panel-content a:hover {
     color: #1976D2;
+    background-color: white;
 }
 
 #kodik-player {
@@ -247,7 +249,6 @@ export default {
     position: absolute;
     z-index: 100;
 }
-
 
 .kodik-anime-not-found {
     width: 100%;
@@ -285,16 +286,18 @@ export default {
     gap: 10px;
     overflow: hidden;
     overflow-y: scroll;
+    display: flex;
     height: 100%;
 }
 
-.player-right-panel-content .voices-and-subtitles-container a {
+.player-right-panel-content a
+{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.player-right-panel-content .voices-and-subtitles-container a span {
+.player-right-panel-content a span {
     font-size: 0.8em;
     color: var(--player-player-right-panel-voices-seasons-cout-span-color);
 }
