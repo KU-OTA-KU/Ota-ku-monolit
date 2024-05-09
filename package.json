@@ -25,6 +25,7 @@
     "author": "vahe",
     "license": "ISC",
     "dependencies": {
+        "@vueuse/head": "^2.0.0",
         "flickity": "^3.0.0",
         "moment": "^2.30.1",
         "vue-cookies": "^1.8.4",

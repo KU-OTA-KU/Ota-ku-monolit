@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import { useHead } from "@vueuse/head";
+
 import TopSlider from './web/topSlider.vue';
 import PrimaryHeader from './web/primaryHeader.vue';
 import MostAnimes from './web/mostAnimes.vue';
@@ -46,16 +48,22 @@ export default {
         Content,
         Filter,
         Welcome,
-        Footer
+        Footer,
     },
     mounted() {
-        document.title = `Смотреть аниме онлайн бесплатно в хорошем качестве`;
         sessionStorage.removeItem("CurrentAnime");
         console.log('Index Mounted!');
-        window.scrollTo({ top: 0});
-    }
+        window.scrollTo({top: 0});
+        useHead({
+            title: "Смотреть аниме онлайн бесплатно в хорошем качестве",
+            meta: {
+
+            }
+        });
+    },
 }
 </script>
+
 
 <style lang="scss" scoped>
 </style>

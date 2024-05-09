@@ -14,20 +14,6 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-        <!--        <section class="filter-query">-->
-        <!--            <div class="filter-title">-->
-        <!--                <i class="fa-solid fa-search"></i>-->
-        <!--                <p>Ваши запросы:</p>-->
-        <!--            </div>-->
-        <!--            <div class="filter-query-content">-->
-        <!--                <template v-for="(value, name) in filters">-->
-        <!--                    <div v-if="value !== '' && value.length !== 0" :key="name" class="filter-item">-->
-        <!--                        {{ name }}: {{ Array.isArray(value) ? value.join(', ') : value }}-->
-        <!--                    </div>-->
-        <!--                </template>-->
-        <!--            </div>-->
-        <!--        </section>-->
-
         <div class="filter-selector">
             <form @submit.prevent="submitFilters">
                 <div class="filter-fl-genre filter-box">
@@ -379,9 +365,8 @@ export default {
 }
 
 .filter-title i {
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
-
 
 .filter-clear button {
     padding: 5px 10px;
@@ -413,7 +398,7 @@ export default {
 
 .filter-selector label {
     font-size: 1em;
-    padding: 10px 0 1px 0;
+    padding: 10px 0 2px 0;
     width: 100%;
     display: block;
 }
@@ -566,17 +551,19 @@ export default {
     overflow-y: scroll;
     position: absolute;
     width: 100%;
+    display: block;
+    margin-top: 2px;
     background-color: var(--filter-filter-custom-select-options-background-color);
     padding: 8px 15px;
     border: 1px solid var(--filter-custom-select-border-color)
 }
 
 .custom-select .custom-select-options::-webkit-scrollbar {
-    width: 3px;
+    width: 2px;
 }
 
 .custom-select .custom-select-options div {
-    padding: 5px 0;
+    padding: 7px 0;
     display: flex;
     align-items: center;
 }
@@ -584,12 +571,14 @@ export default {
 .custom-select .custom-select-options div input,
 .custom-select .custom-select-options div label {
     cursor: pointer;
+    display: block;
     padding: 0;
 }
 
 .custom-select .custom-select-options div input {
-    margin-right: 10px;
-    transform: scale(1.4);
+    margin-right: 15px;
+    transform: scale(1.2);
+    accent-color: #2786E4;
 }
 
 @media screen and (max-width: 1024px) {

@@ -12,7 +12,9 @@
     <anime-stills ref="AnimeStills"></anime-stills>
     <!-- ANIME STILLS INIT END -->
     <!-- PLAYER INIT START -->
+    <div id="yandex_rtb_R-A-7609325-4"></div>
     <player ref="player"></player>
+    <div id="yandex_rtb_R-A-7609325-5"></div>
     <!-- PLAYER INIT END -->
     <!-- ANIME CHARACTERS INIT START -->
     <anime-characters ref="AnimeCharacters"></anime-characters>
@@ -35,9 +37,13 @@ import Player from "@/components/web/player.vue";
 import AnimeCharacters from "@/components/web/animeCharacters.vue";
 import AnimeRelated from "@/components/web/animeRelated.vue";
 
+import { bann_1 } from "@/other/banner/bann_1.js";
+import { bann_2 } from "@/other/banner/bann_2.js";
 export default {
     data() {
         return {
+            bann_1,
+            bann_2,
             animeDataReadyEventCreated: false
         };
     },

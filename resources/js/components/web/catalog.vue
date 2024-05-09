@@ -64,7 +64,7 @@
     <section v-if="animeList.length !== 0" class="main-content" id="main-content" name="main-content">
         <div v-for="anime in animeList" :key="anime.id" class="movie_2" @click="goToAnime(anime.id)">
             <div class="movie_2-image">
-                <img :src="anime.poster && anime.poster.mainUrl ? anime.poster.mainUrl : ''" :alt="'Смотреть аниме ' + (anime.name || anime.russian)">
+                <img v-lazy="anime.poster && anime.poster.mainUrl ? anime.poster.mainUrl : ''" :alt="'Смотреть аниме ' + (anime.name || anime.russian)">
             </div>
             <div class="movie_2-info">
                 <h3>{{ anime.russian }}</h3>
