@@ -11,7 +11,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import IndexComponent from "./components/index.vue";
 import CatalogComponent from "./components/catalog.vue";
 import OpenAnimeComponent from "./components/anime.vue";
-
+import NotFoundComponent from './components/error.vue';
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -27,6 +27,10 @@ const router = createRouter({
             path: "/anime",
             component: OpenAnimeComponent,
         },
+        {
+            path: "/:catchAll(.*)",
+            component: NotFoundComponent,
+        }
     ],
 });
 

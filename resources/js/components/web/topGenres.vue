@@ -3,114 +3,93 @@
         <div class="all-genres-list-inner">
             <div class="all-genres-list-tit">
                 <div class="all-genres-list-container" ref="allGenresFlickityContainer">
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=5'">
+                    <div class="genre-cont" @click="goToAnime(5)">
                         <div class="genre-cont-image-conatiner">
-                            <img v-lazy="'/img/genres/avant_garde_1.webp'" alt="ota-ku Авангард">
+                            <img v-lazy="'/img/genres/avant_garde_1.webp'" alt="Аниме Авангард">
                         </div>
                         <h3>Авангард</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=543'">
+                    <div class="genre-cont" @click="goToAnime(543)">
                         <div class="genre-cont-image-conatiner">
-                            <img
-                                v-lazy="'/img/genres/gourmet_1.webp'"
-                                alt>
+                            <img v-lazy="'/img/genres/gourmet_1.webp'" alt="Аниме Гурман">
                         </div>
                         <h3>Гурман</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=8'">
+                    <div class="genre-cont" @click="goToAnime(8)">
                         <div class="genre-cont-image-conatiner">
-                            <img  v-lazy="'/img/genres/drama_1.webp'"
-                                 alt>
+                            <img v-lazy="'/img/genres/drama_1.webp'" alt="Аниме Драмма">
                         </div>
                         <h3>Драмма</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=4'">
+                    <div class="genre-cont" @click="goToAnime(4)">
                         <div class="genre-cont-image-conatiner">
-                            <img  v-lazy="'/img/genres/comedy_1.webp'"
-                                 alt>
+                            <img v-lazy="'/img/genres/comedy_1.webp'" alt="Аниме Комедия">
                         </div>
                         <h3>Комедия</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=36'">
+                    <div class="genre-cont" @click="goToAnime(36)">
                         <div class="genre-cont-image-conatiner">
-                            <img
-                                v-lazy="'/img/genres/everyday_life_1.webp'"
-                                alt>
+                            <img v-lazy="'/img/genres/everyday_life_1.webp'" alt="Аниме Повседневность">
                         </div>
                         <h3>Повседневность</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=2'">
+                    <div class="genre-cont" @click="goToAnime(2)">
                         <div class="genre-cont-image-conatiner">
-                            <img
-                                v-lazy="'/img/genres/adventures_1.webp'"
-                                alt>
+                            <img v-lazy="'/img/genres/adventures_1.webp'" alt="Аниме Приключения">
                         </div>
                         <h3>Приключения</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=22'">
+                    <div class="genre-cont" @click="goToAnime(22)">
                         <div class="genre-cont-image-conatiner">
-                            <img
-                                v-lazy="'/img/genres/romance_1.webp'"
-                                alt>
+                            <img v-lazy="'/img/genres/romance_1.webp'" alt="Аниме Романтика">
                         </div>
                         <h3>Романтика</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=37'">
+                    <div class="genre-cont" @click="goToAnime(37)">
                         <div class="genre-cont-image-conatiner">
-                            <img
-                                v-lazy="'/img/genres/supernatural_1.webp'"
-                                alt>
+                            <img v-lazy="'/img/genres/supernatural_1.webp'" alt="Аниме Сверхъестественное">
                         </div>
                         <h3>Сверхъестественное</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=30'">
+                    <div class="genre-cont" @click="goToAnime(30)">
                         <div class="genre-cont-image-conatiner">
-                            <img  v-lazy="'/img/genres/sport_1.webp'"
-                                 alt>
+                            <img v-lazy="'/img/genres/sport_1.webp'" alt="Аниме Спорт">
                         </div>
                         <h3>Спорт</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=7'">
+                    <div class="genre-cont" @click="goToAnime(7)">
                         <div class="genre-cont-image-conatiner">
-                            <img  v-lazy="'/img/genres/secret_1.webp'"
-                                 alt>
+                            <img v-lazy="'/img/genres/secret_1.webp'" alt="Аниме Тайна">
                         </div>
                         <h3>Тайна</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=117'">
+                    <div class="genre-cont" @click="goToAnime(117)">
                         <div class="genre-cont-image-conatiner">
-                            <img
-                                v-lazy="'/img/genres/thriller_1.webp'"
-                                alt>
+                            <img v-lazy="'/img/genres/thriller_1.webp'" alt="Аниме Триллер">
                         </div>
                         <h3>Триллер</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=14'">
+                    <div class="genre-cont" @click="goToAnime(14)">
                         <div class="genre-cont-image-conatiner">
-                            <img  v-lazy="'/img/genres/horror_1.webp'"
-                                 alt>
+                            <img v-lazy="'/img/genres/horror_1.webp'" alt="Аниме Ужасы">
                         </div>
                         <h3>Ужасы</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=10'">
+                    <div class="genre-cont" @click="goToAnime(10)">
                         <div class="genre-cont-image-conatiner">
-                            <img
-                                v-lazy="'/img/genres/fantasy_1.webp'"
-                                alt>
+                            <img v-lazy="'/img/genres/fantasy_1.webp'" alt="Аниме Фэнтези">
                         </div>
                         <h3>Фэнтези</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=1'">
+                    <div class="genre-cont" @click="goToAnime(1)">
                         <div class="genre-cont-image-conatiner">
-                            <img  v-lazy="'/img/genres/action_1.webp'"
-                                 alt>
+                            <img v-lazy="'/img/genres/action_1.webp'" alt="Аниме Экшен">
                         </div>
                         <h3>Экшен</h3>
                     </div>
-                    <div class="genre-cont" onclick="window.location.href = '/catalog?genre=9'">
+                    <div class="genre-cont" @click="goToAnime(9)">
                         <div class="genre-cont-image-conatiner">
-                            <img  v-lazy="'/img/genres/etti_1.webp'"
-                                 alt>
+                            <img v-lazy="'/img/genres/etti_1.webp'" alt="Аниме Этти">
                         </div>
                         <h3>Этти</h3>
                     </div>
@@ -155,6 +134,11 @@ export default {
             isDragging = false;
         });
     },
+    methods: {
+        goToAnime(genreId) {
+            this.$router.push(`/catalog?genre=${genreId}`);
+        }
+    }
 }
 </script>
 <style lang="scss">

@@ -12,9 +12,31 @@
     <anime-stills ref="AnimeStills"></anime-stills>
     <!-- ANIME STILLS INIT END -->
     <!-- PLAYER INIT START -->
-    <div id="yandex_rtb_R-A-7609325-4"></div>
+    <div class="ad-container">
+        <div class="ad-container-inner">
+            <div class="ad-container-inner-tit">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8586315114228333"
+                     data-ad-slot="8268539420"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+            </div>
+        </div>
+    </div>
     <player ref="player"></player>
-    <div id="yandex_rtb_R-A-7609325-5"></div>
+    <div class="ad-container">
+        <div class="ad-container-inner">
+            <div class="ad-container-inner-tit">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8586315114228333"
+                     data-ad-slot="6927537591"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+            </div>
+        </div>
+    </div>
     <!-- PLAYER INIT END -->
     <!-- ANIME CHARACTERS INIT START -->
     <anime-characters ref="AnimeCharacters"></anime-characters>
@@ -37,13 +59,9 @@ import Player from "@/components/web/player.vue";
 import AnimeCharacters from "@/components/web/animeCharacters.vue";
 import AnimeRelated from "@/components/web/animeRelated.vue";
 
-import { bann_1 } from "@/other/banner/bann_1.js";
-import { bann_2 } from "@/other/banner/bann_2.js";
 export default {
     data() {
         return {
-            bann_1,
-            bann_2,
             animeDataReadyEventCreated: false
         };
     },
@@ -51,6 +69,8 @@ export default {
         PrimaryHeader, AnimeHeader, AnimeDescription, AnimeStills, Player, AnimeCharacters, AnimeRelated, Footer
     },
     mounted() {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
         console.log('Anime mounted!');
         window.scrollTo({top: 0});
         let headerNavigation = document.querySelector(".header-navigation");

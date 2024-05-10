@@ -6,9 +6,9 @@ User-agent: Yandex
 Disallow: /anime
 Allow: /catalog
 
-
 User-agent: Googlebot
 Disallow: /anime
 Allow: /catalog
 
 Sitemap: https://ota-ku.ru/sitemap.xml
+Sitemap: https://ota-ku.ru/sitemap_anime.xml

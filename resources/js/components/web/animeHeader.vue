@@ -102,12 +102,12 @@ export default {
                this._ANIME_RATING_ = JSON.parse(storedData)[0].rating;
                this._ANIME_DURATION_ = JSON.parse(storedData)[0].duration;
                this._ANIME_NEXT_EPISODE_DATE_ = (() => {
-                   const nextEpisodeDate = JSON.parse(storedData)[0].nextEpisodeAt;
-                   if (!moment(nextEpisodeDate).isValid()) {
+                   const nextEpisodeDate = JSON.parse(storedData)[0]?.nextEpisodeAt;
+                   if (!nextEpisodeDate || !moment(nextEpisodeDate, moment.ISO_8601, true).isValid()) {
                        return "нету";
                    } else {
                        const userLocale = moment.locale();
-                       return moment(nextEpisodeDate).calendar(userLocale);
+                       return moment(nextEpisodeDate).calendar(null, { locale: userLocale });
                    }
                })();
            }

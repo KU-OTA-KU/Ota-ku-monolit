@@ -42,9 +42,14 @@
                 </div>
                 <div class="sidenav-name-container">
                     <router-link :to="'/'"><i class="fa-solid fa-house"></i>Главная</router-link>
+                    <hr>
                     <router-link :to="'/catalog'"><i
                         class="fa-solid fa-layer-group"></i>Каталог
                     </router-link>
+                    <hr>
+                    <router-link to="/release"><i class="fa-solid fa-newspaper"></i>Расписание</router-link>
+                    <hr>
+                    <router-link to="/characters"><i class="fa-solid fa-user"></i>Персонажи</router-link>
                 </div>
                 <div class="sidenav-user-settings">
                     <p>Настройки:</p>
@@ -169,7 +174,7 @@ export default {
         },
         submitForm() {
             const currentPath = this.$route.fullPath;
-            this.$router.push({ path: '/catalog', query: { search: this.searchQuery } });
+            this.$router.push({path: '/catalog', query: {search: this.searchQuery}});
         }
     }
 }
@@ -382,6 +387,11 @@ header {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+.sidenav-name-container hr {
+    color: rgb(255 255 255 / 7%);
+    border: 1px solid;
 }
 
 .sidenav-user-settings span {

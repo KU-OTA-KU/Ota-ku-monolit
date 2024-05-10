@@ -77,12 +77,12 @@
         </div>
     </section>
     <section class="main-content" id="main-content" name="main-content" v-if="animeList.length !== 0">
-        <div class="movie_2" v-for="(anime, index) in animeList" :key="index" @click="goToAnime(anime.id)">
-            <div class="movie_2-image">
+        <div class="movie_2" v-for="(anime, index) in animeList" :key="index">
+            <div class="movie_2-image" @click="goToAnime(anime.id)">
                 <img v-lazy="anime.poster.mainUrl" :alt="anime.russian">
             </div>
             <div class="movie_2-info">
-                <h3>{{ anime.russian }}</h3>
+                <h3 @click="goToAnime(anime.id)">{{ anime.russian }}</h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div class="movie_2-info-info-anime">
                         <p>{{ anime.score }}<i class="fa-solid fa-star"></i></p><span class="dot">•</span>

@@ -89,8 +89,8 @@
                                 <img :src="relatedAnime.anime.poster.mini2xUrl" :alt="relatedAnime.anime.russian">
                             </div>
                             <div class="related-animes-type-year">
-                                <p>{{ relatedAnime.anime.kind }}</p>
-                                <p>{{ relatedAnime.anime.airedOn.year }}</p>
+                                <p>{{ relatedAnime.anime.kind }} <span class="dot">•</span> {{ relatedAnime.anime.airedOn.year }}</p>
+                                <p>{{ relatedAnime.relationRu }}</p>
                             </div>
                         </div>
                     </div>

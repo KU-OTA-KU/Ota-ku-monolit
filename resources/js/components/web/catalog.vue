@@ -62,12 +62,12 @@
         </div>
     </section>
     <section v-if="animeList.length !== 0" class="main-content" id="main-content" name="main-content">
-        <div v-for="anime in animeList" :key="anime.id" class="movie_2" @click="goToAnime(anime.id)">
-            <div class="movie_2-image">
+        <div v-for="anime in animeList" :key="anime.id" class="movie_2">
+            <div class="movie_2-image" @click="goToAnime(anime.id)">
                 <img v-lazy="anime.poster && anime.poster.mainUrl ? anime.poster.mainUrl : ''" :alt="'Смотреть аниме ' + (anime.name || anime.russian)">
             </div>
             <div class="movie_2-info">
-                <h3>{{ anime.russian }}</h3>
+                <h3 @click="goToAnime(anime.id)">{{ anime.russian }}</h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div class="movie_2-info-info-anime">
                         <p v-if="anime.score">{{ anime.score }}<i class="fa-solid fa-star"></i></p>
@@ -79,9 +79,9 @@
                         <p v-if="anime.status">{{ translateStatus(anime.status) }}</p>
                     </div>
                     <div class="movie_2-info-genres-list">
-                        <p v-if="anime.genres && anime.genres.length > 0">{{ anime.genres[0].russian }}</p>
-                        <p v-if="anime.genres && anime.genres.length > 1">{{ anime.genres[1].russian }}</p>
-                        <p v-if="anime.genres && anime.genres.length > 2">{{ anime.genres[2].russian }}</p>
+                        <router-link v-for="(genre, genreIndex) in anime.genres.slice(0, 3)" :key="genreIndex"
+                                     :to="'/catalog?genre='+ genre.id">{{ genre.russian }}
+                        </router-link>
                     </div>
                     <div class="movie_2-info-about">
                         <p>{{ this.cleanDescription(anime.description) }}</p>
@@ -164,6 +164,7 @@ export default {
                                 status
                                 description
                                 genres {
+                                    id
                                     russian
                                 }
                                 airedOn {
