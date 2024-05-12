@@ -19,11 +19,11 @@
             <div class="documents">
               <h3>Документы</h3>
               <ul>
-                <li><a href="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/doc/privacy_policy_ru.php">Политика
-                    конфиденциальности</a></li>
-                <li><a href="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/doc/terms_ru.php">Пользовательское
-                    соглашение</a></li>
-                <li><a href="<?php echo 'http://' . $_SERVER['HTTP_HOST']; ?>/doc/authors_ru.php">Правообладатели</a>
+                <li><router-link :to="'/privacyPolicy/ru'">Политика
+                    конфиденциальности</router-link></li>
+                <li><router-link :to="'/terms/ru'">Пользовательское
+                    соглашение</router-link></li>
+                <li><router-link :to="'/authors/ru'">Правообладатели</router-link>
                 </li>
                 <!-- <li><a href="#">Правила сайта</a></li>-->
               </ul>

@@ -32,8 +32,6 @@ export default {
     },
     mounted() {
         console.log('catalog Mounted!');
-        let headerNavigation = document.querySelector(".header-navigation");
-        headerNavigation.style.display = "none";
         window.scrollTo({ top: 0});
         useHead({
             title: "Лучший aниме каталог",

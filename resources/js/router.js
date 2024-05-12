@@ -7,11 +7,19 @@
 import "./bootstrap";
 import { createRouter, createWebHistory } from "vue-router";
 
-// components
+// pages
 import IndexComponent from "./components/index.vue";
 import CatalogComponent from "./components/catalog.vue";
 import OpenAnimeComponent from "./components/anime.vue";
-import NotFoundComponent from './components/error.vue';
+
+// not found page
+import NotFoundComponent from "./components/error.vue";
+
+// docs russian
+import AuthorsRU from "./components/doc/authors_ru.vue";
+import TermsRU from "./components/doc/terms_ru.vue";
+import PrivacyPolicyRU from "./components/doc/privacy_policy_ru.vue";
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -28,9 +36,21 @@ const router = createRouter({
             component: OpenAnimeComponent,
         },
         {
+            path: "/authors/ru",
+            component: AuthorsRU,
+        },
+        {
+            path: "/terms/ru",
+            component: TermsRU,
+        },
+        {
+            path: "/privacyPolicy/ru",
+            component: PrivacyPolicyRU,
+        },
+        {
             path: "/:catchAll(.*)",
             component: NotFoundComponent,
-        }
+        },
     ],
 });
 
