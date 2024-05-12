@@ -33,7 +33,7 @@ app.use(router);
 app.use(VueLazyload, {
     preLoad: 1.3,
     error: '/img/other/error.png',
-    loading: '/img/other/loading_2.png',
+    loading: '/img/other/loading.png',
     attempt: 1,
 });
 app.mount("#app");

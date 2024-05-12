@@ -3,7 +3,7 @@
         <div class="what-is-anime-container-inner">
             <div class="what-is-anime-container-tit">
                 <div class="what-is-anime-main">
-                    <h1><a href="https://ota-ku.ru">OTA-KU</a> – Смотреть аниме онлайн бесплатно!</h1>
+                    <h1>OTA-KU – Смотреть аниме онлайн бесплатно!</h1>
                     <div class="what-is-cont-1">
                         <p>Хочешь смотреть лучшие аниме онлайн бесплатно на русском? У нас ты найдешь огромную базу
                             самых
@@ -70,13 +70,13 @@
 }
 
 .what-is-anime-container-tit h1 a {
-    color: var(--what-is-anime-container-h1-color);
+    color: var(--col-1);
     text-decoration: underline;
     transition: color 0.2s ease-in-out;
 }
 
 .what-is-anime-container-tit h1 a:hover {
-    color: var(--what-is-anime-container-h1-color-hover);
+    color: var(--col-2);
 }
 
 .what-is-anime-container-tit .what-is-cont-1 {
@@ -116,15 +116,11 @@
 }
 
 .what-is-anime-social .what-is-anime-social-item:nth-child(2):hover i {
-    color: var(--what-is-anime-social-item-2-hover-color-youtube);
+    color: var(--col-3);
 }
 
 .what-is-anime-social .what-is-anime-social-item:nth-child(3):hover i {
-    color: var(--what-is-anime-social-item-3-hover-color-telegram);
-}
-
-.what-is-anime-social .what-is-anime-social-item:nth-child(4):hover i {
-    color: var(--what-is-anime-social-item-3-hover-color-tiktok);
+    color: var(--col-4);
 }
 
 @media screen and (max-width: 1020px) {

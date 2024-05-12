@@ -1,15 +1,26 @@
+@font-face {
+  font-family: "inter-regular";
+  src: url("../fonts/inter/inter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+font-family: "Montserrat-regular";
+src: url("../fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "inter-regular", sans-serif;
+
+    &::after,&::before {
+      margin: 0;
+      padding: 0;
+    }
 }
 
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-}
-
+// mobile mode
 @media screen and (max-width: 768px) {
     ::selection {
         background: transparent;
@@ -27,22 +38,8 @@
     }
 }
 
-/*@font-face {*/
-/* font-family: 'Roboto-regular';*/
-/* src: url('../../assets/fonts/roboto/Roboto-Regular.ttf') format('truetype');*/
-/*}*/
-
-@font-face {
-    font-family: "inter-regular";
-    src: url("../fonts/inter/inter-Regular.ttf") format("truetype");
-}
-
 /* body */
 body {
-    // display: flex;
-    // gap: 10px;
-    // flex-wrap: wrap;
-    // flex-direction: column;
     overflow: hidden;
     min-height: 100vh;
     overflow-y: scroll;
@@ -61,6 +58,34 @@ body {
   flex-direction: column;
 }
 
+// eta headernerni
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat-regular', sans-serif;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h6 {
+  font-size: 0.8em;
+}
+
+// span
+span {
+  color: var(--col-10);
+  font-size: 0.9em;
+}
+
 button {
     font-size: 1em;
     font-weight: bold;
@@ -71,7 +96,7 @@ button {
 }
 
 * {
-    font-family: "inter-regular", sans-serif;
+    
 }
 
 p,
@@ -92,21 +117,6 @@ a {
     user-select: none;
 }
 
-h1 {
-    font-size: 1.5em;
-}
-
-h2 {
-    font-size: 1.5em;
-}
-
-h3 {
-    font-size: 1.5em;
-}
-
-h6 {
-    font-size: 0.8em;
-}
 
 ul {
     list-style-type: none;
