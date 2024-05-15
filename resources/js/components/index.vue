@@ -1,26 +1,9 @@
 <template>
-    <!-- PRIMARY HEADER INIT START-->
     <primary-header></primary-header>
-    <!-- PRIMARY HEADER INIT END -->
-    <!-- TOP SLIDER INIT START -->
     <top-slider></top-slider>
-    <!-- TOP SLIDER INIT END -->
-    <!-- MOST ANIMES INIT START -->
-    <most-animes></most-animes>
-    <!-- MOST ANIMES INIT END-->
-    <div class="ad-container">
-        <div class="ad-container-inner">
-            <div class="ad-container-inner-tit">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-8586315114228333"
-                     data-ad-slot="8268539420"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-            </div>
-        </div>
-    </div>
-    <!-- MAIN ANIMES INIT START-->
+    <welcome></welcome>
+    <top-genres></top-genres>
+    <most-anime-list></most-anime-list>
     <main class="main">
         <div class="main-inner">
             <div class="main-tit">
@@ -30,9 +13,6 @@
         </div>
     </main>
     <!-- MAIN ANIMES INIT END -->
-    <!-- ANIME WELCOME INIT START -->
-    <Welcome></Welcome>
-    <!-- ANIME WELCOME INIT END -->
     <!-- FOOTER INIT START -->
     <Footer></Footer>
     <!-- FOOTER INIT END -->
@@ -41,19 +21,21 @@
 <script>
 import {useHead} from "@vueuse/head";
 
-import TopSlider from './web/topSlider.vue';
+import TopSlider from './web/index/topSlider.vue';
 import PrimaryHeader from './web/primaryHeader.vue';
-import MostAnimes from './web/mostAnimes.vue';
+import TopGenres from './web/index/topGenres.vue';
+import MostAnimeList from './web/index/mostAnimes.vue';
 import Content from './web/animeList.vue';
 import Filter from './web/filter.vue';
-import Welcome from './web/welcome.vue';
+import Welcome from './web/index/welcome.vue';
 import Footer from './web/footer.vue';
 
 export default {
     components: {
         PrimaryHeader,
         TopSlider,
-        MostAnimes,
+        TopGenres,
+        MostAnimeList,
         Content,
         Filter,
         Welcome,
@@ -62,7 +44,6 @@ export default {
     mounted() {
         sessionStorage.removeItem("CurrentAnime");
         console.log('Index Mounted!');
-        (adsbygoogle = window.adsbygoogle || []).push({});
         window.scrollTo({top: 0});
         useHead({
             title: "Смотреть аниме онлайн бесплатно в хорошем качестве",
@@ -99,5 +80,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

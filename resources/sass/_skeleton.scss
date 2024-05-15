@@ -3,11 +3,11 @@
 }
 
 .skeleton-cell-slide {
-    animation: skeleton-slide 1.5s linear infinite;
+    animation: skeleton-slide 2s linear infinite;
 }
 
 .skeleton-bg {
-    background: var(--most-content-movie-most-name-background-gradient);
+    background: var(--cl-20);
     background-size: 200% auto;
 }
 
@@ -49,10 +49,10 @@
 
 @keyframes skeleton-pulse {
     0% {
-        opacity: 0.8;
+        opacity: 0.2;
     }
     100% {
-        opacity: 0.5;
+        opacity: 1;
     }
 }
 

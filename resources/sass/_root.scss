@@ -1,11 +1,10 @@
 @font-face {
-  font-family: "inter-regular";
-  src: url("../fonts/inter/inter-Regular.ttf") format("truetype");
+    font-family: "inter-regular";
+    src: url("../fonts/inter/inter-Regular.ttf") format("truetype");
 }
-
 @font-face {
-font-family: "Montserrat-regular";
-src: url("../fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
+    font-family: "Montserrat-regular";
+    src: url("../fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
 }
 
 * {
@@ -14,13 +13,13 @@ src: url("../fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
     box-sizing: border-box;
     font-family: "inter-regular", sans-serif;
 
-    &::after,&::before {
-      margin: 0;
-      padding: 0;
+    &::after,
+    &::before {
+        margin: 0;
+        padding: 0;
     }
 }
 
-// mobile mode
 @media screen and (max-width: 768px) {
     ::selection {
         background: transparent;
@@ -38,65 +37,69 @@ src: url("../fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
     }
 }
 
-/* body */
 body {
     overflow: hidden;
     min-height: 100vh;
     overflow-y: scroll;
+    scroll-behavior: smooth;
     font-weight: 400;
     font-style: normal;
     font-size: clamp(13px, 1vw, 15px);
     scroll-behavior: smooth !important;
-    color: var(--body-font-color);
-    background-color: var(--body-background-color);
+    background-color: var(--cl-3);
+    color: var(--cl-2);
 }
 
 #app {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  flex-direction: column;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 425px) {
+    #app {
+        gap: 5px !important;
+    }
 }
 
 // eta headernerni
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat-regular', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat-regular", sans-serif;
 }
 
 h1 {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 h2 {
-  font-size: 1.4em;
-  font-weight: 600;
+    font-size: 1.4em;
+    font-weight: 600;
 }
 
 h3 {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
 h6 {
-  font-size: 0.8em;
+    font-family: "inter-regular", sans-serif;
+    font-size: 0.7em;
+    font-weight: normal;
+    color: var(--cl-11);
 }
 
-// span
 span {
-  color: var(--col-10);
-  font-size: 0.9em;
+    color: var(--cl-11);
+    font-size: 0.8em;
 }
 
-button {
-    font-size: 1em;
-    font-weight: bold;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-* {
-    
+ul {
+  list-style-type: none;
 }
 
 p,
@@ -110,37 +113,29 @@ span,
 strong,
 b,
 pre,
-a {
+a,
+ul,
+ol,
+li {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 
-
-ul {
-    list-style-type: none;
+hr {
+  color: var(--cl-12);
+  border: 1px solid;
 }
 
-a {
-    color: currentColor;
-    text-decoration: none;
+.pd-small {
+  padding: 3px 8px;
 }
 
-.dot {
-    color: var(--content-movie-2-info-anime-span-font-color);
-    padding: 0 10px;
-    font-size: 0.9em;
+.pd-normal {
+  padding: 6px 14px;
 }
 
-@media screen and (max-width: 1024px) {
-}
-
-@media screen and (max-width: 425px) {
-}
-
-@media screen and (max-width: 425px) {
-    #app {
-        gap: 5px !important;
-    }
+.pd-large {
+  padding: 8px 18px;
 }
