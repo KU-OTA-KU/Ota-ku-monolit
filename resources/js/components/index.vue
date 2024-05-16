@@ -25,7 +25,7 @@ import TopSlider from './web/index/topSlider.vue';
 import PrimaryHeader from './web/primaryHeader.vue';
 import TopGenres from './web/index/topGenres.vue';
 import MostAnimeList from './web/index/mostAnimes.vue';
-import Content from './web/animeList.vue';
+import Content from './web/index/animeList.vue';
 import Filter from './web/filter.vue';
 import Welcome from './web/index/welcome.vue';
 import Footer from './web/footer.vue';

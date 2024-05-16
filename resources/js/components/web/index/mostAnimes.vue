@@ -3,209 +3,237 @@
         <div class="most-container-inner">
             <div class="most-container-tit">
                 <div class="most-content-gallery-cell">
-                    <div class="most-content-title-h2">
-                        <h2>Онгоинги</h2>
-                    </div>
-                    <div class="most-content-animes-list-option-1">
+                    <div class="most-content-title-h2"><h2>Онгоинги</h2></div>
+                    <div class="most-content-animes-list-option most-content-animes-list-option-1">
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="most-content-gallery-cell">
-                    <div class="most-content-title-h2">
-                        <h2>Анонсы</h2>
-                    </div>
-                    <div class="most-content-animes-list-option-2">
-                        <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                            </div>
-                        </div>
-                        <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                            </div>
-                        </div>
-                        <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                            </div>
-                        </div>
-                        <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="most-content-gallery-cell">
-                    <div class="most-content-title-h2">
-                        <h2>Топ аниме</h2>
-                    </div>
-                    <div class="most-content-animes-list-option-3">
+                    <div class="most-content-title-h2"><h2>Анонсы</h2></div>
+                    <div class="most-content-animes-list-option most-content-animes-list-option-2">
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
+                            </div>
+                        </div>
+                        <div class="most-content-movie">
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="most-content-gallery-cell">
-                    <div class="most-content-title-h2">
-                        <h2>Завершенные</h2>
+                    <div class="most-content-title-h2"><h2>Топ аниме</h2></div>
+                    <div class="most-content-animes-list-option most-content-animes-list-option-3">
+                        <div class="most-content-movie">
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
+                            </div>
+                        </div>
+                        <div class="most-content-movie">
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
+                            </div>
+                        </div>
+                        <div class="most-content-movie">
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
+                            </div>
+                        </div>
+                        <div class="most-content-movie">
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
+                            </div>
+                        </div>
+                        <div class="most-content-movie">
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
+                            </div>
+                        </div>
+                        <div class="most-content-movie">
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
+                            </div>
+                        </div>
                     </div>
-                    <div class="most-content-animes-list-option-4">
+                </div>
+                <div class="most-content-gallery-cell">
+                    <div class="most-content-title-h2"><h2>Завершенные</h2></div>
+                    <div class="most-content-animes-list-option most-content-animes-list-option-4">
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                         <div class="most-content-movie">
-                            <div class="most-content-movie-image skeleton-cell-slide skeleton-bg"></div>
-                            <div class="most-content-movie-info">
-                                <div class="most-name skeleton-bg skeleton-height skeleton-cell-slide"></div>
-                                <div class="most-status skeleton-bg skeleton-height skeleton-cell-slide">
-                                </div>
-                                <div class="most-data skeleton-bg skeleton-height skeleton-cell-slide"></div>
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
+                            </div>
+                        </div>
+                        <div class="most-content-movie">
+                            <div
+                                class="most-content-movie-image most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-weight"
+                                style="background-color: var(--cl-23)"></div>
+                            <div
+                                class="most-content-movie-info skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"
+                                style="background-color: var(--cl-23)">
                             </div>
                         </div>
                     </div>
@@ -213,6 +241,7 @@
             </div>
         </div>
     </section>
+
     <section class="most-container" v-if="animeLists">
         <div class="most-container-inner">
             <div class="most-container-tit">
@@ -229,17 +258,7 @@
                             </div>
                             <div class="most-content-movie-info">
                                 <div class="most-name">
-                                    <router-link :to="'/anime?animeId=' + anime.id">{{ anime.russian }}</router-link>
-                                </div>
-                                <div class="most-status">
-                                    <div class="most-type">{{ anime.kind }}</div>
-                                    <div class="rating">
-                                        {{ anime.score }}
-                                        <i class="fa-solid fa-star" aria-hidden="true" style="cursor: pointer;"></i>
-                                    </div>
-                                </div>
-                                <div class="most-data">
-                                    <p>{{ anime.airedOn.year }}</p>
+                                    <p class="most-anime-name">{{ anime.russian }}</p>
                                 </div>
                             </div>
                         </div>
@@ -258,7 +277,9 @@ export default {
         };
     },
     mounted() {
-        this.fetchAllData();
+        setTimeout(() => {
+            this.fetchAllData();
+        }, "2000");
     },
     methods: {
         async fetchAllData() {
@@ -272,7 +293,7 @@ export default {
                     body: JSON.stringify({
                         query: `
               query {
-                ongoingAnimes: animes(limit: 5, order: popularity, status: "ongoing", kind: "tv") {
+                ongoingAnimes: animes(limit: 6, order: popularity, status: "ongoing", kind: "tv") {
                   id
                   name
                   russian
@@ -285,7 +306,7 @@ export default {
                     year
                   }
                 }
-                anonseAnimes: animes(season: "2024", limit: 5, order: popularity, status: "anons", kind: "tv") {
+                anonseAnimes: animes(season: "2024", limit: 6, order: popularity, status: "anons", kind: "tv") {
                   id
                   name
                   russian
@@ -298,7 +319,7 @@ export default {
                     year
                   }
                 }
-                topAnimes: animes(limit: 5, order: ranked, status: "released", kind: "tv") {
+                topAnimes: animes(limit: 6, order: ranked, status: "released", kind: "tv") {
                   id
                   name
                   russian
@@ -311,7 +332,7 @@ export default {
                     year
                   }
                 }
-                releasedAnimes: animes(limit: 4, order: popularity, status: "released", kind: "tv") {
+                releasedAnimes: animes(limit: 6, order: popularity, status: "released", kind: "tv") {
                   id
                   name
                   russian
@@ -363,7 +384,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .most-container {
     width: 100%;
 
@@ -381,9 +402,9 @@ export default {
         justify-content: space-between;
 
         .most-content-gallery-cell {
-
             .most-content-title-h2 {
                 color: var(--most-content-title-h2-color);
+                margin-bottom: 10px;
             }
         }
 
@@ -393,131 +414,85 @@ export default {
             width: 100%;
             gap: 10px;
             padding: 20px;
+            margin-bottom: 20px;
+            justify-content: space-between;
+            border-radius: 10px;
+            flex-wrap: wrap;
 
 
-        }
-    }
-}
+            .most-content-movie {
+                max-width: 180px;
+                cursor: pointer;
+                width: calc((100% - 10px) / 2);
 
+                &:hover {
+                    .most-content-movie-image img {
+                        transform: scale(1.07);
+                    }
+                }
 
+                .most-content-movie-image {
+                    width: 100%;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    position: relative;
+                    aspect-ratio: 1 / 1.44;
+                    margin-bottom: 5px;
 
-.most-content-movie {
-    width: 20%;
-    padding: 10px 0;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
+                    img {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: transform 0.2s ease-in-out;
+                    }
+                }
 
-    &:hover {
-        .most-name {
-            color: var(--most-content-movie-name-hover);
-        }
-    }
+                .most-content-movie-info {
+                    width: 100%;
 
-    .most-content-movie-image {
-        width: 100%;
-        aspect-ratio: 1 / 1.4;
-        position: relative;
-        overflow: hidden;
+                    .most-name {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        width: 100%;
 
-        img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            pointer-events: none;
-            /*object-fit: cover;*/
-        }
-    }
-
-    .most-content-movie-info {
-        width: 80%;
-        padding-left: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-
-        .most-name {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 100%;
-            transition: color 0.2s ease-in-out;
-
-            //background: var(--most-content-movie-most-name-background-gradient);
-            text-align: left;
-            margin-bottom: 3px;
-            font-size: 0.9em;
-
-            p {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
+                        .most-anime-name {
+                            color: var(--cl-2);
+                            font-size: 0.9em;
+                        }
+                    }
+                }
             }
         }
+    }
 
-        .most-status {
-            display: flex;
-            min-width: 50%;
-            font-size: 0.8em;
-            color: var(--most-content-movie-status-text-color);
-            align-items: center;
-            justify-content: flex-start;
-            gap: 5px;
-            margin-bottom: 3px;
-
-            i {
-                color: var(--most-content-movie-status-star-color);
+    @media screen and (max-width: 1189px) {
+        .most-content-animes-list-option {
+            .most-content-movie:nth-child(6) {
+                display: none;
             }
         }
+    }
 
-        .most-data {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            min-width: 50%;
-            text-align: left;
-            font-size: 0.7em;
+    @media screen and (max-width: 999px) {
+        .most-content-animes-list-option {
+            .most-content-movie:nth-child(6),
+            .most-content-movie:nth-child(5) {
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 809px) {
+        .most-content-animes-list-option {
+            .most-content-movie:nth-child(6),
+            .most-content-movie:nth-child(5) {
+                display: block;
+            }
         }
     }
 }
 
-@media screen and (max-width: 1024px) {
-    .most-container-tit {
-        .most-content-gallery-cell {
-            width: calc(33.33% - 20px);
-        }
-
-        .most-content-gallery-cell:nth-child(4) {
-            display: none;
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .most-container-tit {
-        gap: 20px;
-
-        .most-content-gallery-cell {
-            width: calc(50% - 20px) !important;
-        }
-
-        .most-content-gallery-cell:nth-child(4) {
-            display: unset;
-        }
-
-        .most-content-gallery-cell .most-content-title-h2 {
-            text-align: center;
-        }
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .most-container-tit {
-        .most-content-gallery-cell {
-            width: calc(100%);
-        }
-    }
-}
 </style>
