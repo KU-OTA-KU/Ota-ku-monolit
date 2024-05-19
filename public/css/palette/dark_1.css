@@ -33,13 +33,16 @@
     --cl-21: rgba(104, 104, 104, 0.3);
     --cl-22: #e20101;
     --cl-23: #2c2c2c;
+    --cl-24: rgba(33, 33, 33, 0.9);
+    --cl-25: rgba(33, 33, 33, 0.5);
+    --cl-26: rgba(255, 255, 255, 0.5);
 
     --v-select-body-bg-color: #3C3C3C;
     --v-select-body-border-color: #3C3C3C;
     --v-select-checkbox-accent-color: #0276ff;
     --v-select-search-focus-border-color: #0276ff;
-    --v-select-list-mult-item-container-color: #d1542a;
-    --v-select-list-mult-item-container-bg-color: #0276ff;
+    --v-select-list-mult-item-container-color: #0276ff;
+    --v-select-list-mult-item-container-bg-color: rgba(2, 118, 255, 0.2);
     --v-select-list-input-sctive-bg-color: #0276ff;
     --v-select-list-input-hover-bg-color: #686868;
     --v-select-drawer-scrollbar-track-color: #686868;

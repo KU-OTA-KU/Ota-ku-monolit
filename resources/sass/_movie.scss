@@ -1,11 +1,19 @@
 .movie_2 {
     width: 100%;
-    padding: 15px 10px;
-    background-color: var(--content-movie-2-background-color);
+    padding: 20px;
     display: flex;
     gap: 20px;
     cursor: pointer;
     transition: opacity 0.5s ease-in-out;
+    border-bottom: 1px solid var(--cl-25);
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .dot {
+        padding: 0 5px;
+    }
 }
 
 .movie_2:hover h3 {
@@ -13,11 +21,12 @@
 }
 
 .movie_2:hover .movie_2-image img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .movie_2 .movie_2-image {
-    width: 180px;
+    width: 250px;
+    border-radius: 10px;
     min-width: 100px;
     aspect-ratio: 1 / 1.45;
     position: relative;
@@ -34,12 +43,13 @@
     pointer-events: none;
     user-select: none;
     width: 100%;
+    object-fit: cover;
     transition: transform 0.2s ease-in-out;
 }
 
 .movie_2 h3 {
     transition: color 0.2s ease-in-out;
-    font-family: "inter-regular", sans-serif;
+    line-height: 100%;
 }
 
 .movie_2 .movie_2-info-about {
@@ -47,13 +57,10 @@
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
-}
-
-.movie_2 .movie_2-info-about {
     margin-top: 5px;
-    color: var(--content-movie-2-info-about-p-font-color);
-    font-size: 0.9em;
-    line-height: 21px;
+    color: var(--cl-11);
+    font-size: 0.8em;
+    line-height: 150%;
 }
 
 .movie_2 .movie_2-info-kind-genres-aired-container {
@@ -64,33 +71,22 @@
 }
 
 .movie_2 .movie_2-info-genres-list {
-    width: 100%;
     display: flex;
-    gap: 10px;
-    margin-top: 3px;
-    color: var(--content-movie-2-info-genres-list-font-color);
-    text-decoration: underline;
-}
-
-.movie_2 .movie_2-info-genres-list a:hover {
-    color: white;
-    transition: 0.2s ease-in-out;
+    gap: 15px;
+    a {
+        font-size: 0.8em;
+        text-decoration: underline;
+    }
 }
 
 .movie_2 .movie_2-info-info-anime {
     display: flex;
-    margin-top: 5px;
     align-items: center;
-}
-
-.movie_2 .movie_2-info-info-anime a {
-    color: var(--content-movie-2-info-anime-span-font-color);
-    padding: 0 10px;
-    font-size: 0.9em;
+    line-height: 140%;
 }
 
 .movie_2 .movie_2-info-info-anime i {
-    color: var(--content-movie-2-info-anime-rating-star-color);
+    color: var(--cl-19);
     margin-left: 5px;
 }
 

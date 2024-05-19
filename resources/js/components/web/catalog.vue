@@ -117,7 +117,6 @@ export default {
         this.$watch(
             () => this.$route.query,
             () => {
-                console.log("sisn")
                 this.handleUrlChange();
             }
         );
@@ -226,13 +225,15 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main-content {
+    overflow: hidden;
     width: 100%;
     display: flex;
-    gap: 10px;
     position: relative;
     flex-direction: column;
+    background-color: var(--cl-16);
+    border-radius: 20px;
 }
 
 @media screen and (max-width: 485px) {

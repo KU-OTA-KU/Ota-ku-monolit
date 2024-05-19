@@ -5,94 +5,129 @@
                 <i class="fa-solid fa-sliders"></i>
                 <p>Фильтры</p>
             </div>
-            <button @click="clearFilters" id="clear-button">
-                Очистить
+            <button @click="clearFilters" id="clear-button"
+                    class="pd-small raco-awsome-icon raco-icon-right raco-primary">
                 <i class="fa-solid fa-xmark"></i>
+                 Збросить
             </button>
-            <button @click="closeFilter" id="close-button">
-                Закрыть
+            <button @click="closeFilter" id="close-button"
+                    class="pd-small raco-awsome-icon raco-icon-right raco-primary">
                 <i class="fa-solid fa-xmark"></i>
+                Закрыть
             </button>
         </div>
         <div class="filter-selector">
-            <form @submit.prevent="submitFilters">
+            <form @submit.prevent="submitFilters" method="get">
                 <div class="filter-fl-genre filter-box">
-                    <label for="select-status">Статус</label>
+                    <label for="status">Статус</label>
                     <span>Пожалуйста, выберите статус, в котором находится аниме, из предложенных вариантов:</span>
-                    <div class="custom-select">
-                        <div class="custom-select-title" @click="toggleSelect('status')">Выберите Статус</div>
-                        <div v-show="selectOpen.status" class="custom-select-options" data-filter="status"
-                             style="transform: translateY(10px); opacity: 0; display: none;">
-                            <div v-for="option in statusOptions" :key="option.value">
-                                <input type="checkbox" :id="option.value" v-model="filters.status"
-                                       :value="option.value">
-                                <label :for="option.value">{{ option.label }}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <label for="select-kind">Тип</label>
+                    <select name="status" id="status-selector" multiple>
+                        <option value="anons">Анонсировано</option>
+                        <option value="ongoing">Сейчас выходит</option>
+                        <option value="released">Вышедшее</option>
+                    </select>
+                    <label for="kind">Тип</label>
                     <span>Пожалуйста, выберите один или несколько типов аниме из списка:</span>
-                    <div class="custom-select">
-                        <div class="custom-select-title" @click="toggleSelect('kind')">Выберите Тип</div>
-                        <div v-show="selectOpen.kind" class="custom-select-options" data-filter="kind"
-                             style="transform: translateY(10px); opacity: 0; display: none;">
-                            <div v-for="option in kindOptions" :key="option.value">
-                                <input type="checkbox" :id="option.value" v-model="filters.kind" :value="option.value">
-                                <label :for="option.value">{{ option.label }}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <label for="select-genre">Жанры</label>
+                    <select name="kind" id="kind-selector" multiple>
+                        <option value="tv">ТВ Сериал</option>
+                        <option value="ova">OVA</option>
+                        <option value="movie">Фильм</option>
+                        <option value="ona">ONA</option>
+                    </select>
+                    <label for="genre">Жанры</label>
                     <span>Пожалуйста, укажите жанры для фильтрации наших релизов. Вы можете выбрать несколько опций одновременно:</span>
-                    <div class="custom-select">
-                        <div class="custom-select-title" @click="toggleSelect('genre')">Выберите Жанры</div>
-                        <div v-show="selectOpen.genre" class="custom-select-options" data-filter="genre"
-                             style="transform: translateY(10px); opacity: 0; display: none;">
-                            <div v-for="option in genreOptions" :key="option.value">
-                                <input type="checkbox" :id="option.value" v-model="filters.genre" :value="option.value">
-                                <label :for="option.value">{{ option.label }}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <label for="select-genre">Cортировка</label>
+                    <select id="genre-selector" name="genre" multiple>
+                        <option value="5">Авангард</option>
+                        <option value="543">Гурман</option>
+                        <option value="8">Драма</option>
+                        <option value="4">Комедия</option>
+                        <option value="36">Повседневность</option>
+                        <option value="2">Приключения</option>
+                        <option value="22">Романтика</option>
+                        <option value="37">Сверхъестественное</option>
+                        <option value="30">Спорт</option>
+                        <option value="7">Тайна</option>
+                        <option value="117">Триллер</option>
+                        <option value="14">Ужасы</option>
+                        <option value="24">Фантастика</option>
+                        <option value="10">Фэнтези</option>
+                        <option value="1">Экшен</option>
+                        <option value="9">Этти</option>
+                        <option value="143">Антропоморфизм</option>
+                        <option value="119">CGDCT</option>
+                        <option value="17">Боевые искусства</option>
+                        <option value="32">Вампиры</option>
+                        <option value="104">Взрослые персонажи</option>
+                        <option value="103">Видеоигры</option>
+                        <option value="38">Военное</option>
+                        <option value="141">Выживание</option>
+                        <option value="35">Гарем</option>
+                        <option value="3">Гонки</option>
+                        <option value="112">Гэг-юмор</option>
+                        <option value="39">Детектив</option>
+                        <option value="105">Жесткость</option>
+                        <option value="134">Забота о детях</option>
+                        <option value="146">Игра с высокими ставками</option>
+                        <option value="145">Идолы (жен.)</option>
+                        <option value="150">Идолы (муж.)</option>
+                        <option value="108">Изобразительное искусство</option>
+                        <option value="142">Исполнительское искусство</option>
+                        <option value="13">Исторический</option>
+                        <option value="130">Исэкай</option>
+                        <option value="140">Иясикэй</option>
+                        <option value="102">Командный спорт</option>
+                        <option value="29">Космос</option>
+                        <option value="144">Кроссдрессинг</option>
+                        <option value="137">Культура отаку</option>
+                        <option value="107">Любовный многоугольник</option>
+                        <option value="135">Магическая смена пола</option>
+                        <option value="124">Махо-сёдзё</option>
+                        <option value="147">Медицина</option>
+                        <option value="18">Меха</option>
+                        <option value="6">Мифология</option>
+                        <option value="19">Музыка</option>
+                        <option value="149">Образовательное</option>
+                        <option value="138">Организованная преступность</option>
+                        <option value="20">Пародия</option>
+                        <option value="148">Питомцы</option>
+                    </select>
+                    <label for="sort-selector">Cортировка</label>
                     <span>Пожалуйста, выберите предпочтительный порядок сортировки из списка опций:</span>
-                    <div class="custom-select">
-                        <div class="custom-select-title" @click="toggleSelect('sort')">Сортировать По</div>
-                        <div v-show="selectOpen.sort" class="custom-select-options" data-filter="sort"
-                             style="transform: translateY(10px); opacity: 0; display: none;">
-                            <div v-for="option in sortOptions" :key="option.value">
-                                <input type="radio" :id="option.value" v-model="filters.sort" :value="option.value">
-                                <label :for="option.value">{{ option.label }}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <label for="select-genre">Сезон</label>
+                    <select name="sort" id="sort-selector" multiple>
+                        <option value="ranked">По рейтингу</option>
+                        <option value="popularity">По Популярности</option>
+                        <option value="name">По алфавиту</option>
+                        <option value="aired_on">По дате выхода</option>
+                        <option value="status">Случайно</option>
+                        <option value="episodes">По количеству Серии</option>
+                        <option value="id">По ID</option>
+                    </select>
+                    <label for="season-genre">Сезон</label>
                     <span>Пожалуйста, выберите желаемый сезон из предложенных вариантов:</span>
-                    <div class="custom-select">
-                        <div class="custom-select-title" @click="toggleSelect('season')">Выберите Сезон</div>
-                        <div v-show="selectOpen.season" class="custom-select-options" data-filter="season"
-                             style="transform: translateY(10px); opacity: 0; display: none;">
-                            <div v-for="option in seasonOptions" :key="option.value">
-                                <input type="radio" :id="option.value" v-model="filters.season" :value="option.value">
-                                <label :for="option.value">{{ option.label }}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <label for="select-genre">Оценка</label>
+                    <select name="season" id="season-selector" multiple>
+                        <option value="2024">2024 год</option>
+                        <option value="2023">2023 год</option>
+                        <option value="2021_2022">2021-2022</option>
+                        <option value="2016_2020">2016-2020</option>
+                        <option value="2010_2015">2010-2015</option>
+                        <option value="2000_2009">2000-2009</option>
+                        <option value="1980_1999">1999е годы</option>
+                        <option value="1970_1980">1980е годы</option>
+                        <option value="1968_1999">Динозавры 1968г</option>
+                    </select>
+                    <label for="rating-selector">Оценка</label>
                     <span>Выберите параметры для сортировки аниме по оценкам:</span>
-                    <div class="custom-select">
-                        <div class="custom-select-title" @click="toggleSelect('rating')">Выберите Оценку</div>
-                        <div v-show="selectOpen.rating" class="custom-select-options" data-filter="rating"
-                             style="transform: translateY(10px); opacity: 0; display: none;">
-                            <div v-for="option in ratingOptions" :key="option.value">
-                                <input type="radio" :id="option.value" v-model="filters.rating" :value="option.value">
-                                <label :for="option.value">{{ option.label }}</label>
-                            </div>
-                        </div>
-                    </div>
+                    <select name="rating" id="rating-selector" multiple>
+                        <option value="none">Без оценки</option>
+                        <option value="g">Все оценки</option>
+                        <option value="pg">PG - для детей</option>
+                        <option value="pg_13">PG_13 - для детей 13 лет</option>
+                        <option value="r">R - для подростков 17+</option>
+                        <option value="r_plus">R_plus - умеренная ногота</option>
+                    </select>
                 </div>
                 <div class="submit">
-                    <button type="submit">Искать</button>
+                    <button type="submit" class="raco-primary pd-normal">Применить</button>
                 </div>
             </form>
         </div>
@@ -103,135 +138,77 @@
 </template>
 
 <script>
+import {SingleSelectTag} from "v-selectui/js/singleSelect.js";
+import {MultiSelectTag} from "v-selectui/js/multiSelect.js";
+import "v-selectui/css/singleSelect.css";
+import "v-selectui/css/multiSelect.css";
+
 export default {
     data() {
         return {
-            filters: {
-                status: [],
-                kind: [],
-                sort: '',
-                season: '',
-                rating: '',
-                genre: []
-            },
-            selectOpen: {
-                status: false,
-                kind: false,
-                genre: false
-            },
-            statusOptions: [
-                {value: 'anons', label: 'Анонсировано'},
-                {value: 'ongoing', label: 'Сейчас выходит'},
-                {value: 'released', label: 'Вышедшее'}
-            ],
-            kindOptions: [
-                {value: 'tv', label: 'ТВ Сериал'},
-                {value: 'ova', label: 'OVA'},
-                {value: 'movie', label: 'Фильм'},
-                {value: 'ona', label: "ONA",}
-            ],
-            seasonOptions: [
-                {type: 'radio', value: 'summer_2024', label: 'Лето 2024'},
-                {value: 'spring_2024', label: 'Весна 2024'},
-                {value: 'winter_2024', label: 'Зима 2024'},
-                {value: 'fall_2024', label: 'Осень 2024'},
-                {value: '2024', label: '2024 год'},
-                {value: '2023', label: '2023 год'},
-                {value: '2021_2022', label: '2021-2022'},
-                {value: '2016_2020', label: '2016-2020'},
-                {value: '2010_2015', label: '2010-2015'},
-                {value: '2000_2009', label: '2000-2009'},
-                {value: '1980_1999', label: '1999е годы'},
-                {value: '1970_1980', label: '1980е годы'},
-                {value: '1968_1999', label: 'Динозавры 1968г'}
-            ],
-            ratingOptions: [
-                {value: 'none', label: 'Без оценки'},
-                {value: 'g', label: 'Все оценки'},
-                {value: 'pg', label: 'PG - для детей'},
-                {value: 'pg_13', label: 'PG_13 - для детей 13 лет'},
-                {value: 'r', label: 'r - для подростков 17+'},
-                {value: 'r_plus', label: 'R_plus - умеренная ногота'},
-                // { value: 'rx', label: 'RX - Хентай' }
-            ],
-            sortOptions: [
-                {value: 'ranked', label: 'По рейтингу'},
-                {value: 'popularity', label: 'По Популярности'},
-                {value: 'name', label: 'По алфавиту'},
-                {value: 'aired_on', label: 'По дате выхода'},
-                {value: 'status', label: 'Случайно'},
-                {value: 'episodes', label: 'По количеству Серии'},
-                {value: 'id', label: 'По ID'}
-            ],
-            genreOptions: [
-                {value: '5', label: 'Авангард'},
-                {value: '543', label: 'Гурман'},
-                {value: '8', label: 'Драма'},
-                {value: '4', label: 'Комедия'},
-                {value: '36', label: 'Повседневность'},
-                {value: '2', label: 'Приключения'},
-                {value: '22', label: 'Романтика'},
-                {value: '37', label: 'Сверхъестественное'},
-                {value: '30', label: 'Спорт'},
-                {value: '7', label: 'Тайна'},
-                {value: '117', label: 'Триллер'},
-                {value: '14', label: 'Ужасы'},
-                {value: '24', label: 'Фантастика'},
-                {value: '10', label: 'Фэнтези'},
-                {value: '1', label: 'Экшен'},
-                {value: '9', label: 'Этти'},
-                {value: '143', label: 'Антропоморфизм'},
-                {value: '119', label: 'CGDCT'},
-                {value: '17', label: 'Боевые исскусства'},
-                {value: '32', label: 'Вампиры'},
-                {value: '104', label: 'Взрослые персонажы'},
-                {value: '103', label: 'Видеоигры'},
-                {value: '38', label: 'Военное'},
-                {value: '141', label: 'Выживание'},
-                {value: '35', label: 'Гарем'},
-                {value: '3', label: 'Гонки'},
-                {value: '112', label: 'Гэг-юмор'},
-                {value: '39', label: 'Детектив'},
-                {value: '105', label: 'Жесткость'},
-                {value: '134', label: 'Забота о детях'},
-                {value: '146', label: 'Игра с высокими ставками'},
-                {value: '145', label: 'Идолы (жен.)'},
-                {value: '150', label: 'Идолы (муж.)'},
-                {value: '108', label: 'Изобразительное искусство'},
-                {value: '142', label: 'Исполнительское искусство'},
-                {value: '13', label: 'Исторический'},
-                {value: '130', label: 'Исэкай'},
-                {value: '140', label: 'Иясикэй'},
-                {value: '102', label: 'Командный спорт'},
-                {value: '29', label: 'Космос'},
-                {value: '144', label: 'Кроссдрессинг'},
-                {value: '137', label: 'Культура отаку'},
-                {value: '107', label: 'Любовный многоугольник'},
-                {value: '135', label: 'Магическая смена пола'},
-                {value: '124', label: 'Махо-сёдзё'},
-                {value: '147', label: 'Медицина'},
-                {value: '18', label: 'Меха'},
-                {value: '6', label: 'Мифология'},
-                {value: '19', label: 'Музыка'},
-                {value: '149', label: 'Образовательное'},
-                {value: '138', label: 'Организованная преступность'},
-                {value: '20', label: 'Пародия'},
-                {value: '148', label: 'Питомцы'},
-            ],
+            MultiSelectTag,
+            SingleSelectTag,
         };
     },
     mounted() {
+        if (document.getElementsByClassName("mult-select-tag").length || !document.getElementsByClassName("select-tag").length) {
+            const multSelectTags = document.querySelectorAll(".mult-select-tag");
+            const selectTags = document.querySelectorAll(".select-tag");
+
+            multSelectTags.forEach(tag => tag.parentNode.removeChild(tag));
+            selectTags.forEach(tag => tag.parentNode.removeChild(tag));
+        }
+
+        new SingleSelectTag("status-selector", {
+            rounded: true,
+            placeholder: "Поиск...",
+            onChange: function (values) {
+                console.log(values);
+            },
+        });
+
+        new MultiSelectTag("kind-selector", {
+            rounded: true,
+            placeholder: "Поиск...",
+            onChange: function (values) {
+                console.log(values);
+            },
+        });
+
+        new MultiSelectTag("genre-selector", {
+            rounded: true,
+            placeholder: "Поиск...",
+            onChange: function (values) {
+                console.log(values);
+            },
+        });
+
+        new SingleSelectTag("sort-selector", {
+            rounded: true,
+            placeholder: "Поиск...",
+            onChange: function (values) {
+                console.log(values);
+            },
+        });
+
+        new SingleSelectTag("season-selector", {
+            rounded: true,
+            placeholder: "Поиск...",
+            onChange: function (values) {
+                console.log(values);
+            },
+        });
+
+        new SingleSelectTag("rating-selector", {
+            rounded: true,
+            placeholder: "Поиск...",
+            onChange: function (values) {
+                console.log(values);
+            },
+        });
     },
     methods: {
         clearFilters() {
-            this.filters = {
-                status: [],
-                kind: [],
-                sort: '',
-                season: '',
-                rating: '',
-                genre: []
-            };
             this.$router.push('/catalog');
         },
         closeFilter() {
@@ -266,78 +243,40 @@ export default {
                 },
             });
         },
-        toggleSelect(filter) {
-            Object.keys(this.selectOpen).forEach(key => {
-                if (key !== filter) {
-                    this.selectOpen[key] = false;
-                    this.closeCustomSelect(key);
-                }
-            });
-
-            this.selectOpen[filter] = !this.selectOpen[filter];
-            if (this.selectOpen[filter]) {
-                this.openCustomSelect(filter);
-            } else {
-                this.closeCustomSelect(filter);
-            }
-        },
-        openCustomSelect(filter) {
-            let selectOptions = document.querySelector(`.custom-select-options[data-filter="${filter}"]`);
-            anime({
-                targets: selectOptions,
-                translateY: 0,
-                opacity: 1,
-                duration: 100,
-                easing: "easeInOutQuad",
-                begin: function () {
-                    selectOptions.style.display = "block";
-                    console.log("Opened current select");
-                },
-            });
-        },
-        closeCustomSelect(filter) {
-            let selectOptions = document.querySelector(`.custom-select-options[data-filter="${filter}"]`);
-            anime({
-                targets: selectOptions,
-                translateY: "10px",
-                opacity: 0,
-                duration: 100,
-                easing: "easeInOutQuad",
-                complete: function () {
-                    selectOptions.style.display = "none";
-                    console.log("Closed current select");
-                },
-            });
-        },
         submitFilters() {
-            let queryParams = Object.keys(this.filters)
-                .filter(key => this.filters[key] !== '')
-                .map(key => {
-                    if (Array.isArray(this.filters[key])) {
-                        return `${key}=${this.filters[key].join(',')}`;
-                    } else {
-                        return `${key}=${this.filters[key]}`;
-                    }
-                })
-                .join('&');
+            // Создаем новый экземпляр объекта FormData, передавая ему форму
+            let formData = new FormData(document.querySelector('form'));
+
+            // Преобразуем объект FormData в строку, которую можно использовать в URL-адресе
+            let queryParams = new URLSearchParams(formData).toString();
 
             let catalogUrl = `/catalog?${queryParams}`;
-            console.log('Отправка фильтров', this.filters);
+
+            // Выводим параметры фильтрации в консоль для проверки (можно удалить после тестирования)
+            console.log('Отправка фильтров', formData);
             console.log('URL-адрес каталога с параметрами:', catalogUrl);
+
+            // Выполняем действие, которое необходимо сделать с этими параметрами
+            // Например, перенаправляем пользователя на страницу каталога с параметрами
             this.$router.push(catalogUrl);
-            // window.location.href = `${catalogUrl}`
+            // Или делаем AJAX-запрос с этими параметрами на сервер
+            // Или что-то еще в зависимости от вашей бизнес-логики
         }
+
     }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 /* filter */
 .main-filter {
     min-width: 350px;
     max-width: 350px;
     top: 80px;
     position: sticky;
+    background-color: var(--cl-10);
+    padding: 20px 10px;
+    border-radius: 20px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -368,32 +307,8 @@ export default {
     font-size: 1.1em;
 }
 
-.filter-clear button {
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    font-size: 1em;
-    gap: 8px;
-    border-radius: 20px;
-    color: var(--filter-filter-clear-button);
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.filter-clear button img {
-    width: 15px;
-    margin-left: 5px;
-    filter: invert(1);
-}
-
-.filter-clear button:hover {
-    background-color: var(--filter-filter-clear-button-hover);
-}
-
 .filter-selector {
-    padding: 10px 0;
+    margin-top: 10px;
 }
 
 .filter-selector label {
@@ -410,10 +325,9 @@ export default {
 }
 
 .filter-box span {
-    font-size: 0.8em;
-    color: var(--filter-filter-box-label-span-font-color);
     padding-bottom: 5px;
     display: block;
+    color: var(--cl-15)
 }
 
 .tags-checkbox {
@@ -450,19 +364,8 @@ export default {
 
 .filter-selector .submit button {
     width: 100%;
-    padding: 0 20px;
-    cursor: pointer;
-    background-color: var(--filter-filter-search-button-color);
-    border: 2px solid var(--filter-filter-search-button-border-color);
-    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-    height: 40px;
-    color: var(--filter-filter-search-button-font-color);
 }
 
-.filter-selector .submit button:hover {
-    background-color: var(--filter-filter-search-button-hover-color);
-    border: 2px solid var(--filter-filter-search-button-border-hover-color);
-}
 
 .filt-button {
     display: none;
@@ -488,17 +391,8 @@ export default {
     transition: background-color 0.2s ease-in-out;
 }
 
-.filt-button button:hover {
-    background-color: var(--filter-filter-filt-button);
-}
-
-.filt-button button i {
-    font-size: 1.3em;
-}
-
-.filter-selector .submit {
-    width: 100%;
-    padding: 10px 0;
+.submit {
+    padding: 0 10px;
 }
 
 .filter-query {
@@ -513,13 +407,6 @@ export default {
     width: 100%;
 }
 
-/* customSelector */
-.custom-select {
-    display: block;
-    width: 100%;
-    position: relative;
-}
-
 .filter-query .filter-item:nth-child(1) {
     margin-top: 10px;
     padding: 0 !important;
@@ -529,62 +416,7 @@ export default {
     padding-top: 5px;
 }
 
-.custom-select .custom-select-title {
-    padding: 10px 15px;
-    font-size: 1em;
-    width: 100%;
-    border: none;
-    color: var(--filter-filter-custom-select-title-color);
-    background-color: var(--filter-filter-custom-select-title-background-color);
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-.custom-select .custom-select-options {
-    z-index: 10;
-    max-height: 200px;
-    overflow: hidden;
-    overflow-y: scroll;
-    position: absolute;
-    width: 100%;
-    display: block;
-    margin-top: 2px;
-    background-color: var(--filter-filter-custom-select-options-background-color);
-    padding: 8px 15px;
-    border: 1px solid var(--filter-custom-select-border-color)
-}
-
-.custom-select .custom-select-options::-webkit-scrollbar {
-    width: 2px;
-}
-
-.custom-select .custom-select-options div {
-    padding: 7px 0;
-    display: flex;
-    align-items: center;
-}
-
-.custom-select .custom-select-options div input,
-.custom-select .custom-select-options div label {
-    cursor: pointer;
-    display: block;
-    padding: 0;
-}
-
-.custom-select .custom-select-options div input {
-    margin-right: 15px;
-    transform: scale(1.2);
-    accent-color: #2786E4;
-}
-
 @media screen and (max-width: 1024px) {
-    .custom-select .custom-select-options::-webkit-scrollbar {
-        width: 0;
-    }
 
     .main-filter {
         display: none;

@@ -12,10 +12,9 @@
             </div>
         </div>
     </main>
-    <!-- MAIN ANIMES INIT END -->
-    <!-- FOOTER INIT START -->
+    <YoutubeVideos></YoutubeVideos>
+    <Feedback></Feedback>
     <Footer></Footer>
-    <!-- FOOTER INIT END -->
 </template>
 
 <script>
@@ -27,6 +26,8 @@ import TopGenres from './web/index/topGenres.vue';
 import MostAnimeList from './web/index/mostAnimes.vue';
 import Content from './web/index/animeList.vue';
 import Filter from './web/filter.vue';
+import YoutubeVideos from "@/components/web/index/youtube.vue";
+import Feedback from "@/components/web/index/feedback.vue";
 import Welcome from './web/index/welcome.vue';
 import Footer from './web/footer.vue';
 
@@ -38,6 +39,8 @@ export default {
         MostAnimeList,
         Content,
         Filter,
+        YoutubeVideos,
+        Feedback,
         Welcome,
         Footer,
     },

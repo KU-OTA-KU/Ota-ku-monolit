@@ -79,20 +79,20 @@
     <section class="main-content" id="main-content" name="main-content" v-if="animeList.length !== 0">
         <div class="movie_2" v-for="(anime, index) in animeList" :key="index">
             <div class="movie_2-image" @click="goToAnime(anime.id)">
-                <img v-lazy="anime.poster.mainUrl" :alt="anime.russian">
+                <img v-lazy="anime.poster.main2xUrl" :alt="anime.russian">
             </div>
             <div class="movie_2-info">
                 <h3 @click="goToAnime(anime.id)">{{ anime.russian }}</h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div class="movie_2-info-info-anime">
-                        <p>{{ anime.score }}<i class="fa-solid fa-star"></i></p><span class="dot">•</span>
-                        <p>{{ anime.kind }}</p><span class="dot">•</span>
-                        <p>{{ anime.airedOn.year }}</p>
+                        <span>{{ anime.score }}<i class="fa-solid fa-star"></i></span><span class="dot">•</span>
+                        <span>{{ anime.kind }}</span><span class="dot">•</span>
+                        <span>{{ anime.airedOn.year }}</span>
                         <span class="dot">•</span>
-                        <p>{{ translateStatus(anime.status) }}</p>
+                        <span>{{ translateStatus(anime.status) }}</span>
                     </div>
                     <div class="movie_2-info-genres-list">
-                        <router-link v-for="(genre, genreIndex) in anime.genres.slice(0, 3)" :key="genreIndex"
+                        <router-link class="raco-secondary" v-for="(genre, genreIndex) in anime.genres.slice(0, 3)" :key="genreIndex"
                                      :to="'/catalog?genre='+ genre.id">{{ genre.russian }}
                         </router-link>
                     </div>
@@ -141,7 +141,7 @@ export default {
                                 year
                               }
                               poster {
-                                mainUrl
+                                main2xUrl
                               }
                               description
                               genres {
@@ -167,13 +167,15 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main-content {
+    overflow: hidden;
     width: 100%;
     display: flex;
-    gap: 10px;
     position: relative;
     flex-direction: column;
+    background-color: var(--cl-16);
+    border-radius: 20px;
 
     @media screen and (max-width: 485px) {
         flex-direction: row;
@@ -192,5 +194,9 @@ export default {
     h3 {
         font-weight: bold;
     }
+}
+
+.main-content .movie_2:last-child {
+    border: none;
 }
 </style>
