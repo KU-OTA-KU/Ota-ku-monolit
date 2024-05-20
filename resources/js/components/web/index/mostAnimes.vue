@@ -211,10 +211,13 @@
 </template>
 
 <script>
+import {error} from "@/other/techOperation.js";
+
 export default {
     data() {
         return {
             animeLists: [],
+            error,
         };
     },
     mounted() {
@@ -292,8 +295,9 @@ export default {
                 });
 
                 const data = await response.json();
-                console.log("%cAll data fetched successfully", "color: greenyellow");
-
+                if (!response.ok) {
+                    this.error();
+                }
                 this.animeLists.push({
                     title: "Онгоинги",
                     description: "Вступай в новые эпизоды приключений, следи за сюжетом!",
@@ -318,8 +322,7 @@ export default {
                     animes: data.data.releasedAnimes,
                 });
             } catch (error) {
-                console.warn("Request error => ", error);
-                this.fetchAllData();
+                this.error()
             }
         },
         goToAnime(animeId) {
@@ -461,6 +464,7 @@ export default {
     @media screen and (max-width: 825px) {
         .most-content-animes-list-option {
             justify-content: space-evenly !important;
+
             .most-content-movie:nth-child(6),
             .most-content-movie:nth-child(5) {
                 display: block;

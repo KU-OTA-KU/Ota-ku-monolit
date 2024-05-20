@@ -106,17 +106,11 @@ export default {
     new SingleSelectTag("voice-selector", {
       rounded: true,
       placeholder: "Поиск...",
-      onChange: function (values) {
-        console.log(values);
-      },
     });
 
     new SingleSelectTag("theme-selector", {
       rounded: true,
       placeholder: "Поиск...",
-      onChange: function (values) {
-        console.log(values);
-      },
     });
   },
 
@@ -131,7 +125,6 @@ export default {
           duration: 450,
           easing: "easeInOutExpo",
           begin: function () {
-            console.log("Animation started => open sidenav <=");
             this.sidebarIsOpened = true;
           }.bind(this),
         });
@@ -146,7 +139,6 @@ export default {
         duration: 450,
         easing: "easeInOutExpo",
         complete: function () {
-          console.log("Animation Started => close sidenav <=");
           this.sidebarIsOpened = false;
         }.bind(this),
       });

@@ -10,7 +10,8 @@
                     <img v-lazy="'/img/other/sanji.png'" alt="Хана Мидорикава">
                     <div class="container-info">
                         <h3>Санжи Винсмоук</h3>
-                        <span>Аниме: <router-link :to="'/anime?animeId=15415'" class="raco-secondary">one-piece</router-link></span>
+                        <span>Аниме: <router-link :to="'/anime?animeId=15415'"
+                                                  class="raco-secondary">one-piece</router-link></span>
                     </div>
                 </div>
                 <div class="calendar-container-info">
@@ -20,41 +21,49 @@
                                 <img v-lazy="'https://shikimori.one/' + item.anime.image.x96" :alt="item.anime.name">
                             </div>
                             <div class="li-cont-info">
-                                <h4>{{ item.anime.russian}}</h4>
+                                <h4>{{ item.anime.russian }}</h4>
                                 <span>Следующий эпизод: {{ item.next_episode }}</span>
                                 <span>Дата выхода: {{ formatDate(item.next_episode_at) }}</span>
                             </div>
                         </li>
-                        <li  v-if="Today.length === 0">
+                        <li v-if="Today.length === 0">
                             <div class="li-cont-image skeleton-cell-slide skeleton-bg skeleton-border-radius"></div>
                             <div class="li-cont-info">
                                 <h4 class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></h4>
-                                <span  class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
-                                <span  class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
+                                <span
+                                    class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
+                                <span
+                                    class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
                             </div>
                         </li>
-                        <li  v-if="Today.length === 0">
+                        <li v-if="Today.length === 0">
                             <div class="li-cont-image skeleton-cell-slide skeleton-bg skeleton-border-radius"></div>
                             <div class="li-cont-info">
                                 <h4 class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></h4>
-                                <span  class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
-                                <span  class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
+                                <span
+                                    class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
+                                <span
+                                    class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
                             </div>
                         </li>
-                        <li  v-if="Today.length === 0">
+                        <li v-if="Today.length === 0">
                             <div class="li-cont-image skeleton-cell-slide skeleton-bg skeleton-border-radius"></div>
                             <div class="li-cont-info">
                                 <h4 class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></h4>
-                                <span  class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
-                                <span  class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
+                                <span
+                                    class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
+                                <span
+                                    class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
                             </div>
                         </li>
-                        <li  v-if="Today.length === 0">
+                        <li v-if="Today.length === 0">
                             <div class="li-cont-image skeleton-cell-slide skeleton-bg skeleton-border-radius"></div>
                             <div class="li-cont-info">
                                 <h4 class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></h4>
-                                <span  class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
-                                <span  class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
+                                <span
+                                    class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
+                                <span
+                                    class="skeleton-cell-slide skeleton-bg skeleton-border-radius skeleton-weight skeleton-height skeleton-margin-top"></span>
                             </div>
                         </li>
                     </ul>
@@ -66,17 +75,18 @@
 
 <script>
 import moment from 'moment';
-
+import {error} from "@/other/techOperation.js";
 export default {
     data() {
         return {
             Today: [],
+            error,
         };
     },
     mounted() {
         setTimeout(() => {
             this.fetchCalendarAnime();
-        }, "2000");
+        }, "1000");
     },
     methods: {
         goToAnime(animeId) {
@@ -87,14 +97,12 @@ export default {
                 const response = await fetch("https://shikimori.one/api/calendar");
                 if (response.ok) {
                     const data = await response.json();
-                    console.log(data)
                     this.Today = data.filter(item => moment(item.next_episode_at).isSame(moment(), 'day'));
-                    console.log(this.Today);
                 } else {
-                    console.error("Ошибка при получении данных:", response.statusText);
+                    this.error();
                 }
             } catch (error) {
-                console.error("Ошибка:", error);
+                this.error();
             }
         },
         formatDate(dateString) {
@@ -128,11 +136,12 @@ export default {
 
             &-info {
                 padding: 20px;
-                width: 70%;
+                width: 72%;
                 overflow: hidden;
                 overflow-y: scroll;
                 max-height: 600px;
-                height: 600px;
+                min-height: 600px;
+                height: 100%;
 
                 ul {
                     li {
@@ -146,6 +155,7 @@ export default {
                             aspect-ratio: 1 / 1.5;
                             position: relative;
                             margin-right: 10px;
+
                             img {
                                 width: 100%;
                                 height: 100%;
@@ -154,11 +164,13 @@ export default {
                                 object-position: center;
                             }
                         }
+
                         .li-cont-info {
                             width: 100%;
                             display: flex;
                             flex-direction: column;
                         }
+
                         &:hover {
                             h4 {
                                 color: #1c84ff;
@@ -173,7 +185,7 @@ export default {
             }
 
             &-image {
-                width: 30%;
+                width: 28%;
                 position: relative;
                 overflow: hidden;
 
@@ -204,6 +216,31 @@ export default {
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .calendar-container-info {
+        width: 70% !important;
+        min-height: 400px !important;
+    }
+
+    .calendar-container-image {
+        width: 30% !important;
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .calendar-container-image {
+        display: none;
+    }
+
+    .calendar-container-info {
+        width: 100% !important;
+        padding: 0 !important;
+        min-height: 200px !important;
+        max-height: 400px !important;
     }
 }
 </style>

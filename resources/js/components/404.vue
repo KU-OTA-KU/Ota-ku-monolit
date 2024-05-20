@@ -33,9 +33,19 @@
     </section>
 
 </template>
-<script>
 
+<script>
+import {useHead} from "@vueuse/head";
+
+export default {
+    mounted() {
+        useHead({
+            title: "404 Страница не найдено",
+        })
+    }
+}
 </script>
+
 <style lang="scss" scoped>
 .not-found {
     width: 100%;

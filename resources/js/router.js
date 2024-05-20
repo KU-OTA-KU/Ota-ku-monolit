@@ -12,8 +12,9 @@ import IndexComponent from "./components/index.vue";
 import CatalogComponent from "./components/catalog.vue";
 import OpenAnimeComponent from "./components/anime.vue";
 
-// not found page
-import NotFoundComponent from "./components/error.vue";
+// not found page and tech errors
+import NotFoundComponent from "./components/404.vue";
+import TehcError from "./components/techError.vue";
 
 // docs russian
 import AuthorsRU from "./components/doc/authors_ru.vue";
@@ -50,6 +51,10 @@ const router = createRouter({
         {
             path: "/:catchAll(.*)",
             component: NotFoundComponent,
+        },
+        {
+            path: "/error",
+            component: TehcError,
         },
     ],
 });

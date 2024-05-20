@@ -57,29 +57,95 @@
 </template>
 
 <script>
+import {error} from "@/other/techOperation.js";
+
 export default {
     data() {
         return {
             videoList: [],
             apiKey: 'AIzaSyDHOe3BtTGvzLaIBxekCyylM6DYTXrLFSE',
-            channelId: 'UC4W8zn36O0oZwgzE_UnV7ng'
+            apiKey2: 'AIzaSyCqrqXftpbMSvajchvJsiJTx30XQFiznLw',
+            channelId: 'UC4W8zn36O0oZwgzE_UnV7ng',
+            error,
         };
     },
     mounted() {
-        setTimeout(() => {
-            this.fetchVideosInChannel();
-        }, "2000")
+        this.fetchVideosInChannel();
     },
     methods: {
         async fetchVideosInChannel() {
-            const url = `https://www.googleapis.com/youtube/v3/search?key=${this.apiKey}&channelId=${this.channelId}&part=snippet&order=date&maxResults=4`;
             try {
-                const response = await fetch(url);
-                const data = await response.json();
-                this.videoList = data.items;
-                console.log(this.videoList)
+                const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${this.apiKey}&channelId=${this.channelId}&part=snippet&order=date&maxResults=4`);
+                if (response.ok) {
+                    const data = await response.json();
+                    this.videoList = data.items;
+                } else {
+                    this.videoList = [
+                        {
+                            id: {
+                                videoId: "videoId1"
+                            },
+                            snippet: {
+                                title: "Куда все подевались?",
+                                thumbnails: {
+                                    high: {
+                                        url: "/img/videos/img/video1.png"
+                                    }
+                                },
+                                publishedAt: "2023-01-01T00:00:00Z",
+                                channelTitle: "Ota-ku"
+                            }
+                        },
+                        {
+                            id: {
+                                videoId: "videoId2"
+                            },
+                            snippet: {
+                                title: "Бой Кэна Усато и Черного рыцаря",
+                                thumbnails: {
+                                    high: {
+                                        url: "/img/videos/img/video2.png"
+                                    }
+                                },
+                                publishedAt: "2023-01-02T00:00:00Z",
+                                channelTitle: "Ota-ku"
+                            }
+                        },
+                        {
+                            id: {
+                                videoId: "videoId2"
+                            },
+                            snippet: {
+                                title: "Казума рассказовает интересные истории",
+                                thumbnails: {
+                                    high: {
+                                        url: "/img/videos/img/video3.png"
+                                    }
+                                },
+                                publishedAt: "2023-01-02T00:00:00Z",
+                                channelTitle: "Ota-ku"
+                            }
+                        },
+                        {
+                            id: {
+                                videoId: "videoId2"
+                            },
+                            snippet: {
+                                title: "С днём рождения тебя...",
+                                thumbnails: {
+                                    high: {
+                                        url: "/img/videos/img/video4.png"
+                                    }
+                                },
+                                publishedAt: "2023-01-02T00:00:00Z",
+                                channelTitle: "Ota-ku"
+                            }
+                        }
+                    ];
+                    // this.error();
+                }
             } catch (error) {
-                console.error('Ошибка при получении видео:', error);
+                this.error();
             }
         },
         goToYoutubeVideo(videoId) {

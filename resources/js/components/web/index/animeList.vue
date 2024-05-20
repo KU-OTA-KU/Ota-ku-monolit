@@ -119,6 +119,7 @@
 <script>
 import {cleanDescription} from "@/other/cleanDescription.js";
 import {translateStatus} from "@/other/translateStatus.js";
+import {error} from "@/other/techOperation.js";
 
 export default {
     data() {
@@ -126,6 +127,7 @@ export default {
             animeList: [],
             cleanDescription,
             translateStatus,
+            error,
         };
     },
     mounted() {
@@ -168,7 +170,9 @@ export default {
                         `,
                     }),
                 });
-
+                if (!response.ok) {
+                    this.error()
+                }
                 const data = await response.json();
                 this.animeList = data.data.animes;
             } catch (error) {

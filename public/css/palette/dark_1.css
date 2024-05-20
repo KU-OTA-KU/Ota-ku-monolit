@@ -36,6 +36,14 @@
     --cl-24: rgba(33, 33, 33, 0.9);
     --cl-25: rgba(33, 33, 33, 0.5);
     --cl-26: rgba(255, 255, 255, 0.5);
+    --cl-27: linear-gradient(
+        0deg,
+        rgb(18 18 18) 0%,
+        rgb(18 18 18 / 99%) 50%,
+        rgb(18 18 18 / 66%) 100%
+    );
+
+
     --v-select-body-bg-color: #3C3C3C;
     --v-select-body-border-color: #3C3C3C;
     --v-select-checkbox-accent-color: #0276ff;

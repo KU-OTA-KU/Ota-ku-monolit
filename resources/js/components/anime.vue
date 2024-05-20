@@ -1,120 +1,87 @@
 <template>
-  <!-- PRIMARY HEADER INIT START-->
-  <primary-header></primary-header>
-  <!-- PRIMARY HEADER INIT END -->
-  <!-- ANIME HEADER INIT START -->
-  <anime-header ref="AnimeHeader"></anime-header>
-  <!-- ANIME HEADER INIT END -->
-  <!-- ANIME HEADER INIT START -->
-  <anime-description ref="AnimeDescription"></anime-description>
-  <!-- ANIME HEADER INIT END -->
-  <!-- ANIME STILLS INIT START -->
-  <anime-stills ref="AnimeStills"></anime-stills>
-  <!-- ANIME STILLS INIT END -->
-  <!-- PLAYER INIT START -->
-  <div class="ad-container">
-    <div class="ad-container-inner">
-      <div class="ad-container-inner-tit">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8586315114228333"
-          data-ad-slot="8268539420" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      </div>
-    </div>
-  </div>
-  <player ref="player"></player>
-  <div class="ad-container">
-    <div class="ad-container-inner">
-      <div class="ad-container-inner-tit">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8586315114228333"
-          data-ad-slot="6927537591" data-ad-format="auto" data-full-width-responsive="true"></ins>
-      </div>
-    </div>
-  </div>
-  <!-- PLAYER INIT END -->
-  <!-- ANIME CHARACTERS INIT START -->
-  <anime-characters ref="AnimeCharacters"></anime-characters>
-  <!-- ANIME CHARACTERS INIT END -->
-  <!-- ANIME RELATED LIST INIT START -->
-  <anime-related ref="AnimeRelated"></anime-related>
-  <!-- ANIME RELATED LIST INIT END -->
-  <!-- FOOTER INIT START -->
-  <Footer></Footer>
-  <!-- FOOTER INIT END -->
+    <primary-header></primary-header>
+    <anime-header ref="AnimeHeader"></anime-header>
+    <section class="anime-cont">
+        <div class="anime-cont-inner">
+            <div class="anime-cont-info-bar">
+            </div>
+            <div class="anime-cont-anime-contents-bar">
+                <anime-description ref="AnimeDescription"></anime-description>
+                <anime-stills ref="AnimeStills"></anime-stills>
+                <player ref="player"></player>
+                <anime-characters ref="AnimeCharacters"></anime-characters>
+                <anime-related ref="AnimeRelated"></anime-related>
+            </div>
+        </div>
+    </section>
+    <Footer></Footer>
 </template>
 
 <script>
 import Footer from "@/components/web/footer.vue";
 import PrimaryHeader from "@/components/web/primaryHeader.vue";
-import AnimeHeader from "@/components/web/animeHeader.vue";
-import AnimeDescription from "@/components/web/animeDescription.vue"
-import AnimeStills from "@/components/web/animeStills.vue";
+import AnimeHeader from "@/components/web/anime/animeHeader.vue";
+import AnimeDescription from "@/components/web/anime/animeDescription.vue"
+import AnimeStills from "@/components/web/anime/animeStills.vue";
 import Player from "@/components/web/player.vue";
 import AnimeCharacters from "@/components/web/animeCharacters.vue";
 import AnimeRelated from "@/components/web/animeRelated.vue";
 
 export default {
-  data() {
-    return {
-      animeDataReadyEventCreated: false
-    };
-  },
-  components: {
-    PrimaryHeader, AnimeHeader, AnimeDescription, AnimeStills, Player, AnimeCharacters, AnimeRelated, Footer
-  },
-  mounted() {
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    console.log('Anime mounted!');
-    window.scrollTo({ top: 0 });
-    let headerSearch = document.querySelector(".header-search");
-    let catalogButton = document.querySelector(".catalog-button");
-    let headerMobileSearch = document.querySelector(".search");
-    headerMobileSearch.style.display = "none";
-    catalogButton.style.display = "none";
-    headerSearch.style.display = "none";
-    let header = document.getElementsByTagName("header")[0];
-    header.style.position = "fixed";
-    header.style.backgroundColor = "transparent";
-    header.style.backdropFilter = "blur(7px)";
-    header.style.boxShadow = "none";
-    const animeId = this.$route.query.animeId;
-    // console.log(animeId)
-    this.getCurrAnime(animeId)
-
-    this.$watch(
-      () => this.$route.query.animeId,
-      (newValue, oldValue) => {
-        if (newValue !== oldValue) {
-          this.getCurrAnime(newValue);
-          this.$refs.player.fetchData();
-        }
-      }
-    );
-  },
-  methods: {
-    async appendAnimeInSite(data) {
-      sessionStorage.removeItem("CurrentAnime");
-      data = JSON.stringify(data);
-      sessionStorage.setItem("CurrentAnime", data);
-      window.myData = data;
-
-      await this.$nextTick();
-      // init animeHeader
-      this.$refs.AnimeHeader.main();
-      this.$refs.AnimeStills.main();
-      this.$refs.AnimeDescription.main();
-      this.$refs.AnimeCharacters.main();
-      this.$refs.AnimeRelated.main();
+    data() {
+        return {
+            animeDataReadyEventCreated: false
+        };
     },
-    async getCurrAnime(animeId) {
-      try {
-        const response = await fetch("https://shikimori.one/api/graphql", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            query: `
+    components: {
+        PrimaryHeader, AnimeHeader, AnimeDescription, AnimeStills, Player, AnimeCharacters, AnimeRelated, Footer
+    },
+    mounted() {
+        console.log('Anime mounted!');
+        window.scrollTo({top: 0});
+        let header = document.getElementsByTagName("header")[0];
+        header.style.position = "fixed";
+        header.style.backgroundColor = "transparent";
+        header.style.backdropFilter = "blur(7px)";
+        header.style.boxShadow = "none";
+        const animeId = this.$route.query.animeId;
+        // console.log(animeId)
+        this.getCurrAnime(animeId)
+
+        this.$watch(
+            () => this.$route.query.animeId,
+            (newValue, oldValue) => {
+                if (newValue !== oldValue) {
+                    this.getCurrAnime(newValue);
+                    this.$refs.player.fetchData();
+                }
+            }
+        );
+    },
+    methods: {
+        async appendAnimeInSite(data) {
+            sessionStorage.removeItem("CurrentAnime");
+            data = JSON.stringify(data);
+            sessionStorage.setItem("CurrentAnime", data);
+            window.myData = data;
+
+            await this.$nextTick();
+            this.$refs.AnimeHeader.main();
+            this.$refs.AnimeStills.main();
+            this.$refs.AnimeDescription.main();
+            this.$refs.AnimeCharacters.main();
+            this.$refs.AnimeRelated.main();
+        },
+        async getCurrAnime(animeId) {
+            try {
+                const response = await fetch("https://shikimori.one/api/graphql", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                    body: JSON.stringify({
+                        query: `
               query {
                     animes(ids: "${animeId}", limit: 1) {
                       id
@@ -176,19 +143,40 @@ export default {
                     }
                   }
                 `,
-          }),
-        });
+                    }),
+                });
 
-        const data = await response.json();
-        console.log("%cУСПЕШНО!", "color: greenyellow");
-        const anime = data.data.animes;
-        console.log(anime);
-        this.appendAnimeInSite(anime);
-        document.title = `${anime[0].russian} Смотреть аниме онлайн`;
-      } catch (error) {
-        console.warn("Request error => ", error);
-      }
-    },
-  }
+                const data = await response.json();
+                console.log("%cУСПЕШНО!", "color: greenyellow");
+                const anime = data.data.animes;
+                console.log(anime);
+                this.appendAnimeInSite(anime);
+                document.title = `${anime[0].russian} Смотреть аниме онлайн`;
+            } catch (error) {
+                console.warn("Request error => ", error);
+            }
+        },
+    }
 }
 </script>
+<style lang="scss" scoped>
+.anime-cont {
+    padding: 10px;
+    width: 100%;
+
+    &-inner {
+        max-width: var(--ota-ku-max-width);
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+
+        .anime-cont-info-bar {
+            width: 25%;
+        }
+
+        .anime-cont-anime-contents-bar {
+            width: 75%;
+        }
+    }
+}
+</style>

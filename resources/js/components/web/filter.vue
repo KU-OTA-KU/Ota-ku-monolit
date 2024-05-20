@@ -133,7 +133,7 @@
         </div>
     </section>
     <section class="filt-button">
-        <button @click="openFilter"><i class="fa-solid fa-sliders" aria-hidden="true"></i>Фильтры</button>
+        <button @click="openFilter" class="raco-primary pd-normal raco-awsome-icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i>Фильтры</button>
     </section>
 </template>
 
@@ -271,19 +271,13 @@ export default {
 /* filter */
 .main-filter {
     min-width: 350px;
+    width: 100%;
     max-width: 350px;
     top: 80px;
     position: sticky;
     background-color: var(--cl-10);
     padding: 20px 10px;
     border-radius: 20px;
-}
-
-@media screen and (max-width: 1440px) {
-    .main-filter {
-        min-width: 300px;
-        max-width: 300px;
-    }
 }
 
 .filter-clear {
@@ -370,25 +364,14 @@ export default {
 .filt-button {
     display: none;
     position: sticky;
-    top: 65px;
+    top: 75px;
     width: 100%;
     z-index: 100;
 }
 
 .filt-button button {
-    display: flex;
     width: 100%;
-    outline: none;
-    align-items: center;
-    border: none;
-    justify-content: center;
-    gap: 5px;
-    padding: 8px 0;
-    font-size: 1.1em;
-    cursor: pointer;
-    background-color: var(--filter-filter-filt-button);
-    color: white;
-    transition: background-color 0.2s ease-in-out;
+    border-radius: 30px;
 }
 
 .submit {
@@ -429,10 +412,10 @@ export default {
         max-width: 350px;
         width: 100%;
         height: 100dvh;
-        background-color: var(--filter-filter-background-color);
         z-index: 1001;
         padding: 20px;
         overflow: hidden;
+        border-radius: 0;
     }
 
     .filter-selector {

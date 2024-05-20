@@ -128,7 +128,6 @@ export default {
 
 <style lang="scss">
 .anime-background {
-    /* background-color: rgb(29, 231, 73); */
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -140,7 +139,7 @@ export default {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: var(--anime-header-background-back-gradient);
+    background: var(--cl-27);
 }
 
 .anime-background .anime-back-content {
