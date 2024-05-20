@@ -13,6 +13,7 @@
         </div>
     </main>
     <YoutubeVideos></YoutubeVideos>
+    <Calendar></Calendar>
     <Feedback></Feedback>
     <Footer></Footer>
 </template>
@@ -27,6 +28,7 @@ import MostAnimeList from './web/index/mostAnimes.vue';
 import Content from './web/index/animeList.vue';
 import Filter from './web/filter.vue';
 import YoutubeVideos from "@/components/web/index/youtube.vue";
+import Calendar from "@/components/web/index/calendar.vue";
 import Feedback from "@/components/web/index/feedback.vue";
 import Welcome from './web/index/welcome.vue';
 import Footer from './web/footer.vue';
@@ -40,6 +42,7 @@ export default {
         Content,
         Filter,
         YoutubeVideos,
+        Calendar,
         Feedback,
         Welcome,
         Footer,

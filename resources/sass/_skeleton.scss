@@ -11,6 +11,10 @@
     background-size: 200% auto;
 }
 
+.skeleton-margin-top {
+    margin-top: 10px;
+}
+
 .skeleton-height {
     height: 15px !important;
 }
@@ -45,6 +49,10 @@
 
 .skeleton-weight-30 {
     width: 30%;
+}
+
+.skeleton-border-radius {
+    border-radius: 10px;
 }
 
 @keyframes skeleton-pulse {

@@ -5,7 +5,7 @@
                 <h3>Последние видео</h3>
                 <span>Будьте в курсе самых последних обновлений нашего канала</span>
             </div>
-            <div class="videos-container">
+            <div class="videos-container" v-if="videoList">
                 <div v-for="video in videoList" :key="video.id.videoId" class="yt-container"
                      @click="goToYoutubeVideo(video.id.videoId)">
                     <div class="yt-container-image">
@@ -15,6 +15,40 @@
                         <p>{{ video.snippet.title }}</p>
                         <span> {{ formatDate(video.snippet.publishedAt) }} <span
                             class="dot">•</span> {{ video.snippet.channelTitle }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="videos-container" v-if="videoList.length === 0">
+                <div class="yt-container">
+                    <div class="yt-container-image skeleton-bg skeleton-cell-slide skeleton-border-radius">
+                    </div>
+                    <div class="yt-container-info">
+                        <p class="skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius"></p>
+                        <span class="skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius"></span>
+                    </div>
+                </div>
+                <div class="yt-container">
+                    <div class="yt-container-image skeleton-bg skeleton-cell-slide skeleton-border-radius">
+                    </div>
+                    <div class="yt-container-info">
+                        <p class="skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius"></p>
+                        <span class="skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius"></span>
+                    </div>
+                </div>
+                <div class="yt-container">
+                    <div class="yt-container-image skeleton-bg skeleton-cell-slide skeleton-border-radius">
+                    </div>
+                    <div class="yt-container-info">
+                        <p class="skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius"></p>
+                        <span class="skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius"></span>
+                    </div>
+                </div>
+                <div class="yt-container">
+                    <div class="yt-container-image skeleton-bg skeleton-cell-slide skeleton-border-radius">
+                    </div>
+                    <div class="yt-container-info">
+                        <p class="skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius"></p>
+                        <span class="skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius"></span>
                     </div>
                 </div>
             </div>
@@ -32,7 +66,9 @@ export default {
         };
     },
     mounted() {
-        this.fetchVideosInChannel();
+        setTimeout(() => {
+            this.fetchVideosInChannel();
+        }, "2000")
     },
     methods: {
         async fetchVideosInChannel() {
@@ -79,7 +115,7 @@ export default {
             gap: 10px;
 
             .yt-container {
-                background-color: var(--cl-10);
+                background-color: var(--cl-16);
                 width: 100%;
                 padding: 10px;
                 border-radius: 10px;

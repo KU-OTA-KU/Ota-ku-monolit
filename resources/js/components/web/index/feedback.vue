@@ -26,13 +26,15 @@
 </script>
 <style lang="scss" scoped>
 .feedback {
-    background-color: var(--cl-10);
+
     width: 100%;
     padding: 10px;
 
     &-inner {
         max-width: var(--ota-ku-max-width);
         margin: 0 auto;
+        background-color: var(--cl-10);
+        border-radius: 20px;
         display: flex;
         justify-content: space-between;
         padding: 10px 20px;

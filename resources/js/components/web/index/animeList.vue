@@ -1,77 +1,87 @@
 <template>
     <section v-if="animeList.length === 0" class="main-content" id="main-content" name="main-content">
-        <div class="movie_2 skeleton-cell-pulse">
-            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+        <div class="movie_2">
+            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
             </div>
             <div class="movie_2-info">
-                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div
-                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
+                    </div>
                     <div
-                        class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                     <div
-                        class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="movie_2 skeleton-cell-pulse">
-            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+        <div class="movie_2">
+            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
             </div>
             <div class="movie_2-info">
-                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div
-                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
+                    </div>
                     <div
-                        class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                     <div
-                        class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="movie_2 skeleton-cell-pulse">
-            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+        <div class="movie_2">
+            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
             </div>
             <div class="movie_2-info">
-                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div
-                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
+                    </div>
                     <div
-                        class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                     <div
-                        class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="movie_2 skeleton-cell-pulse">
-            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+        <div class="movie_2">
+            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
             </div>
             <div class="movie_2-info">
-                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div
-                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
+                    </div>
                     <div
-                        class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                     <div
-                        class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="movie_2 skeleton-cell-pulse">
-            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+        <div class="movie_2">
+            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
             </div>
             <div class="movie_2-info">
-                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div
-                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
+                    </div>
                     <div
-                        class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
+                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                     <div
-                        class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,7 +102,8 @@
                         <span>{{ translateStatus(anime.status) }}</span>
                     </div>
                     <div class="movie_2-info-genres-list">
-                        <router-link class="raco-secondary" v-for="(genre, genreIndex) in anime.genres.slice(0, 3)" :key="genreIndex"
+                        <router-link class="raco-secondary" v-for="(genre, genreIndex) in anime.genres.slice(0, 3)"
+                                     :key="genreIndex"
                                      :to="'/catalog?genre='+ genre.id">{{ genre.russian }}
                         </router-link>
                     </div>
@@ -106,8 +117,9 @@
 </template>
 
 <script>
-import { cleanDescription } from "@/other/cleanDescription.js";
-import { translateStatus } from "@/other/translateStatus.js";
+import {cleanDescription} from "@/other/cleanDescription.js";
+import {translateStatus} from "@/other/translateStatus.js";
+
 export default {
     data() {
         return {
@@ -117,7 +129,10 @@ export default {
         };
     },
     mounted() {
-        this.fetchAnimeList(5);
+        setTimeout(() => {
+            this.fetchAnimeList(5);
+        }, "2000");
+
     },
     methods: {
         async fetchAnimeList(limit) {

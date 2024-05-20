@@ -1,62 +1,87 @@
 <template>
     <section v-if="animeList.length === 0 && animeFoundInitialized === false" class="main-content" id="main-content" name="main-content">
-        <div class="movie_2 skeleton-cell-pulse">
-            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+        <div class="movie_2">
+            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
             </div>
             <div class="movie_2-info">
-                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
-                    <div class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
-                    <div class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
-                    <div class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
+                    </div>
+                    <div
+                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
+                    <div
+                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="movie_2 skeleton-cell-pulse">
-            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+        <div class="movie_2">
+            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
             </div>
             <div class="movie_2-info">
-                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
-                    <div class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
-                    <div class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
-                    <div class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
+                    </div>
+                    <div
+                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
+                    <div
+                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="movie_2 skeleton-cell-pulse">
-            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+        <div class="movie_2">
+            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
             </div>
             <div class="movie_2-info">
-                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
-                    <div class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
-                    <div class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
-                    <div class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
+                    </div>
+                    <div
+                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
+                    <div
+                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="movie_2 skeleton-cell-pulse">
-            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+        <div class="movie_2">
+            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
             </div>
             <div class="movie_2-info">
-                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
-                    <div class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
-                    <div class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
-                    <div class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
+                    </div>
+                    <div
+                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
+                    <div
+                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="movie_2 skeleton-cell-pulse">
-            <div class="movie_2-image skeleton-cell-slide skeleton-bg">
+        <div class="movie_2">
+            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
             </div>
             <div class="movie_2-info">
-                <h3 class="skeleton-cell-slide skeleton-bg skeleton-height-h3 skeleton-weight"></h3>
                 <div class="movie_2-info-kind-genres-aired-container">
-                    <div class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
-                    <div class="movie_2-info-genres-list skeleton-cell-slide skeleton-bg skeleton-height skeleton-weight"></div>
-                    <div class="movie_2-info-about skeleton-cell-slide skeleton-bg skeleton-height-full skeleton-weight"></div>
+                    <div
+                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
+                    </div>
+                    <div
+                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
+                    <div
+                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
+                    </div>
                 </div>
             </div>
         </div>
