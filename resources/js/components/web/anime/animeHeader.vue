@@ -6,21 +6,21 @@
                 <div class="anime-back-content-tit">
                     <div class="anime-back-global-info">
                         <div class="anime-back-panel-left">
-                            <div class="anime-back-global-info-image skeleton-bg skeleton-cell-slide"></div>
+                            <div class="anime-back-global-info-image skeleton-bg skeleton-cell-slide skeleton-border-radius"></div>
                             <div class="anime-back-global-info-watch-button">
-                                <div class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight"></div>
-                                <div class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight"></div>
+                                <div class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight skeleton-border-radius"></div>
+                                <div class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight skeleton-border-radius"></div>
                             </div>
                         </div>
                         <div class="anime-back-global-current-anime-information">
-                            <div class="anime-eng-jpg-name skeleton-height skeleton-cell-slide skeleton-weight skeleton-bg"></div>
-                            <div class="anime-title-h2 skeleton-height-h1 skeleton-cell-slide skeleton-weight-50 skeleton-bg"></div>
-                            <div class="anime-score-genres skeleton-height skeleton-cell-slide skeleton-weight-50 skeleton-bg"></div>
-                            <div class="anime-status skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg"></div>
-                            <div class="anime-year skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg"></div>
-                            <div class="anime-rating skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg"></div>
-                            <div class="anime-duration skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg"></div>
-                            <div class="anime-next-episode-block skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg"></div>
+                            <div class="anime-eng-jpg-name skeleton-height skeleton-cell-slide skeleton-weight skeleton-bg skeleton-border-radius"></div>
+                            <div class="anime-title-h2 skeleton-height-h1 skeleton-cell-slide skeleton-weight-50 skeleton-bg skeleton-border-radius"></div>
+                            <div class="anime-score-genres skeleton-height skeleton-cell-slide skeleton-weight-50 skeleton-bg skeleton-border-radius"></div>
+                            <div class="anime-status skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
+                            <div class="anime-year skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
+                            <div class="anime-rating skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
+                            <div class="anime-duration skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
+                            <div class="anime-next-episode-block skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                         <div class="anime-back-panel-left">
                             <div class="anime-back-global-info-image"><img v-lazy="_ANIME_IMAGE_" :alt="_ANIME_ENGLISH_NAME_"></div>
                             <div class="anime-back-global-info-watch-button">
-                                <button><i class="fa-solid fa-play"></i>Смотреть
+                                <button ><i class="fa-solid fa-play"></i>Смотреть
                                 </button>
                                 <button><i class="fa-solid fa-exclamation"></i>Пожаловаться</button>
                             </div>

@@ -1,4 +1,7 @@
 export function  error () {
-    console.log("Tech Error!")
     this.$router.push(`/error`);
+}
+
+export function notFoundPage() {
+    this.$router.push(`/404`);
 }

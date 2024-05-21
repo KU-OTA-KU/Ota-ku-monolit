@@ -27,10 +27,13 @@ import Player from "@/components/web/player.vue";
 import AnimeCharacters from "@/components/web/animeCharacters.vue";
 import AnimeRelated from "@/components/web/animeRelated.vue";
 
+
+import  { notFoundPage } from "@/other/techOperation.js";
 export default {
     data() {
         return {
-            animeDataReadyEventCreated: false
+            animeDataReadyEventCreated: false,
+            notFoundPage
         };
     },
     components: {
@@ -147,13 +150,15 @@ export default {
                 });
 
                 const data = await response.json();
-                console.log("%cУСПЕШНО!", "color: greenyellow");
-                const anime = data.data.animes;
-                console.log(anime);
-                this.appendAnimeInSite(anime);
-                document.title = `${anime[0].russian} Смотреть аниме онлайн`;
-            } catch (error) {
-                console.warn("Request error => ", error);
+                if(response.ok) {
+                    const anime = data.data.animes;
+                    this.appendAnimeInSite(anime);
+                    document.title = `${anime[0].russian} Смотреть аниме онлайн`;
+                } else {
+                    this.notFoundPage();
+                }
+            } catch (e) {
+                this.notFoundPage();
             }
         },
     }
