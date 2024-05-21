@@ -151,60 +151,47 @@ export default {
         };
     },
     mounted() {
-        if (document.getElementsByClassName("mult-select-tag").length || !document.getElementsByClassName("select-tag").length) {
-            const multSelectTags = document.querySelectorAll(".mult-select-tag");
-            const selectTags = document.querySelectorAll(".select-tag");
+        if (document.querySelectorAll(".main-filter .mult-select-tag").length > 0 || document.querySelector(".main-filter .select-tag") === null) {
+            const multSelectTags = document.querySelectorAll(".main-filter .mult-select-tag");
+            const selectTags = document.querySelectorAll(".main-filter .select-tag");
 
-            multSelectTags.forEach(tag => tag.parentNode.removeChild(tag));
-            selectTags.forEach(tag => tag.parentNode.removeChild(tag));
+            if (multSelectTags) {
+                multSelectTags.forEach(tag => tag.parentNode.removeChild(tag));
+            }
+
+            if (selectTags) {
+                selectTags.forEach(tag => tag.parentNode.removeChild(tag));
+            }
         }
 
         new SingleSelectTag("status-selector", {
             rounded: true,
             placeholder: "Поиск...",
-            onChange: function (values) {
-                console.log(values);
-            },
         });
 
         new MultiSelectTag("kind-selector", {
             rounded: true,
             placeholder: "Поиск...",
-            onChange: function (values) {
-                console.log(values);
-            },
         });
 
         new MultiSelectTag("genre-selector", {
             rounded: true,
             placeholder: "Поиск...",
-            onChange: function (values) {
-                console.log(values);
-            },
         });
 
         new SingleSelectTag("sort-selector", {
             rounded: true,
             placeholder: "Поиск...",
-            onChange: function (values) {
-                console.log(values);
-            },
         });
 
         new SingleSelectTag("season-selector", {
             rounded: true,
             placeholder: "Поиск...",
-            onChange: function (values) {
-                console.log(values);
-            },
         });
 
         new SingleSelectTag("rating-selector", {
             rounded: true,
             placeholder: "Поиск...",
-            onChange: function (values) {
-                console.log(values);
-            },
         });
     },
     methods: {

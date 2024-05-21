@@ -16,7 +16,7 @@
                 </div>
                 <div class="calendar-container-info">
                     <ul>
-                        <li v-if="Today" v-for="item in Today" :key="item.anime.id" @click="goToAnime(item.anime.id)">
+                        <li v-if="Today" v-for="item in Today" :key="item.anime.id" @click="this.goToAnime(item.anime.id)">
                             <div class="li-cont-image">
                                 <img v-lazy="'https://shikimori.one/' + item.anime.image.x96" :alt="item.anime.name">
                             </div>
@@ -74,24 +74,27 @@
 </template>
 
 <script>
-import moment from 'moment';
 import {error} from "@/other/techOperation.js";
+import {goToAnime} from "@/other/goToAnime.js";
+import moment from 'moment-timezone';
+
 export default {
     data() {
         return {
             Today: [],
             error,
+            goToAnime
         };
     },
     mounted() {
         setTimeout(() => {
             this.fetchCalendarAnime();
         }, "1000");
+
+        const clientTimeZone = moment.tz.guess();
+        console.log(clientTimeZone)
     },
     methods: {
-        goToAnime(animeId) {
-            this.$router.push(`/anime?animeId=${animeId}`);
-        },
         async fetchCalendarAnime() {
             try {
                 const response = await fetch("https://shikimori.one/api/calendar");
@@ -155,6 +158,8 @@ export default {
                             aspect-ratio: 1 / 1.5;
                             position: relative;
                             margin-right: 10px;
+                            border-radius: 10px;
+                            overflow: hidden;
 
                             img {
                                 width: 100%;
@@ -188,11 +193,20 @@ export default {
                 width: 28%;
                 position: relative;
                 overflow: hidden;
+                cursor: pointer;
+
+                &:hover {
+                    .container-info h3 {
+                        color: var(--cl-7);
+                    }
+                }
 
                 img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    pointer-events: none;
+                    user-select: none;
                 }
 
                 .container-info {
@@ -203,7 +217,7 @@ export default {
                     box-shadow: 0px -25px 10px 0px rgba(22, 22, 22, 0.5);
                     padding: 15px 0;
 
-                    h4 {
+                    h3 {
                         transition: color 0.2s ease-in-out;
                     }
 
@@ -214,6 +228,8 @@ export default {
                         gap: 5px;
                     }
                 }
+
+
             }
         }
     }
@@ -239,7 +255,7 @@ export default {
     .calendar-container-info {
         width: 100% !important;
         padding: 0 !important;
-        min-height: 200px !important;
+        min-height: 400px !important;
         max-height: 400px !important;
     }
 }

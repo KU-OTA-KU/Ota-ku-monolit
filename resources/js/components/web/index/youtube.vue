@@ -83,7 +83,7 @@ export default {
                     this.videoList = [
                         {
                             id: {
-                                videoId: "videoId1"
+                                videoId: "https://www.youtube.com/watch?v=KmDFLw5PdpU"
                             },
                             snippet: {
                                 title: "Куда все подевались?",
@@ -98,7 +98,7 @@ export default {
                         },
                         {
                             id: {
-                                videoId: "videoId2"
+                                videoId: "https://www.youtube.com/watch?v=SzwDKnEDGrI&t=1s"
                             },
                             snippet: {
                                 title: "Бой Кэна Усато и Черного рыцаря",
@@ -113,7 +113,7 @@ export default {
                         },
                         {
                             id: {
-                                videoId: "videoId2"
+                                videoId: "https://www.youtube.com/watch?v=bRRmnMi1yLA"
                             },
                             snippet: {
                                 title: "Казума рассказовает интересные истории",
@@ -128,7 +128,7 @@ export default {
                         },
                         {
                             id: {
-                                videoId: "videoId2"
+                                videoId: "https://www.youtube.com/watch?v=leatnzv3rqw&t=1s"
                             },
                             snippet: {
                                 title: "С днём рождения тебя...",

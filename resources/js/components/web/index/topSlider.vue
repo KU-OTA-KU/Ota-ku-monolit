@@ -29,7 +29,7 @@
                 </span>
                             </div>
                             <p class="description"><span> {{ cleanDescription(anime.description) }} </span></p>
-                            <button class="pd-normal raco-secondary" style="margin-top: 5px;"><i
+                            <button @click="this.goToAnime(anime.id)" class="pd-normal raco-secondary" style="margin-top: 5px;"><i
                                 class="fa-solid fa-play"></i>Cмотреть
                             </button>
                         </div>
@@ -46,6 +46,7 @@ import {shuffleArray} from '@/other/shuffleArray.js';
 import Flickity from 'flickity';
 import 'flickity/css/flickity.css';
 import {cleanDescription} from "@/other/cleanDescription.js";
+import { goToAnime } from "@/other/goToAnime.js";
 
 export default {
     data() {
@@ -55,6 +56,7 @@ export default {
             flickityInstance: null,
             cleanDescription,
             error,
+            goToAnime,
         };
     },
     methods: {

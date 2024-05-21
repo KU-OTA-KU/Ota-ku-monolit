@@ -45,7 +45,7 @@ export default {
                 font-size: 20em;
                 color: var(--cl-8);
                 opacity: 0.3;
-                animation: rotate 3s infinite linear;
+                animation: rotate 3.5s infinite linear;
                 cursor: pointer;
                 transition: opacity 0.2s ease-in-out;
 

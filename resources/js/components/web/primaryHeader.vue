@@ -102,7 +102,6 @@ export default {
     if (themeSelector) {
       themeSelector.value = this.selectedTheme;
     }
-
     new SingleSelectTag("voice-selector", {
       rounded: true,
       placeholder: "Поиск...",
@@ -164,7 +163,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 998;
-  padding: 15px 5px;
+  padding: 15px 10px;
 
   .header-inner {
     max-width: var(--ota-ku-max-width);
