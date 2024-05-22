@@ -41,12 +41,12 @@
 </template>
 
 <script>
-import {error} from "@/other/techOperation.js";
-import {shuffleArray} from '@/other/shuffleArray.js';
+import {error} from "@/other/techOperation.ts";
+import {shuffleArray} from '@/other/shuffleArray.ts';
 import Flickity from 'flickity';
 import 'flickity/css/flickity.css';
-import {cleanDescription} from "@/other/cleanDescription.js";
-import { goToAnime } from "@/other/goToAnime.js";
+import {cleanDescription} from "@/other/cleanDescription.ts";
+import { goToAnime } from "@/other/goToAnime.ts";
 
 export default {
     data() {

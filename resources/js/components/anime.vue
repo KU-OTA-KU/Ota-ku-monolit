@@ -28,7 +28,7 @@ import AnimeCharacters from "@/components/web/animeCharacters.vue";
 import AnimeRelated from "@/components/web/animeRelated.vue";
 
 
-import  { notFoundPage } from "@/other/techOperation.js";
+import  { notFoundPage } from "@/other/techOperation.ts";
 export default {
     data() {
         return {

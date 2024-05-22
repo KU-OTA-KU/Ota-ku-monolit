@@ -1,4 +1,4 @@
-export function translateStatus(status) {
+export function translateStatus(status: string): string  {
     if (status === 'released') {
         return 'Завершено';
     } else if (status === 'ongoing') {

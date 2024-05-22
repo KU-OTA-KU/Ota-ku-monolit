@@ -5,7 +5,7 @@
  */
 
 import "./bootstrap";
-import { createRouter, createWebHistory } from "vue-router";
+import {createRouter, createWebHistory} from "vue-router";
 
 // pages
 import IndexComponent from "./components/index.vue";
@@ -55,6 +55,10 @@ const router = createRouter({
         {
             path: "/error",
             component: TehcError,
+        },
+        {
+            path: "/404",
+            component: NotFoundComponent,
         },
     ],
 });

@@ -117,9 +117,9 @@
 </template>
 
 <script>
-import {cleanDescription} from "@/other/cleanDescription.js";
-import {translateStatus} from "@/other/translateStatus.js";
-import {error} from "@/other/techOperation.js";
+import {cleanDescription} from "@/other/cleanDescription.ts";
+import {translateStatus} from "@/other/translateStatus.ts";
+import {error} from "@/other/techOperation.ts";
 
 export default {
     data() {

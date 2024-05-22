@@ -1,3 +1,3 @@
-export function goToAnime(animeId) {
+export function goToAnime(animeId: string): void {
     this.$router.push(`/anime?animeId=${animeId}`);
 }

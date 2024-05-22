@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { cleanDescription } from "@/other/cleanDescription.js";
+import { cleanDescription } from "@/other/cleanDescription.ts";
 export  default {
     data() {
        return {

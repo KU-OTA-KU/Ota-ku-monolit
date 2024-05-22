@@ -16,6 +16,9 @@
         gtag('js', new Date());
         gtag('config', 'G-XKSYJXXKPB');
     </script>
+    <!-- Yandex.RTB -->
+    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script src="https://yandex.ru/ads/system/context.js"></script>
     <meta name="fragment" content="!">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

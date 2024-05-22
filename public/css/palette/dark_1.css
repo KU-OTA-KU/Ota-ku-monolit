@@ -43,6 +43,10 @@
         rgb(18 18 18 / 66%) 100%
     );
 
+    --cl-28: #1d78b7;
+    --cl-29: #419541;
+    --cl-30: #ca4929;
+
 
     --v-select-body-bg-color: #3C3C3C;
     --v-select-body-border-color: #3C3C3C;

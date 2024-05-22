@@ -121,8 +121,8 @@
 </template>
 
 <script>
-import { cleanDescription } from "@/other/cleanDescription.js";
-import { translateStatus } from "@/other/translateStatus.js";
+import { cleanDescription } from "@/other/cleanDescription.ts";
+import { translateStatus } from "@/other/translateStatus.ts";
 export default {
     data() {
         return {

@@ -211,7 +211,7 @@
 </template>
 
 <script>
-import {error} from "@/other/techOperation.js";
+import {error} from "@/other/techOperation.ts";
 
 export default {
     data() {

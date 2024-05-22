@@ -74,8 +74,8 @@
 </template>
 
 <script>
-import {error} from "@/other/techOperation.js";
-import {goToAnime} from "@/other/goToAnime.js";
+import {error} from "@/other/techOperation.ts";
+import {goToAnime} from "@/other/goToAnime.ts";
 import moment from 'moment-timezone';
 
 export default {

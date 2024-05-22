@@ -1,13 +1,19 @@
 User-agent: *
 Disallow: /anime
 Allow: /catalog
+Disallow: /error
+Disallow: /404
 
 User-agent: Yandex
 Disallow: /anime
+Disallow: /error
+Disallow: /404
 Allow: /catalog
 
 User-agent: Googlebot
 Disallow: /anime
+Disallow: /error
+Disallow: /404
 Allow: /catalog
 
 Sitemap: https://ota-ku.ru/sitemap.xml

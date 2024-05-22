@@ -36,18 +36,18 @@
                         <div class="anime-back-panel-left">
                             <div class="anime-back-global-info-image"><img v-lazy="_ANIME_IMAGE_" :alt="_ANIME_ENGLISH_NAME_"></div>
                             <div class="anime-back-global-info-watch-button">
-                                <button ><i class="fa-solid fa-play"></i>Смотреть
+                                <button class="raco-primary pd-normal raco-awsome-icon"><i class="fa-solid fa-play"></i>Смотреть
                                 </button>
-                                <button><i class="fa-solid fa-exclamation"></i>Пожаловаться</button>
+                                <button class="raco-primary pd-normal raco-awsome-icon"><i class="fa-solid fa-exclamation"></i>Пожаловаться</button>
                             </div>
                         </div>
                         <div class="anime-back-global-current-anime-information">
-                            <div class="anime-eng-jpg-name"><p>{{ _ANIME_ENGLISH_NAME_ }}</p><p>{{  _ANIME_AIR_YEAR_  }}<span class="dot">•</span>{{ _ANIME_KIND_ }}<span class="dot">•</span>{{ _ANIME_RUSSIAN_STATUS_ }}</p></div>
+                            <div class="anime-eng-jpg-name"><span>{{ _ANIME_ENGLISH_NAME_ }}</span><span>{{  _ANIME_AIR_YEAR_  }}<span class="dot">•</span>{{ _ANIME_KIND_ }}<span class="dot">•</span>{{ _ANIME_RUSSIAN_STATUS_ }}</span></div>
                             <div class="anime-title-h2"><h1>{{ _ANIME_RUSSIAN_NAME_ }}</h1></div>
                             <div class="anime-score-genres">
                                 <div class="anime-score"><p>{{ _ANIME_SCORE_ }} <i class="fa-solid fa-star" v-if="_ANIME_SCORE_"></i> </p></div>
                                 <div class="anime-genres-list">
-                                    <router-link v-for="genre in _ANIME_GENRES_" :key="genre.id" :to="'/catalog?genre=' + genre.id">{{ genre.russian }}</router-link>
+                                    <router-link  class="raco-secondary" v-for="genre in _ANIME_GENRES_" :key="genre.id" :to="'/catalog?genre=' + genre.id">{{ genre.russian }}</router-link>
                                 </div>
                             </div>
                             <div class="anime-status"><p>Статус: <span :class="'status-core-block ' + _ANIME_STATUS_ ">{{ _ANIME_RUSSIAN_STATUS_ }}</span></p></div>
@@ -189,57 +189,12 @@ export default {
     object-fit: cover;
 }
 
-.anime-back-global-info-watch-button {
+
+.anime-back-global-info-watch-button button  {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    margin-bottom: 10px;
 }
 
-.anime-back-global-info-watch-button button:nth-child(1) {
-    width: 100%;
-    padding: 10px 0;
-    outline: none;
-    background-color: var(--anime-header-global-info-watch-button-background-color);
-    color: var(--anime-header-global-info-watch-button-font-color);
-    border: 2px solid var(--anime-header-global-info-watch-button-border-color);
-    cursor: pointer;
-    transition: background-color 0.2s;
-    white-space: nowrap;
-}
-
-.anime-back-global-info-watch-button button:nth-child(1) i {
-    font-size: 1.2em;
-    margin-right: 10px;
-}
-
-.anime-back-global-info-watch-button button:nth-child(1):hover {
-    border-color: var(--anime-header-global-info-watch-button-border-color-hover);
-    background-color: var(--anime-header-global-info-watch-button-background-color-hover);
-}
-
-.anime-back-global-info-watch-button button:nth-child(2) {
-    width: 100%;
-    padding: 10px 0;
-    outline: none;
-    background-color: var(--anime-header-global-info-report-button-background-color);
-    color: var(--anime-header-global-info-report-button-text-color);
-    border: 2px solid var(--anime-header-global-info-report-button-border-color);
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-    white-space: nowrap;
-}
-
-.anime-back-global-info-watch-button button:nth-child(2):hover {
-    background-color: var(--anime-header-global-info-report-button-background-color-hover);
-    color: var(--anime-header-global-info-report-button-text-color-hover);
-}
-
-.anime-back-global-info-watch-button button:nth-child(2) i {
-    font-size: 1.2em;
-    margin-right: 10px;
-    color: var(--anime-header-global-info-report-button-i-color);
-}
 
 .anime-back-global-current-anime-information {
     width: 75%;
@@ -247,18 +202,20 @@ export default {
 
 .anime-year, .anime-duration, .anime-rating {
     margin-top: 10px;
-    color: var(--anime-header-next-episode-block-color);
 }
 
 .anime-eng-jpg-name {
     margin-top: 20px;
     display: flex;
-    color: var(--anime-header-global-info-status-text-color);
     align-items: center;
     justify-content: space-between;
     gap: 5px;
     font-size: 0.9em;
     margin-bottom: 3px;
+
+    .dot {
+        padding: 0 5px;
+    }
 }
 
 .anime-eng-jpg-name p:nth-child(1) {
@@ -307,13 +264,14 @@ export default {
 .anime-score p:nth-child(1) i {
     font-size: 1.2em;
     margin-right: 10px;
-    color: orange;
+    color: var(--cl-19);
 }
 
 .anime-score-genres {
     display: flex;
     gap: 20px;
     align-items: center;
+    font-size: 0.9em;
 }
 
 .anime-genres-list {
@@ -322,7 +280,6 @@ export default {
     border-radius: 4px;
     font-size: 1em;
     overflow: hidden;
-    color: var(--anime-header-global-info-genres-list-text-color);
     gap: 10px;
 }
 
@@ -332,41 +289,32 @@ export default {
     text-decoration: underline;
 }
 
-.anime-genres-list a:hover {
-    color: var(--anime-header-global-info-genres-list-text-color-hover);
-}
-
 .anime-next-episode-block {
     margin-top: 10px;
     color: var(--anime-header-next-episode-block-color);
-}
-
-.anime-back-global-current-anime-information span {
-    color: var(--anime-back-global-span-font-color);
 }
 
 .anime-status {
     position: relative;
     display: block;
     margin-top: 10px;
-    color: var(--anime-header-anime-status-info-block-color);
 }
 
 .anime-status .status-core-block {
-    color: var(--anime-header-anime-status-core-block-color);
+    color: var(--cl-2);
     padding: 2px 10px;
 }
 
 .anime-status .status-core-block.ongoing {
-    background-color: var(--anime-header-status-core-block-ongoing-color);
+    background-color: var(--cl-28);
 }
 
 .anime-status .status-core-block.released {
-    background-color: var(--anime-header-status-core-block-released-color);
+    background-color: var(--cl-29);
 }
 
 .anime-status .status-core-block.anons {
-    background-color: var(--anime-header-status-core-block-anons-color);
+    background-color: var(--cl-30);
 }
 
 @media screen and (max-width: 1440px) {
