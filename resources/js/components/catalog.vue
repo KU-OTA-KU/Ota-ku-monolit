@@ -1,6 +1,7 @@
 <template>
     <primary-header></primary-header>
     <Welcome></Welcome>
+    <Search></Search>
     <main class="main">
         <div class="main-inner">
             <div class="main-tit">
@@ -16,6 +17,7 @@
 import {useHead} from "@vueuse/head";
 
 import PrimaryHeader from "@/components/web/primaryHeader.vue";
+import Search from "@/components/web/catalog/search.vue";
 import Content from "@/components/web/catalog/catalog.vue";
 import Filter from "@/components/web/filter.vue";
 import Footer from '@/components/web/footer.vue';
@@ -28,10 +30,13 @@ export default {
         Content,
         PrimaryHeader,
         Footer,
+        Search,
     },
     mounted() {
         console.log('catalog Mounted!');
         window.scrollTo({top: 0});
+        document.querySelector(".main-filter").style.top = "157px";
+        document.querySelector(".filt-button").style.top = "155px";
         useHead({
             title: "Лучший aниме каталог",
             meta: [
