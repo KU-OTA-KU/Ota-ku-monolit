@@ -10,10 +10,6 @@
                             allow="autoplay *; fullscreen *"></iframe>
                     </div>
                 </div>
-                <div class="player-right-panel">
-                    <div class="player-right-panel-content">
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -64,14 +60,8 @@ export default {
 }
 
 .player-tit .player-container {
-    width: 75%;
+    width: 100%;
     aspect-ratio: 177 / 100;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.player-tit .player-right-panel {
-    width: 25%;
     border-radius: 10px;
     overflow: hidden;
 }
