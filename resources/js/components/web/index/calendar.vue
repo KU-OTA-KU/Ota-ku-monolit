@@ -74,25 +74,23 @@
 </template>
 
 <script>
-import {error} from "@/other/techOperation.ts";
-import {goToAnime} from "@/other/goToAnime.ts";
+import { error } from "@/other/techOperation";
+import { goToAnime } from "@/other/goToAnime";
 import moment from 'moment-timezone';
-
 export default {
     data() {
         return {
             Today: [],
             error,
-            goToAnime
+            goToAnime,
+            clientTimeZone: '',
         };
     },
     mounted() {
+        this.clientTimeZone = moment.tz.guess();
         setTimeout(() => {
             this.fetchCalendarAnime();
-        }, "1000");
-
-        const clientTimeZone = moment.tz.guess();
-        console.log(clientTimeZone)
+        }, 1000);
     },
     methods: {
         async fetchCalendarAnime() {
@@ -100,7 +98,9 @@ export default {
                 const response = await fetch("https://shikimori.one/api/calendar");
                 if (response.ok) {
                     const data = await response.json();
-                    this.Today = data.filter(item => moment(item.next_episode_at).isSame(moment(), 'day'));
+                    this.Today = data.filter(item =>
+                        moment(item.next_episode_at).isSame(moment(), 'day')
+                    );
                 } else {
                     this.error();
                 }
@@ -109,12 +109,22 @@ export default {
             }
         },
         formatDate(dateString) {
-            const options = {year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
-            return new Date(dateString).toLocaleDateString('ru-RU', options);
+            return moment(dateString)
+                .tz(this.clientTimeZone)
+                .calendar(null, {
+                    sameDay: '[Сегодня в]  HH:mm',
+                    nextDay: '[Завтра в] LT',
+                    nextWeek: 'dddd [в] LT',
+                    lastDay: '[Вчера в] LT',
+                    lastWeek: '[Прошлая] dddd [в] LT',
+                    sameElse: 'L'
+                });
         },
     }
 }
 </script>
+
+
 
 <style scoped lang="scss">
 .calendar {
