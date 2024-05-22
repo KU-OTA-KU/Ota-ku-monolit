@@ -1,19 +1,11 @@
 <template>
     <primary-header></primary-header>
     <anime-header ref="AnimeHeader"></anime-header>
-    <section class="anime-cont">
-        <div class="anime-cont-inner">
-            <div class="anime-cont-info-bar">
-            </div>
-            <div class="anime-cont-anime-contents-bar">
-                <anime-description ref="AnimeDescription"></anime-description>
-                <anime-stills ref="AnimeStills"></anime-stills>
-                <player ref="player"></player>
-                <anime-characters ref="AnimeCharacters"></anime-characters>
-                <anime-related ref="AnimeRelated"></anime-related>
-            </div>
-        </div>
-    </section>
+    <anime-description ref="AnimeDescription"></anime-description>
+    <anime-stills ref="AnimeStills"></anime-stills>
+    <player ref="player"></player>
+    <anime-characters ref="AnimeCharacters"></anime-characters>
+    <anime-related ref="AnimeRelated"></anime-related>
     <Footer></Footer>
 </template>
 
@@ -23,12 +15,12 @@ import PrimaryHeader from "@/components/web/primaryHeader.vue";
 import AnimeHeader from "@/components/web/anime/animeHeader.vue";
 import AnimeDescription from "@/components/web/anime/animeDescription.vue"
 import AnimeStills from "@/components/web/anime/animeStills.vue";
-import Player from "@/components/web/player.vue";
-import AnimeCharacters from "@/components/web/animeCharacters.vue";
-import AnimeRelated from "@/components/web/animeRelated.vue";
+import Player from "@/components/web/anime/player.vue";
+import AnimeCharacters from "@/components/web/anime/animeCharacters.vue";
+import AnimeRelated from "@/components/web/anime/animeRelated.vue";
 
+import {notFoundPage} from "@/other/techOperation.ts";
 
-import  { notFoundPage } from "@/other/techOperation.ts";
 export default {
     data() {
         return {
@@ -123,7 +115,7 @@ export default {
                           russian
                           poster {
                             id
-                            mini2xUrl
+                            mainUrl
                           }
                         }
                       }
@@ -150,7 +142,7 @@ export default {
                 });
 
                 const data = await response.json();
-                if(response.ok) {
+                if (response.ok) {
                     const anime = data.data.animes;
                     this.appendAnimeInSite(anime);
                     document.title = `${anime[0].russian} Смотреть аниме онлайн`;

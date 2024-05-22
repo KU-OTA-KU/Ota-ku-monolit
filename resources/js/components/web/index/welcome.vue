@@ -20,7 +20,7 @@
                         alt="главная аниме тян в ota-ku.ru">
                     <div class="container-info">
                         <h3>Л Лоулайт</h3>
-                        <span>Аниме: <router-link to="/anime?animeId=123321" class="container-link raco-secondary">Тетрадь смерти</router-link></span>
+                        <span>Аниме: <router-link to="/anime?animeId=1535" class="container-link raco-secondary">Тетрадь смерти</router-link></span>
                     </div>
                 </div>
             </div>

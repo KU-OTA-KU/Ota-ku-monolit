@@ -8,7 +8,7 @@
                         <div class="anime-back-panel-left">
                             <div class="anime-back-global-info-image skeleton-bg skeleton-cell-slide skeleton-border-radius"></div>
                             <div class="anime-back-global-info-watch-button">
-                                <div class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight skeleton-border-radius"></div>
+                                <div class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight skeleton-border-radius" style="margin-bottom: 10px"></div>
                                 <div class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight skeleton-border-radius"></div>
                             </div>
                         </div>
@@ -156,7 +156,7 @@ export default {
 
 .anime-back-content .anime-back-content-tit {
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: var(--ota-ku-max-width);
     width: 100%;
 }
 

@@ -9,7 +9,7 @@
     <section class="anime-description" v-if="_ANIME_DESCRIPTION_">
         <div class="anime-description-inner">
             <div class="anime-description-tit">
-                <p v-if="_ANIME_DESCRIPTION_" >{{ _ANIME_DESCRIPTION_ }}</p>
+                <span v-if="_ANIME_DESCRIPTION_" >{{ _ANIME_DESCRIPTION_ }}</span>
             </div>
         </div>
     </section>
@@ -47,7 +47,7 @@ export  default {
 }
 
 .anime-description .anime-description-inner .anime-description-tit {
-    max-width: 1300px;
+    max-width: var(--ota-ku-max-width);
     width: 100%;
     margin: 0 auto;
     color: var(--anime-description-font-color);
