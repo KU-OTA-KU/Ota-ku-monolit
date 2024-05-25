@@ -90,6 +90,20 @@
                         <option value="138">Организованная преступность</option>
                         <option value="20">Пародия</option>
                         <option value="148">Питомцы</option>
+                        <option value="40">Психологическое</option>
+                        <option value="111">Путишествие во времени</option>
+                        <option value="139">Работа</option>
+                        <option value="125">Реверс-гарем</option>
+                        <option value="106">Реинкарнация</option>
+                        <option value="151">Романтический подтекст</option>
+                        <option value="21">Самураи</option>
+                        <option value="118">Спортивные единоборства</option>
+                        <option value="11">Стратегические игры</option>
+                        <option value="31">Супер сила</option>
+                        <option value="114">Удостроено наград</option>
+                        <option value="131">Хулиганы</option>
+                        <option value="23">Школа</option>
+                        <option value="136">Шоу бизнес</option>
                     </select>
                     <label for="sort-selector">Cортировка</label>
                     <span>Пожалуйста, выберите предпочтительный порядок сортировки из списка опций:</span>
@@ -152,14 +166,6 @@ export default {
         return {
             MultiSelectTag,
             SingleSelectTag,
-            initialSelections: {
-                status: ["released"],
-                kind: ["tv"],
-                genre: ["1", "4"],
-                sort: ["popularity"],
-                season: ["2000_2024"],
-                rating: ["r"]
-            }
         };
     },
     mounted() {

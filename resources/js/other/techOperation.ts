@@ -16,3 +16,7 @@ export function scrollTo(className): void {
         element.scrollIntoView({ behavior: 'smooth' });
     }
 }
+
+export function goToAnime(animeId: string): void {
+    this.$router.push(`/anime?animeId=${animeId}`);
+}

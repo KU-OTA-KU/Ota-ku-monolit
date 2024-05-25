@@ -87,13 +87,14 @@
             </div>
         </div>
     </section>
-    <section class="anime-catalog" id="anime-catalog" name="anime-catalog" v-if="animeList.length !== 0">
+    <section ref="animeCatalog" class="anime-catalog" id="anime-catalog" name="anime-catalog"
+             v-if="animeList.length !== 0">
         <div class="movie_2" v-for="(anime, index) in animeList" :key="index">
             <div class="movie_2-image" @click="goToAnime(anime.id)">
                 <img v-lazy="this.getImgUrl(anime)" :alt="anime.russian">
             </div>
             <div class="movie_2-info">
-                <h3 @click="goToAnime(anime.id)">{{ anime.russian }}</h3>
+                <h3 @click="this.goToAnime(anime.id)">{{ anime.russian }}</h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div class="movie_2-info-info-anime">
                         <span>{{ anime.score }}<i class="fa-solid fa-star"></i></span><span class="dot">•</span>
@@ -123,8 +124,9 @@
 <script>
 import {cleanDescription} from "@/other/cleanDescription.ts";
 import {translateStatus} from "@/other/translateStatus.ts";
+import {getImgUrl, error, goToAnime} from "@/other/techOperation.ts";
+import {onBeforeUnmount} from 'vue';
 
-import {getImgUrl, error} from "@/other/techOperation.ts";
 export default {
     data() {
         return {
@@ -137,7 +139,8 @@ export default {
             cleanDescription,
             translateStatus,
             getImgUrl,
-            error
+            error,
+            goToAnime
         };
     },
     mounted() {
@@ -149,6 +152,9 @@ export default {
                 this.handleUrlChange();
             }
         );
+    },
+    beforeUnmount() {
+        window.removeEventListener("scroll", this.loadNextPage);
     },
     methods: {
         handleUrlChange() {
@@ -208,7 +214,6 @@ export default {
                         }),
                     });
                     const data = await response.json();
-                    console.log("sisn")
                     const animeList = data.data.animes;
                     this.animeList = [...this.animeList, ...animeList];
                     this.currPage++;
@@ -244,17 +249,13 @@ export default {
                 this.fetchAnimeData();
             }
         },
-        goToAnime(animeId) {
-            this.$router.push(`/anime?animeId=${animeId}`);
-        },
         isNearBottom() {
-            const mainContent = document.querySelector(".anime-catalog");
+            const mainContent = this.$refs.animeCatalog;
             if (mainContent) {
                 const mainContentBottom = mainContent.offsetTop + mainContent.offsetHeight;
                 return window.innerHeight + window.scrollY >= mainContentBottom - 200;
-            } else {
-                return 0;
             }
+            return false;
         },
     },
 };
