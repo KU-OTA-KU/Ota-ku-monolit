@@ -22,14 +22,16 @@
                             <div class="flickity-genres-list">
                                 Жанры:
                                 <span>
-                  <router-link class="raco-secondary" v-for="(genre, genreIndex) in anime.genres.slice(0, 3)"
-                               :to="'/catalog?genre=' + genre.id" :key="genreIndex">
-                    {{ genre.russian }}
-                  </router-link>
-                </span>
+                              <router-link class="raco-secondary"
+                                           v-for="(genre, genreIndex) in anime.genres.slice(0, 3)"
+                                           :to="'/catalog?genre=' + genre.id" :key="genreIndex">
+                                {{ genre.russian }}
+                              </router-link>
+                                </span>
                             </div>
                             <p class="description"><span> {{ cleanDescription(anime.description) }} </span></p>
-                            <button @click="this.goToAnime(anime.id)" class="pd-normal raco-secondary" style="margin-top: 5px;"><i
+                            <button @click="this.goToAnime(anime.id)" class="pd-normal raco-secondary"
+                                    style="margin-top: 5px;"><i
                                 class="fa-solid fa-play"></i>Cмотреть
                             </button>
                         </div>
@@ -46,7 +48,7 @@ import {shuffleArray} from '@/other/shuffleArray.ts';
 import Flickity from 'flickity';
 import 'flickity/css/flickity.css';
 import {cleanDescription} from "@/other/cleanDescription.ts";
-import { goToAnime } from "@/other/goToAnime.ts";
+import {goToAnime} from "@/other/goToAnime.ts";
 
 export default {
     data() {
@@ -90,7 +92,7 @@ export default {
                         `,
                     }),
                 });
-                if(!response.ok) {
+                if (!response.ok) {
                     this.error();
                 }
                 const data = await response.json();

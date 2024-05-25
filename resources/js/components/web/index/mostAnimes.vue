@@ -363,6 +363,10 @@ export default {
             margin: 10px 0 0 0;
             border-radius: 10px;
 
+            @media screen and (max-width: 417px) {
+                grid-template-columns: repeat(auto-fill, minmax(126px, 1fr));
+            }
+
 
             .most-content-movie {
                 cursor: pointer;

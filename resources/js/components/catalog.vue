@@ -5,7 +5,7 @@
     <main class="main">
         <div class="main-inner">
             <div class="main-tit">
-                <Content></Content>
+                <AnimeCatalog></AnimeCatalog>
                 <Filter></Filter>
             </div>
         </div>
@@ -18,7 +18,7 @@ import {useHead} from "@vueuse/head";
 
 import PrimaryHeader from "@/components/web/primaryHeader.vue";
 import Search from "@/components/web/catalog/search.vue";
-import Content from "@/components/web/catalog/catalog.vue";
+import AnimeCatalog from "@/components/web/catalog/animeCatalog.vue";
 import Filter from "@/components/web/filter.vue";
 import Footer from '@/components/web/footer.vue';
 import Welcome from "@/components/web/catalog/welcome.vue";
@@ -27,7 +27,7 @@ export default {
     components: {
         Welcome,
         Filter,
-        Content,
+        AnimeCatalog,
         PrimaryHeader,
         Footer,
         Search,
@@ -35,8 +35,6 @@ export default {
     mounted() {
         console.log('catalog Mounted!');
         window.scrollTo({top: 0});
-        document.querySelector(".main-filter").style.top = "157px";
-        document.querySelector(".filt-button").style.top = "155px";
         useHead({
             title: "Лучший aниме каталог",
             meta: [

@@ -36,9 +36,9 @@
                         <div class="anime-back-panel-left">
                             <div class="anime-back-global-info-image"><img v-lazy="_ANIME_IMAGE_" :alt="_ANIME_ENGLISH_NAME_"></div>
                             <div class="anime-back-global-info-watch-button">
-                                <button class="raco-primary pd-normal raco-awsome-icon"><i class="fa-solid fa-play"></i>Смотреть
+                                <button class="raco-primary pd-normal raco-awsome-icon" @click="this.scrollTo('player')"><i class="fa-solid fa-play"></i>Смотреть
                                 </button>
-                                <button class="raco-primary pd-normal raco-awsome-icon"><i class="fa-solid fa-exclamation"></i>Пожаловаться</button>
+                                <button class="raco-primary pd-normal raco-awsome-icon" ><i class="fa-solid fa-exclamation"></i>Пожаловаться</button>
                             </div>
                         </div>
                         <div class="anime-back-global-current-anime-information">
@@ -65,6 +65,8 @@
 
 <script>
 import moment from 'moment';
+import { scrollTo} from "@/other/techOperation.ts";
+
 export default {
     data() {
         return {
@@ -83,6 +85,7 @@ export default {
             _ANIME_RATING_: null,
             _ANIME_DURATION_: null,
             _ANIME_NEXT_EPISODE_DATE_: null,
+            scrollTo,
         };
     },
     methods: {

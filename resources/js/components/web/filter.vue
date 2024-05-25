@@ -8,7 +8,7 @@
             <button @click="clearFilters" id="clear-button"
                     class="pd-small raco-awsome-icon raco-icon-right raco-primary">
                 <i class="fa-solid fa-xmark"></i>
-                 Збросить
+                Збросить
             </button>
             <button @click="closeFilter" id="close-button"
                     class="pd-small raco-awsome-icon raco-icon-right raco-primary">
@@ -17,7 +17,7 @@
             </button>
         </div>
         <div class="filter-selector">
-            <form @submit.prevent="submitFilters" method="get">
+            <form @submit.prevent="submitFilters" method="GET">
                 <div class="filter-fl-genre filter-box">
                     <label for="status">Статус</label>
                     <span>Пожалуйста, выберите статус, в котором находится аниме, из предложенных вариантов:</span>
@@ -35,7 +35,7 @@
                         <option value="ona">ONA</option>
                     </select>
                     <label for="genre">Жанры</label>
-                    <span>Пожалуйста, укажите жанры для фильтрации наших релизов. Вы можете выбрать несколько опций одновременно:</span>
+                    <span>Пожалуйста, укажите жанры для фильтрации наших релизов:</span>
                     <select id="genre-selector" name="genre" multiple>
                         <option value="5">Авангард</option>
                         <option value="543">Гурман</option>
@@ -107,6 +107,8 @@
                     <select name="season" id="season-selector" multiple>
                         <option value="2024">2024 год</option>
                         <option value="2023">2023 год</option>
+                        <option value="2000_2024">2000-2024</option>
+                        <option value="2020_2024">2020-2024</option>
                         <option value="2021_2022">2021-2022</option>
                         <option value="2016_2020">2016-2020</option>
                         <option value="2010_2015">2010-2015</option>
@@ -133,7 +135,9 @@
         </div>
     </section>
     <section class="filt-button">
-        <button @click="openFilter" class="raco-primary pd-normal raco-awsome-icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i>Фильтры</button>
+        <button @click="openFilter" class="raco-primary pd-normal raco-awsome-icon"><i class="fa-solid fa-sliders"
+                                                                                       aria-hidden="true"></i>Фильтры
+        </button>
     </section>
 </template>
 
@@ -148,6 +152,14 @@ export default {
         return {
             MultiSelectTag,
             SingleSelectTag,
+            initialSelections: {
+                status: ["released"],
+                kind: ["tv"],
+                genre: ["1", "4"],
+                sort: ["popularity"],
+                season: ["2000_2024"],
+                rating: ["r"]
+            }
         };
     },
     mounted() {
@@ -163,7 +175,6 @@ export default {
                 selectTags.forEach(tag => tag.parentNode.removeChild(tag));
             }
         }
-
         new SingleSelectTag("status-selector", {
             rounded: true,
             placeholder: "Поиск...",
@@ -205,10 +216,9 @@ export default {
                 targets: filterBox,
                 left: [0, "-100"],
                 opacity: [1, 0],
-                duration: 450,
+                duration: 300,
                 easing: "easeInOutExpo",
                 complete: function () {
-                    console.log("Animation Started =>  close filter <=");
                     body.style.overflow = "auto";
                     filterBox.style.display = "none";
                 },
@@ -221,36 +231,22 @@ export default {
                 targets: filterBox,
                 left: ["-100%", 0],
                 opacity: [0, 1],
-                duration: 450,
+                duration: 300,
                 easing: "easeInOutExpo",
                 begin: function () {
-                    console.log("Animation started => open filter <=");
                     body.style.overflow = "hidden";
                     filterBox.style.display = "block";
                 },
             });
         },
         submitFilters() {
-            // Создаем новый экземпляр объекта FormData, передавая ему форму
-            let formData = new FormData(document.querySelector('form'));
-
-            // Преобразуем объект FormData в строку, которую можно использовать в URL-адресе
-            let queryParams = new URLSearchParams(formData).toString();
+            let formData = new FormData(document.querySelector('.main-filter form'));
+            let queryParams = new URLSearchParams(formData);
 
             let catalogUrl = `/catalog?${queryParams}`;
-
-            // Выводим параметры фильтрации в консоль для проверки (можно удалить после тестирования)
-            console.log('Отправка фильтров', formData);
-            console.log('URL-адрес каталога с параметрами:', catalogUrl);
-
-            // Выполняем действие, которое необходимо сделать с этими параметрами
-            // Например, перенаправляем пользователя на страницу каталога с параметрами
             this.$router.push(catalogUrl);
-            // Или делаем AJAX-запрос с этими параметрами на сервер
-            // Или что-то еще в зависимости от вашей бизнес-логики
-        }
-
-    }
+        },
+    },
 };
 </script>
 
@@ -260,7 +256,7 @@ export default {
     min-width: 350px;
     width: 100%;
     max-width: 350px;
-    top: 80px;
+    top: 78px;
     position: sticky;
     background-color: var(--cl-10);
     padding: 20px 10px;
@@ -294,19 +290,19 @@ export default {
 
 .filter-selector label {
     font-size: 1em;
-    padding: 10px 0 2px 0;
+    padding: 5px 0 2px 0;
     width: 100%;
     display: block;
 }
 
 .filter-box {
     height: 100%;
-    padding: 20px 10px;
+    padding: 10px;
     background-color: var(--filter-filter-genre-box-color);
 }
 
 .filter-box span {
-    padding-bottom: 5px;
+    padding-bottom: 1px;
     display: block;
     color: var(--cl-15)
 }

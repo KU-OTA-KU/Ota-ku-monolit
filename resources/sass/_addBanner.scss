@@ -1,13 +1,10 @@
 .ad-container {
     width: 100%;
-}
-
-.ad-container .ad-container-inner {
-    width: 100%;
     padding: 0 10px;
+    &-inner {
+        width: 100%;
+        max-width: var(--ota-ku-max-width);
+        margin: 0 auto;
+    }
 }
 
-.ad-container .ad-container-inner-tit {
-    max-width: var(--ota-ku-max-width);
-    margin: 0 auto;
-}

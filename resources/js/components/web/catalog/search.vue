@@ -21,7 +21,6 @@ export default {
     },
     methods: {
         submitForm() {
-            console.log(this.searchQuery);
             window.location.href = `/catalog?search=${encodeURIComponent(this.searchQuery)}`;
         }
     }
@@ -30,10 +29,8 @@ export default {
 
 <style lang="scss" scoped>
 .header-search {
-    padding: 5px 10px;
+    padding: 0 10px;
     width: 100%;
-    position: sticky;
-    top: 75px;
     z-index: 900;
 
     &-inner {

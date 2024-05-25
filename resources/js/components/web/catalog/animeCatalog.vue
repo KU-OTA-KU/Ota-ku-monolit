@@ -1,5 +1,6 @@
 <template>
-    <section v-if="animeList.length === 0 && animeFoundInitialized === false" class="main-content" id="main-content" name="main-content">
+    <section v-if="animeList.length === 0 && animeFoundInitialized === false" class="anime-catalog" id="anime-catalog"
+             name="anime-catalog">
         <div class="movie_2">
             <div class="movie_2-image skeleton-bg skeleton-cell-slide">
             </div>
@@ -86,43 +87,44 @@
             </div>
         </div>
     </section>
-    <section v-if="animeList.length !== 0" class="main-content" id="main-content" name="main-content">
-        <div v-for="anime in animeList" :key="anime.id" class="movie_2">
+    <section class="anime-catalog" id="anime-catalog" name="anime-catalog" v-if="animeList.length !== 0">
+        <div class="movie_2" v-for="(anime, index) in animeList" :key="index">
             <div class="movie_2-image" @click="goToAnime(anime.id)">
-                <img v-lazy="anime.poster && anime.poster.mainUrl ? anime.poster.mainUrl : ''" :alt="'Смотреть аниме ' + (anime.name || anime.russian)">
+                <img v-lazy="this.getImgUrl(anime)" :alt="anime.russian">
             </div>
             <div class="movie_2-info">
                 <h3 @click="goToAnime(anime.id)">{{ anime.russian }}</h3>
                 <div class="movie_2-info-kind-genres-aired-container">
                     <div class="movie_2-info-info-anime">
-                        <p v-if="anime.score">{{ anime.score }}<i class="fa-solid fa-star"></i></p>
-                        <span class="dot" v-if="anime.score">•</span>
-                        <p v-if="anime.kind">{{ anime.kind }}</p>
-                        <span class="dot" v-if="anime.kind">•</span>
-                        <p v-if="anime.airedOn.year">{{ anime.airedOn.year }}</p>
-                        <span class="dot" v-if="anime.airedOn.year">•</span>
-                        <p v-if="anime.status">{{ translateStatus(anime.status) }}</p>
+                        <span>{{ anime.score }}<i class="fa-solid fa-star"></i></span><span class="dot">•</span>
+                        <span>{{ anime.kind }}</span><span class="dot">•</span>
+                        <span>{{ anime.airedOn.year }}</span>
+                        <span class="dot">•</span>
+                        <span>{{ translateStatus(anime.status) }}</span>
                     </div>
                     <div class="movie_2-info-genres-list">
-                        <router-link v-for="(genre, genreIndex) in anime.genres.slice(0, 3)" :key="genreIndex"
+                        <router-link class="raco-secondary" v-for="(genre, genreIndex) in anime.genres.slice(0, 3)"
+                                     :key="genreIndex"
                                      :to="'/catalog?genre='+ genre.id">{{ genre.russian }}
                         </router-link>
                     </div>
                     <div class="movie_2-info-about">
-                        <p>{{ this.cleanDescription(anime.description) }}</p>
+                        <p>{{ cleanDescription(anime.description) }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <div  v-if="!animeFound ||  !animeFound && animeFoundInitialized === false" class="empty-anime-message">
+    <div v-if="!animeFound ||  !animeFound && animeFoundInitialized === false" class="empty-anime-message">
         <h3>Ничего не найдено 😔</h3>
     </div>
 </template>
 
 <script>
-import { cleanDescription } from "@/other/cleanDescription.ts";
-import { translateStatus } from "@/other/translateStatus.ts";
+import {cleanDescription} from "@/other/cleanDescription.ts";
+import {translateStatus} from "@/other/translateStatus.ts";
+
+import {getImgUrl, error} from "@/other/techOperation.ts";
 export default {
     data() {
         return {
@@ -133,7 +135,9 @@ export default {
             animeFound: true,
             animeFoundInitialized: false,
             cleanDescription,
-            translateStatus
+            translateStatus,
+            getImgUrl,
+            error
         };
     },
     mounted() {
@@ -153,7 +157,7 @@ export default {
             this.animeFound = true;
             this.animeFoundInitialized = false;
             this.fetchAnimeData();
-            window.scrollTo({ top: 0});
+            window.scrollTo({top: 0});
         },
         async fetchAnimeData() {
             if (!this.loading) {
@@ -172,13 +176,14 @@ export default {
                             animes(
                                 search: "${currentParams.search || ''}",
                                 season: "${currentParams.season || ''}",
-                                status: "${currentParams.status || ''}",
-                                kind: "${currentParams.kind || 'tv,tv_special,ova,ona,special'}",
-                                order: ${currentParams.sort || 'ranked'},
+                                status: "${currentParams.status || 'released,ongoing'}",
+                                kind: "${currentParams.kind || 'tv,ona,ova'}",
+                                order: ${currentParams.sort || 'popularity'},
                                 rating: "${currentParams.rating || ''}",
                                 genre: "${currentParams.genre || ''}",
                                 limit: ${this.limit},
                                 page: ${this.currPage},
+                                censored: true,
                             ) {
                                 id
                                 name
@@ -195,7 +200,7 @@ export default {
                                     year
                                 }
                                 poster {
-                                    mainUrl
+                                    main2xUrl
                                 }
                             }
                         }
@@ -203,6 +208,7 @@ export default {
                         }),
                     });
                     const data = await response.json();
+                    console.log("sisn")
                     const animeList = data.data.animes;
                     this.animeList = [...this.animeList, ...animeList];
                     this.currPage++;
@@ -213,8 +219,8 @@ export default {
                         this.animeFound = true;
                         this.animeFoundInitialized = true;
                     }
-                } catch (error) {
-                    console.error("Ошибка запроса: ", error);
+                } catch (e) {
+                    this.error();
                 } finally {
                     this.loading = false;
                 }
@@ -242,16 +248,20 @@ export default {
             this.$router.push(`/anime?animeId=${animeId}`);
         },
         isNearBottom() {
-            const mainContent = document.querySelector(".main-content");
-            const mainContentBottom = mainContent.offsetTop + mainContent.offsetHeight;
-            return window.innerHeight + window.scrollY >= mainContentBottom - 200;
+            const mainContent = document.querySelector(".anime-catalog");
+            if (mainContent) {
+                const mainContentBottom = mainContent.offsetTop + mainContent.offsetHeight;
+                return window.innerHeight + window.scrollY >= mainContentBottom - 200;
+            } else {
+                return 0;
+            }
         },
     },
 };
 </script>
 
 <style lang="scss" scoped>
-.main-content {
+.anime-catalog {
     overflow: hidden;
     width: 100%;
     display: flex;
@@ -262,7 +272,7 @@ export default {
 }
 
 @media screen and (max-width: 485px) {
-    .main-content {
+    .anime-catalog {
         flex-direction: row;
         flex-wrap: wrap;
     }

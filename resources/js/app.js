@@ -31,10 +31,12 @@ app.component('ota-ku-application', application);
 app.use(seoVueHead);
 app.use(router);
 app.use(VueLazyload, {
-    preLoad: 1.3,
+    preLoad: 1.5,
     error: '/img/other/error.png',
     loading: '/img/other/loading.png',
-    attempt: 1,
+    attempt: 2,
+    lazyComponent : true,
+    silent: true,
 });
 app.mount("#app");
 

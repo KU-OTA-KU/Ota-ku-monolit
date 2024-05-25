@@ -212,6 +212,7 @@ export default {
 
     h3 {
         font-weight: bold;
+        line-height: 120%;
     }
 }
 
