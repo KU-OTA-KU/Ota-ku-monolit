@@ -23,7 +23,7 @@
                             <div class="li-cont-info">
                                 <h4>{{ item.anime.russian }}</h4>
                                 <span>Следующий эпизод: {{ item.next_episode }}</span>
-                                <span>Дата выхода: {{ formatDate(item.next_episode_at) }}</span>
+                                <span>Дата выхода: {{ this.formatDate(item.next_episode_at, this.clientTimeZone) }}</span>
                             </div>
                         </li>
                         <li v-if="Today.length === 0">
@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import { error } from "@/other/techOperation";
+import { error, formatDate } from "@/other/techOperation";
 import { goToAnime } from "@/other/goToAnime";
 import moment from 'moment-timezone';
 export default {
@@ -83,6 +83,7 @@ export default {
             Today: [],
             error,
             goToAnime,
+            formatDate,
             clientTimeZone: '',
         };
     },
@@ -107,18 +108,6 @@ export default {
             } catch (error) {
                 this.error();
             }
-        },
-        formatDate(dateString) {
-            return moment(dateString)
-                .tz(this.clientTimeZone)
-                .calendar(null, {
-                    sameDay: '[Сегодня в]  HH:mm',
-                    nextDay: '[Завтра в] LT',
-                    nextWeek: 'dddd [в] LT',
-                    lastDay: '[Вчера в] LT',
-                    lastWeek: '[Прошлая] dddd [в] LT',
-                    sameElse: 'L'
-                });
         },
     }
 }

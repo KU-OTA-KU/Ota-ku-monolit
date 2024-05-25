@@ -90,7 +90,7 @@
     <section ref="animeCatalog" class="anime-catalog" id="anime-catalog" name="anime-catalog"
              v-if="animeList.length !== 0">
         <div class="movie_2" v-for="(anime, index) in animeList" :key="index">
-            <div class="movie_2-image" @click="goToAnime(anime.id)">
+            <div class="movie_2-image" @click="this.goToAnime(anime.id)">
                 <img v-lazy="this.getImgUrl(anime)" :alt="anime.russian">
             </div>
             <div class="movie_2-info">
@@ -125,7 +125,6 @@
 import {cleanDescription} from "@/other/cleanDescription.ts";
 import {translateStatus} from "@/other/translateStatus.ts";
 import {getImgUrl, error, goToAnime} from "@/other/techOperation.ts";
-import {onBeforeUnmount} from 'vue';
 
 export default {
     data() {

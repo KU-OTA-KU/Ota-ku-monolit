@@ -6,21 +6,33 @@
                 <div class="anime-back-content-tit">
                     <div class="anime-back-global-info">
                         <div class="anime-back-panel-left">
-                            <div class="anime-back-global-info-image skeleton-bg skeleton-cell-slide skeleton-border-radius"></div>
+                            <div
+                                class="anime-back-global-info-image skeleton-bg skeleton-cell-slide skeleton-border-radius"></div>
                             <div class="anime-back-global-info-watch-button">
-                                <div class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight skeleton-border-radius" style="margin-bottom: 10px"></div>
-                                <div class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight skeleton-border-radius"></div>
+                                <div
+                                    class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight skeleton-border-radius"
+                                    style="margin-bottom: 10px"></div>
+                                <div
+                                    class="skeleton-bg skeleton-cell-slide skeleton-height-button skeleton-weight skeleton-border-radius"></div>
                             </div>
                         </div>
                         <div class="anime-back-global-current-anime-information">
-                            <div class="anime-eng-jpg-name skeleton-height skeleton-cell-slide skeleton-weight skeleton-bg skeleton-border-radius"></div>
-                            <div class="anime-title-h2 skeleton-height-h1 skeleton-cell-slide skeleton-weight-50 skeleton-bg skeleton-border-radius"></div>
-                            <div class="anime-score-genres skeleton-height skeleton-cell-slide skeleton-weight-50 skeleton-bg skeleton-border-radius"></div>
-                            <div class="anime-status skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
-                            <div class="anime-year skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
-                            <div class="anime-rating skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
-                            <div class="anime-duration skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
-                            <div class="anime-next-episode-block skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
+                            <div
+                                class="anime-eng-jpg-name skeleton-height skeleton-cell-slide skeleton-weight skeleton-bg skeleton-border-radius"></div>
+                            <div
+                                class="anime-title-h2 skeleton-height-h1 skeleton-cell-slide skeleton-weight-50 skeleton-bg skeleton-border-radius"></div>
+                            <div
+                                class="anime-score-genres skeleton-height skeleton-cell-slide skeleton-weight-50 skeleton-bg skeleton-border-radius"></div>
+                            <div
+                                class="anime-status skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
+                            <div
+                                class="anime-year skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
+                            <div
+                                class="anime-rating skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
+                            <div
+                                class="anime-duration skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
+                            <div
+                                class="anime-next-episode-block skeleton-height skeleton-cell-slide skeleton-weight-30 skeleton-bg skeleton-border-radius"></div>
                         </div>
                     </div>
                 </div>
@@ -34,27 +46,43 @@
                 <div class="anime-back-content-tit">
                     <div class="anime-back-global-info">
                         <div class="anime-back-panel-left">
-                            <div class="anime-back-global-info-image"><img v-lazy="_ANIME_IMAGE_" :alt="_ANIME_ENGLISH_NAME_"></div>
+                            <div class="anime-back-global-info-image"><img v-lazy="_ANIME_IMAGE_"
+                                                                           :alt="_ANIME_ENGLISH_NAME_"></div>
                             <div class="anime-back-global-info-watch-button">
-                                <button class="raco-primary pd-normal raco-awsome-icon" @click="this.scrollTo('player')"><i class="fa-solid fa-play"></i>Смотреть
+                                <button class="raco-primary pd-normal raco-awsome-icon"
+                                        @click="this.scrollTo('player')"><i class="fa-solid fa-play"></i>Смотреть
                                 </button>
-                                <button class="raco-primary pd-normal raco-awsome-icon" ><i class="fa-solid fa-exclamation"></i>Пожаловаться</button>
+                                <button class="raco-primary pd-normal raco-awsome-icon"><i
+                                    class="fa-solid fa-exclamation"></i>Пожаловаться
+                                </button>
                             </div>
                         </div>
                         <div class="anime-back-global-current-anime-information">
-                            <div class="anime-eng-jpg-name"><span>{{ _ANIME_ENGLISH_NAME_ }}</span><span>{{  _ANIME_AIR_YEAR_  }}<span class="dot">•</span>{{ _ANIME_KIND_ }}<span class="dot">•</span>{{ _ANIME_RUSSIAN_STATUS_ }}</span></div>
+                            <div class="anime-eng-jpg-name"><span>{{
+                                    _ANIME_ENGLISH_NAME_
+                                }}</span><span>{{ _ANIME_AIR_YEAR_ }}<span class="dot">•</span>{{ _ANIME_KIND_ }}<span
+                                class="dot">•</span>{{ _ANIME_RUSSIAN_STATUS_ }}</span></div>
                             <div class="anime-title-h2"><h1>{{ _ANIME_RUSSIAN_NAME_ }}</h1></div>
                             <div class="anime-score-genres">
-                                <div class="anime-score"><p>{{ _ANIME_SCORE_ }} <i class="fa-solid fa-star" v-if="_ANIME_SCORE_"></i> </p></div>
+                                <div class="anime-score"><p>{{ _ANIME_SCORE_ }} <i class="fa-solid fa-star"
+                                                                                   v-if="_ANIME_SCORE_"></i></p></div>
                                 <div class="anime-genres-list">
-                                    <router-link  class="raco-secondary" v-for="genre in _ANIME_GENRES_" :key="genre.id" :to="'/catalog?genre=' + genre.id">{{ genre.russian }}</router-link>
+                                    <router-link class="raco-secondary" v-for="genre in _ANIME_GENRES_" :key="genre.id"
+                                                 :to="'/catalog?genre=' + genre.id">{{ genre.russian }}
+                                    </router-link>
                                 </div>
                             </div>
-                            <div class="anime-status"><p>Статус: <span :class="'status-core-block ' + _ANIME_STATUS_ ">{{ _ANIME_RUSSIAN_STATUS_ }}</span></p></div>
+                            <div class="anime-status"><p>Статус: <span :class="'status-core-block ' + _ANIME_STATUS_ ">{{
+                                    _ANIME_RUSSIAN_STATUS_
+                                }}</span></p></div>
                             <div class="anime-year"><p>Год выхода: <span>{{ _ANIME_AIR_YEAR_ }}</span></p></div>
-                            <div class="anime-rating"><p>Возрастные ограничения: <span>{{ _ANIME_RATING_ }}</span></p></div>
-                            <div class="anime-duration"><p>Длительность: ~ <span>{{ _ANIME_DURATION_ }} мин.</span></p></div>
-                            <div class="anime-next-episode-block"><p>Cледуюший Эпизод: <span>{{_ANIME_NEXT_EPISODE_DATE_}}</span></p></div>
+                            <div class="anime-rating"><p>Возрастные ограничения: <span>{{ _ANIME_RATING_ }}</span></p>
+                            </div>
+                            <div class="anime-duration"><p>Длительность: ~ <span>{{ _ANIME_DURATION_ }} мин.</span></p>
+                            </div>
+                            <div class="anime-next-episode-block"><p>Cледуюший Эпизод:
+                                <span>{{ this.formatDate(_ANIME_NEXT_EPISODE_DATE_, this.clientTimeZone) }}</span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,12 +92,13 @@
 </template>
 
 <script>
-import moment from 'moment';
-import { scrollTo} from "@/other/techOperation.ts";
+import moment from 'moment-timezone';
+import {scrollTo, formatDate} from "@/other/techOperation.ts";
 
 export default {
     data() {
         return {
+            formatDate,
             loaded: false,
             _ANIME_ID_: null,
             _ANIME_IMAGE_: null,
@@ -86,45 +115,49 @@ export default {
             _ANIME_DURATION_: null,
             _ANIME_NEXT_EPISODE_DATE_: null,
             scrollTo,
+            clientTimeZone: '',
         };
     },
+    mounted() {
+        this.clientTimeZone = moment.tz.guess();
+    },
     methods: {
-       main() {
-           const storedData = sessionStorage.getItem("CurrentAnime");
-           if (storedData) {
-               this._ANIME_ID_ = JSON.parse(storedData)[0].id;
-               this._ANIME_IMAGE_ = JSON.parse(storedData)[0].poster.originalUrl;
-               this._ANIME_ENGLISH_NAME_ = JSON.parse(storedData)[0].english;
-               this._ANIME_JAPANESE_NAME = JSON.parse(storedData)[0].japanese;
-               this._ANIME_RUSSIAN_NAME_ = JSON.parse(storedData)[0].russian;
-               this._ANIME_STATUS_ = JSON.parse(storedData)[0].status;
-               this._ANIME_AIR_YEAR_ = JSON.parse(storedData)[0].airedOn.year;
-               this._ANIME_KIND_ = JSON.parse(storedData)[0].kind;
-               this._ANIME_SCORE_ = JSON.parse(storedData)[0].score;
-               this._ANIME_GENRES_ = JSON.parse(storedData)[0].genres;
-               this._ANIME_RATING_ = JSON.parse(storedData)[0].rating;
-               this._ANIME_DURATION_ = JSON.parse(storedData)[0].duration;
-               this._ANIME_NEXT_EPISODE_DATE_ = (() => {
-                   const nextEpisodeDate = JSON.parse(storedData)[0]?.nextEpisodeAt;
-                   if (!nextEpisodeDate || !moment(nextEpisodeDate, moment.ISO_8601, true).isValid()) {
-                       return "нету";
-                   } else {
-                       const userLocale = moment.locale();
-                       return moment(nextEpisodeDate).calendar(null, { locale: userLocale });
-                   }
-               })();
-           }
+        main() {
+            const storedData = sessionStorage.getItem("CurrentAnime");
+            if (storedData) {
+                this._ANIME_ID_ = JSON.parse(storedData)[0].id;
+                this._ANIME_IMAGE_ = JSON.parse(storedData)[0].poster.originalUrl;
+                this._ANIME_ENGLISH_NAME_ = JSON.parse(storedData)[0].english;
+                this._ANIME_JAPANESE_NAME = JSON.parse(storedData)[0].japanese;
+                this._ANIME_RUSSIAN_NAME_ = JSON.parse(storedData)[0].russian;
+                this._ANIME_STATUS_ = JSON.parse(storedData)[0].status;
+                this._ANIME_AIR_YEAR_ = JSON.parse(storedData)[0].airedOn.year;
+                this._ANIME_KIND_ = JSON.parse(storedData)[0].kind;
+                this._ANIME_SCORE_ = JSON.parse(storedData)[0].score;
+                this._ANIME_GENRES_ = JSON.parse(storedData)[0].genres;
+                this._ANIME_RATING_ = JSON.parse(storedData)[0].rating;
+                this._ANIME_DURATION_ = JSON.parse(storedData)[0].duration;
+                this._ANIME_NEXT_EPISODE_DATE_ = (() => {
+                    const nextEpisodeDate = JSON.parse(storedData)[0]?.nextEpisodeAt;
+                    if (!nextEpisodeDate || !moment(nextEpisodeDate, moment.ISO_8601, true).isValid()) {
+                        return "нету";
+                    } else {
+                        return nextEpisodeDate;
+                    }
+                })();
+            }
 
-           if (this._ANIME_STATUS_ === 'released') {
-               this._ANIME_RUSSIAN_STATUS_ = 'Завершено';
-           } else if (this._ANIME_STATUS_ === 'ongoing') {
-               this._ANIME_RUSSIAN_STATUS_ = 'Онгоинг';
-           } else {
-               this._ANIME_RUSSIAN_STATUS_ = 'Анонс'
-           }
+            if (this._ANIME_STATUS_ === 'released') {
+                this._ANIME_RUSSIAN_STATUS_ = 'Завершено';
+            } else if (this._ANIME_STATUS_ === 'ongoing') {
+                this._ANIME_RUSSIAN_STATUS_ = 'Онгоинг';
+            } else {
+                this._ANIME_RUSSIAN_STATUS_ = 'Анонс'
+            }
 
-           this.loaded = true;
-       }
+            this.loaded = true;
+        },
+
     }
 };
 </script>
@@ -193,7 +226,7 @@ export default {
 }
 
 
-.anime-back-global-info-watch-button button  {
+.anime-back-global-info-watch-button button {
     width: 100%;
     margin-bottom: 10px;
 }
@@ -278,12 +311,11 @@ export default {
 }
 
 .anime-genres-list {
-    align-items: center;
     display: flex;
-    border-radius: 4px;
-    font-size: 1em;
-    overflow: hidden;
+    align-items: center;
+    font-size: 0.9em;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .anime-genres-list a {

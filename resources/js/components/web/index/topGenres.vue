@@ -45,7 +45,7 @@
           <div class="container-info">
             <h3 @click="goToGenre(10)">Фентези</h3>
             <span>Мир магии, существ и мифологии в волшебном мире фантазий</span>
-            <router-link :to="'/anime?animeId=40028'" class="container-link raco-secondary">Эрен Йегнер</router-link>
+            <router-link :to="'/anime?animeId=16498'" class="container-link raco-secondary">Эрен Йегнер</router-link>
           </div>
         </div>
       </div>
