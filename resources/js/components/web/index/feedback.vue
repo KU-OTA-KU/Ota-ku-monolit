@@ -16,7 +16,7 @@
                 <img v-lazy="'/img/other/kitagawa.png'" alt="">
                 <div class="container-info">
                     <h3>Марин Китагава</h3>
-                    <span>Аниме: <router-link to="/anime?animeId=123321" class="container-link raco-secondary raco-awsome-icon">Эта фарфоровая кукла влюбилась</router-link></span>
+                    <span>Аниме: <router-link to="/anime?animeId=48736" class="container-link raco-secondary raco-awsome-icon">Эта фарфоровая кукла влюбилась</router-link></span>
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@
                         alt="главная аниме тян в ota-ku.ru">
                     <div class="container-info">
                         <h3>Хоодзи Аканэ</h3>
-                        <span>Аниме: <router-link to="/anime?animeId=123321" class="container-link raco-secondary">Терраса кафе богинь</router-link></span>
+                        <span>Аниме: <router-link to="/anime?animeId=52973" class="container-link raco-secondary">Терраса кафе богинь</router-link></span>
                     </div>
                 </div>
             </div>

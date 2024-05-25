@@ -347,7 +347,7 @@ export default {
 .filt-button {
     display: none;
     position: sticky;
-    top: 75px;
+    top: 70px;
     width: 100%;
     z-index: 100;
 }

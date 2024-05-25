@@ -10,7 +10,7 @@
                     <img v-lazy="'/img/other/sanji.png'" alt="Хана Мидорикава">
                     <div class="container-info">
                         <h3>Санжи Винсмоук</h3>
-                        <span>Аниме: <router-link :to="'/anime?animeId=15415'"
+                        <span>Аниме: <router-link :to="'/anime?animeId=21'"
                                                   class="raco-secondary">one-piece</router-link></span>
                     </div>
                 </div>
