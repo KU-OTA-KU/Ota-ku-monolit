@@ -145,6 +145,10 @@ export default {
                 min-height: 600px;
                 height: 100%;
 
+                &::-webkit-scrollbar {
+                    width: 5px;
+                }
+
                 ul {
                     li {
                         margin-bottom: 10px;

@@ -150,7 +150,7 @@
           .container-link {
             width: 100%;
             margin-top: 5px;
-            font-size: 0.7em;
+            font-size: 0.9em;
             text-decoration: underline;
           }
         }

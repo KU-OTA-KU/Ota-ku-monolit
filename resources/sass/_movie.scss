@@ -26,7 +26,7 @@
 }
 
 .movie_2 .movie_2-image {
-    width: 250px;
+    width: 22%;
     border-radius: 10px;
     min-width: 100px;
     aspect-ratio: 1 / 1.45;
@@ -44,6 +44,7 @@
     pointer-events: none;
     user-select: none;
     width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.2s ease-in-out;
 }

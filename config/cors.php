@@ -21,7 +21,13 @@ return [
 
     'allowed_origins' => ['*'],
 
-    'allowed_origins_patterns' => [],
+    'allowed_origins_patterns' => [
+        'https://www.googleapis.com/',
+        'https://shikimori.one/api/',
+        'https://yandex.ru/',
+        'https://www.googletagmanager.com/',
+        'https://www.google-analytics.com'
+    ],
 
     'allowed_headers' => ['*'],
 
@@ -29,6 +35,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => false,
+    'supports_credentials' => true,
 
 ];

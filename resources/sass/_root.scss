@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "inter-regular";
-    src: url("../fonts/inter/inter-Regular.ttf") format("truetype");
+    font-family: "Montserrat-bold";
+    src: url("../fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
 }
 @font-face {
     font-family: "Montserrat-regular";
@@ -11,7 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "inter-regular", sans-serif;
+    font-family: "Montserrat-regular", sans-serif;
 
     &::after,
     &::before {
@@ -44,7 +44,7 @@ body {
     scroll-behavior: smooth;
     font-weight: 400;
     font-style: normal;
-    font-size: clamp(13px, 1.5vw, 15px);
+    font-size: clamp(14px, 1.5vw, 15px);
     background-color: var(--cl-3);
     color: var(--cl-2);
 }
@@ -69,7 +69,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Montserrat-regular", sans-serif;
+    font-family: "Montserrat-bold", sans-serif;
+    line-height: 100%;
 }
 
 h1 {
@@ -77,12 +78,12 @@ h1 {
 }
 
 h2 {
-    font-size: 1.4em;
-    font-weight: 600;
+    font-size: 1.5em;
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.4em;
+
 }
 
 h6 {
