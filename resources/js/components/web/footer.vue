@@ -20,17 +20,17 @@
                             <h3>Документы</h3>
                             <ul>
                                 <li>
-                                    <router-link :to="'/privacyPolicy/ru'">Политика
+                                    <router-link class="raco-secondary" :to="'/privacyPolicy/ru'">Политика
                                         конфиденциальности
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="'/terms/ru'">Пользовательское
+                                    <router-link class="raco-secondary" :to="'/terms/ru'">Пользовательское
                                         соглашение
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="'/authors/ru'">Правообладатели</router-link>
+                                    <router-link class="raco-secondary" :to="'/authors/ru'">Правообладатели</router-link>
                                 </li>
                                 <!-- <li><a href="#">Правила сайта</a></li>-->
                             </ul>
@@ -119,10 +119,6 @@ footer {
     white-space: nowrap;
 }
 
-.contacts ul li span {
-    color: var(--footer-span-color);
-}
-
 .documents h3,
 .contacts h3 {
     margin-bottom: 10px;
@@ -137,19 +133,11 @@ footer {
 .documents ul li,
 .contacts ul li {
     margin-bottom: 5px;
-    color: var(--footer-text-color);
-}
-
-.documents ul li {
-    text-decoration: underline;
+    font-size: 0.9em;
 }
 
 .documents ul li a {
-    transition: color 0.2s ease-in-out;
-}
-
-.documents ul li a:hover {
-    color: var(--footer-documents-a-color-hover);
+    text-decoration: underline;
 }
 
 .footer-copyright {
@@ -165,15 +153,10 @@ footer {
 }
 
 .footer-copyright a {
-    color: var(--footer-copyright-a-color);
-    cursor: pointer;
     text-decoration: underline;
     transition: color 0.2s ease-in-out;
 }
 
-.footer-copyright a:hover {
-    color: var(--footer-copyright-a-color-hover);
-}
 
 @media screen and (max-width: 1440px) {
     .footer-other {

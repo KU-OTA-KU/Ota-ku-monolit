@@ -1,6 +1,11 @@
 <template>
     <primary-header></primary-header>
     <Welcome></Welcome>
+    <section class="ad-container">
+        <div class="ad-container-inner">
+            <div id="yandex_rtb_R-A-7609325-3"></div>
+        </div>
+    </section>
     <Search></Search>
     <main class="main">
         <div class="main-inner">
@@ -33,6 +38,12 @@ export default {
         Search,
     },
     mounted() {
+        window.yaContextCb.push(()=>{
+            Ya.Context.AdvManager.render({
+                "blockId": "R-A-7609325-3",
+                "renderTo": "yandex_rtb_R-A-7609325-3"
+            })
+        })
         console.log('catalog Mounted!');
         window.scrollTo({top: 0});
         useHead({

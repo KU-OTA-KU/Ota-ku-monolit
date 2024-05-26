@@ -33,11 +33,9 @@ export function formatDate(dateString: string, clientTimeZone: string): string {
             .tz(clientTimeZone)
             .calendar(null, {
                 sameDay: '[Сегодня в]  HH:mm',
-                nextDay: '[Завтра в] LT',
-                nextWeek: 'dddd [в] LT',
-                lastDay: '[Вчера в] LT',
-                lastWeek: '[Прошлая] dddd [в] LT',
-                sameElse: 'L'
+                nextDay: '[Завтра в] HH:mm',
+                nextWeek: 'DD.MM.YYYY [в] HH:mm',
+                sameElse: 'DD.MM.YYYY [в] HH:mm'
             });
     }
 }
