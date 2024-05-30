@@ -38,13 +38,13 @@
       <div class="sidenav-user-settings">
         <p>Настройки:</p>
         <span>Пожалуйста, выберите цветовую схему сайта.</span>
-        <select name="themes" class="sidenav-user-sett-selector" id="theme-selector" v-model="selectedTheme" multiple
+        <select name="themes" class="sidenav-user-sett-selector" id="theme-selector" v-model="selectedTheme"
           @change="handleThemeChange">
           <option value="dark_1">Темная (океан)</option>
           <option value="light_1">Светлая</option>
         </select>
         <span>Пожалуйста, выберите вариант озвучки для аниме.</span>
-        <select name="voice-selector" id="voice-selector" v-model="selectedVoice" @change="handleVoiceChange" multiple>
+        <select name="voice-selector" id="voice-selector" v-model="selectedVoice" @change="handleVoiceChange">
           <option value="610">Anilibria.TV</option>
           <option value="609">AniDub</option>
           <option value="910">AniStar</option>
@@ -76,7 +76,7 @@ export default {
   data() {
     return {
       sidebarIsOpened: false,
-      selectedVoice: null,
+      selectedVoice: 610,
       selectedTheme: 'dark_1',
       SingleSelectTag,
     };
