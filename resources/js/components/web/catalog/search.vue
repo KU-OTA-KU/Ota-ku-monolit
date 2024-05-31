@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         submitForm() {
-            window.location.href = `/catalog?search=${encodeURIComponent(this.searchQuery)}`;
+            this.$router.push(`/catalog?search=${encodeURIComponent(this.searchQuery)}`);
         }
     }
 }
