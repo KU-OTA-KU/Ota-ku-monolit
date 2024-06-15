@@ -7,9 +7,9 @@
           <img src="/img/ota-ku/ota-ku.webp" alt="Логотип Ota Ku - лучший аниме" id="ota-ku-best-anime-logo" />
         </router-link>
       </div>
-      <button @click="openSidenav()" class="raco-primary pd-normal raco-awsome-icon ">
+      <v-btn @click="openSidenav()" class="raco-primary pd-normal raco-awsome-icon ">
         <i class="fa-sharp fa-solid fa-bars"></i>Каталог
-      </button>
+      </v-btn>
     </div>
   </header>
   <!-- header End -->

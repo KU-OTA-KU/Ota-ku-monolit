@@ -6,8 +6,17 @@
 
 import "./bootstrap";
 import { createApp } from "vue";
+
 import router from "./router";
 import VueLazyload from 'vue-lazyload';
+
+import '@mdi/font/css/materialdesignicons.css'
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+
+
 import { createHead } from '@vueuse/head';
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -16,6 +25,11 @@ import { createHead } from '@vueuse/head';
  */
 
 const app = createApp({});
+const vuetify = createVuetify({
+    components,
+    directives
+})
+
 const seoVueHead = createHead();
 
 /**
@@ -30,6 +44,7 @@ import application from './components/_app.vue';
 app.component('ota-ku-application', application);
 app.use(seoVueHead);
 app.use(router);
+app.use(vuetify);
 app.use(VueLazyload, {
     preLoad: 1.5,
     error: '/img/other/error.png',
