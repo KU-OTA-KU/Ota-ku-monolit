@@ -4,8 +4,8 @@ export function setCookie(cookieName, cookieValue, expirationDays) {
   let expires = "expires=" + d.toUTCString();
   document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
 }
- 
-export function getCookie(cookieName) {
+
+export function getCookie(cookieName: string): string {
   let name = cookieName + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let cookieArray = decodedCookie.split(';');

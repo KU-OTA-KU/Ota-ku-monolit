@@ -100,7 +100,7 @@
 </template>
 
 <script>
-import {goToAnime} from "@/other/goToAnime.ts";
+import {goToAnime} from "@/ts/goTo.ts";
 
 export default {
     data() {

@@ -4,7 +4,7 @@
       <div class="container">
         <div class="container-inner">
           <div class="container-image" @click="goToGenre(31)">
-            <img v-lazy="'/img/other/onepunchman.png'" alt="">
+            <img v-lazy="'/img/ts/onepunchman.png'" alt="">
           </div>
           <div class="container-info">
             <h3  @click="goToGenre(31)">Супер сила</h3>
@@ -16,7 +16,7 @@
       <div class="container">
         <div class="container-inner">
           <div class="container-image" @click="goToGenre(9)">
-            <img v-lazy="'/img/other/rocksy.png'" alt="">
+            <img v-lazy="'/img/ts/rocksy.png'" alt="">
           </div>
           <div class="container-info">
             <h3 @click="goToGenre(9)">Этти</h3>
@@ -28,7 +28,7 @@
       <div class="container">
         <div class="container-inner">
           <div class="container-image"  @click="goToGenre(27)">
-            <img v-lazy="'/img/other/yudji.png'" alt="">
+            <img v-lazy="'/img/ts/yudji.png'" alt="">
           </div>
           <div class="container-info">
             <h3 @click="goToGenre(27)">Сёнен</h3>
@@ -40,7 +40,7 @@
       <div class="container">
         <div class="container-inner">
           <div class="container-image" @click="goToGenre(10)">
-            <img v-lazy="'/img/other/erren.png'" alt="">
+            <img v-lazy="'/img/ts/erren.png'" alt="">
           </div>
           <div class="container-info">
             <h3 @click="goToGenre(10)">Фентези</h3>
@@ -52,7 +52,7 @@
       <div class="container">
         <div class="container-inner">
           <div class="container-image" @click="goToGenre(4)">
-            <img v-lazy="'/img/other/megumin.png'" alt="">
+            <img v-lazy="'/img/ts/megumin.png'" alt="">
           </div>
           <div class="container-info">
             <h3 @click="goToGenre(4)">Комедия</h3>
@@ -64,7 +64,7 @@
       <div class="container">
         <div class="container-inner">
           <div class="container-image" @click="goToGenre(105)">
-            <img v-lazy="'/img/other/dendy.png'" alt="">
+            <img v-lazy="'/img/ts/dendy.png'" alt="">
           </div>
           <div class="container-info">
             <h3 @click="goToGenre(105)">Жестокость</h3>

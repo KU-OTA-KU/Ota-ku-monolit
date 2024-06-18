@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="image-container-404">
-                    <img :src="'/img/other/darkness_1.png'" alt="Коносуба Даркнесс">
+                    <img :src="'/img/ts/darkness_1.png'" alt="Коносуба Даркнесс">
                 </div>
             </div>
         </div>

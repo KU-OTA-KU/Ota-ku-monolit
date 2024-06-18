@@ -93,7 +93,7 @@
 
 <script>
 import moment from 'moment-timezone';
-import {scrollTo, formatDate} from "@/other/techOperation.ts";
+import {scrollTo, formatDate} from "@/ts/techOperation.ts";
 
 export default {
     data() {

@@ -2,7 +2,7 @@
     <section class="youtube-videos">
         <div class="youtube-videos-inner">
             <div class="youtube-videos-title">
-                <h3>Последние видео</h3>
+                <h3>Последние wdwdwdwdwdwdwd</h3>
                 <span>Будьте в курсе самых последних обновлений нашего канала</span>
             </div>
             <div class="videos-container" v-if="videoList">
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import {error} from "@/other/techOperation.ts";
+import {error} from "@/ts/techOperation.ts";
 
 export default {
     data() {

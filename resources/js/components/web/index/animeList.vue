@@ -1,91 +1,4 @@
 <template>
-    <section v-if="animeList.length === 0" class="main-content" id="main-content" name="main-content">
-        <div class="movie_2">
-            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
-            </div>
-            <div class="movie_2-info">
-                <div class="movie_2-info-kind-genres-aired-container">
-                    <div
-                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
-                    </div>
-                    <div
-                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
-                    </div>
-                    <div
-                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="movie_2">
-            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
-            </div>
-            <div class="movie_2-info">
-                <div class="movie_2-info-kind-genres-aired-container">
-                    <div
-                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
-                    </div>
-                    <div
-                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
-                    </div>
-                    <div
-                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="movie_2">
-            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
-            </div>
-            <div class="movie_2-info">
-                <div class="movie_2-info-kind-genres-aired-container">
-                    <div
-                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
-                    </div>
-                    <div
-                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
-                    </div>
-                    <div
-                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="movie_2">
-            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
-            </div>
-            <div class="movie_2-info">
-                <div class="movie_2-info-kind-genres-aired-container">
-                    <div
-                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
-                    </div>
-                    <div
-                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
-                    </div>
-                    <div
-                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="movie_2">
-            <div class="movie_2-image skeleton-bg skeleton-cell-slide">
-            </div>
-            <div class="movie_2-info">
-                <div class="movie_2-info-kind-genres-aired-container">
-                    <div
-                        class="movie_2-info-info-anime skeleton-cell-slide skeleton-bg skeleton-height-h1 skeleton-border-radius">
-                    </div>
-                    <div
-                        class="movie_2-info-genres-list skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
-                    </div>
-                    <div
-                        class="movie_2-info-about skeleton-margin-top skeleton-cell-slide skeleton-bg skeleton-height skeleton-border-radius">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="main-content" id="main-content" name="main-content" v-if="animeList.length !== 0">
         <div class="movie_2" v-for="(anime, index) in animeList" :key="index">
             <div class="movie_2-image" @click="goToAnime(anime.id)">
@@ -117,9 +30,8 @@
 </template>
 
 <script>
-import {cleanDescription} from "@/other/cleanDescription.ts";
-import {translateStatus} from "@/other/translateStatus.ts";
-import {error} from "@/other/techOperation.ts";
+import {cleanDescription} from "@/ts/cleanDescription.ts";
+import {error} from "@/ts/techOperation.ts";
 
 export default {
     data() {

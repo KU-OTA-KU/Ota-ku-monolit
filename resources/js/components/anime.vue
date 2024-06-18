@@ -29,7 +29,7 @@ import Player from "@/components/web/anime/player.vue";
 import AnimeCharacters from "@/components/web/anime/animeCharacters.vue";
 import AnimeRelated from "@/components/web/anime/animeRelated.vue";
 
-import { notFoundPage } from "@/other/techOperation.ts";
+import { notFoundPage } from "@/ts/techOperation.ts";
 
 export default {
   data() {

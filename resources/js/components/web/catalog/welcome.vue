@@ -10,7 +10,7 @@
                 </div>
                 <div class="what-is-anime-other">
                     <img
-                        v-lazy="'/img/other/akane.png'"
+                        v-lazy="'/img/ts/akane.png'"
                         alt="главная аниме тян в ota-ku.ru">
                     <div class="container-info">
                         <h3>Хоодзи Аканэ</h3>

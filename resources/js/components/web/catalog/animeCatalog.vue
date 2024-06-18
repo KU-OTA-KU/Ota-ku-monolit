@@ -122,9 +122,9 @@
 </template>
 
 <script>
-import {cleanDescription} from "@/other/cleanDescription.ts";
-import {translateStatus} from "@/other/translateStatus.ts";
-import {getImgUrl, error, goToAnime} from "@/other/techOperation.ts";
+import {cleanDescription} from "@/ts/cleanDescription.ts";
+import {translateStatus} from "@/ts/translateStatus.ts";
+import {getImgUrl, error, goToAnime} from "@/ts/techOperation.ts";
 
 export default {
     data() {

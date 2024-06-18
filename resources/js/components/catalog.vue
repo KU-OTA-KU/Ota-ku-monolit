@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import {useHead} from "@vueuse/head";
+import { useHead } from "@vueuse/head";
 
 import PrimaryHeader from "@/components/web/primaryHeader.vue";
 import Search from "@/components/web/catalog/search.vue";

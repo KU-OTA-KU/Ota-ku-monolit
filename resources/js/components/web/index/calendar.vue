@@ -7,7 +7,7 @@
             </div>
             <div class="calendar-container">
                 <div class="calendar-container-image">
-                    <img v-lazy="'/img/other/sanji.png'" alt="Хана Мидорикава">
+                    <img v-lazy="'/img/ts/sanji.png'" alt="Хана Мидорикава">
                     <div class="container-info">
                         <h3>Санжи Винсмоук</h3>
                         <span>Аниме: <router-link :to="'/anime?animeId=21'"
@@ -74,8 +74,8 @@
 </template>
 
 <script>
-import { error, formatDate } from "@/other/techOperation";
-import { goToAnime } from "@/other/goToAnime";
+import { error, formatDate } from "@/ts/techOperation";
+import { goToAnime } from "@/ts/goTo";
 import moment from 'moment-timezone';
 export default {
     data() {

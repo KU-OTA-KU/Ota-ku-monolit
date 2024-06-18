@@ -9,7 +9,7 @@ export function notFoundPage() {
 }
 
 export function getImgUrl(anime): string {
-    return anime.poster && anime.poster.main2xUrl ? anime.poster.main2xUrl : '/img/other/error.png';
+    return anime.poster && anime.poster.main2xUrl ? anime.poster.main2xUrl : '/img/ts/error.png';
 }
 
 export function scrollTo(className): void {

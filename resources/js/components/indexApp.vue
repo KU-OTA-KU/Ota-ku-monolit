@@ -1,27 +1,26 @@
 <template>
     <primary-header></primary-header>
-    <top-slider></top-slider>
-    <welcome></welcome>
-    <top-genres></top-genres>
-    <most-anime-list></most-anime-list>
-    <section class="ad-container">
-        <div class="ad-container-inner">
-            <div id="yandex_rtb_R-A-7609325-1"></div>
-        </div>
-    </section>
-    <YoutubeVideos></YoutubeVideos>
-    <Calendar></Calendar>
-    <Feedback></Feedback>
+    <v-layout>
+        <v-main>
+            <top-slider></top-slider>
+            <!--<welcome></welcome>-->
+            <!--<top-genres></top-genres>-->
+            <most-anime-list></most-anime-list>
+            <YoutubeVideos></YoutubeVideos>
+            <Calendar></Calendar>
+            <Feedback></Feedback>
+        </v-main>
+    </v-layout>
     <Footer></Footer>
 </template>
 
 <script>
 import {useHead} from "@vueuse/head";
 
-import TopSlider from './web/index/topSlider.vue';
+import TopSlider from './web/topSlider.vue';
 import PrimaryHeader from './web/primaryHeader.vue';
 import TopGenres from './web/index/topGenres.vue';
-import MostAnimeList from './web/index/mostAnimes.vue';
+import MostAnimeList from './web/mostAnimes.vue';
 import Content from './web/index/animeList.vue';
 import Filter from './web/filter.vue';
 import YoutubeVideos from "@/components/web/index/youtube.vue";

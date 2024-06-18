@@ -1,6 +1,6 @@
 /**
  * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
+ * includes Vue and ts libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 
@@ -8,13 +8,13 @@ import "./bootstrap";
 import {createRouter, createWebHistory} from "vue-router";
 
 // pages
-import IndexComponent from "./components/index.vue";
+import IndexComponent from "./components/indexApp.vue";
 import CatalogComponent from "./components/catalog.vue";
 import OpenAnimeComponent from "./components/anime.vue";
 
 // not found page and tech errors
-import NotFoundComponent from "./components/404.vue";
-import TehcError from "./components/techError.vue";
+import NotFoundComponent from "./components/apiComponents/404.vue";
+import TechError from "./components/apiComponents/techError.vue";
 
 // docs russian
 import AuthorsRU from "./components/doc/authors_ru.vue";
@@ -54,7 +54,7 @@ const router = createRouter({
         },
         {
             path: "/error",
-            component: TehcError,
+            component: TechError,
         },
         {
             path: "/404",

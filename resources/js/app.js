@@ -1,6 +1,6 @@
 /**
  * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
+ * includes Vue and ts libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 
@@ -8,16 +8,30 @@ import "./bootstrap";
 import { createApp } from "vue";
 
 import router from "./router";
-import VueLazyload from 'vue-lazyload';
 
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-
-
 import { createHead } from '@vueuse/head';
+
+const customDarkTheme= {
+    dark: true,
+    colors: {
+        background: '#ffffff',
+        surface: '#1E88E5',
+        primary: '#0047ff',
+        'primary-darken-1': '#7d798e',
+        secondary: '#03DAC6',
+        'secondary-darken-1': '#018786',
+        error: '#0337bc',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FB8C00',
+    },
+}
+
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -27,7 +41,13 @@ import { createHead } from '@vueuse/head';
 const app = createApp({});
 const vuetify = createVuetify({
     components,
-    directives
+    directives,
+    theme: {
+        defaultTheme: 'customDarkTheme',
+        themes: {
+            customDarkTheme,
+        }
+    }
 })
 
 const seoVueHead = createHead();
@@ -45,14 +65,6 @@ app.component('ota-ku-application', application);
 app.use(seoVueHead);
 app.use(router);
 app.use(vuetify);
-app.use(VueLazyload, {
-    preLoad: 1.5,
-    error: '/img/other/error.png',
-    loading: '/img/other/loading.png',
-    attempt: 2,
-    lazyComponent : true,
-    silent: true,
-});
 app.mount("#app");
 
 /**

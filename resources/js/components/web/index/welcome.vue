@@ -16,7 +16,7 @@
                 </div>
                 <div class="what-is-anime-other">
                     <img
-                        v-lazy="'/img/other/L.png'"
+                        v-lazy="'/img/ts/L.png'"
                         alt="главная аниме тян в ota-ku.ru">
                     <div class="container-info">
                         <h3>Л Лоулайт</h3>
