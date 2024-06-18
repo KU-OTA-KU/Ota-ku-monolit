@@ -9,7 +9,7 @@
                 <div v-for="video in videoList" :key="video.id.videoId" class="yt-container"
                      @click="goToYoutubeVideo(video.id.videoId)">
                     <div class="yt-container-image">
-                        <img v-lazy="video.snippet.thumbnails.high.url" :alt="video.snippet.title">
+                        <img :src="video.snippet.thumbnails.high.url" :alt="video.snippet.title">
                     </div>
                     <div class="yt-container-info">
                         <p>{{ video.snippet.title }}</p>

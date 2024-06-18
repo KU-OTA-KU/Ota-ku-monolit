@@ -38,7 +38,8 @@
                         советом... Сумеют ли парни разоблачить тайный студсовет, угрожающий студенткам Хачимицу?
                     </v-card-text>
                     <v-card-actions class="pa-4">
-                        <v-btn variant="tonal" :to="'anime?animeId=30240'" prepend-icon="mdi-play" ripple="lg">
+                        <v-btn variant="tonal" prepend-icon="mdi-play" :loading="loading"
+                               @click="this.openAnime(30240)">
                             Смотреть
                         </v-btn>
                     </v-card-actions>
@@ -68,7 +69,8 @@
                     <v-card-text class="top-slider-anime-cart-text" v-text="cleanDescription(anime.description)">
                     </v-card-text>
                     <v-card-actions class="pa-4">
-                        <v-btn variant="tonal" :to="'anime?animeId=' + anime.id" prepend-icon="mdi-play" ripple="lg">
+                        <v-btn variant="tonal" prepend-icon="mdi-play" :loading="loading"
+                               @click="this.openAnime(anime.id)">
                             Смотреть
                         </v-btn>
                     </v-card-actions>
@@ -78,18 +80,20 @@
     </v-container>
 </template>
 
-<script>
+<script lang="ts">
 import {cleanDescription} from "@/ts/cleanDescription.ts";
-
+import { openAnime } from "@/ts/goTo.ts";
 export default {
     data() {
         return {
             animeList: [],
             cleanDescription,
+            loading: false,
+            openAnime,
         };
     },
     methods: {
-        async fetchAnimeList(limit) {
+        async fetchAnimeList(limit: number) {
             try {
                 const response = await fetch("https://shikimori.one/api/graphql", {
                     method: "POST",
@@ -124,7 +128,6 @@ export default {
                 }
                 const data = await response.json();
                 this.animeList = data.data.animes;
-                console.log(this.animeList)
             } catch (error) {
                 this.error();
             }

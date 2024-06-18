@@ -6,9 +6,9 @@
             <!--<welcome></welcome>-->
             <!--<top-genres></top-genres>-->
             <most-anime-list></most-anime-list>
-            <YoutubeVideos></YoutubeVideos>
-            <Calendar></Calendar>
-            <Feedback></Feedback>
+<!--            <YoutubeVideos></YoutubeVideos>-->
+<!--            <Calendar></Calendar>-->
+<!--            <Feedback></Feedback>-->
         </v-main>
     </v-layout>
     <Footer></Footer>

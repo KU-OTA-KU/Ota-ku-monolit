@@ -1,66 +1,107 @@
 <template>
-    <section class="most-container" v-if="animeLists">
-        <div class="most-container-inner">
-            <div class="most-container-tit">
-                <div class="most-content-gallery-cell" v-for="(animeList, index) in animeLists" :key="index">
-                    <div class="most-content-title-h2">
-                        <h2>{{ animeList.title }}</h2>
-                        <span>{{ animeList.description }}</span>
-                    </div>
-                    <div class="most-content-animes-list-option"
-                         :class="'most-content-animes-list-option-' + (index + 1)">
-                        <div class="most-content-movie" v-for="(anime, i) in animeList.animes" :key="i">
-                            <div class="most-content-movie-image">
-                                <img v-lazy="anime.poster.main2xUrl" :alt="anime.name">
-                                <div class="most-content-movie-info">
-                                    <span class="most-content-movie-name">
-                                        {{ anime.russian }}
-                                    </span>
-                                    <span class="most-content-info">
-                                        {{ anime.airedOn.year }} <span class="dot">•</span>
-                                        Тв сериал
-                                    </span>
-                                    <button class="most-content-movie-button">
-                                        <i class="fa-solid fa-play"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <v-container class="most-anime-container"
+                 style="max-width: var(--ota-ku-max-width); padding: 20px 10px 10px 10px; align-items: center;">
+        <div v-for="category in animeList" :key="category.title" class="mb-5">
+            <v-card :title="category.title" :subtitle="category.description" variant="text" class="pa-0">
+                <v-row no-gutters class="mt-1">
+                    <v-col v-for="anime in category.anime" :key="anime.id" cols="6" xxl="2" xl="2" lg="2" md="3" sm="4"
+                           xs="4" class="pa-2">
+                        <v-card variant="text" link rounded="lg" @click="openDialog(anime)">
+                            <v-img :lazy-src="anime.poster.main2xUrl" :src="anime.poster.main2xUrl" :alt="anime.name"
+                                   rounded="lg" aspect-ratio="0.7" cover
+                                   style="pointer-events: none; user-select: none;"></v-img>
+                            <v-card-title class="pa-1 font-weight-regular" style="font-size: 1em;">{{
+                                    anime.russian
+                                }}
+                            </v-card-title>
+                            <v-card-subtitle class="pa-1 d-flex ga-1 pt-0 pb-3" style="font-size: 0.8em">
+                                Тип: {{ anime.kind }}
+                                <span>•</span>
+                                Оценка: {{ anime.score }}
+                            </v-card-subtitle>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </v-card>
         </div>
-    </section>
+
+        <v-dialog v-model="dialog" class="most-anime-dialog-modal-panel">
+            <v-card color="#212121" class="d-flex flex-row most-anime-dialog-modal-panel-card" rounded="lg">
+                <div class="most-anime-dialog-modal-panel-one pa-0">
+                    <v-img :lazy-src="selectedAnime.poster.main2xUrl" :src="selectedAnime.poster.main2xUrl" :alt="selectedAnime.name" width="100%"
+                           aspect-ratio="0.7" cover></v-img>
+                </div>
+                <div class="most-anime-dialog-modal-panel-two">
+                    <v-card-title class="headline pb-0 d-flex justify-space-between"><p class="text-wrap">
+                        {{ selectedAnime.russian }}</p>
+                        <v-btn variant="tonal" min-width="30px" min-height="30px" @click="dialog = false">
+                            <v-icon>mdi-close</v-icon>
+                        </v-btn>
+                    </v-card-title>
+                    <v-card-subtitle class="d-flex ga-1" style="font-size: 0.8em">
+                        <div>Тип: {{ selectedAnime.kind }}</div>
+                        <span>•</span>
+                        <div>Оценка: {{ selectedAnime.score }}</div>
+                        <span>•</span>
+                        <div>Год выхода: {{ selectedAnime.airedOn.year }}</div>
+                    </v-card-subtitle>
+                    <v-card-text v-text="cleanDescription(selectedAnime.description)"
+                                 style="font-family: 'Inter', sans-serif;
+                                  max-height: 10em;
+                                  overflow: hidden;
+                                  overflow-y: scroll;
+                                  text-overflow: ellipsis;
+                                  white-space: normal;
+                                  line-height: 150%;
+                                  color: #9e9e9e;"
+                                 class="mt-2 most-anime-dialog-modal-panel-text">
+                    </v-card-text>
+                    <v-card-actions class="d-flex ga-1 pa-4 most-anime-dialog-modal-panel-actions">
+                        <v-btn prepend-icon="mdi-play" variant="flat" :loading="loading"
+                               @click="this.openAnime(selectedAnime.id)">Смотреть
+                        </v-btn>
+                        <v-btn prepend-icon="mdi-account-multiple" variant="tonal" disabled>Смотреть вместе</v-btn>
+                        <v-btn prepend-icon="mdi-bookmark" variant="tonal" disabled>В избранное</v-btn>
+                    </v-card-actions>
+                </div>
+            </v-card>
+        </v-dialog>
+    </v-container>
 </template>
 
+
 <script lang="ts">
+import axios from "axios";
+import {cleanDescription} from "@/ts/cleanDescription.ts";
+import {openAnime} from "@/ts/goTo.ts";
+
 export default {
     data() {
         return {
-            animeLists: [],
+            animeList: [],
+            dialog: false,
+            selectedAnime: {},
+            cleanDescription,
+            loading: false,
+            openAnime,
         };
     },
     mounted() {
         this.fetchAllData(6);
     },
     methods: {
-        fetchAllData(animeLimit: number) {
+        async fetchAllData(animeLimit: number) {
             try {
-                const response = fetch("https://shikimori.one/api/graphql", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Accept: "application/json",
-                    },
-                    body: JSON.stringify({
-                        query: `
+                const response = await axios.post("https://shikimori.one/api/graphql", {
+                    query: `
               query {
-                ongoingAnime: animes(limit: ${animeLimit}, order: popularity, status: "ongoing", kind: "tv") {
+                ongoingAnime: animes(limit: 6, order: popularity, status: "ongoing", kind: "tv") {
                   id
                   name
                   russian
                   kind
                   score
+                  description
                   poster {
                     main2xUrl
                   }
@@ -74,6 +115,7 @@ export default {
                   russian
                   kind
                   score
+                  description
                   poster {
                     main2xUrl
                   }
@@ -87,6 +129,7 @@ export default {
                   russian
                   kind
                   score
+                  description
                   poster {
                     main2xUrl
                   }
@@ -100,6 +143,7 @@ export default {
                   russian
                   kind
                   score
+                  description
                   poster {
                     main2xUrl
                   }
@@ -109,187 +153,97 @@ export default {
                 }
               }
             `,
-                    }),
+                }, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
                 });
 
-                const data = response.json();
-                if (!response.ok) {
-                    this.error();
+                if (!response.status === 200) {
+                    this.$router.push(`/error`);
                 }
-                this.animeLists.push({
+                const data = response.data;
+                this.animeList.push({
                     title: "Онгоинги",
                     description: "Вступай в новые эпизоды приключений, следи за сюжетом!",
-                    anime: data.data.ongoingAnimes,
+                    anime: data.data.ongoingAnime,
                 });
 
-                this.animeLists.push({
+                this.animeList.push({
                     title: "Анонсы",
                     description: "Узнавай первым о предстоящих релизах, которые ожидают нас!",
-                    anime: data.data.anonseAnimes,
+                    anime: data.data.anonseAnime,
                 });
 
-                this.animeLists.push({
+                this.animeList.push({
                     title: "Топ аниме",
                     description: "Погружайся в лучшие произведения аниме, отмеченные высшим призом!",
-                    anime: data.data.topAnimes,
+                    anime: data.data.topAnime,
                 });
 
-                this.animeLists.push({
+                this.animeList.push({
                     title: "Завершенные",
                     description: "Проведи время в компании классических аниме, наполненных волнением!",
-                    anime: data.data.releasedAnimes,
+                    anime: data.data.releasedAnime,
                 });
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }
         },
+        openDialog(anime) {
+            this.selectedAnime = anime;
+            this.dialog = true;
+        }
     },
 };
 </script>
 
-<style lang="scss" scoped>
-.most-container {
-    width: 100%;
+<style lang="sass">
+.most-anime-container
+    .v-card-item
+        padding: 0
 
-    &-inner {
-        width: 100%;
-        padding: 0 10px;
-    }
+.most-anime-dialog-modal-panel
+    max-width: 1200px
 
-    & .most-container-tit {
-        max-width: var(--ota-ku-max-width);
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin: 30px auto 0;
-        gap: 18px;
+    &-one
+        width: 25%
 
-        .most-content-gallery-cell {
-            .most-content-title-h2 {
-                color: var(--most-content-title-h2-color);
-            }
-        }
+    &-two
+        width: 75%
 
-        .most-content-animes-list-option {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(194px, 1fr));
-            gap: 10px;
-            margin: 10px 0 0 0;
-            border-radius: 10px;
+@media screen and (max-width: 910px)
+    .most-anime-dialog-modal-panel
+        max-width: 700px !important
 
-            @media screen and (max-width: 417px) {
-                grid-template-columns: repeat(auto-fill, minmax(126px, 1fr));
-            }
+        .most-anime-dialog-modal-panel-card
+            flex-direction: column !important
 
+        &-one
+            margin: 0 auto
+            width: 100%
+            height: 400px
 
-            .most-content-movie {
-                cursor: pointer;
-                width: 100%;
+        &-two
+            width: 100%
 
-                &:hover {
-                    .most-content-movie-image img {
-                        transform: scale(1.1);
-                        filter: blur(2px);
-                    }
+@media screen and (max-width: 600px)
+    .most-anime-dialog-modal-panel
+        max-width: 500px !important
 
-                    .most-content-movie-info {
-                        display: flex;
-                    }
-                }
+        .most-anime-dialog-modal-panel-actions
+            flex-direction: column !important
+            gap: 10px
 
-                .most-content-movie-image {
-                    width: 100%;
-                    border-radius: 10px;
-                    overflow: hidden;
-                    position: relative;
-                    aspect-ratio: 1 / 1.44;
-                    margin-bottom: 5px;
+            button
+                width: 100%
+                margin-inline-start: 0 !important
 
-                    img {
-                        object-fit: cover;
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        transition: transform 0.2s ease-in-out;
-                    }
-                }
+        .most-anime-dialog-modal-panel-text
+            display: none !important
 
-                .most-content-movie-info {
-                    background-color: var(--cl-24);
-                    display: none;
-                    text-align: center;
-                    position: absolute;
-                    z-index: 2;
-                    width: 100%;
-                    padding: 10px;
-                    height: 100%;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-
-                    .most-content-movie-name {
-                        position: absolute;
-                        top: 0;
-                        padding: 10px;
-                        color: var(--cl-2);
-                    }
-
-                    .most-content-info {
-                        position: absolute;
-                        bottom: 0;
-                        padding: 10px;
-                    }
-
-                    button {
-                        width: 100px;
-                        height: 100px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border-radius: 50%;
-                        border: none;
-                        outline: none;
-                        box-shadow: none;
-                        background-color: var(--cl-25);
-
-                        i {
-                            font-size: 2em;
-                            color: var(--cl-26);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @media screen and (max-width: 1233px) {
-        .most-content-animes-list-option {
-            .most-content-movie:nth-child(6) {
-                display: none;
-            }
-        }
-    }
-
-    @media screen and (max-width: 1029px) {
-        .most-content-animes-list-option {
-            .most-content-movie:nth-child(6),
-            .most-content-movie:nth-child(5) {
-                display: none;
-            }
-        }
-    }
-
-    @media screen and (max-width: 825px) {
-        .most-content-animes-list-option {
-            justify-content: space-evenly !important;
-
-            .most-content-movie:nth-child(6),
-            .most-content-movie:nth-child(5) {
-                display: block;
-            }
-        }
-    }
-}
-
+@media screen and (max-width: 425px)
+    .most-anime-dialog-modal-panel
+        max-width: 400px !important
 </style>
