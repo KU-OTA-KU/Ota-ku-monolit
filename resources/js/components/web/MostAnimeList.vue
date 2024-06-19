@@ -276,6 +276,7 @@ export default defineComponent({
     },
 });
 </script>
+
 <style lang="sass">
 .custom-skeleton-1
     .v-skeleton-loader__image
