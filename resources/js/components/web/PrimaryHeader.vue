@@ -13,7 +13,7 @@
                     </v-toolbar-title>
                     <v-toolbar-items class="header-toolbar-items ga-2">
                         <v-btn :variant="getButtonVariant('/catalog')" class="text-capitalize" active to="/catalog"
-                               rounded="lg" size="small" height="30px">
+                               rounded="lg" size="small" height="30px" theme="customDarkTheme">
                             Каталог
                         </v-btn>
                         <v-btn :variant="getButtonVariant('/releases')" class="text-capitalize" active to="/releases"

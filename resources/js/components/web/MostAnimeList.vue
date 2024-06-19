@@ -1,34 +1,54 @@
 <template>
     <v-container class="most-anime-container"
                  style="max-width: var(--ota-ku-max-width); padding: 20px 10px 10px 10px; align-items: center;">
-        <div v-for="category in animeList" :key="category.title" class="mb-5">
-            <v-card :title="category.title" :subtitle="category.description" variant="text" class="pa-0">
+        <div v-if="mostAnimeListSkeleton">
+            <v-card variant="text" class="pa-0" v-for="n in 2" :key="n">
+                <v-skeleton-loader
+                class="mb-3"
+                type="list-item-two-line"
+                >
+                </v-skeleton-loader>
                 <v-row no-gutters class="mt-1">
-                    <v-col v-for="anime in category.anime" :key="anime.id" cols="6" xxl="2" xl="2" lg="2" md="3" sm="4"
-                           xs="4" class="pa-2">
-                        <v-card variant="text" link rounded="lg" @click="openDialog(anime)">
-                            <v-img :lazy-src="anime.poster.main2xUrl" :src="anime.poster.main2xUrl" :alt="anime.name"
-                                   rounded="lg" aspect-ratio="0.7" cover
-                                   style="pointer-events: none; user-select: none;"></v-img>
-                            <v-card-title class="pa-1 font-weight-regular" style="font-size: 1em;">{{
-                                    anime.russian
-                                }}
-                            </v-card-title>
-                            <v-card-subtitle class="pa-1 d-flex ga-1 pt-0 pb-3" style="font-size: 0.8em">
-                                Тип: {{ anime.kind }}
-                                <span>•</span>
-                                Оценка: {{ anime.score }}
-                            </v-card-subtitle>
-                        </v-card>
+                    <v-col v-for="n in 6" :key="n" cols="6" xxl="2" xl="2" lg="2" md="3" sm="4" xs="4" class="pa-2">
+                        <v-skeleton-loader
+                            class="mb-5 custom-skeleton-1"
+                            type="image, list-item-two-line"
+                        ></v-skeleton-loader>
                     </v-col>
                 </v-row>
             </v-card>
+        </div>
+        <div v-else>
+            <div v-for="category in animeList" :key="category.title" class="mb-5">
+                <v-card :title="category.title" :subtitle="category.description" variant="text" class="pa-0">
+                    <v-row no-gutters class="mt-1">
+                        <v-col v-for="anime in category.anime" :key="anime.id" cols="6" xxl="2" xl="2" lg="2" md="3" sm="4" xs="4" class="pa-2">
+                            <v-card variant="text" link rounded="lg" @click="openDialog(anime)">
+                                <v-img :lazy-src="anime.poster.main2xUrl" :src="anime.poster.main2xUrl"
+                                       :alt="anime.name"
+                                       rounded="lg" aspect-ratio="0.7" cover
+                                       style="pointer-events: none; user-select: none;"></v-img>
+                                <v-card-title class="pa-1 font-weight-regular" style="font-size: 1em;">{{
+                                        anime.russian
+                                    }}
+                                </v-card-title>
+                                <v-card-subtitle class="pa-1 d-flex ga-1 pt-0 pb-3" style="font-size: 0.8em">
+                                    Тип: {{ anime.kind }}
+                                    <span>•</span>
+                                    Оценка: {{ anime.score }}
+                                </v-card-subtitle>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-card>
+            </div>
         </div>
 
         <v-dialog v-model="dialog" class="most-anime-dialog-modal-panel">
             <v-card color="#212121" class="d-flex flex-row most-anime-dialog-modal-panel-card" rounded="lg">
                 <div class="most-anime-dialog-modal-panel-one pa-0">
-                    <v-img :lazy-src="selectedAnime.poster.main2xUrl" :src="selectedAnime.poster.main2xUrl" :alt="selectedAnime.name" width="100%"
+                    <v-img :lazy-src="selectedAnime.poster.main2xUrl" :src="selectedAnime.poster.main2xUrl"
+                           :alt="selectedAnime.name" width="100%"
                            aspect-ratio="0.7" cover></v-img>
                 </div>
                 <div class="most-anime-dialog-modal-panel-two">
@@ -56,11 +76,11 @@
                                  class="mt-2 most-anime-dialog-modal-panel-text">
                     </v-card-text>
                     <v-card-actions class="d-flex ga-1 pa-4 most-anime-dialog-modal-panel-actions">
-                        <v-btn prepend-icon="mdi-play" variant="flat" :loading="loading"
-                               @click="this.openAnime(selectedAnime.id)">Смотреть
+                        <v-btn prepend-icon="mdi-play" variant="flat" :loading="loading" theme="customDarkTheme"
+                               @click="openAnime(selectedAnime.id)">Смотреть
                         </v-btn>
                         <!--<v-btn prepend-icon="mdi-account-multiple" variant="tonal" disabled>Смотреть вместе</v-btn>-->
-                        <v-btn prepend-icon="mdi-bookmark" variant="tonal" disabled>В избранное</v-btn>
+                        <v-btn prepend-icon="mdi-bookmark" variant="tonal" disabled theme="customDarkTheme">В избранное</v-btn>
                     </v-card-actions>
                 </div>
             </v-card>
@@ -68,20 +88,21 @@
     </v-container>
 </template>
 
-
 <script lang="ts">
 import axios from "axios";
 import {cleanDescription} from "@/ts/cleanDescription.ts";
-import { openAnime } from "@/ts/goTo.ts";
+import {openAnime} from "@/ts/goTo.ts";
+import {defineComponent, ref} from "vue";
 
-export default {
+export default defineComponent({
     data() {
         return {
             animeList: [],
             dialog: false,
             selectedAnime: {},
             cleanDescription,
-            loading: false,
+            loading: ref(false),
+            mostAnimeListSkeleton: ref(true),
             openAnime,
         };
     },
@@ -150,7 +171,7 @@ export default {
                     year
                   }
                 }
-                filmsAnime: animes(season: "2023_2024", limit: ${animeLimit}, order: popularity, status: "released", kind: "movie") {
+                filmsAnime: animes(season: "2020_2024", limit: ${animeLimit}, order: popularity, status: "released", kind: "movie") {
                   id
                   name
                   russian
@@ -164,7 +185,7 @@ export default {
                     year
                   }
                 }
-                ovaAnime: animes(season: "2023_2024", limit: ${animeLimit}, status: "released", kind: "ova" censored: false) {
+                ovaAnime: animes(season: "2023_2024", limit: ${animeLimit}, order: popularity, status: "released", kind: "ova") {
                   id
                   name
                   russian
@@ -201,9 +222,10 @@ export default {
                     },
                 });
 
-                if (!response.status === 200) {
+                if (response.status !== 200) {
                     this.$router.push(`/error`);
                 }
+
                 const data = response.data;
                 this.animeList.push({
                     title: "Онгоинги",
@@ -214,7 +236,7 @@ export default {
                     title: "Популярные ONA",
                     description: "оригинальные анимационные сети (ONA) с уникальными и захватывающими сюжетами!",
                     anime: data.data.onaAnime,
-                })
+                });
                 this.animeList.push({
                     title: "Топ аниме",
                     description: "Погружайся в лучшие произведения аниме, отмеченные высшим призом!",
@@ -224,7 +246,7 @@ export default {
                     title: "Популярные OVA",
                     description: "(Original Video Animation) — эксклюзивные анимационные произведения!",
                     anime: data.data.ovaAnime,
-                })
+                });
                 this.animeList.push({
                     title: "Анонсы",
                     description: "Узнавай первым о предстоящих релизах, которые ожидают нас!",
@@ -239,10 +261,12 @@ export default {
                     title: "Фильмы",
                     description: "Эксклюзивная коллекция анимационных фильмов для наслаждения!",
                     anime: data.data.filmsAnime,
-                })
+                });
 
+                this.mostAnimeListSkeleton = false;
             } catch (error) {
                 console.log(error);
+                this.$router.push(`/error`);
             }
         },
         openDialog(anime) {
@@ -250,10 +274,13 @@ export default {
             this.dialog = true;
         }
     },
-};
+});
 </script>
-
 <style lang="sass">
+.custom-skeleton-1
+    .v-skeleton-loader__image
+        height: 286px
+
 .most-anime-container
     .v-card-item
         padding: 0

@@ -20,7 +20,7 @@ const customDarkTheme= {
     dark: true,
     colors: {
         background: '#ffffff',
-        surface: '#1E88E5',
+        surface: '#1763b1',
         primary: '#0047ff',
         'primary-darken-1': '#7d798e',
         secondary: '#03DAC6',
@@ -43,7 +43,7 @@ const vuetify = createVuetify({
     components,
     directives,
     theme: {
-        defaultTheme: 'customDarkTheme',
+        defaultTheme: 'dark',
         themes: {
             customDarkTheme,
         }
