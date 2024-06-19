@@ -26,7 +26,7 @@ import MostAnimeList from './web/MostAnimeList.vue';
 // import YoutubeVideos from "@/components/web/index/youtube.vue";
 // import Calendar from "@/components/web/index/calendar.vue";
 // import Feedback from "@/components/web/index/feedback.vue";
-// import Welcome from './web/index/welcome.vue';
+// import Welcome from './web/index/welcomecatalog.vue';
 import Footer from './web/Footer.vue';
 
 export default {

@@ -8,8 +8,8 @@ import "./bootstrap";
 import {createRouter, createWebHistory} from "vue-router";
 
 // pages
-import IndexComponent from "./components/indexApp.vue";
-import CatalogComponent from "./components/catalog.vue";
+import IndexComponent from "./components/IndexApp.vue";
+import CatalogComponent from "./components/CatalogApp.vue";
 import OpenAnimeComponent from "./components/anime.vue";
 
 // not found page and tech errors

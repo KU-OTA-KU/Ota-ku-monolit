@@ -280,7 +280,7 @@ export default defineComponent({
 <style lang="sass">
 .custom-skeleton-1
     .v-skeleton-loader__image
-        height: 286px
+        height: 260px
 
 .most-anime-container
     .v-card-item

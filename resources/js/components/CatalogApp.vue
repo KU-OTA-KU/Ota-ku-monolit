@@ -1,20 +1,12 @@
 <template>
     <primary-header></primary-header>
-    <Welcome></Welcome>
-    <section class="ad-container">
-        <div class="ad-container-inner">
-            <div id="yandex_rtb_R-A-7609325-3"></div>
-        </div>
-    </section>
-    <Search></Search>
-    <main class="main">
-        <div class="main-inner">
-            <div class="main-tit">
-                <AnimeCatalog></AnimeCatalog>
-                <Filter></Filter>
-            </div>
-        </div>
-    </main>
+    <v-container style="max-width: var(--ota-ku-max-width); padding: 20px 10px 0 10px; align-items: center;">
+        <v-breadcrumbs :items="['Главная Страница', 'Каталог']" class="pa-0" style="font-size: 0.8em">
+            <template v-slot:divider>
+                <v-icon icon="mdi-chevron-right" color="#9e9e9e"></v-icon>
+            </template>
+        </v-breadcrumbs>
+    </v-container>
     <Footer></Footer>
 </template>
 
@@ -22,29 +14,19 @@
 import { useHead } from "@vueuse/head";
 
 import PrimaryHeader from "@/components/web/PrimaryHeader.vue";
-import Search from "@/components/web/catalog/search.vue";
-import AnimeCatalog from "@/components/web/catalog/animeCatalog.vue";
+// import Search from "@/components/web/catalog/search.vue";
+// import AnimeCatalog from "@/components/web/catalog/animeCatalog.vue";
 import Footer from '@/components/web/Footer.vue';
-import Welcome from "@/components/web/catalog/welcome.vue";
 
 export default {
     components: {
-        Welcome,
-
-        AnimeCatalog,
+        // Welcome,
+        // AnimeCatalog,
         PrimaryHeader,
         Footer,
-        Search,
+        // Search,
     },
     mounted() {
-        window.yaContextCb.push(()=>{
-            Ya.Context.AdvManager.render({
-                "blockId": "R-A-7609325-3",
-                "renderTo": "yandex_rtb_R-A-7609325-3"
-            })
-        })
-        console.log('catalog Mounted!');
-
         useHead({
             title: "Лучший aниме каталог",
             meta: [
