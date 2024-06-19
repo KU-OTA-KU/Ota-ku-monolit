@@ -49,7 +49,6 @@
                                  style="font-family: 'Inter', sans-serif;
                                   max-height: 10em;
                                   overflow: hidden;
-                                  overflow-y: scroll;
                                   text-overflow: ellipsis;
                                   white-space: normal;
                                   line-height: 150%;
@@ -60,7 +59,7 @@
                         <v-btn prepend-icon="mdi-play" variant="flat" :loading="loading"
                                @click="this.openAnime(selectedAnime.id)">Смотреть
                         </v-btn>
-                        <v-btn prepend-icon="mdi-account-multiple" variant="tonal" disabled>Смотреть вместе</v-btn>
+                        <!--<v-btn prepend-icon="mdi-account-multiple" variant="tonal" disabled>Смотреть вместе</v-btn>-->
                         <v-btn prepend-icon="mdi-bookmark" variant="tonal" disabled>В избранное</v-btn>
                     </v-card-actions>
                 </div>
@@ -73,7 +72,7 @@
 <script lang="ts">
 import axios from "axios";
 import {cleanDescription} from "@/ts/cleanDescription.ts";
-import {openAnime} from "@/ts/goTo.ts";
+import { openAnime } from "@/ts/goTo.ts";
 
 export default {
     data() {
@@ -151,6 +150,48 @@ export default {
                     year
                   }
                 }
+                filmsAnime: animes(season: "2023_2024", limit: ${animeLimit}, order: popularity, status: "released", kind: "movie") {
+                  id
+                  name
+                  russian
+                  kind
+                  score
+                  description
+                  poster {
+                    main2xUrl
+                  }
+                  airedOn {
+                    year
+                  }
+                }
+                ovaAnime: animes(season: "2023_2024", limit: ${animeLimit}, status: "released", kind: "ova" censored: false) {
+                  id
+                  name
+                  russian
+                  kind
+                  score
+                  description
+                  poster {
+                    main2xUrl
+                  }
+                  airedOn {
+                    year
+                  }
+                }
+                onaAnime: animes(season: "2023_2024", limit: ${animeLimit}, order: popularity, status: "released", kind: "ona") {
+                  id
+                  name
+                  russian
+                  kind
+                  score
+                  description
+                  poster {
+                    main2xUrl
+                  }
+                  airedOn {
+                    year
+                  }
+                }
               }
             `,
                 }, {
@@ -169,24 +210,37 @@ export default {
                     description: "Вступай в новые эпизоды приключений, следи за сюжетом!",
                     anime: data.data.ongoingAnime,
                 });
-
                 this.animeList.push({
-                    title: "Анонсы",
-                    description: "Узнавай первым о предстоящих релизах, которые ожидают нас!",
-                    anime: data.data.anonseAnime,
-                });
-
+                    title: "Популярные ONA",
+                    description: "оригинальные анимационные сети (ONA) с уникальными и захватывающими сюжетами!",
+                    anime: data.data.onaAnime,
+                })
                 this.animeList.push({
                     title: "Топ аниме",
                     description: "Погружайся в лучшие произведения аниме, отмеченные высшим призом!",
                     anime: data.data.topAnime,
                 });
-
+                this.animeList.push({
+                    title: "Популярные OVA",
+                    description: "(Original Video Animation) — эксклюзивные анимационные произведения!",
+                    anime: data.data.ovaAnime,
+                })
+                this.animeList.push({
+                    title: "Анонсы",
+                    description: "Узнавай первым о предстоящих релизах, которые ожидают нас!",
+                    anime: data.data.anonseAnime,
+                });
                 this.animeList.push({
                     title: "Завершенные",
                     description: "Проведи время в компании классических аниме, наполненных волнением!",
                     anime: data.data.releasedAnime,
                 });
+                this.animeList.push({
+                    title: "Фильмы",
+                    description: "Эксклюзивная коллекция анимационных фильмов для наслаждения!",
+                    anime: data.data.filmsAnime,
+                })
+
             } catch (error) {
                 console.log(error);
             }

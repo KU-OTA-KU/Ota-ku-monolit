@@ -30,17 +30,17 @@
                 <v-col class="d-flex justify-end ga-1">
                     <v-tooltip text="Случайное аниме" location="start">
                         <template v-slot:activator="{ props }">
-                            <v-btn v-bind="props" icon="mdi-dice-multiple" variant="text"></v-btn>
+                            <v-btn v-bind="props" icon="mdi-dice-multiple" variant="text" disabled></v-btn>
                         </template>
                     </v-tooltip>
                     <v-tooltip text="Поиск аниме" location="bottom">
                         <template v-slot:activator="{ props }">
-                            <v-btn v-bind="props" icon="mdi-magnify" variant="text"></v-btn>
+                            <v-btn v-bind="props" icon="mdi-magnify" variant="text" disabled></v-btn>
                         </template>
                     </v-tooltip>
                     <v-tooltip text="Ваш профиль" location="end">
                         <template v-slot:activator="{ props }">
-                            <v-btn v-bind="props" icon="mdi-account" variant="text"></v-btn>
+                            <v-btn v-bind="props" icon="mdi-account" variant="text" disabled></v-btn>
                         </template>
                     </v-tooltip>
                 </v-col>
@@ -49,7 +49,7 @@
     </v-layout>
     <v-layout class="bottom-navigation">
         <v-bottom-navigation class="pa-1 d-flex ga-3" :elevation="5" grow style="background-color: rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" color="surface">
-            <v-btn value="recent" width="120px" rounded="xl" :variant="getButtonVariant('/schedule')">
+            <v-btn value="recent" width="120px" rounded="xl" :variant="getButtonVariant('/schedule')" disabled>
                 <v-icon>mdi-history</v-icon>
                 <span>Сегодня</span>
             </v-btn>
@@ -59,7 +59,7 @@
                 <span>Каталог</span>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn value="nearby" width="120px" rounded="xl" :variant="getButtonVariant('/releases')">
+            <v-btn value="nearby" width="120px" rounded="xl" :variant="getButtonVariant('/releases')" disabled>
                 <v-icon>mdi-filmstrip-box-multiple</v-icon>
                 <span>Библатека</span>
             </v-btn>

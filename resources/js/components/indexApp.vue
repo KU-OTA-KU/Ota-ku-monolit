@@ -6,54 +6,46 @@
             <!--<welcome></welcome>-->
             <!--<top-genres></top-genres>-->
             <most-anime-list></most-anime-list>
-<!--            <YoutubeVideos></YoutubeVideos>-->
-<!--            <Calendar></Calendar>-->
-<!--            <Feedback></Feedback>-->
+            <!--<YoutubeVideos></YoutubeVideos>-->
+            <!--<Calendar></Calendar>-->
+            <!--<Feedback></Feedback>-->
         </v-main>
     </v-layout>
     <Footer></Footer>
 </template>
 
-<script>
+<script lang="ts">
 import {useHead} from "@vueuse/head";
 
-import TopSlider from './web/topSlider.vue';
-import PrimaryHeader from './web/primaryHeader.vue';
-import TopGenres from './web/index/topGenres.vue';
-import MostAnimeList from './web/mostAnimes.vue';
-import Content from './web/index/animeList.vue';
-import Filter from './web/filter.vue';
-import YoutubeVideos from "@/components/web/index/youtube.vue";
-import Calendar from "@/components/web/index/calendar.vue";
-import Feedback from "@/components/web/index/feedback.vue";
-import Welcome from './web/index/welcome.vue';
-import Footer from './web/footer.vue';
+import TopSlider from './web/TopSlider.vue';
+import PrimaryHeader from './web/PrimaryHeader.vue';
+// import TopGenres from './web/index/topGenres.vue';
+import MostAnimeList from './web/MostAnimeList.vue';
+// import Content from './web/index/animeList.vue';
+// import Filter from './web/filter.vue';
+// import YoutubeVideos from "@/components/web/index/youtube.vue";
+// import Calendar from "@/components/web/index/calendar.vue";
+// import Feedback from "@/components/web/index/feedback.vue";
+// import Welcome from './web/index/welcome.vue';
+import Footer from './web/Footer.vue';
 
 export default {
     components: {
         PrimaryHeader,
         TopSlider,
-        TopGenres,
+        // TopGenres,
         MostAnimeList,
-        Content,
-        Filter,
-        YoutubeVideos,
-        Calendar,
-        Feedback,
-        Welcome,
+        // Content,
+        // Filter,
+        // YoutubeVideos,
+        // Calendar,
+        // Feedback,
+        // Welcome,
         Footer,
     },
     mounted() {
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-                "blockId": "R-A-7609325-1",
-                "renderTo": "yandex_rtb_R-A-7609325-1"
-            })
-        })
-
-        sessionStorage.removeItem("CurrentAnime");
-        console.log('Index Mounted!');
-        window.scrollTo({top: 0});
+        sessionStorage.removeItem("CurrentAnime"); // remove curr anime in  session storage
+        // using headers for index.app
         useHead({
             title: "Смотреть аниме онлайн бесплатно в хорошем качестве",
             meta: [
@@ -89,4 +81,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="sass" scoped></style>

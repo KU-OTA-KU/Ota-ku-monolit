@@ -29,7 +29,6 @@ export default {
     methods: {
         fetchData() {
             this.currentAnime = this.$route.query.animeId;
-            this.currentAnimeVoice = parseInt(this.VueCookies.get('selectedVoice')) || null;
         },
     },
     mounted() {

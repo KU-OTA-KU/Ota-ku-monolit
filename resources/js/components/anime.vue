@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import Footer from "@/components/web/footer.vue";
-import PrimaryHeader from "@/components/web/primaryHeader.vue";
+import Footer from "@/components/web/Footer.vue";
+import PrimaryHeader from "@/components/web/PrimaryHeader.vue";
 import AnimeHeader from "@/components/web/anime/animeHeader.vue";
 import AnimeDescription from "@/components/web/anime/animeDescription.vue"
 import AnimeStills from "@/components/web/anime/animeStills.vue";
@@ -55,14 +55,6 @@ export default {
         "renderTo": "yandex_rtb_R-A-7609325-5"
       })
     })
-
-    console.log('Anime mounted!');
-    window.scrollTo({ top: 0 });
-    let header = document.getElementsByTagName("header")[0];
-    header.style.position = "fixed";
-    header.style.backgroundColor = "transparent";
-    header.style.backdropFilter = "blur(7px)";
-    header.style.boxShadow = "none";
     const animeId = this.$route.query.animeId;
     // console.log(animeId)
     this.getCurrAnime(animeId)

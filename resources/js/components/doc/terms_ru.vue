@@ -108,7 +108,7 @@
   </div>
 </template>
 <script>
-import PrimaryHeader from '../web/primaryHeader.vue';
+import PrimaryHeader from '../web/PrimaryHeader.vue';
 
 export default {
   components: {

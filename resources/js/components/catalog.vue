@@ -21,17 +21,16 @@
 <script>
 import { useHead } from "@vueuse/head";
 
-import PrimaryHeader from "@/components/web/primaryHeader.vue";
+import PrimaryHeader from "@/components/web/PrimaryHeader.vue";
 import Search from "@/components/web/catalog/search.vue";
 import AnimeCatalog from "@/components/web/catalog/animeCatalog.vue";
-import Filter from "@/components/web/filter.vue";
-import Footer from '@/components/web/footer.vue';
+import Footer from '@/components/web/Footer.vue';
 import Welcome from "@/components/web/catalog/welcome.vue";
 
 export default {
     components: {
         Welcome,
-        Filter,
+
         AnimeCatalog,
         PrimaryHeader,
         Footer,
@@ -45,7 +44,7 @@ export default {
             })
         })
         console.log('catalog Mounted!');
-        window.scrollTo({top: 0});
+
         useHead({
             title: "Лучший aниме каталог",
             meta: [
