@@ -22,7 +22,7 @@ const customDarkTheme= {
         background: '#ffffff',
         surface: '#1763b1',
         primary: '#0047ff',
-        'primary-darken-1': '#7d798e',
+        'primary-darken-1': '#afa5df',
         secondary: '#212121',
         'secondary-darken-1': '#018786',
         error: '#0337bc',

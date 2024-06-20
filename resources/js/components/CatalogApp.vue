@@ -6,6 +6,7 @@
                 <v-icon icon="mdi-chevron-right" color="#9e9e9e"></v-icon>
             </template>
         </v-breadcrumbs>
+        <Anime-catalog></Anime-catalog>
     </v-container>
     <Footer></Footer>
 </template>
@@ -17,12 +18,14 @@ import PrimaryHeader from "@/components/web/PrimaryHeader.vue";
 // import Search from "@/components/web/catalog/search.vue";
 // import AnimeCatalog from "@/components/web/catalog/animeCatalog.vue";
 import Footer from '@/components/web/Footer.vue';
+import AnimeCatalog from '@/components/web/AnimeCatalog.vue';
 
 export default {
     components: {
         // Welcome,
         // AnimeCatalog,
         PrimaryHeader,
+        AnimeCatalog,
         Footer,
         // Search,
     },

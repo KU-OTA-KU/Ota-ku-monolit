@@ -20,7 +20,9 @@
         </div>
         <div v-else>
             <div v-for="category in animeList" :key="category.title" class="mb-5">
-                <v-card :title="category.title" :subtitle="category.description" variant="text" class="pa-0">
+                <v-card variant="text" class="pa-0">
+                    <v-card-title class="pa-0">{{ category.title }}</v-card-title>
+                    <v-card-subtitle class="pa-0">{{ category.description }}</v-card-subtitle>
                     <v-row no-gutters class="mt-1">
                         <v-col v-for="anime in category.anime" :key="anime.id" cols="6" xxl="2" xl="2" lg="2" md="3" sm="4" xs="4" class="pa-2">
                             <v-card variant="text" link rounded="lg" @click="openDialog(anime)">
@@ -281,10 +283,6 @@ export default defineComponent({
 .custom-skeleton-1
     .v-skeleton-loader__image
         height: 260px
-
-.most-anime-container
-    .v-card-item
-        padding: 0
 
 .most-anime-dialog-modal-panel
     max-width: 1200px

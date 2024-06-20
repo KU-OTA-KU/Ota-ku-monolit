@@ -17,11 +17,11 @@
                             Каталог
                         </v-btn>
                         <v-btn :variant="getButtonVariant('/releases')" class="text-capitalize" active to="/releases"
-                               rounded="lg" size="small" disabled height="30px">
+                               rounded="lg" size="small" disabled height="30px" theme="customDarkTheme">
                             Релизы
                         </v-btn>
                         <v-btn :variant="getButtonVariant('/schedule')" class="text-capitalize" active to="/schedule"
-                               rounded="lg" size="small" disabled height="30px">
+                               rounded="lg" size="small" disabled height="30px" theme="customDarkTheme">
                             Расписание
                         </v-btn>
                     </v-toolbar-items>
@@ -30,17 +30,17 @@
                 <v-col class="d-flex justify-end ga-1">
                     <v-tooltip text="Случайное аниме" location="start">
                         <template v-slot:activator="{ props }">
-                            <v-btn v-bind="props" icon="mdi-dice-multiple" variant="text" disabled></v-btn>
+                            <v-btn theme="customDarkTheme" v-bind="props" icon="mdi-dice-multiple" variant="text" disabled></v-btn>
                         </template>
                     </v-tooltip>
                     <v-tooltip text="Поиск аниме" location="bottom">
                         <template v-slot:activator="{ props }">
-                            <v-btn v-bind="props" icon="mdi-magnify" variant="text" disabled></v-btn>
+                            <v-btn theme="customDarkTheme" v-bind="props" icon="mdi-magnify" variant="text" disabled></v-btn>
                         </template>
                     </v-tooltip>
                     <v-tooltip text="Ваш профиль" location="end">
                         <template v-slot:activator="{ props }">
-                            <v-btn v-bind="props" icon="mdi-account" variant="text" disabled></v-btn>
+                            <v-btn theme="customDarkTheme" v-bind="props" icon="mdi-account" variant="text" disabled></v-btn>
                         </template>
                     </v-tooltip>
                 </v-col>
@@ -49,17 +49,17 @@
     </v-layout>
     <v-layout class="bottom-navigation">
         <v-bottom-navigation class="pa-1 d-flex ga-3" :elevation="5" grow style="background-color: rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);" color="surface">
-            <v-btn value="recent" width="120px" rounded="xl" :variant="getButtonVariant('/schedule')" disabled>
+            <v-btn value="recent" width="120px" rounded="xl" :variant="getButtonVariant('/schedule')" disabled theme="customDarkTheme">
                 <v-icon>mdi-history</v-icon>
                 <span>Сегодня</span>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn value="favorites" rounded="xl" width="120px" :variant="getButtonVariant('/catalog')" to="/catalog">
+            <v-btn value="favorites" rounded="xl" width="120px" :variant="getButtonVariant('/catalog')" to="/catalog" theme="customDarkTheme">
                 <v-icon>mdi-movie-filter</v-icon>
                 <span>Каталог</span>
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn value="nearby" width="120px" rounded="xl" :variant="getButtonVariant('/releases')" disabled>
+            <v-btn value="nearby" width="120px" rounded="xl" :variant="getButtonVariant('/releases')" disabled theme="customDarkTheme">
                 <v-icon>mdi-filmstrip-box-multiple</v-icon>
                 <span>Библатека</span>
             </v-btn>
@@ -74,7 +74,7 @@ export default {
             this.$router.push('/');
         },
         getButtonVariant(route: string) {
-            return this.$route.path === route ? 'flat' : 'plain';
+            return this.$route.path === route ? 'flat' : 'text';
         }
     }
 }
