@@ -2,27 +2,45 @@
     <v-card class="mt-4 mb-4" variant="text">
         <v-card-title class="pa-0">Каталог релизов</v-card-title>
         <v-card-subtitle class="pa-0">Самые новые и свежие эпизоды в каталоге</v-card-subtitle>
-        <v-row no-gutters class="mt-3 d-flex ga-4 flex-row flex-nowrap">
+        <v-row no-gutters class="mt-4">
+            <v-text-field label="Поиск..." variant="solo-filled" hide-details density="comfortable"
+                          v-model="searchQuery" @input="filterAnimeList(searchQuery)"></v-text-field>
+            <v-btn :icon="sidebarVisible ? 'mdi-close' : 'mdi-filter'" rounded="" class="ml-4" variant="tonal"
+                   density="default" @click="toggleSidebar">
+            </v-btn>
+        </v-row>
+        <v-row no-gutters class="mt-4 d-flex ga-4 flex-row flex-nowrap catalog-container">
             <v-card max-width="100%" width="100%" rounded="lg">
                 <v-list>
-                    <v-card v-for="n in 15" :key="n" link rounded="0" class="pa-5" variant="text"
+                    <v-card @click="openDialog(anime)" v-if="animeList.data && animeList.data.animes" v-for="anime in animeList.data.animes"
+                            :key="anime.id" link rounded="0" class="catalog-content-containers pa-5" variant="text"
                             style="border-bottom: 1px solid rgba(158,158,158,0.20)">
-                        <div class="pt-2 pb-2">
+                        <v-row no-gutters class="pt-2 pb-2 flex-nowrap">
                             <v-img
+                                :lazy-src="anime.poster.main2xUrl"
+                                :src="anime.poster.main2xUrl"
                                 rounded="lg"
-                                lazy-src="https://desu.shikimori.one/uploads/poster/animes/30240/3ecb164964d634cb2fdf2040070cc90f.jpeg"
-                                src="https://desu.shikimori.one/uploads/poster/animes/30240/3ecb164964d634cb2fdf2040070cc90f.jpeg"
-                                max-width="180px"
-                                aspect-ratio="0.7"
-                                width="100%"
-                                class="pointer-events-none user-select-none"
+                                cover
+                                class="pointer-events-none user-select-none mr-3 catalog-content-containers-v-image overflow-hidden"
                             >
                             </v-img>
-                        </div>
+                            <div style="width: 100%;">
+                                <v-card-title class="pa-0 text-wrap">{{ anime.russian }}</v-card-title>
+                                <v-card-subtitle class="pa-0 d-flex ga-1 pt-1 pb-2 text-wrap" style="font-size: 0.8em">
+                                    Тип: {{ anime.kind }}
+                                    <span>•</span>
+                                    Оценка: {{ anime.score }}
+                                </v-card-subtitle>
+                                <v-card-text class="pa-0 catalog-content-container-card-text"
+                                             style="font-family: 'Inter', sans-serif;">
+                                    {{ cleanDescription(anime.description) }}
+                                </v-card-text>
+                            </div>
+                        </v-row>
                     </v-card>
                 </v-list>
             </v-card>
-            <v-card max-width="var(--filter-slider-max-width)" width="100%" class="sidebar" rounded="lg" height="100%"
+            <v-card v-show="sidebarVisible" width="100%" class="sidebar" rounded="lg" height="100%"
                     position="relative" style="background-color: transparent">
                 <div class="content-wrapper d-flex flex-column ga-5 pb-5">
                     <v-form class="contents pt-2 position-relative"
@@ -83,7 +101,8 @@
                         </v-card>
                     </v-form>
                     <div class="submit-filter">
-                        <div class="submit-filter-inner-container pa-4 d-flex ga-4" style="background-color: #212121; border-radius: 6px;">
+                        <div class="submit-filter-inner-container pa-4 d-flex ga-4"
+                             style="background-color: #212121; border-radius: 6px;">
                             <v-btn theme="customDarkTheme" variant="flat" prepend-icon="mdi-check-all">
                                 Поиск
                             </v-btn>
@@ -99,8 +118,15 @@
 </template>
 
 <script lang="ts">
+import axios from "axios";
+import {cleanDescription} from "@/ts/cleanDescription.ts";
+import {openAnime} from "@/ts/goTo.ts";
+import {defineComponent, ref} from "vue";
+import debounce from 'lodash/debounce';
+
 export default {
     mounted() {
+        this.fetchAllData(10, 'popularity', "released", "");
         let sidebar = document.getElementsByClassName("sidebar")[0];
         let sidebar_content = document.getElementsByClassName("content-wrapper")[0];
 
@@ -109,7 +135,7 @@ export default {
             let viewportHeight = window.innerHeight;
             let contentHeight = sidebar_content.getBoundingClientRect().height;
             let sidebarTop = sidebar.getBoundingClientRect().top + window.pageYOffset;
-            if (scrollTop >= contentHeight - viewportHeight + sidebarTop) {
+            if (scrollTop >= contentHeight - viewportHeight + sidebarTop && window.innerWidth > 1024) {
                 sidebar_content.style.transform = `translateY(-${contentHeight - viewportHeight + sidebarTop}px)`;
                 sidebar_content.style.position = "fixed";
             } else {
@@ -117,8 +143,27 @@ export default {
                 sidebar_content.style.position = "";
             }
         }
+
+        window.onresize = () => {
+            if (window.innerWidth <= 1024) {
+                sidebar_content.style.position = "relative";
+                sidebar_content.style.transform = "";
+            } else {
+
+            }
+        };
+
+        // in computer mode open sidebar for responsibility
+        if (window.innerWidth >= 1024) {
+            this.sidebarVisible = true
+        }
     },
     data: () => ({
+        animeList: [],
+        dialog: false,
+        selectedAnime: {},
+        cleanDescription,
+        sidebarVisible: false,
         statusItems: [
             {
                 id: 'anons',
@@ -257,10 +302,12 @@ export default {
             {id: 'r', name: 'R', subtitle: 'Для подростков 17+'},
             {id: 'r_plus', name: 'R+', subtitle: 'Умеренная нагота'}
         ],
-
-
     }),
     methods: {
+        openDialog(anime) {
+            this.selectedAnime = anime;
+            this.dialog = true;
+        },
         itemProps(item) {
             return {
                 id: item.id,
@@ -268,13 +315,62 @@ export default {
                 subtitle: item.subtitle,
             }
         },
+        toggleSidebar() {
+            this.sidebarVisible = !this.sidebarVisible;
+        },
+        async fetchAllData(animeLimit: number, sortItems: string, statusItems: string, searchQuery: string) {
+            try {
+                const response = await axios.post("https://shikimori.one/api/graphql", {
+                    query: `
+              query {
+                animes(limit: ${animeLimit}, order: ${sortItems}, status: "${statusItems}", search: "${searchQuery}", kind: "tv", censored: false) {
+                  id
+                  name
+                  russian
+                  kind
+                  score
+                  description
+                  poster {
+                    main2xUrl
+                  }
+                  airedOn {
+                    year
+                  }
+                }
+              }
+            `,
+                }, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Accept: "application/json",
+                    },
+                });
+
+                if (response.status !== 200) {
+                    this.$router.push(`/error`);
+                }
+
+                this.animeList = response.data;
+                console.log(this.animeList)
+            } catch (error) {
+                console.error(error);
+            }
+        },
+        filterAnimeList: debounce(function (searchQuery: string) {
+            if (searchQuery !== '') {
+                this.fetchAllData(10, 'name', '', searchQuery);
+            } else {
+                this.fetchAllData(10, 'popularity', "released", "");
+            }
+
+        }, 1000),
     },
-}
+};
 </script>
 
 <style scoped lang="sass">
 .sidebar
-    width: 100%
+    max-width: var(--filter-slider-max-width)
 
     .content-wrapper
         .anime-filter-content-v-card
@@ -282,4 +378,39 @@ export default {
             max-width: var(--filter-slider-max-width)
             min-width: var(--filter-slider-max-width)
 
+
+.catalog-content-containers
+    .catalog-content-containers-v-image
+        max-width: 180px
+        width: 100%
+        aspect-ratio: 0.7
+
+        @media screen and (max-width: 1170px)
+            &
+                max-width: 150px
+
+        @media screen and (max-width: 520px)
+            &
+                max-width: 110px
+
+    .catalog-content-container-card-text
+        display: -webkit-box
+        -webkit-line-clamp: 4
+        -webkit-box-orient: vertical
+        overflow: hidden
+        color: #9e9e9e
+
+
+@media screen and (max-width: 1024px)
+    .catalog-container
+        flex-direction: column-reverse !important
+
+    .sidebar
+        max-width: 100%
+
+        .content-wrapper
+            .anime-filter-content-v-card
+                width: 100%
+                max-width: 100%
+                min-width: 100%
 </style>

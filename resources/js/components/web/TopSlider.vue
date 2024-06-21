@@ -22,7 +22,7 @@
                 <v-card class="pa-2 d-flex flex-column justify-center gap-6 top-slider-anime-card" hover color="" link
                         :ripple="false"
                         style="">
-                    <v-card-title class="fill-height align-end" style="font-size: 1.9em; font-weight: 600">
+                    <v-card-title class="fill-height align-end text-wrap" style="font-size: 1.9em; font-weight: 600">
                         Школа строгово режима
                     </v-card-title>
                     <v-card-subtitle class="pt-0">Оценка 7.6</v-card-subtitle>
@@ -63,10 +63,11 @@
                 </v-img>
                 <v-card class="pa-2 d-flex flex-column justify-center top-slider-anime-card" hover color="" link
                         :ripple="false">
-                    <v-card-title class="fill-height align-end" v-text="anime.russian"
+                    <v-card-title class="fill-height align-end text-wrap" v-text="anime.russian"
                                   style="font-size: 1.9em; font-weight: 600;"></v-card-title>
                     <v-card-subtitle class="pt-0">Оценка {{ anime.score }}</v-card-subtitle>
-                    <v-card-text class="top-slider-anime-cart-text" v-text="cleanDescription(anime.description)">
+                    <v-card-text class="top-slider-anime-cart-text">
+                        <p> {{ cleanDescription(anime.description) }}</p>
                     </v-card-text>
                     <v-card-actions class="pa-4">
                         <v-btn variant="tonal" prepend-icon="mdi-play" :loading="loading"
@@ -82,7 +83,8 @@
 
 <script lang="ts">
 import {cleanDescription} from "@/ts/cleanDescription.ts";
-import { openAnime } from "@/ts/goTo.ts";
+import {openAnime} from "@/ts/goTo.ts";
+
 export default {
     data() {
         return {
@@ -149,13 +151,15 @@ export default {
 
 .top-slider-anime-cart-text
     width: 70%
-    max-height: 10em
+    display: -webkit-box
+    -webkit-line-clamp: 5
+    -webkit-box-orient: vertical
     overflow: hidden
-    text-overflow: ellipsis
+    max-height: 115px
     white-space: normal
-    line-height: 150%
     color: #9e9e9e
     font-family: 'Inter', sans-serif
+
 
 @media screen and (max-width: 600px)
     .top-slider-anime-image
