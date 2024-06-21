@@ -10,7 +10,7 @@ import {createRouter, createWebHistory} from "vue-router";
 // pages
 import IndexComponent from "./components/IndexApp.vue";
 import CatalogComponent from "./components/CatalogApp.vue";
-import OpenAnimeComponent from "./components/anime.vue";
+import OpenAnimeComponent from "./components/OpenAnimeApp.vue";
 
 // not found page and tech errors
 import NotFoundComponent from "./components/apiComponents/404.vue";

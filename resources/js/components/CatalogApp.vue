@@ -8,7 +8,6 @@
         </v-breadcrumbs>
         <Anime-catalog></Anime-catalog>
     </v-container>
-    <Footer></Footer>
 </template>
 
 <script>
@@ -17,7 +16,7 @@ import { useHead } from "@vueuse/head";
 import PrimaryHeader from "@/components/web/PrimaryHeader.vue";
 // import Search from "@/components/web/catalog/search.vue";
 // import AnimeCatalog from "@/components/web/catalog/animeCatalog.vue";
-import Footer from '@/components/web/Footer.vue';
+// import Footer from '@/components/web/Footer.vue';
 import AnimeCatalog from '@/components/web/AnimeCatalog.vue';
 
 export default {
@@ -26,7 +25,6 @@ export default {
         // AnimeCatalog,
         PrimaryHeader,
         AnimeCatalog,
-        Footer,
         // Search,
     },
     mounted() {
