@@ -46,12 +46,12 @@
                 </v-card>
             </div>
         </div>
-
-        <anime-dialog
-            :selectedAnime="selectedAnime"
-            ref="animeDialogRef"
-        />
     </v-container>
+
+    <anime-dialog
+        :selectedAnime="selectedAnime"
+        ref="animeDialogRef"
+    />
 </template>
 
 <script lang="ts">
@@ -245,47 +245,4 @@ export default defineComponent({
 .custom-skeleton-1
     .v-skeleton-loader__image
         height: 260px
-
-.most-anime-dialog-modal-panel
-    max-width: 1200px
-
-    &-one
-        width: 25%
-
-    &-two
-        width: 75%
-
-@media screen and (max-width: 910px)
-    .most-anime-dialog-modal-panel
-        max-width: 700px !important
-
-        .most-anime-dialog-modal-panel-card
-            flex-direction: column !important
-
-        &-one
-            margin: 0 auto
-            width: 100%
-            height: 400px
-
-        &-two
-            width: 100%
-
-@media screen and (max-width: 600px)
-    .most-anime-dialog-modal-panel
-        max-width: 500px !important
-
-        .most-anime-dialog-modal-panel-actions
-            flex-direction: column !important
-            gap: 10px
-
-            button
-                width: 100%
-                margin-inline-start: 0 !important
-
-        .most-anime-dialog-modal-panel-text
-            display: none !important
-
-@media screen and (max-width: 425px)
-    .most-anime-dialog-modal-panel
-        max-width: 400px !important
 </style>

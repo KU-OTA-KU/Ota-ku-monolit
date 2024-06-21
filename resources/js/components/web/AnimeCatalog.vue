@@ -12,7 +12,16 @@
         <v-row no-gutters class="mt-4 d-flex ga-4 flex-row flex-nowrap catalog-container">
             <v-card max-width="100%" width="100%" rounded="lg">
                 <v-list>
-                    <v-card @click="openDialog(anime)" v-if="animeList.data && animeList.data.animes" v-for="anime in animeList.data.animes"
+                    <div v-if="animeCatalogListSkeleton">
+                        <v-card variant="text" class="pa-0" v-for="n in 10" :key="n">
+                            <v-skeleton-loader
+                                class="mb-3"
+                                type="list-item-three-line"
+                            >
+                            </v-skeleton-loader>
+                        </v-card>
+                    </div>
+                    <v-card v-else @click="openDialog(anime)" v-if="animeList.data && animeList.data.animes" v-for="anime in animeList.data.animes"
                             :key="anime.id" link rounded="0" class="catalog-content-containers pa-5" variant="text"
                             style="border-bottom: 1px solid rgba(158,158,158,0.20)">
                         <v-row no-gutters class="pt-2 pb-2 flex-nowrap">
@@ -115,16 +124,24 @@
             </v-card>
         </v-row>
     </v-card>
+
+    <anime-dialog
+        :selectedAnime="selectedAnime"
+        ref="animeDialogRef"
+    />
 </template>
 
 <script lang="ts">
 import axios from "axios";
 import {cleanDescription} from "@/ts/cleanDescription.ts";
-import {openAnime} from "@/ts/goTo.ts";
 import {defineComponent, ref} from "vue";
 import debounce from 'lodash/debounce';
+import AnimeDialog from "@/components/web/options/AnimeDialog.vue";
 
 export default {
+    components: {
+        AnimeDialog,
+    },
     mounted() {
         this.fetchAllData(10, 'popularity', "released", "");
         let sidebar = document.getElementsByClassName("sidebar")[0];
@@ -160,10 +177,10 @@ export default {
     },
     data: () => ({
         animeList: [],
-        dialog: false,
         selectedAnime: {},
         cleanDescription,
         sidebarVisible: false,
+        animeCatalogListSkeleton: true,
         statusItems: [
             {
                 id: 'anons',
@@ -306,7 +323,7 @@ export default {
     methods: {
         openDialog(anime) {
             this.selectedAnime = anime;
-            this.dialog = true;
+            this.$refs.animeDialogRef.openDialog();
         },
         itemProps(item) {
             return {
@@ -350,12 +367,15 @@ export default {
                     this.$router.push(`/error`);
                 }
 
+
                 this.animeList = response.data;
+                this.animeCatalogListSkeleton = false;
                 console.log(this.animeList)
             } catch (error) {
                 console.error(error);
             }
         },
+
         filterAnimeList: debounce(function (searchQuery: string) {
             if (searchQuery !== '') {
                 this.fetchAllData(10, 'name', '', searchQuery);
