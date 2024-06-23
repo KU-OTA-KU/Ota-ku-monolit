@@ -81,13 +81,14 @@ export default defineComponent({
               query {
                 ongoingAnime: animes(limit: 6, order: popularity, status: "ongoing", kind: "tv") {
                   id
-                  name
                   russian
                   kind
                   score
                   description
+                  videos { playerUrl }
                   poster {
                     main2xUrl
+                    originalUrl
                   }
                   airedOn {
                     year
@@ -95,13 +96,14 @@ export default defineComponent({
                 }
                 anonseAnime: animes(season: "2024", limit: ${animeLimit}, order: name, status: "anons", kind: "tv") {
                   id
-                  name
                   russian
                   kind
                   score
                   description
+                  videos { playerUrl }
                   poster {
                     main2xUrl
+                    originalUrl
                   }
                   airedOn {
                     year
@@ -109,12 +111,13 @@ export default defineComponent({
                 }
                 topAnime: animes(limit: ${animeLimit}, order: ranked, status: "released", kind: "tv") {
                   id
-                  name
                   russian
                   kind
                   score
                   description
+                  videos { playerUrl }
                   poster {
+                    originalUrl
                     main2xUrl
                   }
                   airedOn {
@@ -123,12 +126,13 @@ export default defineComponent({
                 }
                 releasedAnime: animes(limit: ${animeLimit}, order: popularity, status: "released", kind: "tv") {
                   id
-                  name
                   russian
                   kind
                   score
                   description
+                  videos { playerUrl }
                   poster {
+                    originalUrl
                     main2xUrl
                   }
                   airedOn {
@@ -137,12 +141,13 @@ export default defineComponent({
                 }
                 filmsAnime: animes(season: "2020_2024", limit: ${animeLimit}, order: popularity, status: "released", kind: "movie") {
                   id
-                  name
                   russian
                   kind
                   score
                   description
+                  videos { playerUrl }
                   poster {
+                    originalUrl
                     main2xUrl
                   }
                   airedOn {
@@ -151,12 +156,13 @@ export default defineComponent({
                 }
                 ovaAnime: animes(season: "2023_2024", limit: ${animeLimit}, order: popularity, status: "released", kind: "ova") {
                   id
-                  name
                   russian
                   kind
                   score
                   description
+                  videos { playerUrl }
                   poster {
+                    originalUrl
                     main2xUrl
                   }
                   airedOn {
@@ -165,12 +171,13 @@ export default defineComponent({
                 }
                 onaAnime: animes(season: "2023_2024", limit: ${animeLimit}, order: popularity, status: "released", kind: "ona") {
                   id
-                  name
                   russian
                   kind
                   score
                   description
+                  videos { playerUrl }
                   poster {
+                    originalUrl
                     main2xUrl
                   }
                   airedOn {
@@ -230,7 +237,7 @@ export default defineComponent({
                 this.mostAnimeListSkeleton = false;
             } catch (error) {
                 console.log(error);
-                this.$router.push(`/error`);
+
             }
         },
         openDialog(anime) {
