@@ -64,11 +64,18 @@
             <section>
                 <v-container
                     style="max-width: var(--ota-ku-max-width); padding: 10px 10px 10px 10px; align-items: center;">
+
                     <v-card rounded="lg" variant="text">
                         <v-card-title class="pa-0">Кадры</v-card-title>
                         <v-card-subtitle class="pa-0">Топ кадры из аниме</v-card-subtitle>
                         <v-row no-gutters justify="center" style="width: 100%; height: 100%;">
-                            <v-col cols="12" xxl="3" xl="3" lg="3" md="3" sm="6" xs="12" class="pa-2"
+                            <v-col v-if="screenshots.length === 0" cols="6" xxl="3" xl="3" lg="3" md="3" sm="3" xs="5" class="pa-2" v-for="n in 4">
+                                <v-skeleton-loader
+                                    type="card"
+                                >
+                                </v-skeleton-loader>
+                            </v-col>
+                            <v-col v-else cols="6" xxl="3" xl="3" lg="3" md="3" sm="3" xs="5" class="pa-2"
                                    v-for="(image, index) in screenshots">
                                 <v-img
                                     width="100%"
@@ -99,7 +106,7 @@
         </v-main>
         <v-main v-else>
             <div class="position-absolute d-flex"
-                 style="background-color: #121212; align-items: center; justify-content: center; z-index: 1010; width: 100%; height: 100%;">
+                 style="background-color: #121212; align-items: center; justify-content: center; z-index: 1010; width: 100vw; height: 100dvh;">
                 <div class="loader"></div>
             </div>
         </v-main>
