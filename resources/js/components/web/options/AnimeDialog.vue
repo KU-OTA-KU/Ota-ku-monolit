@@ -1,8 +1,23 @@
 <template>
     <v-dialog v-model="dialog" class="most-anime-dialog-modal-panel">
-        <v-card color="#212121" class="d-flex flex-row most-anime-dialog-modal-panel-card" rounded="lg">
-            <div class="most-anime-dialog-modal-panel-one pa-0">
-                <v-img :lazy-src="selectedAnime.poster.main2xUrl" :src="selectedAnime.poster.main2xUrl" :alt="selectedAnime.name" width="100%" aspect-ratio="0.7" cover></v-img>
+        <v-card color="#212121" class="d-flex flex-column most-anime-dialog-modal-panel-card" rounded="lg">
+            <div class="most-anime-dialog-modal-panel-one">
+                <v-carousel style="width: 100%;" class="most-anime-dialog-modal-carousel" hide-delimiters>
+                    <v-carousel-item>
+                        <v-img :lazy-src="selectedAnime.poster.main2xUrl" :src="selectedAnime.poster.originalUrl" :alt="selectedAnime.name" width="100%" cover></v-img>
+                    </v-carousel-item>
+                    <v-carousel-item v-for="video in selectedAnime.videos">
+                        <iframe
+                            :src="video.playerUrl"
+                            width="100%"
+                            height="100%"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </v-carousel-item>
+                </v-carousel>
+
             </div>
             <div class="most-anime-dialog-modal-panel-two">
                 <v-card-title class="headline pb-0 d-flex justify-space-between"><p class="text-wrap">{{ selectedAnime.russian }}</p>
@@ -60,31 +75,25 @@ export default defineComponent({
 </script>
 
 <style lang="sass">
+.most-anime-dialog-modal-carousel
+    height: 600px !important
+
 .most-anime-dialog-modal-panel
-    max-width: 1200px
-
-    &-one
-        width: 25%
-
-    &-two
-        width: 75%
+    max-width: 900px
+    &-one, &-two
+        width: 100%
 
 @media screen and (max-width: 910px)
+    .most-anime-dialog-modal-carousel
+        height: 400px !important
+
     .most-anime-dialog-modal-panel
         max-width: 700px !important
 
-        .most-anime-dialog-modal-panel-card
-            flex-direction: column !important
-
-        &-one
-            margin: 0 auto
-            width: 100%
-            height: 400px
-
-        &-two
-            width: 100%
-
 @media screen and (max-width: 600px)
+    .most-anime-dialog-modal-carousel
+        height: 350px !important
+
     .most-anime-dialog-modal-panel
         max-width: 500px !important
 
@@ -101,5 +110,5 @@ export default defineComponent({
 
 @media screen and (max-width: 425px)
     .most-anime-dialog-modal-panel
-        max-width: 400px !important
+        max-width: 500px !important
 </style>

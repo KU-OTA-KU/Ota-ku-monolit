@@ -1,5 +1,5 @@
 <template>
-    <v-card class="mt-4 mb-4" variant="text">
+    <v-card class="mt-4 mb-13" variant="text">
         <v-card-title class="pa-0">Каталог релизов</v-card-title>
         <v-card-subtitle class="pa-0">Самые новые и свежие эпизоды в каталоге</v-card-subtitle>
         <v-row no-gutters class="mt-4">
@@ -27,7 +27,7 @@
                         <v-row no-gutters class="pt-2 pb-2 flex-nowrap">
                             <v-img
                                 :lazy-src="anime.poster.main2xUrl"
-                                :src="anime.poster.main2xUrl"
+                                :src="anime.poster.originalUrl"
                                 rounded="lg"
                                 cover
                                 class="pointer-events-none user-select-none mr-3 catalog-content-containers-v-image overflow-hidden"
@@ -347,8 +347,10 @@ export default {
                   kind
                   score
                   description
+                  videos { playerUrl }
                   poster {
                     main2xUrl
+                    originalUrl
                   }
                   airedOn {
                     year
@@ -420,6 +422,9 @@ export default {
         overflow: hidden
         color: #9e9e9e
 
+        @media screen and (max-width: 425px)
+            &
+                display: none
 
 @media screen and (max-width: 1024px)
     .catalog-container
