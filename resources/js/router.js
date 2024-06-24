@@ -13,8 +13,8 @@ import CatalogComponent from "./components/CatalogApp.vue";
 import OpenAnimeComponent from "./components/OpenAnimeApp.vue";
 
 // not found page and tech errors
-import NotFoundComponent from "./components/apiComponents/404.vue";
-import TechError from "./components/apiComponents/techError.vue";
+import NotFoundComponent from "./components/web/options/404.vue";
+import TechError from "./components/web/options/techError.vue";
 
 // docs russian
 import AuthorsRU from "./components/doc/authors_ru.vue";

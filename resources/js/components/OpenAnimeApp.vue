@@ -6,6 +6,8 @@
                 </v-btn>
             </template>
             <template v-slot:append>
+                <v-btn icon="mdi-home" variant="tonal" theme="customDarkTheme" rounded="lg" class="mr-3" @click="this.$router.push('/')">
+                </v-btn>
                 <v-btn icon="mdi-dots-vertical" variant="tonal" theme="customDarkTheme" rounded="lg" disabled>
                 </v-btn>
             </template>
@@ -64,14 +66,14 @@
             <section>
                 <v-container
                     style="max-width: var(--ota-ku-max-width); padding: 10px 10px 10px 10px; align-items: center;">
-
                     <v-card rounded="lg" variant="text">
                         <v-card-title class="pa-0">Кадры</v-card-title>
                         <v-card-subtitle class="pa-0">Топ кадры из аниме</v-card-subtitle>
                         <v-row no-gutters justify="center" style="width: 100%; height: 100%;">
-                            <v-col v-if="screenshots.length === 0" cols="6" xxl="3" xl="3" lg="3" md="3" sm="3" xs="5" class="pa-2" v-for="n in 4">
+                            <v-col v-if="screenshots.length === 0" cols="6" xxl="3" xl="3" lg="3" md="3" sm="3" xs="5"
+                                   class="pa-2" v-for="n in 4">
                                 <v-skeleton-loader
-                                    type="card"
+                                    type="image"
                                 >
                                 </v-skeleton-loader>
                             </v-col>
@@ -103,6 +105,44 @@
                     </div>
                 </v-container>
             </section>
+            <!-- most anime List-->
+            <section>
+                <v-container
+                    style="max-width: var(--ota-ku-max-width); padding: 0 10px 10px 10px; align-items: center;">
+                    <v-card variant="text" rounded="lg">
+                        <v-card-title class="pa-0">Похожые релизы</v-card-title>
+                        <v-card-subtitle class="pa-0">Аниме и фильмы связеные с франшизой</v-card-subtitle>
+                        <v-row no-gutters>
+                            <v-col v-if="relatedAnime.length === 0" v-for="n in 4" cols="6" xxl="3" xl="3" lg="3" md="4" sm="4" xs="5" class="pa-2">
+                                <v-skeleton-loader
+                                    type="image, list-item-two-line"
+                                ></v-skeleton-loader>
+                            </v-col>
+                            <v-col v-else cols="6" xxl="3" xl="3" lg="3" md="4" sm="4" xs="5" class="pa-2"
+                                   v-for="related in relatedAnime" @click="this.openAnime(related.id);">
+                                <v-card link variant="text">
+                                    <v-img
+                                        width="100%"
+                                        aspect-ratio="1.6"
+                                        rounded="lg"
+                                        cover
+                                        :lazy-src="related.main2xUrl"
+                                        :src="related.main2xUrl"
+                                    >
+                                    </v-img>
+                                    <v-card-title class="pa-0 pt-2" style="font-size: 0.9em">{{
+                                            related.russian
+                                        }}
+                                    </v-card-title>
+                                    <v-card-subtitle class="pa-0 pt-1" style="font-size: 0.8em">
+                                        {{ related.relationRu}}
+                                    </v-card-subtitle>
+                                </v-card>
+                            </v-col>
+                        </v-row>
+                    </v-card>
+                </v-container>
+            </section>
         </v-main>
         <v-main v-else>
             <div class="position-absolute d-flex"
@@ -118,6 +158,7 @@ import axios from 'axios';
 import {cleanDescription} from "../ts/cleanDescription";
 import {formatDate} from "../ts/formatDate";
 import moment from 'moment-timezone';
+import {openAnime} from "../ts/goTo.ts";
 
 export default {
     mounted() {
@@ -129,6 +170,16 @@ export default {
         } else {
             this.goBack();
         }
+
+        this.$watch(
+            () => this.$route.query.animeId,
+            (newValue, oldValue) => {
+                if (newValue !== oldValue) {
+                    this.fetchAnime(newValue);
+                    this.currentAnime = newValue;
+                }
+            }
+        );
     },
     data() {
         return {
@@ -139,9 +190,14 @@ export default {
             studios: [],
             screenshots: [],
             locale: 'ru',
+            mostList: [],
+            openAnime,
         };
     },
     methods: {
+        reloadAnime() {
+
+        },
         formatDate,
         cleanDescription,
         async fetchAnime(animeId: number) {
@@ -162,6 +218,7 @@ export default {
                             studios { id name }
                             poster { originalUrl }
                             screenshots { id originalUrl }
+                            related { id anime { id russian poster { main2xUrl } } relationRu }
                           }
                         }
                     `
@@ -176,11 +233,19 @@ export default {
                     this.$router.push(`/error`);
                 } else {
                     this.animeList = response.data.data.animes[0];
+                    console.log(this.animeList)
                     this.genres = this.animeList.genres.map(item => item.russian);
                     this.studios = this.animeList.studios.map(item => item.name);
                     this.screenshots = this.animeList.screenshots.slice(0, 4).map(item => item.originalUrl);
-
-                    console.log(this.screenshots)
+                    this.relatedAnime = this.animeList.related
+                        .filter(item => item.anime !== null)
+                        .map(item => ({
+                            id: item.anime.id,
+                            russian: item.anime.russian,
+                            main2xUrl: item.anime.poster.main2xUrl,
+                            relationRu: item.relationRu
+                        }));
+                    console.log(this.relatedAnime)
                 }
             } catch (error) {
                 this.$router.push(`/error`);
