@@ -14,7 +14,7 @@
         </v-app-bar>
     </v-layout>
     <v-layout>
-        <v-main v-if="animeList && animeList.poster">
+        <v-main v-if="animeList && animeList.poster && currentAnime">
             <!-- background and image-->
             <section class="position-relative">
                 <v-parallax
@@ -195,9 +195,6 @@ export default {
         };
     },
     methods: {
-        reloadAnime() {
-
-        },
         formatDate,
         cleanDescription,
         async fetchAnime(animeId: number) {
@@ -233,7 +230,6 @@ export default {
                     this.$router.push(`/error`);
                 } else {
                     this.animeList = response.data.data.animes[0];
-                    console.log(this.animeList)
                     this.genres = this.animeList.genres.map(item => item.russian);
                     this.studios = this.animeList.studios.map(item => item.name);
                     this.screenshots = this.animeList.screenshots.slice(0, 4).map(item => item.originalUrl);
@@ -259,7 +255,6 @@ export default {
 </script>
 
 <style scoped lang="sass">
-
 .loader
     width: 40px
     padding: 6px
